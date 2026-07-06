@@ -1,0 +1,44 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+  wide?: boolean;
+}
+
+const { title, description = "Writing, photography, and experiments.", wide = false } = Astro.props;
+const pathname = Astro.url.pathname;
+
+const isActive = (href: string) =>
+  href === "/" ? pathname === "/" : pathname.startsWith(href);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} · Matthew R. Kenney</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <div class={`site ${wide ? "site--wide" : ""}`}>
+      <nav class="nav">
+        <a class="nav__name" href="/">Matthew R. Kenney</a>
+        <ul class="nav__links">
+          <li><a href="/writing" aria-current={isActive("/writing") ? "page" : undefined}>Writing</a></li>
+          <li><a href="/photography" aria-current={isActive("/photography") ? "page" : undefined}>Photography</a></li>
+          <li><a href="/experiments" aria-current={isActive("/experiments") ? "page" : undefined}>Experiments</a></li>
+        </ul>
+      </nav>
+      <main>
+        <slot />
+      </main>
+      <footer class="footer">
+        &copy; {new Date().getFullYear()} Matthew R. Kenney
+      </footer>
+    </div>
+  </body>
+</html>

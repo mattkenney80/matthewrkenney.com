@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const experiments: { title: string; description: string; href?: string }[] = [
+  // Add entries here as experiments are built, e.g.:
+  // { title: "WebGL noise field", description: "A generative background toy.", href: "/experiments/noise-field" },
+];
+---
+
+<BaseLayout title="Experiments" description="One-off demos and creative dead ends.">
+  <h1>Experiments</h1>
+  <p class="lede">
+    A freeform space for one-off layouts, interactions, and demos that don't belong in
+    writing or photography. Nothing here is precious — some of it may break.
+  </p>
+
+  {experiments.length === 0 ? (
+    <p class="meta" style="margin-top: 2rem;">No experiments published yet.</p>
+  ) : (
+    <div class="card-grid" style="margin-top: 2rem;">
+      {experiments.map((exp) => (
+        <a class="card" href={exp.href ?? "#"} style="text-decoration: none; color: inherit;">
+          <h2>{exp.title}</h2>
+          <p>{exp.description}</p>
+        </a>
+      ))}
+    </div>
+  )}
+</BaseLayout>
