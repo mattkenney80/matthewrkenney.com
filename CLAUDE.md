@@ -18,11 +18,27 @@ This file is read automatically at the start of every Claude Code session. Keep 
 - **Astro** (v7, static output) — content collections for writing + photography.
 - Plain CSS with design tokens in `src/styles/global.css` (no framework).
 - **No CMS/backend.** Content is authored as local markdown files, published via git push.
-- **Cloudflare Pages** — static hosting. Build command `npm run build`, output dir `dist`.
-  Custom domain: matthewrkenney.com (already registered/managed on Cloudflare).
+- **Cloudflare Pages** — static hosting, project name `matthewrkenney-com`. Build command
+  `npm run build`, output dir `dist`. Live at matthewrkenney.com and www.matthewrkenney.com
+  (both DNS + Pages custom domains configured).
 - No Functions/API routes needed for the current scope — this is a fully static site.
   If that changes (e.g. a contact form, comments), follow the same "keys never touch the
   frontend" rule as the sibling project.
+
+### Deployment
+
+- **Currently deployed via `wrangler pages deploy dist --project-name matthewrkenney-com`**
+  (direct upload), not Git-connected auto-deploy. The Cloudflare dashboard's "Connect to
+  GitHub" flow (Workers & Pages → Create → Pages → Import a Git repository) was unreliable
+  in-browser (hung indefinitely on the GitHub authorization step) — this is a one-time
+  dashboard click-through the user may still want to do later to get push-to-deploy on
+  `main`. Until then: after any content/code change, rebuild (`npm run build`) and redeploy
+  (`wrangler pages deploy dist --project-name matthewrkenney-com`) manually.
+- Repo: github.com/mattkenney80/matthewrkenney.com (public).
+- DNS: root (`@`) and `www` are CNAME records in the `matthewrkenney.com` zone pointing to
+  `matthewrkenney-com.pages.dev`, proxied. **Bot Fight Mode is OFF** for this zone (was on
+  by default, caused a JS-challenge page for non-browser requests — turned off since a
+  static personal site doesn't need it).
 
 ## Structure
 
@@ -90,7 +106,11 @@ once there's real photography to design around.
       `/experiments` index.
 - [x] Placeholder content (one post, one photo series with solid-color placeholder images)
       so the build/pages have something to render.
+- [x] GitHub repo created (mattkenney80/matthewrkenney.com) and pushed.
+- [x] **Live** at matthewrkenney.com / www.matthewrkenney.com via Cloudflare Pages
+      (direct-upload deploy, not Git-connected yet — see Deployment section above).
 - [ ] Replace placeholder photos with real images; replace/expand the placeholder post.
-- [ ] Connect GitHub repo + Cloudflare Pages for a live URL at matthewrkenney.com.
+- [ ] Optionally connect GitHub to Cloudflare Pages in the dashboard for automatic
+      deploy-on-push (currently manual `wrangler pages deploy`).
 - [ ] Decide whether writing posts use `.md` or `.mdx` (MDX only needed if embedding
       components in post bodies — not wired up yet, add `@astrojs/mdx` if so).
