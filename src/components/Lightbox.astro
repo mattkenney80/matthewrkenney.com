@@ -1,0 +1,72 @@
+---
+// Pairs with buttons carrying class="photo-trigger" and
+// data-full / data-alt / data-caption attributes.
+---
+
+<div class="lightbox" data-open="false" aria-hidden="true">
+  <button class="lightbox__close" type="button" aria-label="Close">&times;</button>
+  <button class="lightbox__prev" type="button" aria-label="Previous photo">&larr;</button>
+  <button class="lightbox__next" type="button" aria-label="Next photo">&rarr;</button>
+  <a class="lightbox__download" href="" download aria-label="Download full-size photo">Download full size</a>
+  <figure class="lightbox__figure">
+    <img class="lightbox__img" src="" alt="" />
+    <figcaption class="lightbox__caption"></figcaption>
+  </figure>
+</div>
+
+<script>
+  function initLightbox() {
+    const lightbox = document.querySelector<HTMLDivElement>(".lightbox");
+    if (!lightbox) return;
+
+    const img = lightbox.querySelector<HTMLImageElement>(".lightbox__img")!;
+    const caption = lightbox.querySelector<HTMLElement>(".lightbox__caption")!;
+    const closeBtn = lightbox.querySelector<HTMLButtonElement>(".lightbox__close")!;
+    const prevBtn = lightbox.querySelector<HTMLButtonElement>(".lightbox__prev")!;
+    const nextBtn = lightbox.querySelector<HTMLButtonElement>(".lightbox__next")!;
+    const downloadLink = lightbox.querySelector<HTMLAnchorElement>(".lightbox__download")!;
+
+    const triggers = Array.from(document.querySelectorAll<HTMLButtonElement>(".photo-trigger"));
+    let index = 0;
+
+    function show(i: number) {
+      index = (i + triggers.length) % triggers.length;
+      const t = triggers[index];
+      img.src = t.dataset.full ?? "";
+      img.alt = t.dataset.alt ?? "";
+      caption.textContent = t.dataset.caption ?? "";
+      downloadLink.href = t.dataset.download ?? t.dataset.full ?? "";
+    }
+
+    function open(i: number) {
+      show(i);
+      lightbox.dataset.open = "true";
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function close() {
+      lightbox.dataset.open = "false";
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    triggers.forEach((t, i) => t.addEventListener("click", () => open(i)));
+    closeBtn.addEventListener("click", close);
+    prevBtn.addEventListener("click", () => show(index - 1));
+    nextBtn.addEventListener("click", () => show(index + 1));
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) close();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (lightbox.dataset.open !== "true") return;
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowLeft") show(index - 1);
+      if (e.key === "ArrowRight") show(index + 1);
+    });
+  }
+
+  initLightbox();
+</script>

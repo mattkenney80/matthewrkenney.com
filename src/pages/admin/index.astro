@@ -1,0 +1,57 @@
+---
+export const prerender = false;
+
+import { env } from "cloudflare:workers";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { formatDate, type Article } from "../../lib/articles";
+
+const { DB } = env;
+const { results } = await DB.prepare(
+  "SELECT * FROM articles ORDER BY date DESC"
+).all<Article>();
+const articles = results ?? [];
+---
+
+<BaseLayout title="Admin · Writing">
+  <div class="admin-bar">
+    <h1>Articles</h1>
+    <a class="btn btn--primary" href="/admin/new">New article</a>
+  </div>
+
+  {articles.length === 0 ? (
+    <p class="lede">No articles yet.</p>
+  ) : (
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Status</th>
+          <th>Date</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {articles.map((article) => (
+          <tr>
+            <td>
+              <a href={`/admin/edit/${article.id}`}>{article.title}</a>
+            </td>
+            <td>
+              {article.published ? (
+                <span class="status-pill status-pill--published">Published</span>
+              ) : (
+                <span class="status-pill status-pill--draft">Draft</span>
+              )}
+            </td>
+            <td>{formatDate(article.date)}</td>
+            <td>
+              <form method="POST" action={`/admin/delete/${article.id}`} onsubmit="return confirm('Delete this article? This cannot be undone.')">
+                <button class="btn btn--danger" type="submit">Delete</button>
+              </form>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  )}
+</BaseLayout>

@@ -1,12 +1,17 @@
 ---
+export const prerender = false;
+
+import { env } from "cloudflare:workers";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { formatDate, type Article } from "../lib/articles";
 
-const posts = (await getCollection("writing", ({ data }) => !data.draft)).sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
-);
-const recentPosts = posts.slice(0, 3);
+const { DB } = env;
+const { results } = await DB.prepare(
+  "SELECT * FROM articles WHERE published = 1 ORDER BY date DESC LIMIT 3"
+).all<Article>();
+const recentPosts = results ?? [];
 
 const series = (await getCollection("photography", ({ data }) => !data.draft)).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
@@ -29,8 +34,8 @@ const featured = series[0];
       <ul class="post-list">
         {recentPosts.map((post) => (
           <li>
-            <a class="post-list__title" href={`/writing/${post.id}`}>{post.data.title}</a>
-            <p class="meta">{post.data.date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</p>
+            <a class="post-list__title" href={`/writing/${post.slug}`}>{post.title}</a>
+            <p class="meta">{formatDate(post.date)}</p>
           </li>
         ))}
       </ul>

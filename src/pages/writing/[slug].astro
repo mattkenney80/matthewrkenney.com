@@ -1,33 +1,32 @@
 ---
-import { getCollection, render } from "astro:content";
-import { Image } from "astro:assets";
-import BaseLayout from "../../layouts/BaseLayout.astro";
+export const prerender = false;
 
-export async function getStaticPaths() {
-  const posts = await getCollection("writing", ({ data }) => !data.draft);
-  return posts.map((post) => ({
-    params: { slug: post.id },
-    props: { post },
-  }));
+import { env } from "cloudflare:workers";
+import { marked } from "marked";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { articleTags, formatDate, type Article } from "../../lib/articles";
+
+const { DB } = env;
+const post = await DB.prepare(
+  "SELECT * FROM articles WHERE slug = ? AND published = 1"
+)
+  .bind(Astro.params.slug)
+  .first<Article>();
+
+if (!post) {
+  Astro.response.status = 404;
+  return await Astro.rewrite("/404");
 }
 
-const { post } = Astro.props;
-const { Content } = await render(post);
+const html = marked.parse(post.body);
 ---
 
-<BaseLayout title={post.data.title} description={post.data.description}>
+<BaseLayout title={post.title} description={post.description ?? undefined}>
   <article>
-    <h1>{post.data.title}</h1>
-    <p class="meta">
-      {post.data.date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
-    </p>
-    {post.data.tags.map((tag) => <span class="tag">{tag}</span>)}
-    {post.data.cover && (
-      <Image src={post.data.cover} alt={post.data.title} width={900} style="margin: 1.5rem 0;" />
-    )}
-    <div class="prose" style="margin-top: 1.5rem;">
-      <Content />
-    </div>
+    <h1>{post.title}</h1>
+    <p class="meta">{formatDate(post.date)}</p>
+    {articleTags(post).map((tag) => <span class="tag">{tag}</span>)}
+    <div class="prose" style="margin-top: 1.5rem;" set:html={html} />
   </article>
   <p><a href="/writing">&larr; All writing</a></p>
 </BaseLayout>

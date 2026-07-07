@@ -1,10 +1,15 @@
 ---
-import { getCollection } from "astro:content";
-import BaseLayout from "../../layouts/BaseLayout.astro";
+export const prerender = false;
 
-const posts = (await getCollection("writing", ({ data }) => !data.draft)).sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
-);
+import { env } from "cloudflare:workers";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { articleTags, formatDate, type Article } from "../../lib/articles";
+
+const { DB } = env;
+const { results } = await DB.prepare(
+  "SELECT * FROM articles WHERE published = 1 ORDER BY date DESC"
+).all<Article>();
+const posts = results ?? [];
 ---
 
 <BaseLayout title="Writing" description="Essays, notes, and short posts.">
@@ -15,12 +20,10 @@ const posts = (await getCollection("writing", ({ data }) => !data.draft)).sort(
     <ul class="post-list">
       {posts.map((post) => (
         <li>
-          <a class="post-list__title" href={`/writing/${post.id}`}>{post.data.title}</a>
-          <p class="meta">
-            {post.data.date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
-          </p>
-          {post.data.description && <p>{post.data.description}</p>}
-          {post.data.tags.map((tag) => <span class="tag">{tag}</span>)}
+          <a class="post-list__title" href={`/writing/${post.slug}`}>{post.title}</a>
+          <p class="meta">{formatDate(post.date)}</p>
+          {post.description && <p>{post.description}</p>}
+          {articleTags(post).map((tag) => <span class="tag">{tag}</span>)}
         </li>
       ))}
     </ul>

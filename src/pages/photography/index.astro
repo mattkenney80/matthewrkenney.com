@@ -16,9 +16,11 @@ const series = (await getCollection("photography", ({ data }) => !data.draft)).s
     <div class="series-grid">
       {series.map((entry) => (
         <a class="gallery-card" href={`/photography/${entry.id}`}>
-          {entry.data.cover && (
-            <Image src={entry.data.cover} alt={entry.data.title} width={640} />
-          )}
+          <div class="cover-frame">
+            {entry.data.cover && (
+              <Image src={entry.data.cover} alt={entry.data.title} width={800} />
+            )}
+          </div>
           <span class="gallery-card__title">{entry.data.title}</span>
           <p class="meta">{entry.data.photos.length} photo{entry.data.photos.length === 1 ? "" : "s"}</p>
         </a>
