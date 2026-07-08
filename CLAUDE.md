@@ -165,8 +165,8 @@ Palette (in `global.css` custom properties, easy to retune):
       rendering, first real post published ("Sebastian").
 - [x] Photography: masonry gallery + full-size lightbox + download-original link;
       "Bicycle Crimes" album (131 photos) published as the first real album.
-- [ ] **Domain cutover incomplete**: matthewrkenney.com DNS still points at the old
-      Pages project, not the current Worker deployment. Needs fixing.
+- [x] **Domain cutover complete**: matthewrkenney.com and www.matthewrkenney.com
+      now routed to the Worker deployment via routes in wrangler.jsonc.
 - [ ] `/admin` has no auth gate yet (Cloudflare Access was the plan, dashboard-only step,
       not done).
 - [ ] Optionally connect GitHub to Cloudflare for auto-deploy-on-push (currently manual).

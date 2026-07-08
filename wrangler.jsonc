@@ -17,5 +17,15 @@
 	],
 	"observability": {
 		"enabled": true
-	}
+	},
+	"routes": [
+		{
+			"pattern": "matthewrkenney.com/*",
+			"zone_name": "matthewrkenney.com"
+		},
+		{
+			"pattern": "www.matthewrkenney.com/*",
+			"zone_name": "matthewrkenney.com"
+		}
+	]
 }

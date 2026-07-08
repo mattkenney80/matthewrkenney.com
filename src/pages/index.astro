@@ -48,7 +48,7 @@ const featured = series.find((entry) => entry.data.cover);
       <h2>Featured photos</h2>
       <a class="gallery-card" href={`/photography/${featured.id}`}>
         {featured.data.cover && (
-          <Image src={featured.data.cover} alt={featured.data.title} width={900} />
+          <Image src={featured.data.cover} alt={featured.data.title} width={900} height={600} />
         )}
         <span class="gallery-card__title">{featured.data.title}</span>
       </a>
