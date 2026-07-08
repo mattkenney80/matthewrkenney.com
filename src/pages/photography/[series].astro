@@ -35,23 +35,27 @@ const photos = await Promise.all(
     </p>
     {entry.data.description && <p class="lede">{entry.data.description}</p>}
 
-    <div class="gallery-grid" style="margin-top: 1.5rem;">
-      {photos.map((photo) => (
-        <figure>
-          <button
-            class="photo-trigger"
-            type="button"
-            data-full={photo.full.src}
-            data-download={photo.download.src}
-            data-alt={photo.alt}
-            data-caption={photo.caption ?? ""}
-          >
-            <Image src={photo.src} alt={photo.alt} width={800} loading="lazy" />
-          </button>
-          {photo.caption && <figcaption>{photo.caption}</figcaption>}
-        </figure>
-      ))}
-    </div>
+    {photos.length === 0 ? (
+      <p class="meta" style="margin-top: 1.5rem;">No photos yet — check back soon.</p>
+    ) : (
+      <div class="gallery-grid" style="margin-top: 1.5rem;">
+        {photos.map((photo) => (
+          <figure>
+            <button
+              class="photo-trigger"
+              type="button"
+              data-full={photo.full.src}
+              data-download={photo.download.src}
+              data-alt={photo.alt}
+              data-caption={photo.caption ?? ""}
+            >
+              <Image src={photo.src} alt={photo.alt} width={800} loading="lazy" />
+            </button>
+            {photo.caption && <figcaption>{photo.caption}</figcaption>}
+          </figure>
+        ))}
+      </div>
+    )}
 
     <div class="prose" style="margin-top: 2rem;">
       <Content />

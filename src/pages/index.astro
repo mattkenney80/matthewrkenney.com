@@ -16,7 +16,7 @@ const recentPosts = results ?? [];
 const series = (await getCollection("photography", ({ data }) => !data.draft)).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
-const featured = series[0];
+const featured = series.find((entry) => entry.data.cover);
 ---
 
 <BaseLayout title="Home">
