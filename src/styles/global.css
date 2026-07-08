@@ -542,3 +542,30 @@ figcaption {
   font-size: 0.875rem;
   margin-bottom: var(--space-3);
 }
+
+/* Photo gallery embedded within a writing post (raw HTML in markdown body) */
+
+.prose .eulogy-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-2);
+  margin: var(--space-3) 0 var(--space-4);
+}
+
+.prose .eulogy-gallery a {
+  display: block;
+  line-height: 0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.prose .eulogy-gallery img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  transition: opacity 0.2s ease;
+}
+
+.prose .eulogy-gallery a:hover img {
+  opacity: 0.88;
+}
