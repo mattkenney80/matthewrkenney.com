@@ -87,3 +87,10 @@ photos:
   - src: "./portland-me_48615079832_o.jpg"
     alt: "Night photography, photo 41"
 ---
+
+A lot of the films I love, especially the work of directors like Michael Mann, and the photographer Todd Hido have had a deep effect on my work. I'm channeling them when I shoot, trying to find my own visual voice.
+
+I prefer night photography because I like constraints. Photography captures light, and there isn't much of it at night, which makes everything look unusual and beautiful. A place you know well looks radically different in the dark. It also requires a tripod and time. These are all long exposures, which I prefer shooting. I think you put more thought into it.
+
+I'm also just drawn to the night. I've had persistent sleeping issues throughout my life, and I love the quiet. My favorite thing is a city at night with no people in it. When you find that, it's absolutely the best. Fog adds a wonderful effect too.
+
