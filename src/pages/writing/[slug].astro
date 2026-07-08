@@ -21,7 +21,12 @@ if (!post) {
 const html = marked.parse(post.body);
 ---
 
-<BaseLayout title={post.title} description={post.description ?? undefined}>
+<BaseLayout
+  title={post.title}
+  description={post.description ?? undefined}
+  image={`/og/writing/${post.slug}.png`}
+  type="article"
+>
   <article>
     <h1>{post.title}</h1>
     <p class="meta">{formatDate(post.date)}</p>
