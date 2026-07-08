@@ -22,6 +22,8 @@ const isActive = (href: string) =>
     <title>{title} · Matthew R. Kenney</title>
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://api.fontshare.com" />
+    <link href="https://api.fontshare.com/v2/css?f[]=gambetta@300,400,500,600,700&display=swap" rel="stylesheet" />
   </head>
   <body>
     <div class={`site ${wide ? "site--wide" : ""}`}>
