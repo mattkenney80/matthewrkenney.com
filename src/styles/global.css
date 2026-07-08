@@ -5,8 +5,8 @@
   --color-border: #e5e2da;
   --color-accent: #a1442a;
 
-  --font-sans: "Gambetta", "Iowan Old Style", Georgia, "Times New Roman", serif;
-  --font-serif: "Gambetta", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --font-sans: "Fraunces", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --font-serif: "Fraunces", "Iowan Old Style", Georgia, "Times New Roman", serif;
 
   --measure: 34rem;
   --space-1: 0.5rem;
@@ -98,6 +98,8 @@ img {
 
 h1, h2, h3 {
   font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-weight: 600;
   letter-spacing: -0.01em;
   line-height: 1.15;
 }
@@ -107,6 +109,7 @@ h2 { font-size: 1.375rem; margin: 0 0 var(--space-1); }
 
 .prose {
   font-family: var(--font-serif);
+  font-optical-sizing: auto;
   font-size: 1.125rem;
   max-width: var(--measure);
 }
