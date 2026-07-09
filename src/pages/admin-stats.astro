@@ -3,8 +3,18 @@ export const prerender = false;
 
 import { env } from "cloudflare:workers";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { validateSession } from "../lib/auth";
 
-const { DB } = env;
+const { DB, SESSION } = env;
+
+// Check authentication
+const cookie = Astro.request.headers.get("cookie");
+const sessionId = cookie?.split("admin_session=")[1]?.split(";")[0];
+const isAuthenticated = await validateSession(SESSION, sessionId);
+
+if (!isAuthenticated) {
+  return Astro.redirect("/admin/login");
+}
 
 // Get or create stats table
 let viewCount = 0;
@@ -33,7 +43,19 @@ try {
 
 <BaseLayout title="Admin Stats" description="Page statistics" robots="noindex, nofollow">
   <div style="max-width: 600px; margin: 2rem auto; padding: 2rem; border: 1px solid #e5e2da; border-radius: 4px;">
-    <h1 style="margin: 0 0 1rem 0; font-size: 2rem;">Page Statistics</h1>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+      <h1 style="margin: 0; font-size: 2rem;">Page Statistics</h1>
+      <form method="POST" action="/admin/logout" style="margin: 0;">
+        <button
+          type="submit"
+          style="padding: 0.5rem 1rem; background: #e5e2da; color: #1a1a1a; border: none; border-radius: 4px; font-size: 0.875rem; cursor: pointer; transition: opacity 0.2s;"
+          onmouseover="this.style.opacity='0.7'"
+          onmouseout="this.style.opacity='1'"
+        >
+          Logout
+        </button>
+      </form>
+    </div>
 
     <div style="padding: 2rem; background: #fdfdfb; border-radius: 4px; text-align: center;">
       <p style="margin: 0 0 1rem 0; color: #55534d; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">
@@ -49,7 +71,7 @@ try {
     </p>
 
     <p style="color: #55534d; font-size: 0.75rem; margin-top: 1rem;">
-      🔒 Not indexed by search engines • No encryption • Simple counter
+      🔒 Protected • Not indexed by search engines • Requires authentication
     </p>
   </div>
 
