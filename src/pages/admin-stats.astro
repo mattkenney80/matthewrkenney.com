@@ -1,0 +1,61 @@
+---
+export const prerender = false;
+
+import { env } from "cloudflare:workers";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const { DB } = env;
+
+// Get or create stats table
+let viewCount = 0;
+try {
+  const result = await DB.prepare(
+    "SELECT view_count FROM page_stats WHERE page_name = 'admin_stats' LIMIT 1"
+  ).first();
+
+  viewCount = result?.view_count ?? 0;
+
+  // Increment the counter
+  await DB.prepare(
+    "INSERT INTO page_stats (page_name, view_count) VALUES ('admin_stats', 1) ON CONFLICT(page_name) DO UPDATE SET view_count = view_count + 1"
+  ).run();
+
+  // Get updated count
+  const updated = await DB.prepare(
+    "SELECT view_count FROM page_stats WHERE page_name = 'admin_stats' LIMIT 1"
+  ).first();
+  viewCount = updated?.view_count ?? 1;
+} catch (e) {
+  // Table might not exist yet, that's ok
+  console.log("Stats table not ready");
+}
+---
+
+<BaseLayout title="Admin Stats" description="Page statistics" robots="noindex, nofollow">
+  <div style="max-width: 600px; margin: 2rem auto; padding: 2rem; border: 1px solid #e5e2da; border-radius: 4px;">
+    <h1 style="margin: 0 0 1rem 0; font-size: 2rem;">Page Statistics</h1>
+
+    <div style="padding: 2rem; background: #fdfdfb; border-radius: 4px; text-align: center;">
+      <p style="margin: 0 0 1rem 0; color: #55534d; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">
+        Total Views
+      </p>
+      <p style="margin: 0; font-size: 3rem; font-weight: 600; color: #1a1a1a;">
+        {viewCount}
+      </p>
+    </div>
+
+    <p style="margin-top: 2rem; color: #55534d; font-size: 0.875rem;">
+      This page counts every visit. Updated in real-time.
+    </p>
+
+    <p style="color: #55534d; font-size: 0.75rem; margin-top: 1rem;">
+      🔒 Not indexed by search engines • No encryption • Simple counter
+    </p>
+  </div>
+
+  <style>
+    :global(body) {
+      background: #fdfdfb;
+    }
+  </style>
+</BaseLayout>
