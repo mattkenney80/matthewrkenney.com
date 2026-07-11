@@ -41,7 +41,7 @@ const photos = await Promise.all(
     {entry.data.description && <p class="lede">{entry.data.description}</p>}
 
     {hasIntro && (
-      <div class="prose" style="margin-top: 1.5rem;">
+      <div class="prose gallery-intro">
         <Content />
       </div>
     )}

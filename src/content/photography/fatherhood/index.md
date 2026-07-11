@@ -44,4 +44,6 @@ photos:
 
 My father passed away when I was ten. My parents divorced when I was two. His own father had abandoned him. Growing up, I was raised by women, which was a good thing. It taught me how to think from two different perspectives, and on balance that has been an asset my whole life.
 
-That said, for almost all of my life, up until my early thirties, before I met my wife, I saw fathers as a general nuisance, something odd, something I didn't understand. I knew they were needed for a little while, but after that, I figured the mom could run with it. Then my father-in-law passed away, and it showed me what a father really is. These photos are dedicated to Dr. Sebastian Sora.
+That said, for almost all of my life, up until my early thirties, before I met my wife, I saw fathers as a general nuisance, something odd, something I didn't understand. I knew they were needed for a little while, but after that, I figured the mom could run with it. Then my father-in-law passed away, and it showed me what a father really is.
+
+*These photos are dedicated to Dr. Sebastian Sora.*

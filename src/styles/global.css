@@ -39,6 +39,7 @@ a {
 
 img {
   max-width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -160,6 +161,22 @@ h2 { font-size: 1.375rem; margin: 0 0 var(--space-1); }
   margin-right: var(--space-1);
 }
 
+/* Photography: intro text above a gallery */
+
+.gallery-intro {
+  margin-top: var(--space-4);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.gallery-intro p:last-child {
+  margin-bottom: 0;
+}
+
+.gallery-intro em {
+  color: var(--color-ink-soft);
+}
+
 /* Photography: single-column gallery of individual photos.
    Most personal photo sets skew landscape; a multi-column masonry squeezes
    wide photos into narrow slots. One full-width column lets each photo be
@@ -186,6 +203,7 @@ h2 { font-size: 1.375rem; margin: 0 0 var(--space-1); }
 
 .gallery-grid img {
   width: 100%;
+  height: auto;
   border-radius: 2px;
   transition: opacity 0.2s ease;
 }
