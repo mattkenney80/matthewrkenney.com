@@ -15,7 +15,7 @@ const post = await DB.prepare(
 
 if (!post) {
   Astro.response.status = 404;
-  return await Astro.rewrite("/404");
+  return new Response("Not found", { status: 404 });
 }
 
 const html = marked.parse(post.body);
