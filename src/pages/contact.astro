@@ -58,8 +58,38 @@ if (Astro.request.method === "POST") {
 
   {sent ? (
     <>
-      <p class="lede">Thanks — your message is on its way.</p>
-      <p><a href="/">&larr; Back home</a></p>
+      <div class="envelope" role="status">
+        <span class="clasp" aria-hidden="true"></span>
+
+        <p class="kicker">Message received</p>
+
+        <p class="message">
+          Your message has been received and placed in a manila envelope on a desk in
+          a room where nobody works. Someone will find it.
+        </p>
+
+        <hr class="rule" />
+
+        <span class="stamp">REF <span id="ref">——</span></span>
+
+        <p class="footnote">
+          Quote this number in any follow-up. It will not help, but it will be quoted.
+        </p>
+      </div>
+      <p style="margin-top: 2rem;"><a href="/">&larr; Back home</a></p>
+      <script is:inline>
+        // A reference that is absurdly precise and genuinely unique per submission.
+        // Format: MF-YYDDD-HHMM-XX   (MF = manila file, DDD = day of year)
+        function reference(d = new Date()) {
+          const pad = (n, w = 2) => String(n).padStart(w, "0");
+          const start = Date.UTC(d.getFullYear(), 0, 0);
+          const day = Math.floor((Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) - start) / 86400000);
+          const rand = Math.random().toString(36).slice(2, 4).toUpperCase();
+          return `MF-${pad(d.getFullYear() % 100)}${pad(day, 3)}-${pad(d.getHours())}${pad(d.getMinutes())}-${rand}`;
+        }
+
+        document.getElementById("ref").textContent = reference();
+      </script>
     </>
   ) : (
     <>
@@ -93,3 +123,95 @@ if (Astro.request.method === "POST") {
     </>
   )}
 </BaseLayout>
+
+<style>
+  .envelope {
+    --manila: #d8c295;
+    --manila-dark: #b9a077;
+    --envelope-ink: #2b2620;
+    --envelope-ink-soft: #6a6157;
+    --stamp: #7c2f24;
+
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    margin-top: 2.5rem;
+    padding: 3rem 2.25rem 2.25rem;
+    background: var(--manila);
+    border: 1px solid var(--manila-dark);
+    border-radius: 2px;
+    box-shadow: 0 1px 0 #c9b085 inset, 0 18px 40px -22px rgba(43, 38, 32, .55);
+    color: var(--envelope-ink);
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  }
+
+  /* the clasp: one small piece of envelope hardware, nothing more */
+  .clasp {
+    position: absolute;
+    top: -9px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--manila-dark);
+    border: 1px solid #9c8462;
+  }
+
+  .kicker {
+    margin: 0 0 1.5rem;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--envelope-ink-soft);
+  }
+
+  .message {
+    margin: 0;
+    font-size: 1.3rem;
+    line-height: 1.55;
+    letter-spacing: .01em;
+  }
+
+  .rule {
+    margin: 2rem 0 1.25rem;
+    border: 0;
+    border-top: 1px dashed var(--manila-dark);
+  }
+
+  /* signature element: the reference, stamped slightly crooked */
+  .stamp {
+    display: inline-block;
+    padding: .45rem .8rem;
+    border: 2px solid var(--stamp);
+    border-radius: 3px;
+    transform: rotate(-1.6deg);
+    color: var(--stamp);
+    font-family: "Courier New", Courier, monospace;
+    font-size: 13px;
+    letter-spacing: .1em;
+    opacity: .82;
+  }
+
+  .footnote {
+    margin: 1.25rem 0 0;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--envelope-ink-soft);
+  }
+
+  @media (max-width: 480px) {
+    .envelope { padding: 2.5rem 1.5rem 1.75rem; }
+    .message { font-size: 1.15rem; }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .envelope { animation: settle .45s cubic-bezier(.2, .7, .3, 1) both; }
+    @keyframes settle {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: none; }
+    }
+  }
+</style>
