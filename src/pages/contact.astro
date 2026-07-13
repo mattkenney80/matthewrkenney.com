@@ -8,22 +8,23 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 let sent = false;
 let error: string | undefined;
-let draft = { name: "", email: "", message: "" };
+let draft = { name: "", email: "", city: "", favorites: "" };
 
 if (Astro.request.method === "POST") {
   const form = await Astro.request.formData();
   const name = String(form.get("name") ?? "").trim();
   const email = String(form.get("email") ?? "").trim();
-  const message = String(form.get("message") ?? "").trim();
+  const city = String(form.get("city") ?? "").trim();
+  const favorites = String(form.get("favorites") ?? "").trim();
   const honeypot = String(form.get("website") ?? "").trim();
 
-  draft = { name, email, message };
+  draft = { name, email, city, favorites };
 
   if (honeypot) {
     // Bot filled the hidden field; pretend everything worked.
     sent = true;
-  } else if (!name || !email || !message) {
-    error = "Name, email, and message are all required.";
+  } else if (!name || !email || !city || !favorites) {
+    error = "All fields are required.";
   } else {
     try {
       const msg = createMimeMessage();
@@ -33,7 +34,7 @@ if (Astro.request.method === "POST") {
       msg.setSubject(`Contact form: ${name}`);
       msg.addMessage({
         contentType: "text/plain",
-        data: `Name: ${name}\nEmail: ${email}\n\n${message}\n`,
+        data: `Name: ${name}\nEmail: ${email}\nCity: ${city}\n\nFavorite Band, Book or Movie (or all):\n${favorites}\n`,
       });
 
       await env.CONTACT_EMAIL.send(
@@ -74,8 +75,12 @@ if (Astro.request.method === "POST") {
           <input type="text" id="email" name="email" value={draft.email} required />
         </div>
         <div class="field">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="8" required>{draft.message}</textarea>
+          <label for="city">City</label>
+          <input type="text" id="city" name="city" value={draft.city} required />
+        </div>
+        <div class="field">
+          <label for="favorites">What is your favorite Band, Book or Movie or all?</label>
+          <textarea id="favorites" name="favorites" rows="6" required>{draft.favorites}</textarea>
         </div>
         <div class="field" style="position: absolute; left: -9999px;" aria-hidden="true">
           <label for="website">Website</label>
