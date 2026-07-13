@@ -11,7 +11,36 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <p>
     This site is where I share photographs, writing, and experiments in AI.
   </p>
+  <p>
+    All photographs are actually for free. I will mail you one. Just give me your
+    mailing address via the <a href="/contact">contact form</a>, and I will mail you a photo.
+  </p>
+  <blockquote class="about-quote">
+    <p>&ldquo;Practice any art&hellip; not to get money and fame, but to make your soul grow.&rdquo;</p>
+    <cite>&mdash; Kurt Vonnegut</cite>
+  </blockquote>
   <p class="meta">
     Matthew R. Kenney, Bloomfield, New Jersey, father of three, owner of two dogs with PTSD.
   </p>
 </BaseLayout>
+
+<style>
+  .about-quote {
+    margin: 2rem 0;
+    padding-left: 1.25rem;
+    border-left: 2px solid var(--color-accent);
+    max-width: var(--measure);
+  }
+
+  .about-quote p {
+    margin: 0 0 0.375rem;
+    font-style: italic;
+    color: var(--color-ink);
+  }
+
+  .about-quote cite {
+    font-style: normal;
+    font-size: 0.875rem;
+    color: var(--color-ink-soft);
+  }
+</style>
