@@ -1,6 +1,7 @@
 ---
 export const prerender = false;
 
+import { env } from "cloudflare:workers";
 import { getEntry, render } from "astro:content";
 import { Image, getImage } from "astro:assets";
 import BaseLayout from "../../layouts/BaseLayout.astro";
@@ -9,8 +10,17 @@ import Lightbox from "../../components/Lightbox.astro";
 const entry = await getEntry("photography", Astro.params.series);
 
 if (!entry || entry.data.draft) {
-  Astro.response.status = 404;
-  return await Astro.rewrite("/404");
+  // Serve the prerendered 404 page (Astro.rewrite can't target a static
+  // route from an on-demand one under "server" output).
+  try {
+    const asset = await env.ASSETS.fetch(new URL("/404.html", Astro.url));
+    return new Response(asset.body, {
+      status: 404,
+      headers: { "Content-Type": "text/html; charset=utf-8" },
+    });
+  } catch {
+    return new Response("Not found", { status: 404 });
+  }
 }
 
 const { Content } = await render(entry);

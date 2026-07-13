@@ -14,8 +14,17 @@ const post = await DB.prepare(
   .first<Article>();
 
 if (!post) {
-  Astro.response.status = 404;
-  return new Response("Not found", { status: 404 });
+  // Serve the prerendered 404 page (Astro.rewrite can't target a static
+  // route from an on-demand one under "server" output).
+  try {
+    const asset = await env.ASSETS.fetch(new URL("/404.html", Astro.url));
+    return new Response(asset.body, {
+      status: 404,
+      headers: { "Content-Type": "text/html; charset=utf-8" },
+    });
+  } catch {
+    return new Response("Not found", { status: 404 });
+  }
 }
 
 const html = marked.parse(post.body);

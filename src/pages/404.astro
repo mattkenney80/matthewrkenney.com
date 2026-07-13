@@ -5,5 +5,30 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <BaseLayout title="Not found">
   <h1>Not found</h1>
   <p class="lede">There's nothing at this address.</p>
+  <blockquote class="lost-quote">
+    <p>&ldquo;Some people never go crazy. What truly horrible lives they must lead.&rdquo;</p>
+    <cite>&mdash; Charles Bukowski</cite>
+  </blockquote>
   <p><a href="/">&larr; Back home</a></p>
 </BaseLayout>
+
+<style>
+  .lost-quote {
+    margin: 2rem 0;
+    padding-left: 1.25rem;
+    border-left: 2px solid var(--color-accent);
+    max-width: var(--measure);
+  }
+
+  .lost-quote p {
+    margin: 0 0 0.375rem;
+    font-style: italic;
+    color: var(--color-ink);
+  }
+
+  .lost-quote cite {
+    font-style: normal;
+    font-size: 0.875rem;
+    color: var(--color-ink-soft);
+  }
+</style>
