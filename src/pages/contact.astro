@@ -1,0 +1,90 @@
+---
+export const prerender = false;
+
+import { env } from "cloudflare:workers";
+import { EmailMessage } from "cloudflare:email";
+import { createMimeMessage, Mailbox } from "mimetext/browser";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+let sent = false;
+let error: string | undefined;
+let draft = { name: "", email: "", message: "" };
+
+if (Astro.request.method === "POST") {
+  const form = await Astro.request.formData();
+  const name = String(form.get("name") ?? "").trim();
+  const email = String(form.get("email") ?? "").trim();
+  const message = String(form.get("message") ?? "").trim();
+  const honeypot = String(form.get("website") ?? "").trim();
+
+  draft = { name, email, message };
+
+  if (honeypot) {
+    // Bot filled the hidden field; pretend everything worked.
+    sent = true;
+  } else if (!name || !email || !message) {
+    error = "Name, email, and message are all required.";
+  } else {
+    try {
+      const msg = createMimeMessage();
+      msg.setSender({ name: "matthewrkenney.com", addr: "contact@matthewrkenney.com" });
+      msg.setRecipient("matthew.kenney80@gmail.com");
+      msg.setHeader("Reply-To", new Mailbox({ addr: email, name }));
+      msg.setSubject(`Contact form: ${name}`);
+      msg.addMessage({
+        contentType: "text/plain",
+        data: `Name: ${name}\nEmail: ${email}\n\n${message}\n`,
+      });
+
+      await env.CONTACT_EMAIL.send(
+        new EmailMessage(
+          "contact@matthewrkenney.com",
+          "matthew.kenney80@gmail.com",
+          msg.asRaw()
+        )
+      );
+      sent = true;
+    } catch (e) {
+      console.error("Contact form send failed:", e);
+      error = "Something went wrong sending your message. Please try again later.";
+    }
+  }
+}
+---
+
+<BaseLayout title="Contact" description="Get in touch with Matthew R. Kenney.">
+  <h1>Contact</h1>
+
+  {sent ? (
+    <>
+      <p class="lede">Thanks — your message is on its way.</p>
+      <p><a href="/">&larr; Back home</a></p>
+    </>
+  ) : (
+    <>
+      <p class="lede">Have something to say? I read everything that comes through here.</p>
+      {error && <p class="admin-notice">{error}</p>}
+      <form method="POST" style="max-width: var(--measure);">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" value={draft.name} required />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" value={draft.email} required />
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="8" required>{draft.message}</textarea>
+        </div>
+        <div class="field" style="position: absolute; left: -9999px;" aria-hidden="true">
+          <label for="website">Website</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+        </div>
+        <div class="form-actions">
+          <button class="btn btn--primary" type="submit">Send</button>
+        </div>
+      </form>
+    </>
+  )}
+</BaseLayout>

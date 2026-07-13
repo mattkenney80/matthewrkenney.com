@@ -8,6 +8,12 @@
 		"directory": "./dist",
 		"binding": "ASSETS"
 	},
+	"send_email": [
+		{
+			"name": "CONTACT_EMAIL",
+			"destination_address": "matthew.kenney80@gmail.com"
+		}
+	],
 	"d1_databases": [
 		{
 			"binding": "DB",
