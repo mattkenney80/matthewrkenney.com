@@ -1,0 +1,724 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Cycling on Strava"
+  description="Recent rides from Strava, via a server-side OAuth2 token exchange."
+>
+  <section class="container head">
+    <p class="eyebrow">Strava &middot; OAuth2</p>
+    <h1>Cycling on Strava</h1>
+    <p class="text-muted" id="sub">Loading recent activity…</p>
+    <p>
+      <a
+        class="profile-link"
+        href="https://www.strava.com/athletes/69681569"
+        target="_blank"
+        rel="noopener noreferrer">View profile on Strava ↗</a
+      >
+    </p>
+  </section>
+
+  <section class="container">
+    <div id="summary" class="summary" hidden></div>
+
+    <div class="layout-two-col">
+      <div class="consistency-section">
+        <p class="eyebrow">riding patterns</p>
+        <h2>Streak & Calendar</h2>
+
+        <div class="streak-tracker">
+          <div class="streak-current">
+            <div class="streak-label">Current Streak</div>
+            <div class="streak-value" id="currentStreak">0</div>
+            <div class="streak-subtext">consecutive days</div>
+          </div>
+          <div class="streak-bar-container">
+            <div class="streak-bar" id="streakBar"></div>
+          </div>
+          <div class="streak-best">
+            <div class="streak-label">Personal Best</div>
+            <div class="streak-value" id="longestStreak">0</div>
+            <div class="streak-subtext">days</div>
+          </div>
+        </div>
+
+        <div class="consistency-card">
+          <div class="consistency-label">Preferred Ride Time</div>
+          <div id="timeOfDayChart" class="time-of-day-chart"></div>
+        </div>
+      </div>
+
+      <div class="rides-section">
+        <div id="toolbar" class="toolbar" hidden>
+          <label>
+            <span class="toolbar-lbl">Sort by</span>
+            <select id="sort">
+              <option value="date">Date (newest)</option>
+              <option value="distance">Distance (longest)</option>
+              <option value="elevation">Elevation gain</option>
+            </select>
+          </label>
+          <label>
+            <span class="toolbar-lbl">Min distance</span>
+            <select id="minDistance">
+              <option value="0">Any distance</option>
+              <option value="10">10+ mi</option>
+              <option value="25">25+ mi</option>
+              <option value="50">50+ mi</option>
+              <option value="75">75+ mi</option>
+              <option value="100">100+ mi</option>
+            </select>
+          </label>
+          <label>
+            <span class="toolbar-lbl">Start location</span>
+            <select id="location">
+              <option value="all">All locations</option>
+            </select>
+          </label>
+        </div>
+
+        <div id="list" class="list"></div>
+      </div>
+    </div>
+
+    <div id="setup" class="setup" hidden>
+      <p class="eyebrow">setup needed</p>
+      <h2>Connect Strava</h2>
+      <p class="text-muted">
+        The integration is built, but it needs your Strava API credentials
+        (kept server-side, never in the browser). One-time steps:
+      </p>
+      <ol class="text-muted">
+        <li>
+          Create an API app at
+          <code>strava.com/settings/api</code> → copy the <b>Client ID</b> and
+          <b>Client Secret</b>.
+        </li>
+        <li>
+          Authorize once to get a <b>refresh token</b> with
+          <code>activity:read_all</code> scope (see README for the exact URL +
+          token-exchange curl).
+        </li>
+        <li>
+          Put all three in <code>.dev.vars</code> locally (or
+          <code>wrangler pages secret put</code> in prod) and reload.
+        </li>
+      </ol>
+    </div>
+
+    <p id="msg" class="text-muted" hidden></p>
+  </section>
+</BaseLayout>
+
+<script>
+  type Activity = {
+    id: number;
+    name: string;
+    type: string;
+    distanceMi: number;
+    movingTimeS: number;
+    elevationGainM: number;
+    avgSpeedMph: number | null;
+    startDate: string;
+    locationLabel: string;
+    kudos: number;
+  };
+  type Payload = {
+    count: number;
+    activities: Activity[];
+    error?: string;
+    detail?: string;
+  };
+
+  const el = (id: string) => document.getElementById(id)!;
+  const esc = (s: string) =>
+    s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]!);
+  const fmtTime = (s: number) => {
+    const h = Math.floor(s / 3600);
+    const m = Math.round((s % 3600) / 60);
+    return h ? `${h}h ${m}m` : `${m}m`;
+  };
+  const fmtDate = (iso: string) =>
+    new Date(iso).toLocaleDateString(undefined, {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    });
+
+  let allActivities: Activity[] = [];
+
+  type SortKey = "date" | "distance" | "elevation";
+  const sorters: Record<SortKey, (a: Activity, b: Activity) => number> = {
+    date: (a, b) => +new Date(b.startDate) - +new Date(a.startDate),
+    distance: (a, b) => b.distanceMi - a.distanceMi,
+    elevation: (a, b) => b.elevationGainM - a.elevationGainM,
+  };
+
+  async function load() {
+    try {
+      const r = await fetch("/api/strava");
+      const data: Payload = await r.json();
+      if (r.status === 503 || data.error === "not_configured") {
+        el("sub").textContent = "Not connected yet.";
+        el("setup").hidden = false;
+        return;
+      }
+      if (!r.ok || data.error) throw new Error(data.detail || `HTTP ${r.status}`);
+
+      allActivities = data.activities ?? [];
+
+      setupToolbar();
+      applyAndRender();
+    } catch (e) {
+      el("sub").textContent = "Couldn't load activities.";
+      const msg = el("msg");
+      msg.hidden = false;
+      msg.textContent =
+        "The Strava Function errored. Run the full stack with `npm run preview` (wrangler), and check your credentials.";
+    }
+  }
+
+  function setupToolbar() {
+    if (!allActivities.length) return;
+    el("toolbar").hidden = false;
+
+    // Group by the place name the Function already resolved (via reverse
+    // geocoding cluster centroids), most-ridden-from first.
+    const counts = new Map<string, number>();
+    for (const a of allActivities) {
+      counts.set(a.locationLabel, (counts.get(a.locationLabel) ?? 0) + 1);
+    }
+    const sortedLabels = [...counts.entries()].sort((a, b) => b[1] - a[1]);
+
+    const locationSelect = el("location") as HTMLSelectElement;
+    for (const [label, count] of sortedLabels) {
+      const opt = document.createElement("option");
+      opt.value = label;
+      opt.textContent = `${label} (${count})`;
+      locationSelect.appendChild(opt);
+    }
+
+    el("sort").addEventListener("change", applyAndRender);
+    el("minDistance").addEventListener("change", applyAndRender);
+    locationSelect.addEventListener("change", applyAndRender);
+  }
+
+  function currentActivities(): Activity[] {
+    const label = (el("location") as HTMLSelectElement).value;
+    const minDistance = Number((el("minDistance") as HTMLSelectElement).value);
+    return allActivities.filter(
+      (a) => (label === "all" || a.locationLabel === label) && a.distanceMi >= minDistance,
+    );
+  }
+
+  function applyAndRender() {
+    const sortKey = (el("sort") as HTMLSelectElement).value as SortKey;
+    const acts = [...currentActivities()].sort(sorters[sortKey]);
+    render(acts);
+  }
+
+  function render(acts: Activity[]) {
+    el("sub").textContent = acts.length
+      ? `${acts.length} ${acts.length === allActivities.length ? "total" : "matching"} activities`
+      : "No matching activities.";
+
+    if (acts.length) {
+      const totalMi = acts.reduce((s, a) => s + a.distanceMi, 0);
+      const totalElev = acts.reduce((s, a) => s + a.elevationGainM, 0);
+      const longest = acts.reduce((m, a) => (a.distanceMi > m.distanceMi ? a : m));
+      const stats = [
+        { label: "activities", value: String(acts.length), tone: "blue" },
+        { label: "total distance", value: `${totalMi.toFixed(1)} mi`, tone: "navy" },
+        { label: "total climbing", value: `${totalElev.toLocaleString()} m`, tone: "blue" },
+        { label: "longest ride in view", value: `${longest.distanceMi} mi`, tone: "yellow" },
+      ];
+      const sum = el("summary");
+      sum.hidden = false;
+      sum.innerHTML = stats
+        .map(
+          (s) =>
+            `<div class="stat tone-${s.tone}"><div class="stat-val">${s.value}</div><div class="stat-lbl">${s.label}</div></div>`,
+        )
+        .join("");
+    }
+
+    el("list").innerHTML = acts
+      .map(
+        (a) => `
+        <div class="ride">
+          <div class="ride-main">
+            <span class="ride-type">${esc(a.type)}</span>
+            <span class="ride-name">${esc(a.name)}</span>
+          </div>
+          <div class="ride-stats">
+            <span><b>${a.distanceMi}</b> mi</span>
+            <span><b>${fmtTime(a.movingTimeS)}</b></span>
+            <span><b>${a.elevationGainM}</b> m climb</span>
+            ${a.avgSpeedMph ? `<span><b>${a.avgSpeedMph}</b> mph</span>` : ""}
+            <span class="ride-date">${fmtDate(a.startDate)}</span>
+          </div>
+        </div>`,
+      )
+      .join("");
+  }
+
+  function renderConsistencyDashboard() {
+    if (!allActivities.length) return;
+
+    const dateSet = new Set<string>();
+    for (const a of allActivities) {
+      const date = new Date(a.startDate);
+      dateSet.add(date.toISOString().split("T")[0]);
+    }
+
+    const sortedDates = Array.from(dateSet).sort();
+    let longestStreak = 1;
+    let currentStreak = 1;
+    let currentStreakEnd = new Date();
+
+    for (let i = 1; i < sortedDates.length; i++) {
+      const prev = new Date(sortedDates[i - 1]);
+      const curr = new Date(sortedDates[i]);
+      const dayDiff = (curr.getTime() - prev.getTime()) / (1000 * 60 * 60 * 24);
+      if (dayDiff === 1) {
+        currentStreak++;
+        currentStreakEnd = curr;
+        longestStreak = Math.max(longestStreak, currentStreak);
+      } else {
+        currentStreak = 1;
+      }
+    }
+
+    // Calculate actual current streak from today backward
+    let actualCurrentStreak = 0;
+    const today = new Date();
+    for (let i = 0; i < 365; i++) {
+      const checkDate = new Date(today);
+      checkDate.setDate(checkDate.getDate() - i);
+      const dateStr = checkDate.toISOString().split("T")[0];
+      if (dateSet.has(dateStr)) {
+        actualCurrentStreak++;
+      } else if (i > 0) {
+        break;
+      }
+    }
+
+    el("longestStreak").textContent = String(longestStreak);
+    el("currentStreak").textContent = String(actualCurrentStreak);
+    const streakPercent = Math.min(100, (actualCurrentStreak / longestStreak) * 100);
+    const streakBar = el("streakBar") as HTMLElement;
+    streakBar.style.width = `${streakPercent}%`;
+
+    // Time of day pattern
+    const timeOfDay = { morning: 0, afternoon: 0, evening: 0, night: 0 };
+    const timeDetails: Record<string, string[]> = {
+      morning: [],
+      afternoon: [],
+      evening: [],
+      night: [],
+    };
+
+    for (const a of allActivities) {
+      const date = new Date(a.startDate);
+      const hour = date.getHours();
+      let period: keyof typeof timeOfDay;
+
+      if (hour >= 5 && hour < 12) {
+        period = "morning";
+      } else if (hour >= 12 && hour < 17) {
+        period = "afternoon";
+      } else if (hour >= 17 && hour < 21) {
+        period = "evening";
+      } else {
+        period = "night";
+      }
+
+      timeOfDay[period]++;
+      timeDetails[period].push(
+        `${a.name.slice(0, 20)} (${hour}:${String(date.getMinutes()).padStart(2, "0")})`,
+      );
+    }
+
+    const total = Object.values(timeOfDay).reduce((a, b) => a + b, 0);
+    const times = [
+      { label: "Early Morning", key: "morning", icon: "🌅", time: "5am–12pm", count: timeOfDay.morning },
+      { label: "Afternoon", key: "afternoon", icon: "☀️", time: "12pm–5pm", count: timeOfDay.afternoon },
+      { label: "Evening", key: "evening", icon: "🌆", time: "5pm–9pm", count: timeOfDay.evening },
+      { label: "Night", key: "night", icon: "🌙", time: "9pm–5am", count: timeOfDay.night },
+    ];
+
+    const maxCount = Math.max(...times.map((t) => t.count));
+    const timeChartHTML = times
+      .map(
+        (t) => `
+        <div class="time-period">
+          <div class="time-header">
+            <span class="time-icon">${t.icon}</span>
+            <div class="time-info">
+              <div class="time-label">${t.label}</div>
+              <div class="time-range">${t.time}</div>
+            </div>
+            <div class="time-count">${t.count}</div>
+          </div>
+          <div class="time-bar-track">
+            <div class="time-bar" style="width: ${(t.count / maxCount) * 100}%"></div>
+          </div>
+          <div class="time-percent">${total > 0 ? Math.round((t.count / total) * 100) : 0}%</div>
+        </div>`,
+      )
+      .join("");
+
+    el("timeOfDayChart").innerHTML = timeChartHTML;
+  }
+
+  load();
+
+  async function waitForActivities() {
+    let attempts = 0;
+    while (!allActivities.length && attempts < 50) {
+      await new Promise((resolve) => setTimeout(resolve, 100));
+      attempts++;
+    }
+    if (allActivities.length) {
+      renderConsistencyDashboard();
+    }
+  }
+
+  waitForActivities();
+</script>
+
+<style>
+  .head {
+    padding-block: var(--space-16) var(--space-6);
+  }
+
+  .layout-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+    margin-bottom: var(--space-8);
+  }
+
+  @media (max-width: 1200px) {
+    .layout-two-col {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .consistency-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .consistency-section p {
+    margin: 0;
+  }
+
+  .consistency-section h2 {
+    margin: var(--space-2) 0 var(--space-4) 0;
+  }
+
+  .consistency-card {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+
+  .consistency-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: var(--space-4);
+  }
+
+  .streak-tracker {
+    background: linear-gradient(135deg, var(--blue) 0%, var(--navy) 100%);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    margin-bottom: var(--space-6);
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: var(--space-8);
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(52, 73, 94, 0.2);
+    color: white;
+  }
+
+  .streak-current,
+  .streak-best {
+    text-align: center;
+  }
+
+  .streak-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.9;
+    margin-bottom: var(--space-2);
+  }
+
+  .streak-value {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+
+  .streak-subtext {
+    font-size: 0.85rem;
+    opacity: 0.85;
+    margin-top: var(--space-1);
+  }
+
+  .streak-bar-container {
+    height: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+
+  .streak-bar {
+    height: 100%;
+    background: var(--yellow);
+    border-radius: 999px;
+    transition: width 0.6s ease;
+    width: 0%;
+  }
+
+  .time-of-day-chart {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  .time-period {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .time-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    justify-content: space-between;
+  }
+
+  .time-icon {
+    font-size: 1.8rem;
+    flex: 0 0 auto;
+  }
+
+  .time-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .time-label {
+    font-weight: 600;
+    color: var(--near-black);
+    font-size: 0.95rem;
+  }
+
+  .time-range {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+  }
+
+  .time-count {
+    font-family: var(--font-mono);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--blue);
+    flex: 0 0 auto;
+  }
+
+  .time-bar-track {
+    height: 24px;
+    background: var(--bg-subtle);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .time-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--blue), var(--navy));
+    border-radius: var(--radius);
+    transition: width 0.6s ease;
+    min-width: 2px;
+  }
+
+  .time-period:nth-child(1) .time-bar {
+    background: linear-gradient(90deg, #ff9800, #f57c00);
+  }
+
+  .time-period:nth-child(2) .time-bar {
+    background: linear-gradient(90deg, #fbc02d, #f57f17);
+  }
+
+  .time-period:nth-child(3) .time-bar {
+    background: linear-gradient(90deg, #ff7043, #d84315);
+  }
+
+  .time-period:nth-child(4) .time-bar {
+    background: linear-gradient(90deg, #5c6bc0, #3f51b5);
+  }
+
+  .time-percent {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-align: right;
+  }
+
+
+  .rides-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+  .profile-link {
+    font-size: 0.9rem;
+    font-weight: 560;
+    color: color-mix(in srgb, var(--blue) 72%, var(--near-black));
+  }
+
+  .summary {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-8);
+  }
+
+  .toolbar {
+    display: flex;
+    gap: var(--space-6);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-6);
+  }
+  .toolbar label {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+  .toolbar-lbl {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+  }
+  .toolbar select {
+    font: inherit;
+    font-size: 0.9rem;
+    color: var(--near-black);
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: var(--space-2) var(--space-3);
+    box-shadow: var(--shadow-sm);
+  }
+  /* injected via innerHTML — scoped-style hash isn't applied; target globally.
+     Tone system: blue/navy carry the regular metrics, yellow is reserved as a
+     highlight fill for the standout "longest ride" stat (pure yellow is too
+     pale for text-on-white, so it gets a tinted background instead). */
+  :global(#summary .stat) {
+    flex: 1 1 160px;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--tone, var(--blue));
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-sm);
+  }
+  :global(#summary .stat-val) {
+    font-family: var(--font-mono);
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--tone, var(--blue));
+  }
+  :global(#summary .stat-lbl) {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-top: var(--space-1);
+  }
+  :global(#summary .stat.tone-navy) {
+    --tone: var(--navy);
+  }
+  :global(#summary .stat.tone-yellow) {
+    --tone: var(--yellow);
+    background: color-mix(in srgb, var(--yellow) 16%, white);
+    border-left-color: color-mix(in srgb, var(--yellow) 75%, var(--near-black));
+  }
+  :global(#summary .stat.tone-yellow .stat-val) {
+    color: var(--near-black);
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  :global(#list .ride) {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--blue);
+    border-radius: var(--radius);
+    padding: var(--space-4) var(--space-6);
+    box-shadow: var(--shadow-sm);
+  }
+  :global(#list .ride-main) {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-3);
+    margin-bottom: var(--space-2);
+  }
+  :global(#list .ride-type) {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--blue) 70%, var(--near-black));
+  }
+  :global(#list .ride-name) {
+    font-weight: 600;
+  }
+  :global(#list .ride-stats) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+  :global(#list .ride-date) {
+    margin-left: auto;
+    color: var(--text-faint);
+  }
+
+  .setup {
+    background: var(--bg-subtle);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-12);
+    max-width: 64ch;
+  }
+  .setup ol {
+    margin: var(--space-4) 0 0;
+    padding-left: 1.2em;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+</style>

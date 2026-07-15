@@ -4,8 +4,11 @@ export const prerender = false;
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const experiments: { title: string; description: string; href?: string }[] = [
-  // Add entries here as experiments are built, e.g.:
-  // { title: "WebGL noise field", description: "A generative background toy.", href: "/experiments/noise-field" },
+  {
+    title: "Cycling on Strava",
+    description: "Activity feed, stats, and riding patterns from Strava via OAuth2. Shows rides grouped by location with streak tracking and time-of-day analysis.",
+    href: "/experiments/strava",
+  },
 ];
 ---
 
