@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 660" width="760" height="660" font-family="Georgia, 'Times New Roman', serif">
+  <rect width="760" height="660" fill="#faf6ee"/>
+  <!-- panel border -->
+  <path d="M30,26 Q380,22 730,27 L731,522 Q380,527 29,523 Z" fill="none" stroke="#1c1c1c" stroke-width="2.5"/>
+
+  <g stroke="#1c1c1c" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- horizon / ground -->
+    <path d="M42,442 Q200,434 380,441 T718,438" stroke-width="2.5"/>
+    <!-- distant hatching for sky texture -->
+    <g stroke-width="1" opacity="0.5">
+      <path d="M70,90 Q120,86 170,90"/>
+      <path d="M560,70 Q620,66 680,70"/>
+      <path d="M600,84 Q650,80 700,84"/>
+    </g>
+
+    <!-- sewer grate -->
+    <path d="M96,442 L214,441 L228,462 L108,463 Z" stroke-width="2.5"/>
+    <path d="M112,444 L122,460" stroke-width="2"/>
+    <path d="M130,444 L140,460" stroke-width="2"/>
+    <path d="M148,443 L158,460" stroke-width="2"/>
+    <path d="M166,443 L176,460" stroke-width="2"/>
+    <path d="M184,443 L194,460" stroke-width="2"/>
+    <path d="M202,442 L212,460" stroke-width="2"/>
+    <!-- little impact stink/ache lines above grate -->
+    <path d="M150,420 Q147,410 152,402" stroke-width="1.5"/>
+    <path d="M170,422 Q174,412 170,404" stroke-width="1.5"/>
+
+    <!-- man, face-down on the grass -->
+    <circle cx="268" cy="424" r="15" stroke-width="2.5"/>
+    <!-- hair scribble on back of head -->
+    <path d="M258,414 Q263,408 270,411 Q276,406 281,412" stroke-width="1.5"/>
+    <!-- body -->
+    <path d="M283,424 Q320,410 358,418 Q382,423 402,428" stroke-width="2.5"/>
+    <path d="M283,432 Q325,428 360,432 Q385,434 402,434" stroke-width="2.5"/>
+    <!-- arm flung forward toward the grate -->
+    <path d="M286,428 Q262,440 238,446" stroke-width="2.5"/>
+    <path d="M238,446 L230,443 M238,446 L232,451" stroke-width="1.5"/>
+    <!-- legs, one knee bent up -->
+    <path d="M402,431 Q430,428 452,436" stroke-width="2.5"/>
+    <path d="M402,428 Q420,412 444,410 Q456,410 460,420" stroke-width="2.5"/>
+    <!-- shoes -->
+    <path d="M452,436 L466,434 L465,441 L452,441 Z" stroke-width="2"/>
+    <path d="M460,420 L474,419 L473,426 L461,425 Z" stroke-width="2"/>
+    <!-- one shoe knocked clean off, nearby -->
+    <path d="M330,468 L350,466 Q354,470 350,474 L331,475 Z" stroke-width="2"/>
+
+    <!-- dizzy stars above head -->
+    <g stroke-width="1.8">
+      <path d="M244,382 L256,392 M256,382 L244,392 M250,378 L250,396"/>
+      <path d="M276,364 L286,372 M286,364 L276,372 M281,361 L281,375"/>
+      <path d="M306,380 L316,388 M316,380 L306,388 M311,377 L311,391"/>
+    </g>
+
+    <!-- fallen bike, missing its front wheel -->
+    <!-- rear wheel -->
+    <circle cx="556" cy="398" r="42" stroke-width="2.5"/>
+    <circle cx="556" cy="398" r="5" stroke-width="2"/>
+    <path d="M556,356 L556,440 M514,398 L598,398 M527,369 L585,427 M585,369 L527,427" stroke-width="1.2"/>
+    <!-- frame -->
+    <path d="M556,398 L598,326" stroke-width="2.8"/>
+    <path d="M556,398 L648,344" stroke-width="2.8"/>
+    <path d="M598,326 L648,344" stroke-width="2.8"/>
+    <!-- seat -->
+    <path d="M586,320 Q598,314 610,320" stroke-width="2.8"/>
+    <!-- fork, nosed into the ground with nothing on it -->
+    <path d="M648,344 L662,432" stroke-width="2.8"/>
+    <path d="M652,344 L668,430" stroke-width="2"/>
+    <!-- handlebars -->
+    <path d="M646,336 Q636,318 622,316" stroke-width="2.5"/>
+    <!-- impact ticks where the naked fork meets earth -->
+    <path d="M652,444 Q648,452 640,455 M676,442 Q682,450 690,452" stroke-width="1.5"/>
+
+    <!-- the front wheel, rolling away a free man -->
+    <circle cx="700" cy="386" r="34" stroke-width="2.5"/>
+    <circle cx="700" cy="386" r="4" stroke-width="2"/>
+    <path d="M700,352 L700,420 M666,386 L734,386 M677,363 L723,409 M723,363 L677,409" stroke-width="1.2"/>
+    <!-- motion lines -->
+    <path d="M642,372 Q652,370 660,371 M638,386 Q650,385 658,386 M644,400 Q654,399 662,399" stroke-width="1.8"/>
+
+    <!-- grass tufts -->
+    <g stroke-width="1.5">
+      <path d="M240,452 L236,444 M244,452 L244,443 M248,452 L252,445"/>
+      <path d="M420,450 L416,442 M424,450 L424,441 M428,450 L432,443"/>
+      <path d="M500,448 L496,440 M504,448 L504,439"/>
+      <path d="M80,470 L76,462 M84,470 L84,461 M88,470 L92,463"/>
+    </g>
+
+    <!-- shadow hatching under man and bike -->
+    <g stroke-width="1" opacity="0.6">
+      <path d="M290,447 L300,442 M308,448 L318,443 M326,449 L336,444 M344,449 L354,444 M362,450 L372,445"/>
+      <path d="M530,447 L540,442 M548,447 L558,442 M566,447 L576,442"/>
+      <path d="M684,428 L694,423 M700,428 L710,423"/>
+    </g>
+  </g>
+
+  <!-- caption -->
+  <text x="380" y="576" text-anchor="middle" font-style="italic" font-size="23" fill="#1c1c1c">&#8220;Not a torque wrench in that whole damn country.&#8221;</text>
+  <!-- signature -->
+  <text x="700" y="512" text-anchor="end" font-style="italic" font-size="13" fill="#1c1c1c" opacity="0.7">m.k.</text>
+</svg>

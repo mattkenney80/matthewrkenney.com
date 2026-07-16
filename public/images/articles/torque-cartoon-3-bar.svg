@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 660" width="760" height="660" font-family="Georgia, 'Times New Roman', serif">
+  <rect width="760" height="660" fill="#faf6ee"/>
+  <!-- panel border -->
+  <path d="M30,26 Q380,22 730,27 L731,522 Q380,527 29,523 Z" fill="none" stroke="#1c1c1c" stroke-width="2.5"/>
+
+  <g stroke="#1c1c1c" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- hanging lamp over the drinker -->
+    <path d="M236,26 L236,96" stroke-width="2"/>
+    <path d="M208,120 L236,96 L264,120 Q236,130 208,120 Z" stroke-width="2.5"/>
+    <!-- light hatching falling from lamp -->
+    <g stroke-width="1" opacity="0.45">
+      <path d="M214,132 L200,180 M226,134 L218,186 M238,135 L238,188 M250,134 L258,186 M262,132 L272,180"/>
+    </g>
+
+    <!-- back shelf with bottles -->
+    <path d="M448,168 L706,166" stroke-width="2.5"/>
+    <g stroke-width="2">
+      <path d="M470,166 L470,126 Q470,120 475,120 L481,120 Q486,120 486,126 L486,166"/>
+      <path d="M476,120 L476,106 L480,106 L480,120"/>
+      <path d="M506,166 L506,132 Q506,126 511,126 L517,126 Q522,126 522,132 L522,166"/>
+      <path d="M512,126 L512,112 L516,112 L516,126"/>
+      <path d="M544,166 L544,122 Q544,116 549,116 L555,116 Q560,116 560,122 L560,166"/>
+      <path d="M550,116 L550,102 L554,102 L554,116"/>
+      <path d="M582,166 L582,136 Q582,130 587,130 L593,130 Q598,130 598,136 L598,166"/>
+      <path d="M588,130 L588,118 L592,118 L592,130"/>
+      <path d="M622,166 L622,126 Q622,120 627,120 L633,120 Q638,120 638,126 L638,166"/>
+      <path d="M628,120 L628,106 L632,106 L632,120"/>
+      <path d="M662,166 L662,134 Q662,128 667,128 L673,128 Q678,128 678,134 L678,166"/>
+      <path d="M668,128 L668,114 L672,114 L672,128"/>
+    </g>
+
+    <!-- bar counter -->
+    <path d="M56,382 L704,378" stroke-width="3"/>
+    <path d="M56,392 L704,388" stroke-width="2"/>
+    <!-- counter front, wood grain -->
+    <path d="M60,392 L60,478 M700,388 L700,474" stroke-width="2.5"/>
+    <path d="M60,478 Q380,484 700,474" stroke-width="2.5"/>
+    <g stroke-width="1" opacity="0.5">
+      <path d="M90,400 Q92,436 90,470 M130,400 Q127,436 130,470 M170,399 Q172,436 170,470 M210,398 Q208,436 210,469 M250,398 Q252,436 250,469 M290,397 Q288,436 290,468 M330,396 Q332,436 330,468 M370,396 Q368,435 370,467 M410,395 Q412,435 410,467 M450,394 Q448,434 450,466 M490,394 Q492,434 490,466 M530,393 Q528,433 530,465 M570,392 Q572,433 570,465 M610,391 Q608,432 610,464 M650,390 Q652,432 650,464"/>
+    </g>
+
+    <!-- THE DRINKER: slumped, bandaged, philosophical -->
+    <!-- head, profile facing right -->
+    <circle cx="238" cy="268" r="26" stroke-width="2.8"/>
+    <!-- bandage wrapped around the crown -->
+    <path d="M214,258 Q238,238 262,258" stroke-width="2.5"/>
+    <path d="M212,266 Q238,246 264,266" stroke-width="2.5"/>
+    <g stroke-width="1" opacity="0.7">
+      <path d="M222,254 L226,262 M232,249 L235,258 M242,248 L244,257 M252,251 L254,260"/>
+    </g>
+    <!-- bandage knot, slightly stupid, on top -->
+    <path d="M234,240 Q230,230 238,232 Q244,226 246,236 Q252,234 246,242" stroke-width="2"/>
+    <!-- plaster on cheek -->
+    <path d="M246,280 L260,274" stroke-width="3"/>
+    <path d="M249,284 L263,278" stroke-width="3"/>
+    <!-- heavy-lidded eye -->
+    <path d="M248,262 L258,262" stroke-width="2"/>
+    <circle cx="253" cy="265" r="1.5" fill="#1c1c1c" stroke="none"/>
+    <!-- big nose, been through something -->
+    <path d="M262,266 Q272,272 264,280" stroke-width="2.2"/>
+    <!-- mouth mid-sentence -->
+    <path d="M254,288 Q260,290 264,287" stroke-width="1.8"/>
+    <!-- stubble -->
+    <g fill="#1c1c1c" stroke="none">
+      <circle cx="244" cy="290" r="0.9"/><circle cx="250" cy="293" r="0.9"/><circle cx="240" cy="285" r="0.9"/><circle cx="256" cy="292" r="0.9"/><circle cx="236" cy="290" r="0.9"/>
+    </g>
+    <!-- slumped shoulders and back -->
+    <path d="M216,286 Q192,300 186,340 Q182,368 190,382" stroke-width="2.8"/>
+    <path d="M258,292 Q276,304 282,330" stroke-width="2.8"/>
+    <!-- arm on the bar, hand around the glass -->
+    <path d="M282,330 Q296,352 312,362" stroke-width="2.8"/>
+    <circle cx="320" cy="366" r="8" stroke-width="2"/>
+    <!-- the glass -->
+    <path d="M316,378 L314,346 L340,346 L338,378 Z" stroke-width="2.2"/>
+    <path d="M316,360 L338,360" stroke-width="1.2"/>
+    <!-- the bottle, on duty beside it -->
+    <path d="M362,378 L362,330 Q362,324 367,324 L375,324 Q380,324 380,330 L380,378" stroke-width="2.2"/>
+    <path d="M367,324 L367,306 L375,306 L375,324" stroke-width="2"/>
+    <!-- other elbow on bar, head propped days ago -->
+    <path d="M216,300 Q206,340 216,372" stroke-width="2.8"/>
+
+    <!-- THE BARTENDER: polishing a glass, one eyebrow up -->
+    <circle cx="564" cy="248" r="22" stroke-width="2.8"/>
+    <!-- slick hair -->
+    <path d="M544,240 Q554,226 574,228 Q584,230 586,240" stroke-width="2.2"/>
+    <path d="M548,234 Q560,224 578,230" stroke-width="1.2"/>
+    <!-- eyes: one flat, one eyebrow raised -->
+    <circle cx="556" cy="248" r="1.6" fill="#1c1c1c" stroke="none"/>
+    <circle cx="572" cy="248" r="1.6" fill="#1c1c1c" stroke="none"/>
+    <path d="M551,241 L561,241" stroke-width="1.8"/>
+    <path d="M566,236 Q572,232 578,236" stroke-width="1.8"/>
+    <!-- nose and noncommittal mouth -->
+    <path d="M564,250 Q561,258 566,260" stroke-width="2"/>
+    <path d="M558,268 L572,268" stroke-width="1.8"/>
+    <!-- body, vest -->
+    <path d="M544,268 Q528,290 528,340 L528,378" stroke-width="2.8"/>
+    <path d="M584,268 Q600,290 600,340 L600,378" stroke-width="2.8"/>
+    <path d="M564,270 L564,375" stroke-width="1.2"/>
+    <circle cx="564" cy="300" r="1.5" fill="#1c1c1c" stroke="none"/>
+    <circle cx="564" cy="330" r="1.5" fill="#1c1c1c" stroke="none"/>
+    <!-- bowtie -->
+    <path d="M556,272 L564,276 L556,280 Z M572,272 L564,276 L572,280 Z" stroke-width="1.8"/>
+    <!-- arms holding glass and rag -->
+    <path d="M544,286 Q520,300 516,320" stroke-width="2.8"/>
+    <path d="M584,286 Q608,298 610,318" stroke-width="2.8"/>
+    <!-- the glass being polished -->
+    <path d="M506,332 L504,308 L524,308 L522,332 Z" stroke-width="2"/>
+    <!-- rag squiggle -->
+    <path d="M610,318 Q618,328 612,336 Q606,344 614,350" stroke-width="2"/>
+
+    <!-- stool under the drinker -->
+    <path d="M196,478 Q222,472 248,477" stroke-width="2"/>
+    <path d="M204,477 L200,510 M240,477 L246,510" stroke-width="2"/>
+
+    <!-- shadow hatching -->
+    <g stroke-width="1" opacity="0.5">
+      <path d="M300,398 L312,392 M320,399 L332,393 M340,399 L352,393"/>
+      <path d="M540,394 L552,388 M560,394 L572,388 M580,393 L592,387"/>
+    </g>
+  </g>
+
+  <!-- caption -->
+  <text x="380" y="576" text-anchor="middle" font-style="italic" font-size="22" fill="#1c1c1c">&#8220;Technically it&#8217;s a moped, but I&#8217;m not dying in a story about a moped.&#8221;</text>
+  <text x="700" y="512" text-anchor="end" font-style="italic" font-size="13" fill="#1c1c1c" opacity="0.7">m.k.</text>
+</svg>

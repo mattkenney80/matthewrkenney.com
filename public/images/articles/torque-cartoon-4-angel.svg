@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 660" width="760" height="660" font-family="Georgia, 'Times New Roman', serif">
+  <rect width="760" height="660" fill="#faf6ee"/>
+  <!-- panel border -->
+  <path d="M30,26 Q380,22 730,27 L731,522 Q380,527 29,523 Z" fill="none" stroke="#1c1c1c" stroke-width="2.5"/>
+
+  <g stroke="#1c1c1c" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- ground -->
+    <path d="M42,468 Q380,460 718,466" stroke-width="2.5"/>
+
+    <!-- THE MOPED (for the story, an e-bike) -->
+    <!-- wheels -->
+    <circle cx="512" cy="404" r="46" stroke-width="2.8"/>
+    <circle cx="512" cy="404" r="6" stroke-width="2"/>
+    <path d="M512,358 L512,450 M466,404 L558,404 M480,372 L544,436 M544,372 L480,436" stroke-width="1.2"/>
+    <circle cx="668" cy="404" r="46" stroke-width="2.8"/>
+    <circle cx="668" cy="404" r="6" stroke-width="2"/>
+    <path d="M668,358 L668,450 M622,404 L714,404 M636,372 L700,436 M700,372 L636,436" stroke-width="1.2"/>
+    <!-- step-through frame -->
+    <path d="M512,404 Q548,368 560,364 L610,364 Q650,372 668,404" stroke-width="2.8"/>
+    <!-- seat -->
+    <path d="M512,404 L528,330" stroke-width="2.8"/>
+    <path d="M514,326 Q530,318 546,326" stroke-width="3"/>
+    <!-- battery, the heart of the karma -->
+    <rect x="562" y="368" width="58" height="34" stroke-width="2.2"/>
+    <path d="M594,372 L584,386 L592,386 L582,398" stroke-width="2"/>
+    <!-- steering column and bars -->
+    <path d="M668,404 L636,314" stroke-width="2.8"/>
+    <path d="M628,310 Q640,300 654,306" stroke-width="2.8"/>
+    <!-- headlight -->
+    <circle cx="652,316" cy="316" r="0" stroke-width="0"/>
+    <circle cx="656" cy="318" r="7" stroke-width="2"/>
+    <!-- front fender -->
+    <path d="M636,362 Q664,344 694,362" stroke-width="2.2"/>
+    <!-- FRONT AXLE BOLT, with a tiny ominous halo of its own -->
+    <circle cx="668" cy="404" r="12" stroke-width="1.2" stroke-dasharray="3,3"/>
+
+    <!-- THE MAN, mounting up: helmet, glasses, ready -->
+    <!-- head -->
+    <circle cx="300" cy="240" r="24" stroke-width="2.8"/>
+    <!-- helmet dome -->
+    <path d="M274,236 Q276,204 300,202 Q324,204 326,236" stroke-width="2.8"/>
+    <path d="M274,236 L326,236" stroke-width="2.5"/>
+    <!-- vents -->
+    <path d="M288,214 Q290,208 294,206 M302,205 Q306,206 308,211" stroke-width="1.5"/>
+    <!-- THE KNOB on the back, drawn with respect -->
+    <circle cx="272" cy="230" r="6" stroke-width="2"/>
+    <path d="M268,226 L276,234 M276,226 L268,234" stroke-width="1.2"/>
+    <!-- chin strap -->
+    <path d="M280,252 Q290,266 302,264" stroke-width="1.8"/>
+    <!-- the 53-gram glasses, thick frames -->
+    <rect x="288" y="234" width="16" height="11" rx="3" stroke-width="2.2"/>
+    <rect x="308" y="234" width="14" height="11" rx="3" stroke-width="2.2"/>
+    <path d="M304,239 L308,239" stroke-width="2"/>
+    <!-- tiny camera dot on the hinge, because they are those ones -->
+    <circle cx="320" cy="236" r="1.5" fill="#1c1c1c" stroke="none"/>
+    <!-- nose under glasses -->
+    <path d="M306,246 Q310,252 305,256" stroke-width="2"/>
+    <!-- determined mouth -->
+    <path d="M296,260 Q302,262 308,259" stroke-width="1.8"/>
+    <!-- body, leaning toward the bike -->
+    <path d="M284,262 Q262,296 268,346 Q270,368 278,376" stroke-width="2.8"/>
+    <path d="M318,264 Q340,290 344,330" stroke-width="2.8"/>
+    <!-- arm reaching for the bars -->
+    <path d="M344,330 Q380,330 420,340 Q440,346 456,356" stroke-width="2.8"/>
+    <circle cx="462" cy="360" r="7" stroke-width="2"/>
+    <!-- other arm back, about to swing -->
+    <path d="M272,300 Q252,316 254,338" stroke-width="2.8"/>
+    <!-- legs, one mid-swing over the frame -->
+    <path d="M278,376 Q280,414 276,460" stroke-width="2.8"/>
+    <path d="M276,460 L258,460 Q254,466 260,468 L278,468 Z" stroke-width="2.2"/>
+    <path d="M330,368 Q374,376 408,398 Q420,406 424,418" stroke-width="2.8"/>
+    <path d="M424,418 L438,414 Q444,418 440,424 L426,428 Z" stroke-width="2.2"/>
+
+    <!-- THE ANGEL: seen better eternities -->
+    <!-- wings, slightly molting -->
+    <path d="M96,232 Q56,196 62,150 Q88,168 100,196 Q94,150 112,118 Q126,150 122,196 Q140,160 164,148 Q156,190 130,224" stroke-width="2.5"/>
+    <path d="M104,214 Q98,196 100,180 M116,208 Q114,188 118,170" stroke-width="1.2"/>
+    <!-- a single feather falling off -->
+    <path d="M70,250 Q66,258 70,266 Q74,258 70,250" stroke-width="1.5"/>
+    <!-- halo, tilted, needs maintenance -->
+    <ellipse cx="140" cy="132" rx="26" ry="8" stroke-width="2.2" transform="rotate(-12 140 132)"/>
+    <!-- head -->
+    <circle cx="138" cy="172" r="24" stroke-width="2.8"/>
+    <!-- receding curls -->
+    <path d="M118,162 Q122,152 132,150 M146,150 Q154,152 158,162" stroke-width="1.8"/>
+    <!-- heavy-lidded eyes -->
+    <path d="M126,170 L136,170 M144,170 L154,170" stroke-width="2"/>
+    <circle cx="131" cy="173" r="1.5" fill="#1c1c1c" stroke="none"/>
+    <circle cx="149" cy="173" r="1.5" fill="#1c1c1c" stroke="none"/>
+    <!-- world-weary brows -->
+    <path d="M124,163 Q130,160 136,163 M144,163 Q150,160 156,163" stroke-width="1.5"/>
+    <!-- big nose -->
+    <path d="M140,174 Q136,184 142,188" stroke-width="2.2"/>
+    <!-- mouth with cigarette -->
+    <path d="M132,194 L146,194" stroke-width="1.8"/>
+    <path d="M146,194 L166,190" stroke-width="2.5"/>
+    <path d="M166,190 L170,189" stroke-width="3.5"/>
+    <!-- smoke, unhurried -->
+    <path d="M172,184 Q178,176 172,168 Q166,160 174,152 Q182,144 176,136" stroke-width="1.5" opacity="0.8"/>
+    <!-- stubble -->
+    <g fill="#1c1c1c" stroke="none">
+      <circle cx="130" cy="192" r="0.9"/><circle cx="136" cy="198" r="0.9"/><circle cx="144" cy="199" r="0.9"/><circle cx="126" cy="187" r="0.9"/><circle cx="150" cy="197" r="0.9"/>
+    </g>
+    <!-- robe -->
+    <path d="M118,192 Q96,230 92,300 Q88,380 98,452" stroke-width="2.8"/>
+    <path d="M158,192 Q176,226 180,290 Q184,372 176,452" stroke-width="2.8"/>
+    <path d="M98,452 Q138,462 176,452" stroke-width="2.8"/>
+    <!-- robe folds -->
+    <g stroke-width="1.2" opacity="0.7">
+      <path d="M118,240 Q114,330 118,430 M138,236 Q136,330 138,436 M158,240 Q162,330 158,430"/>
+    </g>
+    <!-- bare feet -->
+    <path d="M116,452 Q112,462 120,464 M152,452 Q156,462 148,464" stroke-width="2"/>
+    <!-- arm out, hand on the rider's shoulder -->
+    <path d="M162,210 Q210,222 254,254 Q264,260 272,268" stroke-width="2.8"/>
+    <path d="M272,268 Q282,272 284,264" stroke-width="2.2"/>
+    <!-- other arm holding a small celestial clipboard -->
+    <path d="M114,214 Q98,236 106,258" stroke-width="2.8"/>
+    <rect x="94" y="254" width="34" height="44" stroke-width="2" transform="rotate(-8 111 276)"/>
+    <path d="M100,266 L120,263 M101,276 L121,273 M102,286 L116,284" stroke-width="1.2"/>
+    <!-- checkmarks on the clipboard, two checked, one not -->
+    <path d="M124,262 L127,265 L131,258" stroke-width="1.5"/>
+    <path d="M125,272 L128,275 L132,268" stroke-width="1.5"/>
+
+    <!-- shadow hatching -->
+    <g stroke-width="1" opacity="0.5">
+      <path d="M470,458 L482,452 M490,459 L502,453 M510,459 L522,453 M530,459 L542,453"/>
+      <path d="M630,458 L642,452 M650,458 L662,452 M670,458 L682,452"/>
+      <path d="M100,470 L112,464 M120,470 L132,464 M140,470 L152,464"/>
+      <path d="M256,472 L268,466 M276,472 L288,466"/>
+    </g>
+  </g>
+
+  <!-- caption -->
+  <text x="380" y="576" text-anchor="middle" font-style="italic" font-size="22" fill="#1c1c1c">&#8220;Helmet. Glasses. Tighten the little knob. Bolts are not my department.&#8221;</text>
+  <text x="700" y="512" text-anchor="end" font-style="italic" font-size="13" fill="#1c1c1c" opacity="0.7">m.k.</text>
+</svg>

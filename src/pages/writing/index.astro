@@ -7,7 +7,7 @@ import { articleTags, formatDate, type Article } from "../../lib/articles";
 
 const { DB } = env;
 const { results } = await DB.prepare(
-  "SELECT * FROM articles WHERE published = 1 ORDER BY date DESC"
+  "SELECT * FROM articles WHERE published = 1 ORDER BY date DESC, id DESC"
 ).all<Article>();
 const posts = results ?? [];
 ---

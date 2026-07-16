@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 660" width="760" height="660" font-family="Georgia, 'Times New Roman', serif">
+  <rect width="760" height="660" fill="#faf6ee"/>
+  <!-- panel border -->
+  <path d="M30,26 Q380,22 730,27 L731,522 Q380,527 29,523 Z" fill="none" stroke="#1c1c1c" stroke-width="2.5"/>
+
+  <g stroke="#1c1c1c" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- floor line -->
+    <path d="M42,470 Q380,464 718,469" stroke-width="2.5"/>
+
+    <!-- framed photo of the jet on the wall -->
+    <rect x="86" y="70" width="160" height="104" stroke-width="2.5"/>
+    <rect x="96" y="80" width="140" height="84" stroke-width="1.5"/>
+    <!-- fighter jet, simple -->
+    <path d="M116,126 L196,118 L216,122 L196,126 Z" stroke-width="2"/>
+    <path d="M150,122 L138,104 L146,104 L162,120" stroke-width="2"/>
+    <path d="M150,124 L140,140 L148,140 L162,126" stroke-width="2"/>
+    <path d="M196,118 L192,108 L198,108 L202,118" stroke-width="1.5"/>
+    <!-- the missile, underlined because it is the point -->
+    <rect x="150" y="132" width="26" height="5" stroke-width="1.5"/>
+    <path d="M176,134 L182,134" stroke-width="1.5"/>
+    <!-- little plaque -->
+    <path d="M138,186 L194,186" stroke-width="1.5"/>
+    <path d="M148,192 L184,192" stroke-width="1"/>
+
+    <!-- pegboard with tools -->
+    <rect x="560" y="66" width="150" height="150" stroke-width="2"/>
+    <g stroke-width="1" opacity="0.5">
+      <path d="M575,80 L575,200 M595,80 L595,200 M615,80 L615,200 M635,80 L635,200 M655,80 L655,200 M675,80 L675,200 M695,80 L695,200"/>
+    </g>
+    <!-- a wrench -->
+    <path d="M590,100 L630,150" stroke-width="3"/>
+    <circle cx="586" cy="96" r="9" stroke-width="2.5"/>
+    <path d="M580,90 L578,84" stroke-width="2"/>
+    <!-- a hammer -->
+    <path d="M668,100 L668,150" stroke-width="3"/>
+    <rect x="656" y="88" width="24" height="12" stroke-width="2.5"/>
+    <!-- one empty outline where a tool should be, dashed -->
+    <path d="M600,170 L640,196" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+    <!-- pile of donated bikes, left -->
+    <circle cx="120" cy="420" r="36" stroke-width="2.5"/>
+    <circle cx="176" cy="434" r="30" stroke-width="2.5"/>
+    <circle cx="98" cy="446" r="24" stroke-width="2.5"/>
+    <path d="M120,420 L176,380 L210,410 M176,380 L150,368 M96,400 L150,436" stroke-width="2.2"/>
+    <path d="M140,360 Q150,352 162,358" stroke-width="2.2"/>
+    <path d="M210,410 L224,398 Q232,392 240,396" stroke-width="2.2"/>
+    <g stroke-width="1.2">
+      <path d="M120,384 L120,456 M84,420 L156,420"/>
+      <path d="M176,404 L176,464 M146,434 L206,434"/>
+    </g>
+
+    <!-- THE ENGINEER, center, holding a wheel at arm's length -->
+    <!-- head -->
+    <circle cx="380" cy="196" r="32" stroke-width="2.8"/>
+    <!-- bald crown, side hair tufts -->
+    <path d="M350,186 Q346,196 348,206 M352,182 Q347,178 344,182" stroke-width="1.8"/>
+    <path d="M410,186 Q414,196 412,206 M408,182 Q413,178 416,182" stroke-width="1.8"/>
+    <!-- glasses -->
+    <circle cx="366" cy="192" r="9" stroke-width="2"/>
+    <circle cx="394" cy="192" r="9" stroke-width="2"/>
+    <path d="M375,192 L385,192" stroke-width="2"/>
+    <path d="M357,190 L349,187 M403,190 L411,187" stroke-width="1.5"/>
+    <!-- eyes: small worried dots behind lenses -->
+    <circle cx="366" cy="193" r="1.6" fill="#1c1c1c" stroke="none"/>
+    <circle cx="394" cy="193" r="1.6" fill="#1c1c1c" stroke="none"/>
+    <!-- big honest nose -->
+    <path d="M380,196 Q376,208 382,212 Q388,214 388,208" stroke-width="2.2"/>
+    <!-- mustache -->
+    <path d="M366,216 Q380,224 394,216" stroke-width="2.5"/>
+    <path d="M368,219 Q380,226 392,219" stroke-width="1.5"/>
+    <!-- grim mouth just under mustache -->
+    <path d="M374,227 Q380,225 386,227" stroke-width="1.8"/>
+    <!-- ears -->
+    <path d="M348,196 Q342,198 346,206" stroke-width="1.8"/>
+    <path d="M412,196 Q418,198 414,206" stroke-width="1.8"/>
+    <!-- body: work shirt, honest belly -->
+    <path d="M356,226 Q330,262 332,330 Q334,378 348,392" stroke-width="2.8"/>
+    <path d="M404,226 Q428,262 426,330 Q424,378 412,392" stroke-width="2.8"/>
+    <path d="M348,392 Q380,400 412,392" stroke-width="2.8"/>
+    <!-- shirt buttons -->
+    <path d="M380,240 L379,388" stroke-width="1.2"/>
+    <circle cx="379" cy="270" r="1.5" fill="#1c1c1c" stroke="none"/>
+    <circle cx="379" cy="310" r="1.5" fill="#1c1c1c" stroke="none"/>
+    <circle cx="379" cy="350" r="1.5" fill="#1c1c1c" stroke="none"/>
+    <!-- shirt pocket with pens -->
+    <rect x="392" y="262" width="20" height="24" stroke-width="1.5"/>
+    <path d="M397,262 L397,252 M404,262 L404,250" stroke-width="1.5"/>
+    <!-- right arm, extended, holding the wheel away from himself -->
+    <path d="M420,252 Q460,250 486,262" stroke-width="2.8"/>
+    <path d="M424,268 Q462,268 488,276" stroke-width="2.8"/>
+    <!-- hands gripping the rim -->
+    <circle cx="494" cy="266" r="7" stroke-width="2"/>
+    <circle cx="496" cy="282" r="7" stroke-width="2"/>
+    <!-- the suspect wheel -->
+    <circle cx="540" cy="290" r="48" stroke-width="2.8"/>
+    <circle cx="540" cy="290" r="6" stroke-width="2"/>
+    <path d="M540,242 L540,338 M492,290 L588,290 M506,256 L574,324 M574,256 L506,324" stroke-width="1.3"/>
+    <!-- one spoke conspicuously loose, dangling -->
+    <path d="M540,290 Q556,318 548,334" stroke-width="1.3" stroke-dasharray="3,3"/>
+    <!-- left arm on hip -->
+    <path d="M340,252 Q318,268 330,296 Q336,306 348,304" stroke-width="2.8"/>
+    <!-- legs -->
+    <path d="M360,394 L358,462 M400,394 L404,462" stroke-width="2.8"/>
+    <!-- boots -->
+    <path d="M358,462 L338,462 Q334,468 340,470 L360,470 Z" stroke-width="2.2"/>
+    <path d="M404,462 L424,462 Q428,468 422,470 L402,470 Z" stroke-width="2.2"/>
+
+    <!-- THE KID, looking up at him -->
+    <circle cx="282" cy="330" r="17" stroke-width="2.5"/>
+    <!-- ball cap -->
+    <path d="M266,324 Q282,308 298,324" stroke-width="2.2"/>
+    <path d="M296,322 Q308,322 312,328" stroke-width="2.2"/>
+    <!-- face looking up-right -->
+    <circle cx="288" cy="328" r="1.4" fill="#1c1c1c" stroke="none"/>
+    <path d="M292,336 Q296,334 298,331" stroke-width="1.5"/>
+    <path d="M288,334 Q286,338 290,339" stroke-width="1.5"/>
+    <!-- body -->
+    <path d="M274,346 Q268,380 272,414 M292,346 Q298,380 294,414" stroke-width="2.5"/>
+    <path d="M272,414 L292,414" stroke-width="2.5"/>
+    <!-- arms, hands in pockets -->
+    <path d="M273,356 Q262,368 268,382 M293,356 Q304,368 298,382" stroke-width="2.2"/>
+    <!-- legs -->
+    <path d="M278,414 L276,462 M288,414 L290,462" stroke-width="2.5"/>
+    <path d="M276,462 L264,462 Q261,467 266,468 L278,468 Z" stroke-width="2"/>
+    <path d="M290,462 L302,462 Q305,467 300,468 L288,468 Z" stroke-width="2"/>
+
+    <!-- hatching: shadows -->
+    <g stroke-width="1" opacity="0.55">
+      <path d="M340,478 L352,472 M360,479 L372,473 M380,479 L392,473 M400,479 L412,473"/>
+      <path d="M262,476 L272,471 M280,476 L290,471"/>
+      <path d="M96,472 L108,466 M118,473 L130,467 M140,473 L152,467 M162,474 L174,468"/>
+      <!-- shading under the wheel he holds -->
+      <path d="M508,344 L520,336 M524,348 L536,340 M540,350 L552,342"/>
+    </g>
+  </g>
+
+  <!-- caption -->
+  <text x="380" y="576" text-anchor="middle" font-style="italic" font-size="22" fill="#1c1c1c">&#8220;Forty years hanging missiles on fighter jets, and this is the first thing that&#8217;s scared me.&#8221;</text>
+  <text x="700" y="512" text-anchor="end" font-style="italic" font-size="13" fill="#1c1c1c" opacity="0.7">m.k.</text>
+</svg>

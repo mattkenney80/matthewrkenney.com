@@ -9,7 +9,7 @@ import { formatDate, type Article } from "../lib/articles";
 
 const { DB } = env;
 const { results } = await DB.prepare(
-  "SELECT * FROM articles WHERE published = 1 ORDER BY date DESC LIMIT 3"
+  "SELECT * FROM articles WHERE published = 1 ORDER BY date DESC, id DESC LIMIT 3"
 ).all<Article>();
 const recentPosts = results ?? [];
 
