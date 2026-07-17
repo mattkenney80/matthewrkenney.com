@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 700" width="760" height="700" font-family="Georgia, 'Times New Roman', serif">
+  <rect width="760" height="700" fill="#faf6ee"/>
+  <rect x="40" y="30" width="680" height="540" fill="none" stroke="#1c1c1c" stroke-width="2.5"/>
+  <g stroke="#1c1c1c" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- flag, upper right -->
+    <path d="M636,150 L636,250" stroke-width="2"/>
+    <path d="M636,152 L692,152 L692,196 L636,196" stroke-width="2"/>
+    <path d="M636,166 L692,166 M636,180 L692,180" stroke-width="1.2"/>
+    <!-- the raised bench -->
+    <path d="M96,268 L672,268 L672,336 L96,336 Z" stroke-width="2.5"/>
+    <path d="M96,300 L672,300" stroke-width="1.4"/>
+    <!-- three officials behind the bench -->
+    <!-- left, smug -->
+    <circle cx="216" cy="236" r="24" stroke-width="2.5"/>
+    <path d="M198,228 Q206,218 216,220" stroke-width="1.6"/>
+    <path d="M206,234 L216,234 M224,234 L234,234" stroke-width="2"/>
+    <path d="M210,248 Q216,252 224,248" stroke-width="1.8"/>
+    <path d="M192,262 Q216,272 240,262" stroke-width="2.3"/>
+    <!-- middle, frowning, with a paper -->
+    <circle cx="384" cy="236" r="24" stroke-width="2.5"/>
+    <path d="M366,226 Q374,216 384,218 Q394,216 402,226" stroke-width="1.6"/>
+    <circle cx="376" cy="236" r="1.8" fill="#1c1c1c" stroke="none"/>
+    <circle cx="392" cy="236" r="1.8" fill="#1c1c1c" stroke="none"/>
+    <path d="M374,252 Q384,246 394,252" stroke-width="1.8"/>
+    <path d="M360,262 Q384,272 408,262" stroke-width="2.3"/>
+    <path d="M416,244 L438,240 L442,258 L420,262 Z" stroke-width="1.8"/>
+    <!-- right, frowning -->
+    <circle cx="552" cy="236" r="24" stroke-width="2.5"/>
+    <path d="M534,232 Q540,222 552,222 Q564,222 570,232" stroke-width="1.6"/>
+    <circle cx="544" cy="236" r="1.8" fill="#1c1c1c" stroke="none"/>
+    <circle cx="560" cy="236" r="1.8" fill="#1c1c1c" stroke="none"/>
+    <path d="M542,252 Q552,246 562,252" stroke-width="1.8"/>
+    <path d="M528,262 Q552,272 576,262" stroke-width="2.3"/>
+    <!-- rail in front, with a gap for the witness -->
+    <path d="M120,384 L330,384 M430,384 L640,384" stroke-width="2"/>
+    <!-- the witness, speaking -->
+    <circle cx="380" cy="420" r="24" stroke-width="2.5"/>
+    <path d="M366,402 Q374,394 382,400 Q388,394 394,401" stroke-width="1.5"/>
+    <circle cx="372" cy="420" r="1.8" fill="#1c1c1c" stroke="none"/>
+    <circle cx="390" cy="420" r="1.8" fill="#1c1c1c" stroke="none"/>
+    <!-- open mouth, mid-sentence -->
+    <ellipse cx="381" cy="434" rx="4" ry="5" stroke-width="1.6"/>
+    <!-- body and clasped hands -->
+    <path d="M362,442 Q350,474 358,500 M398,442 Q410,474 402,500" stroke-width="2.5"/>
+    <path d="M366,462 Q380,476 394,462" stroke-width="2"/>
+    <path d="M380,470 L380,486" stroke-width="1.6"/>
+    <!-- witness table -->
+    <path d="M330,500 L470,500 L470,556 L330,556 Z" stroke-width="2.2"/>
+    <!-- a glass of water on the table -->
+    <path d="M436,504 L434,528 L452,528 L450,504 Z" stroke-width="1.8"/>
+    <path d="M435,516 L451,516" stroke-width="1.1"/>
+  </g>
+  <text x="380" y="632" text-anchor="middle" font-style="italic" font-size="23" fill="#1c1c1c">&#8220;the truth was six words long. nobody in that room</text>
+  <text x="380" y="664" text-anchor="middle" font-style="italic" font-size="23" fill="#1c1c1c">could afford it, and I finally could.&#8221;</text>
+</svg>

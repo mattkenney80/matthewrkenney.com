@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 700" width="760" height="700" font-family="Georgia, 'Times New Roman', serif">
+  <rect width="760" height="700" fill="#faf6ee"/>
+  <rect x="40" y="30" width="680" height="540" fill="none" stroke="#1c1c1c" stroke-width="2.5"/>
+  <g stroke="#1c1c1c" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- top shelf -->
+    <path d="M96,150 L680,146" stroke-width="2.2"/>
+    <g stroke-width="2">
+      <rect x="150" y="120" width="14" height="30"/><path d="M153,120 L157,110 L161,120 Z"/>
+      <rect x="188" y="120" width="14" height="30"/><path d="M191,120 L195,110 L199,120 Z"/>
+      <rect x="226" y="120" width="14" height="30"/><path d="M229,120 L233,110 L237,120 Z"/>
+      <rect x="470" y="120" width="14" height="30"/><path d="M473,120 L477,110 L481,120 Z"/>
+      <rect x="512" y="120" width="14" height="30"/><path d="M515,120 L519,110 L523,120 Z"/>
+    </g>
+    <!-- second shelf -->
+    <path d="M96,214 L680,210" stroke-width="2.2"/>
+    <g stroke-width="2">
+      <rect x="178" y="184" width="14" height="30"/><path d="M181,184 L185,174 L189,184 Z"/>
+      <rect x="600" y="184" width="14" height="30"/><path d="M603,184 L607,174 L611,184 Z"/>
+    </g>
+    <!-- bar counter -->
+    <path d="M84,430 L692,422" stroke-width="3"/>
+    <path d="M84,446 L692,438" stroke-width="2"/>
+    <path d="M96,446 L96,540 M680,438 L680,536" stroke-width="2.2"/>
+    <path d="M96,540 Q388,548 680,536" stroke-width="2.2"/>
+    <!-- the drinker, left, on a stool -->
+    <circle cx="300" cy="330" r="24" stroke-width="2.5"/>
+    <path d="M286,312 Q294,304 302,310 Q308,304 314,311" stroke-width="1.5"/>
+    <circle cx="308" cy="332" r="1.9" fill="#1c1c1c" stroke="none"/>
+    <g fill="#1c1c1c" stroke="none"><circle cx="316" cy="336" r="0.9"/><circle cx="312" cy="342" r="0.9"/><circle cx="320" cy="341" r="0.9"/></g>
+    <!-- oval torso, seated -->
+    <path d="M282,352 Q266,404 282,452 L318,452 Q334,404 318,352" stroke-width="2.5"/>
+    <!-- arm reaching along the bar to the debris -->
+    <path d="M316,384 Q372,398 420,414" stroke-width="2.3"/>
+    <path d="M420,414 L430,410 M420,414 L428,419" stroke-width="1.5"/>
+    <!-- legs and stool -->
+    <path d="M290,452 L286,520 M310,452 L314,520" stroke-width="2.5"/>
+    <path d="M270,520 L330,520 M300,452 L300,540 M276,540 L300,520 L324,540" stroke-width="2"/>
+    <!-- the debris field on the bar: knocked-over daggers -->
+    <g stroke-width="1.8">
+      <path d="M446,414 L444,398 M440,404 L448,402"/>
+      <path d="M462,414 L462,396 M457,402 L467,402"/>
+      <path d="M478,415 L482,399 M475,405 L484,403"/>
+      <path d="M498,414 L496,400 M492,406 L504,404"/>
+      <path d="M512,415 L516,401"/>
+    </g>
+    <!-- the bartender, right -->
+    <circle cx="588" cy="342" r="26" stroke-width="2.5"/>
+    <path d="M566,332 Q578,320 598,322 Q610,324 612,336" stroke-width="2"/>
+    <circle cx="580" cy="342" r="1.8" fill="#1c1c1c" stroke="none"/>
+    <circle cx="598" cy="342" r="1.8" fill="#1c1c1c" stroke="none"/>
+    <path d="M576,358 Q588,352 600,358" stroke-width="1.8"/>
+    <!-- body -->
+    <path d="M566,366 Q552,400 556,430 M610,366 Q624,400 620,430" stroke-width="2.5"/>
+    <!-- arm holding a rag, drying a glass -->
+    <path d="M572,384 Q548,398 540,416" stroke-width="2.3"/>
+    <path d="M540,416 Q548,424 542,432 Q536,440 544,446" stroke-width="1.8"/>
+    <path d="M612,386 Q634,398 636,416" stroke-width="2.3"/>
+  </g>
+  <text x="380" y="632" text-anchor="middle" font-style="italic" font-size="23" fill="#1c1c1c">&#8220;some men inherit land. I got the debris field,</text>
+  <text x="380" y="664" text-anchor="middle" font-style="italic" font-size="23" fill="#1c1c1c">and the rent was due either way.&#8221;</text>
+</svg>

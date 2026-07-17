@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 700" width="760" height="700" font-family="Georgia, 'Times New Roman', serif">
+  <rect width="760" height="700" fill="#faf6ee"/>
+  <rect x="40" y="30" width="680" height="540" fill="none" stroke="#1c1c1c" stroke-width="2.5"/>
+  <g stroke="#1c1c1c" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- floor -->
+    <path d="M64,506 L696,506" stroke-width="2.5"/>
+    <!-- hanging lamp, top left -->
+    <path d="M250,30 L250,96" stroke-width="2"/>
+    <path d="M230,126 L250,96 L270,126 Q250,134 230,126 Z" stroke-width="2.2"/>
+    <!-- window with moon, top right -->
+    <rect x="566" y="70" width="112" height="100" stroke-width="2.2"/>
+    <path d="M622,70 L622,170 M566,120 L678,120" stroke-width="1.8"/>
+    <circle cx="650" cy="98" r="14" stroke-width="2"/>
+    <!-- bed / low counter, left -->
+    <path d="M92,438 L330,438 L330,506 M92,438 L92,506" stroke-width="2.2"/>
+    <ellipse cx="150" cy="438" rx="46" ry="9" stroke-width="2"/>
+    <path d="M96,438 Q90,410 108,406" stroke-width="2"/>
+    <!-- the man, standing, drawn toward the fridge -->
+    <circle cx="378" cy="322" r="23" stroke-width="2.5"/>
+    <path d="M365,304 Q372,296 380,302" stroke-width="1.5"/>
+    <circle cx="389" cy="324" r="1.9" fill="#1c1c1c" stroke="none"/>
+    <path d="M356,318 Q360,320 360,326" stroke-width="1.6"/>
+    <!-- attention lines by his head -->
+    <path d="M408,300 Q416,296 420,290 M414,312 Q422,310 428,308 M410,326 Q418,326 424,327" stroke-width="1.6"/>
+    <!-- oval torso -->
+    <path d="M360,344 Q344,392 356,452 Q378,462 400,452 Q412,392 396,344" stroke-width="2.5"/>
+    <!-- arms clasped behind back -->
+    <path d="M362,364 Q338,392 360,424" stroke-width="2.3"/>
+    <path d="M396,364 Q416,388 402,420" stroke-width="2.3"/>
+    <!-- legs -->
+    <path d="M368,454 L366,506 M390,454 L392,506" stroke-width="2.5"/>
+    <!-- mini fridge body, right -->
+    <path d="M556,410 L654,410 L654,556 L556,556 Z" stroke-width="2.5"/>
+    <!-- open door, swung to the right -->
+    <path d="M654,410 L708,394 L708,540 L654,556" stroke-width="2.5"/>
+    <path d="M670,414 L670,532 M684,410 L684,528 M698,406 L698,524" stroke-width="1.4"/>
+    <!-- interior shelves -->
+    <path d="M562,458 L648,458 M562,500 L648,500" stroke-width="1.4"/>
+    <!-- bottles, drawn as little daggers: rows of 5, 4, 3 -->
+    <g stroke-width="1.6">
+      <path d="M576,442 L576,458 M572,447 L580,447"/>
+      <path d="M594,442 L594,458 M590,447 L598,447"/>
+      <path d="M612,442 L612,458 M608,447 L616,447"/>
+      <path d="M630,442 L630,458 M626,447 L634,447"/>
+      <path d="M648,442 L648,458 M644,447 L652,447"/>
+      <path d="M585,484 L585,500 M581,489 L589,489"/>
+      <path d="M603,484 L603,500 M599,489 L607,489"/>
+      <path d="M621,484 L621,500 M617,489 L625,489"/>
+      <path d="M639,484 L639,500 M635,489 L643,489"/>
+      <path d="M594,526 L594,542 M590,531 L598,531"/>
+      <path d="M612,526 L612,542 M608,531 L616,531"/>
+      <path d="M630,526 L630,542 M626,531 L634,531"/>
+    </g>
+    <!-- light spilling from the open fridge toward the man -->
+    <g stroke-width="1.4">
+      <path d="M556,452 L470,410"/>
+      <path d="M556,478 L452,452"/>
+      <path d="M556,506 L456,506"/>
+      <path d="M556,532 L470,548"/>
+    </g>
+  </g>
+  <text x="380" y="632" text-anchor="middle" font-style="italic" font-size="23" fill="#1c1c1c">&#8220;closing it was easy. it was the second opening</text>
+  <text x="380" y="664" text-anchor="middle" font-style="italic" font-size="23" fill="#1c1c1c">that had my name on it.&#8221;</text>
+</svg>
