@@ -1,0 +1,55 @@
+---
+export const prerender = false;
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const movies: { title: string; year: string; note?: string; imdb: string }[] = [
+  {
+    title: "Michael Clayton",
+    year: "2007",
+    imdb: "https://www.imdb.com/title/tt0465538/",
+  },
+  {
+    title: "Rogue Trader",
+    year: "1999",
+    imdb: "https://www.imdb.com/title/tt0140352/",
+  },
+  {
+    title: "Dear Zachary: A Letter to a Son About His Father",
+    year: "2008",
+    imdb: "https://www.imdb.com/title/tt1152758/",
+  },
+  {
+    title: "Wonder Boys",
+    year: "2000",
+    imdb: "https://www.imdb.com/title/tt0185037/",
+  },
+  {
+    title: "Shotgun Stories",
+    year: "2007",
+    imdb: "https://www.imdb.com/title/tt0850644/",
+  },
+  {
+    title: "The Overnighters",
+    year: "2014",
+    note: "the overnight documentary",
+    imdb: "https://www.imdb.com/title/tt3465916/",
+  },
+];
+---
+
+<BaseLayout title="Movie Recommendations" description="Movies worth your time, with links to IMDB.">
+  <h1>Movie Recommendations</h1>
+  <p class="lede">A running list of films worth your time.</p>
+
+  <ul class="post-list" style="margin-top: 1.5rem;">
+    {movies.map((movie) => (
+      <li>
+        <a class="post-list__title" href={movie.imdb} target="_blank" rel="noopener">
+          {movie.title}
+        </a>
+        <p class="meta">{movie.year}{movie.note && ` — ${movie.note}`}</p>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>
