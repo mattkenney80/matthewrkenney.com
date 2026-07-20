@@ -3,37 +3,42 @@ export const prerender = false;
 
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const movies: { title: string; year: string; note?: string; imdb: string }[] = [
+const movies: { title: string; year: string; imdb: string; description: string }[] = [
   {
     title: "Michael Clayton",
     year: "2007",
     imdb: "https://www.imdb.com/title/tt0465538/",
+    description: "George Clooney plays a law firm's janitor, the guy who mops up messes for men richer than he will ever be. It's a legal thriller, technically, but really it's about being middle-aged in corporate America and realizing you took your one shot and missed. The question the movie asks is what's left of a man after that, and the answer, delivered in a silent cab ride over the closing credits, is: maybe just enough.",
   },
   {
     title: "Rogue Trader",
     year: "1999",
     imdb: "https://www.imdb.com/title/tt0140352/",
+    description: "Ewan McGregor plays Nick Leeson, the trader who vaporized Barings Bank, a 233-year-old institution, from a desk in Singapore. The plot is simple: get cocky, dig a hole, lie about the hole, dig faster. Not a masterpiece, but a perfect little fable about the secret account where we all stash our losses, and what happens when the bill finally clears.",
   },
   {
     title: "Dear Zachary: A Letter to a Son About His Father",
     year: "2008",
     imdb: "https://www.imdb.com/title/tt1152758/",
+    description: "I'm not going to tell you what happens. Kurt Kuenne set out to make a scrapbook film about his murdered best friend, Andrew Bagby, for the son Andrew never got to meet. Usually in these stories the man is the monster. Not this time. Andrew was, by every account, one of the good ones, and what happened to his family is the hardest thing a documentary has ever asked me to sit through. It will make you cry. Watch it anyway.",
   },
   {
     title: "Wonder Boys",
     year: "2000",
     imdb: "https://www.imdb.com/title/tt0185037/",
+    description: "Michael Douglas as a pot-smoking novelist seven years and two thousand pages into a book that refuses to end. The most honest movie about creative work I know, because it admits that most of the artistic life isn't inspiration, it's driving around Pittsburgh with a dead dog in your trunk while your editor asks how it's coming. Warm, shaggy, and criminally underseen.",
   },
   {
     title: "Shotgun Stories",
     year: "2007",
     imdb: "https://www.imdb.com/title/tt0850644/",
+    description: "Jeff Nichols' first film, and within five minutes you know you're watching an auteur. Michael Shannon and his brothers (Son, Boy, and Kid, which is what their father bothered to name them) go to war with the second family their dad raised after he sobered up and became somebody else's good father. It's a movie about dads, mostly the craters they leave. Quiet, Southern, and it goes off exactly like its title.",
   },
   {
-    title: "The Overnighters",
-    year: "2014",
-    note: "the overnight documentary",
-    imdb: "https://www.imdb.com/title/tt3465916/",
+    title: "Overnight",
+    year: "2003",
+    imdb: "https://www.imdb.com/title/tt0390622/",
+    description: "A documentary about Troy Duffy, the Boston bartender Harvey Weinstein handed a movie deal, a record deal, and half a bar, and who torched every bit of it through sheer ego. A man given too much who appreciated none of it. It plays like a Greek tragedy, not to sound like a hack, except the gods are Miramax and the fatal flaw is being insufferable. Beautiful, in its awful way.",
   },
 ];
 ---
@@ -42,14 +47,43 @@ const movies: { title: string; year: string; note?: string; imdb: string }[] = [
   <h1>Movie Recommendations</h1>
   <p class="lede">A running list of films worth your time.</p>
 
-  <ul class="post-list" style="margin-top: 1.5rem;">
+  <div class="movies-list" style="margin-top: 1.5rem;">
     {movies.map((movie) => (
-      <li>
-        <a class="post-list__title" href={movie.imdb} target="_blank" rel="noopener">
-          {movie.title}
-        </a>
-        <p class="meta">{movie.year}{movie.note && ` — ${movie.note}`}</p>
-      </li>
+      <article class="movie-card">
+        <h2>
+          <a href={movie.imdb} target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
+            {movie.title}
+          </a>
+        </h2>
+        <p class="meta">{movie.year}</p>
+        <p style="margin-top: 0.75rem; line-height: 1.6;">{movie.description}</p>
+      </article>
     ))}
-  </ul>
+  </div>
+
+  <style>
+    .movie-card {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .movie-card:last-child {
+      border-bottom: none;
+    }
+
+    .movie-card h2 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .movie-card a:hover {
+      text-decoration: underline;
+    }
+
+    .movie-card .meta {
+      margin: 0;
+    }
+  </style>
 </BaseLayout>
