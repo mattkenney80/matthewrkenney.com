@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <style>
+      .cartoon-text { font-family: Georgia, serif; font-size: 14px; fill: #1a1a1a; }
+      .cartoon-quote { font-family: Georgia, serif; font-size: 13px; fill: #555; font-style: italic; }
+    </style>
+  </defs>
+
+  <rect width="800" height="600" fill="#fafaf8"/>
+  <rect x="40" y="40" width="720" height="480" fill="none" stroke="#333" stroke-width="1"/>
+
+  <!-- Typewriter -->
+  <rect x="100" y="180" width="200" height="100" fill="none" stroke="#1a1a1a" stroke-width="2" rx="4"/>
+  <!-- Roller -->
+  <circle cx="115" cy="200" r="12" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  <circle cx="285" cy="200" r="12" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  <!-- Keys -->
+  <circle cx="140" cy="220" r="3" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  <circle cx="160" cy="220" r="3" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  <circle cx="180" cy="220" r="3" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  <circle cx="200" cy="220" r="3" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  <circle cx="220" cy="220" r="3" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  <circle cx="240" cy="220" r="3" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  <!-- Paper in typewriter -->
+  <line x1="110" y1="195" x2="290" y2="195" stroke="#999" stroke-width="1"/>
+
+  <!-- Stack of manuscript pages -->
+  <rect x="320" y="210" width="60" height="80" fill="none" stroke="#999" stroke-width="1"/>
+  <rect x="325" y="215" width="60" height="80" fill="none" stroke="#999" stroke-width="1"/>
+  <rect x="330" y="220" width="60" height="80" fill="none" stroke="#999" stroke-width="1"/>
+
+  <!-- Dead dog in trunk (silhouette) -->
+  <ellipse cx="480" cy="280" rx="45" ry="30" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  <circle cx="520" cy="250" r="15" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  <line x1="500" y1="310" x2="480" y2="330" stroke="#1a1a1a" stroke-width="1.5"/>
+  <line x1="520" y1="310" x2="540" y2="330" stroke="#1a1a1a" stroke-width="1.5"/>
+
+  <!-- Quote -->
+  <text x="100" y="360" class="cartoon-quote" text-anchor="start">
+    "He'd been writing the same book for seven years. He had two thousand
+  </text>
+  <text x="100" y="380" class="cartoon-quote" text-anchor="start">
+    pages and no ending. Most writers call that failure. He called it honesty
+  </text>
+  <text x="100" y="400" class="cartoon-quote" text-anchor="start">
+    about the human condition. He was right, which made it worse."
+  </text>
+
+  <text x="100" y="430" class="cartoon-text" font-size="12" text-anchor="start" fill="#999">
+    — Wonder Boys
+  </text>
+</svg>

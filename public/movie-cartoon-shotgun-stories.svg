@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <style>
+      .cartoon-text { font-family: Georgia, serif; font-size: 14px; fill: #1a1a1a; }
+      .cartoon-quote { font-family: Georgia, serif; font-size: 13px; fill: #555; font-style: italic; }
+    </style>
+  </defs>
+
+  <rect width="800" height="600" fill="#fafaf8"/>
+  <rect x="40" y="40" width="720" height="480" fill="none" stroke="#333" stroke-width="1"/>
+
+  <!-- Two family groups facing off -->
+  <!-- First group (left) -->
+  <circle cx="120" cy="180" r="18" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  <line x1="120" y1="198" x2="120" y2="240" stroke="#1a1a1a" stroke-width="2"/>
+  <line x1="120" y1="210" x2="100" y2="235" stroke="#1a1a1a" stroke-width="2"/>
+  <line x1="120" y1="210" x2="140" y2="235" stroke="#1a1a1a" stroke-width="2"/>
+
+  <!-- Second group (right) -->
+  <circle cx="280" cy="180" r="18" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  <line x1="280" y1="198" x2="280" y2="240" stroke="#1a1a1a" stroke-width="2"/>
+  <line x1="280" y1="210" x2="260" y2="235" stroke="#1a1a1a" stroke-width="2"/>
+  <line x1="280" y1="210" x2="300" y2="235" stroke="#1a1a1a" stroke-width="2"/>
+
+  <!-- Third figure (between them, smaller) -->
+  <circle cx="200" cy="200" r="14" fill="none" stroke="#999" stroke-width="1.5"/>
+  <line x1="200" y1="214" x2="200" y2="250" stroke="#999" stroke-width="1.5"/>
+  <line x1="200" y1="224" x2="185" y2="245" stroke="#999" stroke-width="1.5"/>
+  <line x1="200" y1="224" x2="215" y2="245" stroke="#999" stroke-width="1.5"/>
+
+  <!-- A space between them (the war) -->
+  <path d="M 160 260 Q 200 300 240 260" fill="none" stroke="#ccc" stroke-width="2" stroke-dasharray="5,5"/>
+
+  <!-- Quote -->
+  <text x="100" y="340" class="cartoon-quote" text-anchor="start">
+    "A man's children fight his war after he's dead and sober.
+  </text>
+  <text x="100" y="360" class="cartoon-quote" text-anchor="start">
+    Not because they hate him. Because they never learned
+  </text>
+  <text x="100" y="380" class="cartoon-quote" text-anchor="start">
+    how to love him. So they settle for knowing."
+  </text>
+
+  <text x="100" y="410" class="cartoon-text" font-size="12" text-anchor="start" fill="#999">
+    — Shotgun Stories
+  </text>
+</svg>

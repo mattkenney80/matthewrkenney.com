@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <style>
+      .cartoon-text { font-family: Georgia, serif; font-size: 14px; fill: #1a1a1a; }
+      .cartoon-quote { font-family: Georgia, serif; font-size: 13px; fill: #555; font-style: italic; }
+    </style>
+  </defs>
+
+  <rect width="800" height="600" fill="#fafaf8"/>
+  <rect x="40" y="40" width="720" height="480" fill="none" stroke="#333" stroke-width="1"/>
+
+  <!-- Trading desk with monitors -->
+  <rect x="80" y="220" width="300" height="120" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+
+  <!-- Three monitor frames -->
+  <rect x="100" y="150" width="50" height="40" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  <rect x="170" y="140" width="50" height="50" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  <rect x="240" y="150" width="50" height="40" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+
+  <!-- Desk supports -->
+  <line x1="100" y1="195" x2="100" y2="220" stroke="#1a1a1a" stroke-width="1.5"/>
+  <line x1="295" y1="195" x2="295" y2="220" stroke="#1a1a1a" stroke-width="1.5"/>
+
+  <!-- Figure hunched over desk -->
+  <ellipse cx="150" cy="280" rx="25" ry="30" fill="#1a1a1a"/>
+  <line x1="150" y1="315" x2="150" y2="340" stroke="#1a1a1a" stroke-width="2"/>
+
+  <!-- Papers/documents scattered -->
+  <line x1="180" y1="250" x2="200" y2="240" stroke="#999" stroke-width="1"/>
+  <line x1="185" y1="260" x2="205" y2="250" stroke="#999" stroke-width="1"/>
+  <line x1="220" y1="270" x2="240" y2="260" stroke="#999" stroke-width="1"/>
+
+  <!-- A hole beneath the desk (visual metaphor) -->
+  <path d="M 100 335 Q 120 360 150 365 Q 180 360 200 335" fill="none" stroke="#ccc" stroke-width="2" stroke-dasharray="3,3"/>
+
+  <!-- Quote -->
+  <text x="350" y="180" class="cartoon-quote" text-anchor="start">
+    "The first lie is the hardest. After that,
+  </text>
+  <text x="350" y="200" class="cartoon-quote" text-anchor="start">
+    you just keep digging. The hole gets
+  </text>
+  <text x="350" y="220" class="cartoon-quote" text-anchor="start">
+    deeper but your shovel gets lighter. That's
+  </text>
+  <text x="350" y="240" class="cartoon-quote" text-anchor="start">
+    how you know you're lost."
+  </text>
+
+  <text x="350" y="270" class="cartoon-text" font-size="12" text-anchor="start" fill="#999">
+    — Rogue Trader
+  </text>
+</svg>

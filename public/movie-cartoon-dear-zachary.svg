@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <style>
+      .cartoon-text { font-family: Georgia, serif; font-size: 14px; fill: #1a1a1a; }
+      .cartoon-quote { font-family: Georgia, serif; font-size: 13px; fill: #555; font-style: italic; }
+    </style>
+  </defs>
+
+  <rect width="800" height="600" fill="#fafaf8"/>
+  <rect x="40" y="40" width="720" height="480" fill="none" stroke="#333" stroke-width="1"/>
+
+  <!-- Simple chair -->
+  <rect x="120" y="200" width="60" height="80" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  <line x1="120" y1="280" x2="100" y2="300" stroke="#1a1a1a" stroke-width="2"/>
+  <line x1="180" y1="280" x2="200" y2="300" stroke="#1a1a1a" stroke-width="2"/>
+
+  <!-- Figure sitting, head bowed -->
+  <circle cx="150" cy="160" r="20" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  <line x1="150" y1="180" x2="150" y2="210" stroke="#1a1a1a" stroke-width="2"/>
+  <line x1="150" y1="190" x2="130" y2="215" stroke="#1a1a1a" stroke-width="2"/>
+  <line x1="150" y1="190" x2="170" y2="215" stroke="#1a1a1a" stroke-width="2"/>
+
+  <!-- Empty frame on wall (representing the documentary, or absence) -->
+  <rect x="300" y="120" width="120" height="150" fill="none" stroke="#999" stroke-width="2"/>
+  <line x1="310" y1="130" x2="410" y2="260" stroke="#999" stroke-width="1" opacity="0.5"/>
+  <line x1="410" y1="130" x2="310" y2="260" stroke="#999" stroke-width="1" opacity="0.5"/>
+
+  <!-- Quote -->
+  <text x="350" y="200" class="cartoon-quote" text-anchor="start">
+    "He meant to document a good man.
+  </text>
+  <text x="350" y="220" class="cartoon-quote" text-anchor="start">
+    Instead he made a record of how
+  </text>
+  <text x="350" y="240" class="cartoon-quote" text-anchor="start">
+    easily the world breaks the innocent.
+  </text>
+  <text x="350" y="260" class="cartoon-quote" text-anchor="start">
+    That's not filmmaking. That's witness."
+  </text>
+
+  <text x="350" y="290" class="cartoon-text" font-size="12" text-anchor="start" fill="#999">
+    — Dear Zachary
+  </text>
+</svg>

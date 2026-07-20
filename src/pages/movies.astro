@@ -48,23 +48,42 @@ const movies: { title: string; year: string; imdb: string; description: string }
   <p class="lede">A running list of films worth your time.</p>
 
   <div class="movies-list" style="margin-top: 1.5rem;">
-    {movies.map((movie) => (
-      <article class="movie-card">
-        <h2>
-          <a href={movie.imdb} target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
-            {movie.title}
-          </a>
-        </h2>
-        <p class="meta">{movie.year}</p>
-        <p style="margin-top: 0.75rem; line-height: 1.6;">{movie.description}</p>
-      </article>
-    ))}
+    {movies.map((movie, index) => {
+      const cartoonMap: { [key: number]: string } = {
+        0: "michael-clayton",
+        1: "rogue-trader",
+        2: "dear-zachary",
+        3: "wonder-boys",
+        4: "shotgun-stories",
+        5: "overnight",
+      };
+      return (
+        <article class="movie-card">
+          <h2>
+            <a href={movie.imdb} target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
+              {movie.title}
+            </a>
+          </h2>
+          <p class="meta">{movie.year}</p>
+
+          <div class="movie-cartoon">
+            <img
+              src={`/movie-cartoon-${cartoonMap[index]}.svg`}
+              alt={`Cartoon for ${movie.title}`}
+              loading="lazy"
+            />
+          </div>
+
+          <p style="margin-top: 1.5rem; line-height: 1.6;">{movie.description}</p>
+        </article>
+      );
+    })}
   </div>
 
   <style>
     .movie-card {
-      margin-bottom: 2rem;
-      padding-bottom: 2rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2.5rem;
       border-bottom: 1px solid var(--color-border);
     }
 
@@ -83,7 +102,20 @@ const movies: { title: string; year: string; imdb: string; description: string }
     }
 
     .movie-card .meta {
-      margin: 0;
+      margin: 0 0 1.25rem 0;
+    }
+
+    .movie-cartoon {
+      margin: 1.5rem 0;
+      max-width: 550px;
+    }
+
+    .movie-cartoon img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid #e8e8e6;
+      border-radius: 2px;
     }
   </style>
 </BaseLayout>
