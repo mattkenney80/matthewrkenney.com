@@ -1,48 +1,50 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 320">
   <defs>
     <style>
-      .cartoon-text { font-family: Georgia, serif; font-size: 14px; fill: #1a1a1a; }
-      .cartoon-quote { font-family: Georgia, serif; font-size: 13px; fill: #555; font-style: italic; }
+      .cartoon-text { font-family: Georgia, serif; font-size: 12px; fill: #1a1a1a; }
+      .cartoon-quote { font-family: Georgia, serif; font-size: 11px; fill: #555; font-style: italic; }
     </style>
   </defs>
 
-  <rect width="800" height="600" fill="#fafaf8"/>
-  <rect x="40" y="40" width="720" height="480" fill="none" stroke="#333" stroke-width="1"/>
+  <rect width="560" height="320" fill="#fafaf8"/>
+  <rect x="8" y="8" width="544" height="304" fill="none" stroke="#333" stroke-width="1.5"/>
 
-  <!-- Two family groups facing off -->
   <!-- First group (left) -->
-  <circle cx="120" cy="180" r="18" fill="none" stroke="#1a1a1a" stroke-width="2"/>
-  <line x1="120" y1="198" x2="120" y2="240" stroke="#1a1a1a" stroke-width="2"/>
-  <line x1="120" y1="210" x2="100" y2="235" stroke="#1a1a1a" stroke-width="2"/>
-  <line x1="120" y1="210" x2="140" y2="235" stroke="#1a1a1a" stroke-width="2"/>
+  <circle cx="60" cy="70" r="11" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  <line x1="60" y1="81" x2="60" y2="110" stroke="#1a1a1a" stroke-width="1.5"/>
+  <line x1="60" y1="90" x2="45" y2="105" stroke="#1a1a1a" stroke-width="1.5"/>
+  <line x1="60" y1="90" x2="75" y2="105" stroke="#1a1a1a" stroke-width="1.5"/>
 
   <!-- Second group (right) -->
-  <circle cx="280" cy="180" r="18" fill="none" stroke="#1a1a1a" stroke-width="2"/>
-  <line x1="280" y1="198" x2="280" y2="240" stroke="#1a1a1a" stroke-width="2"/>
-  <line x1="280" y1="210" x2="260" y2="235" stroke="#1a1a1a" stroke-width="2"/>
-  <line x1="280" y1="210" x2="300" y2="235" stroke="#1a1a1a" stroke-width="2"/>
+  <circle cx="150" cy="70" r="11" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  <line x1="150" y1="81" x2="150" y2="110" stroke="#1a1a1a" stroke-width="1.5"/>
+  <line x1="150" y1="90" x2="135" y2="105" stroke="#1a1a1a" stroke-width="1.5"/>
+  <line x1="150" y1="90" x2="165" y2="105" stroke="#1a1a1a" stroke-width="1.5"/>
 
-  <!-- Third figure (between them, smaller) -->
-  <circle cx="200" cy="200" r="14" fill="none" stroke="#999" stroke-width="1.5"/>
-  <line x1="200" y1="214" x2="200" y2="250" stroke="#999" stroke-width="1.5"/>
-  <line x1="200" y1="224" x2="185" y2="245" stroke="#999" stroke-width="1.5"/>
-  <line x1="200" y1="224" x2="215" y2="245" stroke="#999" stroke-width="1.5"/>
+  <!-- Third figure (between, smaller) -->
+  <circle cx="105" cy="85" r="8" fill="none" stroke="#999" stroke-width="1"/>
+  <line x1="105" y1="93" x2="105" y2="115" stroke="#999" stroke-width="1"/>
+  <line x1="105" y1="100" x2="92" y2="110" stroke="#999" stroke-width="1"/>
+  <line x1="105" y1="100" x2="118" y2="110" stroke="#999" stroke-width="1"/>
 
-  <!-- A space between them (the war) -->
-  <path d="M 160 260 Q 200 300 240 260" fill="none" stroke="#ccc" stroke-width="2" stroke-dasharray="5,5"/>
+  <!-- Space between (the war) -->
+  <path d="M 90 125 Q 105 145 120 125" fill="none" stroke="#ccc" stroke-width="1.2" stroke-dasharray="3,3"/>
 
   <!-- Quote -->
-  <text x="100" y="340" class="cartoon-quote" text-anchor="start">
-    "A man's children fight his war after he's dead and sober.
+  <text x="240" y="70" class="cartoon-quote" text-anchor="start">
+    "A man's children fight his war after
   </text>
-  <text x="100" y="360" class="cartoon-quote" text-anchor="start">
-    Not because they hate him. Because they never learned
+  <text x="240" y="85" class="cartoon-quote" text-anchor="start">
+    he's dead and sober. Not because they hate
   </text>
-  <text x="100" y="380" class="cartoon-quote" text-anchor="start">
-    how to love him. So they settle for knowing."
+  <text x="240" y="100" class="cartoon-quote" text-anchor="start">
+    him. Because they never learned how to love
+  </text>
+  <text x="240" y="115" class="cartoon-quote" text-anchor="start">
+    him. So they settle for knowing."
   </text>
 
-  <text x="100" y="410" class="cartoon-text" font-size="12" text-anchor="start" fill="#999">
+  <text x="240" y="140" class="cartoon-text" font-size="10" text-anchor="start" fill="#999">
     — Shotgun Stories
   </text>
 </svg>

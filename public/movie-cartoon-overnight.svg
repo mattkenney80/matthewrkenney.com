@@ -1,52 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 320">
   <defs>
     <style>
-      .cartoon-text { font-family: Georgia, serif; font-size: 14px; fill: #1a1a1a; }
-      .cartoon-quote { font-family: Georgia, serif; font-size: 13px; fill: #555; font-style: italic; }
+      .cartoon-text { font-family: Georgia, serif; font-size: 12px; fill: #1a1a1a; }
+      .cartoon-quote { font-family: Georgia, serif; font-size: 11px; fill: #555; font-style: italic; }
     </style>
   </defs>
 
-  <rect width="800" height="600" fill="#fafaf8"/>
-  <rect x="40" y="40" width="720" height="480" fill="none" stroke="#333" stroke-width="1"/>
+  <rect width="560" height="320" fill="#fafaf8"/>
+  <rect x="8" y="8" width="544" height="304" fill="none" stroke="#333" stroke-width="1.5"/>
 
   <!-- Rising trajectory -->
-  <path d="M 100 280 Q 180 200 260 120" fill="none" stroke="#999" stroke-width="2" stroke-dasharray="4,4"/>
+  <path d="M 30 150 Q 70 90 110 50" fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="3,3"/>
 
   <!-- Falling trajectory -->
-  <path d="M 260 120 Q 320 180 380 280" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-dasharray="4,4"/>
+  <path d="M 110 50 Q 140 100 170 150" fill="none" stroke="#1a1a1a" stroke-width="1.5" stroke-dasharray="3,3"/>
 
   <!-- Figure at peak -->
-  <circle cx="260" cy="120" r="16" fill="none" stroke="#1a1a1a" stroke-width="2"/>
-  <line x1="260" y1="136" x2="260" y2="170" stroke="#1a1a1a" stroke-width="2"/>
-  <line x1="260" y1="145" x2="240" y2="165" stroke="#1a1a1a" stroke-width="2"/>
-  <line x1="260" y1="145" x2="280" y2="165" stroke="#1a1a1a" stroke-width="2"/>
+  <circle cx="110" cy="50" r="10" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  <line x1="110" y1="60" x2="110" y2="80" stroke="#1a1a1a" stroke-width="1.5"/>
+  <line x1="110" y1="67" x2="95" y2="80" stroke="#1a1a1a" stroke-width="1.5"/>
+  <line x1="110" y1="67" x2="125" y2="80" stroke="#1a1a1a" stroke-width="1.5"/>
 
-  <!-- Crown/halo at peak (representing his moment) -->
-  <path d="M 240 100 Q 260 85 280 100" fill="none" stroke="#ccc" stroke-width="2"/>
-  <circle cx="245" cy="98" r="2" fill="#ccc"/>
-  <circle cx="260" cy="92" r="2" fill="#ccc"/>
-  <circle cx="275" cy="98" r="2" fill="#ccc"/>
+  <!-- Crown/halo at peak -->
+  <path d="M 95 35 Q 110 25 125 35" fill="none" stroke="#ccc" stroke-width="1.2"/>
+  <circle cx="100" cy="33" r="1.5" fill="#ccc"/>
+  <circle cx="110" cy="28" r="1.5" fill="#ccc"/>
+  <circle cx="120" cy="33" r="1.5" fill="#ccc"/>
 
-  <!-- Debris/papers falling -->
-  <line x1="300" y1="160" x2="320" y2="200" stroke="#999" stroke-width="1"/>
-  <line x1="340" y1="140" x2="360" y2="190" stroke="#999" stroke-width="1"/>
-  <line x1="360" y1="170" x2="380" y2="240" stroke="#999" stroke-width="1"/>
+  <!-- Debris falling -->
+  <line x1="135" y1="75" x2="150" y2="110" stroke="#999" stroke-width="0.8"/>
+  <line x1="155" y1="65" x2="170" y2="115" stroke="#999" stroke-width="0.8"/>
+  <line x1="170" y1="90" x2="185" y2="145" stroke="#999" stroke-width="0.8"/>
 
   <!-- Quote -->
-  <text x="100" y="340" class="cartoon-quote" text-anchor="start">
-    "A man was handed everything and burned it all down
+  <text x="220" y="55" class="cartoon-quote" text-anchor="start">
+    "A man was handed everything and burned
   </text>
-  <text x="100" y="360" class="cartoon-quote" text-anchor="start">
-    because he couldn't imagine being less important than
+  <text x="220" y="70" class="cartoon-quote" text-anchor="start">
+    it all down because he couldn't imagine
   </text>
-  <text x="100" y="380" class="cartoon-quote" text-anchor="start">
-    he believed he was. The tragic part wasn't the fall.
+  <text x="220" y="85" class="cartoon-quote" text-anchor="start">
+    being less important than he believed he
   </text>
-  <text x="100" y="400" class="cartoon-quote" text-anchor="start">
-    It was how fast everyone forgot he was ever up there."
+  <text x="220" y="100" class="cartoon-quote" text-anchor="start">
+    was. The tragic part wasn't the fall. It
+  </text>
+  <text x="220" y="115" class="cartoon-quote" text-anchor="start">
+    was how fast everyone forgot he was ever up there."
   </text>
 
-  <text x="100" y="430" class="cartoon-text" font-size="12" text-anchor="start" fill="#999">
+  <text x="220" y="140" class="cartoon-text" font-size="10" text-anchor="start" fill="#999">
     — Overnight
   </text>
 </svg>

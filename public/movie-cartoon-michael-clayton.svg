@@ -1,52 +1,52 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 320">
   <defs>
     <style>
-      .cartoon-text { font-family: Georgia, serif; font-size: 14px; fill: #1a1a1a; }
-      .cartoon-quote { font-family: Georgia, serif; font-size: 13px; fill: #555; font-style: italic; }
+      .cartoon-text { font-family: Georgia, serif; font-size: 12px; fill: #1a1a1a; }
+      .cartoon-quote { font-family: Georgia, serif; font-size: 11px; fill: #555; font-style: italic; }
     </style>
   </defs>
 
   <!-- Background -->
-  <rect width="800" height="600" fill="#fafaf8"/>
+  <rect width="560" height="320" fill="#fafaf8"/>
 
   <!-- Frame border -->
-  <rect x="40" y="40" width="720" height="480" fill="none" stroke="#333" stroke-width="1"/>
+  <rect x="8" y="8" width="544" height="304" fill="none" stroke="#333" stroke-width="1.5"/>
 
   <!-- Taxi at night -->
-  <rect x="100" y="200" width="180" height="80" fill="none" stroke="#1a1a1a" stroke-width="2" rx="4"/>
-  <circle cx="140" cy="300" r="15" fill="none" stroke="#1a1a1a" stroke-width="2"/>
-  <circle cx="220" cy="300" r="15" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  <rect x="30" y="80" width="120" height="60" fill="none" stroke="#1a1a1a" stroke-width="2" rx="3"/>
+  <circle cx="55" cy="145" r="10" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  <circle cx="105" cy="145" r="10" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
 
   <!-- Silhouette inside taxi -->
-  <ellipse cx="180" cy="230" rx="30" ry="25" fill="#1a1a1a"/>
-  <line x1="150" y1="240" x2="210" y2="240" stroke="#1a1a1a" stroke-width="2"/>
+  <ellipse cx="75" cy="100" rx="18" ry="15" fill="#1a1a1a"/>
+  <line x1="55" y1="110" x2="95" y2="110" stroke="#1a1a1a" stroke-width="1.5"/>
 
   <!-- Window reflection - buildings -->
-  <line x1="105" y1="210" x2="115" y2="180" stroke="#999" stroke-width="1"/>
-  <line x1="130" y1="210" x2="140" y2="170" stroke="#999" stroke-width="1"/>
-  <line x1="155" y1="210" x2="165" y2="175" stroke="#999" stroke-width="1"/>
+  <line x1="35" y1="90" x2="42" y2="70" stroke="#999" stroke-width="1"/>
+  <line x1="55" y1="90" x2="62" y2="65" stroke="#999" stroke-width="1"/>
+  <line x1="75" y1="90" x2="82" y2="68" stroke="#999" stroke-width="1"/>
 
-  <!-- Distant city lights (small dots) -->
-  <circle cx="400" cy="100" r="2" fill="#ccc"/>
-  <circle cx="420" cy="95" r="2" fill="#ccc"/>
-  <circle cx="450" cy="105" r="2" fill="#ccc"/>
+  <!-- Distant city lights -->
+  <circle cx="180" cy="45" r="1.5" fill="#ccc"/>
+  <circle cx="195" cy="40" r="1.5" fill="#ccc"/>
+  <circle cx="215" cy="50" r="1.5" fill="#ccc"/>
 
   <!-- Quote -->
-  <text x="320" y="200" class="cartoon-quote" text-anchor="start">
-    "He realized too late that the cab ride
+  <text x="180" y="85" class="cartoon-quote" text-anchor="start">
+    "He realized too late that the cab ride home
   </text>
-  <text x="320" y="220" class="cartoon-quote" text-anchor="start">
-    home was the only honesty he would
+  <text x="180" y="100" class="cartoon-quote" text-anchor="start">
+    was the only honesty he would ever have.
   </text>
-  <text x="320" y="240" class="cartoon-quote" text-anchor="start">
-    ever have. Everything else was just
+  <text x="180" y="115" class="cartoon-quote" text-anchor="start">
+    Everything else was just waiting for
   </text>
-  <text x="320" y="260" class="cartoon-quote" text-anchor="start">
-    waiting for the meter to stop."
+  <text x="180" y="130" class="cartoon-quote" text-anchor="start">
+    the meter to stop."
   </text>
 
   <!-- Credit line -->
-  <text x="320" y="290" class="cartoon-text" font-size="12" text-anchor="start" fill="#999">
+  <text x="180" y="155" class="cartoon-text" font-size="10" text-anchor="start" fill="#999">
     — Michael Clayton
   </text>
 </svg>
