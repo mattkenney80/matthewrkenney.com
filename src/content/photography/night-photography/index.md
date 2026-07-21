@@ -2,7 +2,7 @@
 title: "Night Photography"
 description: "Long exposures and city lights after dark."
 date: 2026-07-08
-cover: "./dscf2364_49296706687_o.jpg"
+cover: "./night.webp"
 photos:
   - src: "./dscf2364_49296706687_o.jpg"
     alt: "Night photography, photo 1"

@@ -13,10 +13,9 @@ const featuredMovie = {
   description: "Sexy Beast might be the most beautiful film ever made about a man who just wants to be left alone. Every frame looks incredible. The baking Spanish sun, the impossibly blue pool, a boulder rolling down the hill in the first five minutes like a bad omen with a great cinematographer. Gal Dove did the impossible. He got out. Did his time, made his money, retired to a villa with the woman he loves and a tan he earned. He finished on top, which almost nobody in his trade ever does. Then Don Logan shows up. Ben Kingsley plays him as pure menace in a golf shirt, a psychopath who takes the word \"no\" as a personal insult, and one of the great screen villains because he never needs a weapon when he can just wear you down instead. That's the whole film. One man's small perfect paradise against a force of nature that wants him back in the muck. Gorgeous, tense, remarkable.",
 };
 
-const series = (await getCollection("photography", ({ data }) => !data.draft)).sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
-);
-const featured = series.find((entry) => entry.data.cover);
+const allSeries = await getCollection("photography", ({ data }) => !data.draft);
+const nightPhotography = allSeries.find((entry) => entry.id === "night-photography");
+const nightPhotoCover = nightPhotography?.data.cover;
 ---
 
 <BaseLayout title="Home">
@@ -54,16 +53,16 @@ const featured = series.find((entry) => entry.data.cover);
     <p><a href="/movies">All movies &rarr;</a></p>
   </section>
 
-  {featured && (
+  {nightPhotography && (
     <section style="margin-top: 2.5rem;">
       <h2>Featured photos</h2>
-      <a class="gallery-card" href={`/photography/${featured.id}`}>
-        {featured.data.cover && (
-          <Image src={featured.data.cover} alt={featured.data.title} width={800} loading="lazy" />
+      <a class="gallery-card" href="/photography/night-photography">
+        {nightPhotoCover && (
+          <Image src={nightPhotoCover} alt={nightPhotography.data.title} width={800} loading="lazy" />
         )}
-        <span class="gallery-card__title">{featured.data.title}</span>
+        <span class="gallery-card__title">{nightPhotography.data.title}</span>
       </a>
-      <p><a href="/photography">All photography &rarr;</a></p>
+      <p><a href="/photography/night-photography">Explore night photography &rarr;</a></p>
     </section>
   )}
 </BaseLayout>
