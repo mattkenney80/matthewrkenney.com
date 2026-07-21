@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 320">
+  <defs>
+    <style>
+      .cartoon-text { font-family: Georgia, serif; font-size: 12px; fill: #1a1a1a; }
+      .cartoon-quote { font-family: Georgia, serif; font-size: 11px; fill: #555; font-style: italic; }
+    </style>
+  </defs>
+
+  <rect width="560" height="320" fill="#fafaf8"/>
+  <rect x="8" y="8" width="544" height="304" fill="none" stroke="#333" stroke-width="1.5"/>
+
+  <!-- Sky section -->
+  <rect x="8" y="8" width="544" height="145" fill="#f5f0e8"/>
+
+  <!-- Rain lines -->
+  <line x1="80" y1="20" x2="75" y2="50" stroke="#999" stroke-width="1"/>
+  <line x1="110" y1="25" x2="105" y2="55" stroke="#999" stroke-width="1"/>
+  <line x1="140" y1="22" x2="135" y2="52" stroke="#999" stroke-width="1"/>
+  <line x1="170" y1="28" x2="165" y2="58" stroke="#999" stroke-width="1"/>
+  <line x1="200" y1="24" x2="195" y2="54" stroke="#999" stroke-width="1"/>
+  <line x1="230" y1="26" x2="225" y2="56" stroke="#999" stroke-width="1"/>
+  <line x1="260" y1="30" x2="255" y2="60" stroke="#999" stroke-width="1"/>
+
+  <!-- Lightning bolt (right side) -->
+  <path d="M 420 15 L 425 35 L 415 38 L 422 60" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- More rain on right -->
+  <line x1="290" y1="22" x2="285" y2="52" stroke="#999" stroke-width="1"/>
+  <line x1="320" y1="28" x2="315" y2="58" stroke="#999" stroke-width="1"/>
+  <line x1="350" y1="24" x2="345" y2="54" stroke="#999" stroke-width="1"/>
+  <line x1="380" y1="26" x2="375" y2="56" stroke="#999" stroke-width="1"/>
+
+  <!-- Canyon/terrain section -->
+  <rect x="8" y="153" width="544" height="159" fill="#f9f6f0"/>
+
+  <!-- Left canyon wall -->
+  <path d="M 8 153 L 60 180 L 80 220 L 70 312" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+
+  <!-- Right canyon wall -->
+  <path d="M 552 153 L 500 180 L 480 220 L 490 312" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+
+  <!-- River water (wavy lines at bottom) -->
+  <path d="M 50 280 Q 70 275 90 280 T 130 280" fill="none" stroke="#999" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 40 295 Q 60 290 80 295 T 120 295" fill="none" stroke="#999" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M 450 280 Q 470 275 490 280 T 530 280" fill="none" stroke="#999" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 440 295 Q 460 290 480 295 T 520 295" fill="none" stroke="#999" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- Rope bridge cables -->
+  <path d="M 120 200 Q 280 240 440 200" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M 125 210 Q 280 250 435 210" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+
+  <!-- Bridge deck planks -->
+  <line x1="140" y1="208" x2="140" y2="218" stroke="#1a1a1a" stroke-width="0.8"/>
+  <line x1="160" y1="212" x2="160" y2="222" stroke="#1a1a1a" stroke-width="0.8"/>
+  <line x1="180" y1="215" x2="180" y2="225" stroke="#1a1a1a" stroke-width="0.8"/>
+  <line x1="200" y1="218" x2="200" y2="228" stroke="#1a1a1a" stroke-width="0.8"/>
+  <line x1="220" y1="219" x2="220" y2="229" stroke="#1a1a1a" stroke-width="0.8"/>
+  <line x1="240" y1="218" x2="240" y2="228" stroke="#1a1a1a" stroke-width="0.8"/>
+  <line x1="260" y1="217" x2="260" y2="227" stroke="#1a1a1a" stroke-width="0.8"/>
+  <line x1="280" y1="216" x2="280" y2="226" stroke="#1a1a1a" stroke-width="0.8"/>
+  <line x1="300" y1="217" x2="300" y2="227" stroke="#1a1a1a" stroke-width="0.8"/>
+  <line x1="320" y1="218" x2="320" y2="228" stroke="#1a1a1a" stroke-width="0.8"/>
+  <line x1="340" y1="219" x2="340" y2="229" stroke="#1a1a1a" stroke-width="0.8"/>
+  <line x1="360" y1="218" x2="360" y2="228" stroke="#1a1a1a" stroke-width="0.8"/>
+  <line x1="380" y1="217" x2="380" y2="227" stroke="#1a1a1a" stroke-width="0.8"/>
+  <line x1="400" y1="215" x2="400" y2="225" stroke="#1a1a1a" stroke-width="0.8"/>
+  <line x1="420" y1="212" x2="420" y2="222" stroke="#1a1a1a" stroke-width="0.8"/>
+
+  <!-- Left truck -->
+  <rect x="150" y="195" width="50" height="20" fill="none" stroke="#1a1a1a" stroke-width="1.5" rx="1"/>
+  <circle cx="165" cy="217" r="5" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  <circle cx="185" cy="217" r="5" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  <rect x="145" y="203" width="60" height="8" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+
+  <!-- Right truck -->
+  <rect x="310" y="200" width="50" height="20" fill="none" stroke="#1a1a1a" stroke-width="1.5" rx="1"/>
+  <circle cx="325" cy="222" r="5" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  <circle cx="345" cy="222" r="5" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  <rect x="305" y="208" width="60" height="8" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+
+  <!-- Quote -->
+  <text x="30" y="260" class="cartoon-quote" text-anchor="start">
+    "Everybody's hauling something that'll kill them.
+  </text>
+  <text x="30" y="275" class="cartoon-quote" text-anchor="start">
+    Mine just rattles louder."
+  </text>
+
+  <text x="30" y="300" class="cartoon-text" font-size="10" text-anchor="start" fill="#999">
+    — Sorcerer
+  </text>
+</svg>

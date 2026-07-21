@@ -5,6 +5,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 const movies: { title: string; year: string; imdb: string; description: string }[] = [
   {
+    title: "Sorcerer",
+    year: "1977",
+    imdb: "https://www.imdb.com/title/tt0076740/",
+    description: "Sorcerer (1977) is William Friedkin's hidden gem. While it's a remake of The Wages of Fear, that label doesn't do it justice. Four men from different backgrounds end up in a decaying South American oil town: a getaway driver, a French banker, a Palestinian militant, and a hitman. They all hide from pasts that catch up with them. When a well catches fire in the jungle, one man must drive two hundred miles of treacherous mountain roads with a truckload of unstable dynamite. The pay offers a way out, but most won't make it. Friedkin uses the first act to show how each man earned his spot in hell. By the time the trucks roll, you realize the drive isn't just about money. It's about men trying to escape fate in vehicles that could kill them at any moment. The film's climax features two forty-ton trucks crossing a rope bridge in a raging storm. They creep across a crumbling span over a boiling river, creating one of the most terrifying scenes ever filmed. There are no CGI tricks, only months of hardship that almost derailed the production. Tangerine Dream's electronic score transforms the jungle into something eerie and cosmic. The title reflects this; it's painted on a truck, but Friedkin uses it to symbolize fate itself, an evil sorcerer nobody can escape. The film is bleak and deliberate, pushing boundaries and ending with a cruel twist. Audiences in 1977 wanted Star Wars but got a grim existential tale instead. It flopped and marked the end of Friedkin's golden era. Time has proven them wrong.",
+  },
+  {
     title: "Enter the Void",
     year: "2009",
     imdb: "https://www.imdb.com/title/tt0387564/",
@@ -62,14 +68,15 @@ const movies: { title: string; year: string; imdb: string; description: string }
   <div class="movies-list" style="margin-top: 1.5rem;">
     {movies.map((movie, index) => {
       const cartoonMap: { [key: number]: string } = {
-        0: "enter-the-void",
-        1: "sexy-beast",
-        2: "michael-clayton",
-        3: "rogue-trader",
-        4: "dear-zachary",
-        5: "wonder-boys",
-        6: "shotgun-stories",
-        7: "overnight",
+        0: "sorcerer",
+        1: "enter-the-void",
+        2: "sexy-beast",
+        3: "michael-clayton",
+        4: "rogue-trader",
+        5: "dear-zachary",
+        6: "wonder-boys",
+        7: "shotgun-stories",
+        8: "overnight",
       };
       return (
         <article class="movie-card">
