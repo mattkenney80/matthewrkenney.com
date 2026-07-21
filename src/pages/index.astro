@@ -6,11 +6,11 @@ import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const featuredMovie = {
-  title: "Sexy Beast",
-  year: "2000",
-  imdb: "https://www.imdb.com/title/tt0274518/",
-  cartoon: "sexy-beast",
-  description: "Sexy Beast might be the most beautiful film ever made about a man who just wants to be left alone. Every frame looks incredible. The baking Spanish sun, the impossibly blue pool, a boulder rolling down the hill in the first five minutes like a bad omen with a great cinematographer. Gal Dove did the impossible. He got out. Did his time, made his money, retired to a villa with the woman he loves and a tan he earned. He finished on top, which almost nobody in his trade ever does. Then Don Logan shows up. Ben Kingsley plays him as pure menace in a golf shirt, a psychopath who takes the word \"no\" as a personal insult, and one of the great screen villains because he never needs a weapon when he can just wear you down instead. That's the whole film. One man's small perfect paradise against a force of nature that wants him back in the muck. Gorgeous, tense, remarkable.",
+  title: "Sorcerer",
+  year: "1977",
+  imdb: "https://www.imdb.com/title/tt0076740/",
+  cartoon: "sorcerer",
+  description: "Sorcerer (1977) is William Friedkin's hidden gem. While it's a remake of The Wages of Fear, that label doesn't do it justice. Four men from different backgrounds end up in a decaying South American oil town: a getaway driver, a French banker, a Palestinian militant, and a hitman. They all hide from pasts that catch up with them. When a well catches fire in the jungle, one man must drive two hundred miles of treacherous mountain roads with a truckload of unstable dynamite. The pay offers a way out, but most won't make it. Friedkin uses the first act to show how each man earned his spot in hell. By the time the trucks roll, you realize the drive isn't just about money. It's about men trying to escape fate in vehicles that could kill them at any moment. The film's climax features two forty-ton trucks crossing a rope bridge in a raging storm. They creep across a crumbling span over a boiling river, creating one of the most terrifying scenes ever filmed. There are no CGI tricks, only months of hardship that almost derailed the production. Tangerine Dream's electronic score transforms the jungle into something eerie and cosmic. The title reflects this; it's painted on a truck, but Friedkin uses it to symbolize fate itself, an evil sorcerer nobody can escape. The film is bleak and deliberate, pushing boundaries and ending with a cruel twist. Audiences in 1977 wanted Star Wars but got a grim existential tale instead. It flopped and marked the end of Friedkin's golden era. Time has proven them wrong.",
 };
 
 const allSeries = await getCollection("photography", ({ data }) => !data.draft);
