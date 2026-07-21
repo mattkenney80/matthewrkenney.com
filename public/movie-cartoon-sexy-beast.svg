@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 320">
+  <defs>
+    <style>
+      .cartoon-text { font-family: Georgia, serif; font-size: 12px; fill: #1a1a1a; }
+      .cartoon-quote { font-family: Georgia, serif; font-size: 11px; fill: #555; font-style: italic; }
+    </style>
+  </defs>
+
+  <rect width="560" height="320" fill="#fafaf8"/>
+  <rect x="8" y="8" width="544" height="304" fill="none" stroke="#333" stroke-width="1.5"/>
+
+  <!-- Sky section (top half - cream) -->
+  <rect x="8" y="8" width="544" height="152" fill="#f5f0e8"/>
+
+  <!-- Water section (bottom half - blue) -->
+  <rect x="8" y="160" width="544" height="152" fill="#d4e6f1"/>
+
+  <!-- Sun (left side, outlined) -->
+  <circle cx="50" cy="50" r="20" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  <line x1="50" y1="18" x2="50" y2="8" stroke="#1a1a1a" stroke-width="1.5"/>
+  <line x1="50" y1="82" x2="50" y2="92" stroke="#1a1a1a" stroke-width="1.5"/>
+  <line x1="18" y1="50" x2="8" y2="50" stroke="#1a1a1a" stroke-width="1.5"/>
+  <line x1="82" y1="50" x2="92" y2="50" stroke="#1a1a1a" stroke-width="1.5"/>
+
+  <!-- Happy face (right side, in sky) -->
+  <circle cx="420" cy="55" r="25" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  <circle cx="410" cy="45" r="3" fill="#1a1a1a"/>
+  <circle cx="430" cy="45" r="3" fill="#1a1a1a"/>
+  <path d="M 410 60 Q 420 68 430 60" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Hill/boulder trajectory curve (from upper right down to lower left) -->
+  <path d="M 480 20 Q 420 60 280 160" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  <circle cx="280" cy="160" r="18" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+
+  <!-- Bed in water -->
+  <rect x="80" y="190" width="100" height="50" fill="none" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <line x1="80" y1="200" x2="180" y2="200" stroke="#1a1a1a" stroke-width="1.5"/>
+
+  <!-- Figure lying in bed -->
+  <ellipse cx="130" cy="195" rx="35" ry="12" fill="#1a1a1a"/>
+  <line x1="100" y1="215" x2="80" y2="235" stroke="#1a1a1a" stroke-width="1.5"/>
+  <line x1="160" y1="215" x2="180" y2="235" stroke="#1a1a1a" stroke-width="1.5"/>
+
+  <!-- Quote -->
+  <text x="30" y="270" class="cartoon-quote" text-anchor="start">
+    "This is the life. Sun, pool, not a care in the world.
+  </text>
+  <text x="30" y="285" class="cartoon-quote" text-anchor="start">
+    Is that thing getting bigger?"
+  </text>
+
+  <text x="30" y="305" class="cartoon-text" font-size="10" text-anchor="start" fill="#999">
+    — Sexy Beast
+  </text>
+</svg>

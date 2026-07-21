@@ -5,6 +5,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 const movies: { title: string; year: string; imdb: string; description: string }[] = [
   {
+    title: "Sexy Beast",
+    year: "2000",
+    imdb: "https://www.imdb.com/title/tt0274518/",
+    description: "Sexy Beast might be the most beautiful film ever made about a man who just wants to be left alone. Every frame looks incredible. The baking Spanish sun, the impossibly blue pool, a boulder rolling down the hill in the first five minutes like a bad omen with a great cinematographer. Gal Dove did the impossible. He got out. Did his time, made his money, retired to a villa with the woman he loves and a tan he earned. He finished on top, which almost nobody in his trade ever does. Then Don Logan shows up. Ben Kingsley plays him as pure menace in a golf shirt, a psychopath who takes the word \"no\" as a personal insult, and one of the great screen villains because he never needs a weapon when he can just wear you down instead. That's the whole film. One man's small perfect paradise against a force of nature that wants him back in the muck. Gorgeous, tense, remarkable.",
+  },
+  {
     title: "Michael Clayton",
     year: "2007",
     imdb: "https://www.imdb.com/title/tt0465538/",
@@ -50,12 +56,13 @@ const movies: { title: string; year: string; imdb: string; description: string }
   <div class="movies-list" style="margin-top: 1.5rem;">
     {movies.map((movie, index) => {
       const cartoonMap: { [key: number]: string } = {
-        0: "michael-clayton",
-        1: "rogue-trader",
-        2: "dear-zachary",
-        3: "wonder-boys",
-        4: "shotgun-stories",
-        5: "overnight",
+        0: "sexy-beast",
+        1: "michael-clayton",
+        2: "rogue-trader",
+        3: "dear-zachary",
+        4: "wonder-boys",
+        5: "shotgun-stories",
+        6: "overnight",
       };
       return (
         <article class="movie-card">
