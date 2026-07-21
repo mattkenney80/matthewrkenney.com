@@ -5,6 +5,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 const movies: { title: string; year: string; imdb: string; description: string }[] = [
   {
+    title: "Enter the Void",
+    year: "2009",
+    imdb: "https://www.imdb.com/title/tt0387564/",
+    description: "Enter the Void (2009) is Gaspar Noé's challenge to look away. The film's nerve lies in its camera work. We don't just watch Oscar, a young dealer in neon Tokyo. We see through his eyes, blinks and all. Then, twenty minutes in, he's shot dead. The film pulls its best trick: the camera keeps moving. It lifts off his corpse and turns into a spirit, floating over the city. It phases through walls and revisits his memories like a ghost that can't let go. This impossible motion is key. Drawing from the Tibetan Book of the Dead, Noé shows a dead man's perspective. It follows one stubborn consciousness circling its wreckage: the grief, the drugs, and the sister he can't leave behind. This journey drifts toward something like rebirth. You don't follow a story; you experience a mind dissolving. Noé ensures you feel death from the inside, not just as a spectator.",
+  },
+  {
     title: "Sexy Beast",
     year: "2000",
     imdb: "https://www.imdb.com/title/tt0274518/",
@@ -56,13 +62,14 @@ const movies: { title: string; year: string; imdb: string; description: string }
   <div class="movies-list" style="margin-top: 1.5rem;">
     {movies.map((movie, index) => {
       const cartoonMap: { [key: number]: string } = {
-        0: "sexy-beast",
-        1: "michael-clayton",
-        2: "rogue-trader",
-        3: "dear-zachary",
-        4: "wonder-boys",
-        5: "shotgun-stories",
-        6: "overnight",
+        0: "enter-the-void",
+        1: "sexy-beast",
+        2: "michael-clayton",
+        3: "rogue-trader",
+        4: "dear-zachary",
+        5: "wonder-boys",
+        6: "shotgun-stories",
+        7: "overnight",
       };
       return (
         <article class="movie-card">

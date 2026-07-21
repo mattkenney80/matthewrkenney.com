@@ -1,0 +1,77 @@
+<svg viewBox="0 0 700 620" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="700" height="620" fill="#ffffff"/>
+
+  <!-- panel border -->
+  <rect x="60" y="40" width="580" height="440" fill="#ffffff" stroke="#111111" stroke-width="1.5"/>
+
+  <g stroke="#111111" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- floor line -->
+    <line x1="60" y1="410" x2="640" y2="410"/>
+
+    <!-- back wall / window -->
+    <rect x="110" y="150" width="150" height="120" stroke-width="1.8"/>
+    <line x1="185" y1="150" x2="185" y2="270" stroke-width="1.2"/>
+    <line x1="110" y1="210" x2="260" y2="210" stroke-width="1.2"/>
+    <!-- little city skyline through window -->
+    <g stroke-width="1.1">
+      <rect x="122" y="230" width="14" height="30"/>
+      <rect x="142" y="218" width="12" height="42"/>
+      <rect x="160" y="238" width="16" height="22"/>
+      <rect x="196" y="224" width="12" height="36"/>
+      <rect x="214" y="236" width="14" height="24"/>
+      <rect x="232" y="220" width="12" height="40"/>
+    </g>
+
+    <!-- TV facing away (glow lines) -->
+    <rect x="470" y="300" width="120" height="80"/>
+    <line x1="470" y1="380" x2="470" y2="405"/>
+    <line x1="590" y1="380" x2="590" y2="405"/>
+    <g stroke-width="1.1">
+      <line x1="600" y1="320" x2="628" y2="312"/>
+      <line x1="600" y1="340" x2="632" y2="340"/>
+      <line x1="600" y1="360" x2="628" y2="368"/>
+    </g>
+
+    <!-- couch seen from behind -->
+    <path d="M150 405 L150 320 Q150 305 168 305 L360 305 Q378 305 378 320 L378 405"/>
+    <path d="M150 350 L378 350"/>
+    <path d="M264 350 L264 405"/>
+    <path d="M168 320 Q200 312 262 320" stroke-width="1.4"/>
+    <path d="M266 320 Q320 312 360 320" stroke-width="1.4"/>
+
+    <!-- two heads above couch (the living couple) -->
+    <circle cx="210" cy="290" r="20"/>
+    <circle cx="318" cy="292" r="20"/>
+    <path d="M195 278 Q210 268 225 278" stroke-width="1.4"/>
+    <path d="M303 280 Q318 272 333 282" stroke-width="1.4"/>
+
+    <!-- SPIRIT 1 (near ceiling, left) -->
+    <g>
+      <circle cx="300" cy="105" r="22"/>
+      <circle cx="292" cy="102" r="1.6" fill="#111111"/>
+      <circle cx="308" cy="102" r="1.6" fill="#111111"/>
+      <path d="M294 114 Q300 118 307 114" stroke-width="1.4"/>
+      <path d="M282 122 Q272 150 286 168 Q300 182 292 200"/>
+      <path d="M318 122 Q330 148 320 170 Q312 188 322 202"/>
+      <path d="M300 126 Q300 160 300 196" stroke-width="1.2"/>
+    </g>
+
+    <!-- SPIRIT 2 (near ceiling, right) -->
+    <g>
+      <circle cx="392" cy="128" r="20"/>
+      <circle cx="385" cy="125" r="1.6" fill="#111111"/>
+      <circle cx="399" cy="125" r="1.6" fill="#111111"/>
+      <path d="M386 137 Q392 140 399 137" stroke-width="1.4"/>
+      <path d="M376 143 Q368 168 380 182 Q392 194 386 210"/>
+      <path d="M408 143 Q418 166 410 184 Q403 200 412 212"/>
+    </g>
+
+  </g>
+
+  <!-- caption -->
+  <text x="350" y="540" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="21" fill="#111111">
+    <tspan x="350" dy="0">&#8220;I keep meaning to move toward the light, but I want</tspan>
+    <tspan x="350" dy="30">to see how it ends.&#8221;</tspan>
+  </text>
+</svg>
