@@ -5,6 +5,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 const movies: { title: string; year: string; imdb: string; description: string }[] = [
   {
+    title: "Margin Call",
+    year: "2011",
+    imdb: "https://www.imdb.com/title/tt1615147/",
+    description: "Margin Call is probably my favorite movie about finance. It's criminally underrated, but those who know it light up when you mention it, like you've found a fellow member of a small club. The story unfolds in about four rooms over a single sleepless night, and it never feels small. There's no crash montage or chaotic trading floor, just people in offices talking. Somehow, that's more tense than any thriller with a body count. Every performance is top-notch, and Jeremy Irons plays one of the most incredible characters in film history. He's so good as the CEO that I often have to pause the movie just to absorb what he's doing before I can continue. Sometimes, I'll go to YouTube and watch him speak in that movie, no plot, no context, just him talking. It's an unbelievable film, and one of my favorite scenes features Kevin Spacey in Brooklyn Heights. He talks about being an engineer and building a bridge, counting all the years and lives he supposedly saved with it. He thinks he has a profound point, and then Paul Bettany cuts in with, Some people want to take the long ride home, and it's brilliant. That exchange captures the essence of the whole movie. Every grand justification meets a flat, honest line that deflates it. It's one of the best movies ever made, and I'd argue nothing else comes close to capturing the quiet, bloodless way real money actually blows up.",
+  },
+  {
     title: "Sorcerer",
     year: "1977",
     imdb: "https://www.imdb.com/title/tt0076740/",
@@ -68,15 +74,16 @@ const movies: { title: string; year: string; imdb: string; description: string }
   <div class="movies-list" style="margin-top: 1.5rem;">
     {movies.map((movie, index) => {
       const cartoonMap: { [key: number]: string } = {
-        0: "sorcerer",
-        1: "enter-the-void",
-        2: "sexy-beast",
-        3: "michael-clayton",
-        4: "rogue-trader",
-        5: "dear-zachary",
-        6: "wonder-boys",
-        7: "shotgun-stories",
-        8: "overnight",
+        0: "margin-call",
+        1: "sorcerer",
+        2: "enter-the-void",
+        3: "sexy-beast",
+        4: "michael-clayton",
+        5: "rogue-trader",
+        6: "dear-zachary",
+        7: "wonder-boys",
+        8: "shotgun-stories",
+        9: "overnight",
       };
       return (
         <article class="movie-card">
