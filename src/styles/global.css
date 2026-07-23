@@ -43,6 +43,27 @@ body.no-grid {
   background-image: none;
 }
 
+/* A brick smokestack (a personal landmark) as a quiet corner signature.
+   Fixed to the viewport, behind all content, and non-interactive. */
+.smokestack-mark {
+  position: fixed;
+  right: clamp(0.5rem, 3vw, 2.5rem);
+  bottom: 0;
+  height: min(56vh, 440px);
+  width: auto;
+  opacity: 0.12;
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Keep it off narrow screens, where it would crowd the content. */
+@media (max-width: 700px) {
+  .smokestack-mark {
+    display: none;
+  }
+}
+
 a {
   color: inherit;
 }

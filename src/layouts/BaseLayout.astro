@@ -65,6 +65,7 @@ const imageURL = new URL(image, Astro.url.origin).href;
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet" />
   </head>
   <body class={plainReading ? "no-grid" : undefined}>
+    <img class="smokestack-mark" src="/smokestack.svg" alt="" aria-hidden="true" />
     <div class={`site ${wide ? "site--wide" : ""}`}>
       <nav class="nav">
         <a class="nav__name" href="/">Matthew R. Kenney</a>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 480" role="img" aria-label="Brick smokestack">
+  <path d="M34,470 L39,60 L36,50 L35,42 L37,38 L63,38 L65,42 L64,50 L61,60 L66,470 L34,470 Z" fill="#3a3a38"/>
+  <!-- cap bands -->
+  <line x1="35" y1="42" x2="65" y2="42" stroke="#fdfdfb" stroke-width="1" opacity="0.5"/>
+  <line x1="36" y1="50" x2="64" y2="50" stroke="#fdfdfb" stroke-width="1" opacity="0.5"/>
+  <!-- brick courses -->
+  <line x1="38.2" y1="120" x2="61.8" y2="120" stroke="#fdfdfb" stroke-width="0.8" opacity="0.42"/>
+  <line x1="37.6" y1="190" x2="62.4" y2="190" stroke="#fdfdfb" stroke-width="0.8" opacity="0.42"/>
+  <line x1="37.0" y1="260" x2="63.0" y2="260" stroke="#fdfdfb" stroke-width="0.8" opacity="0.42"/>
+  <line x1="36.3" y1="330" x2="63.7" y2="330" stroke="#fdfdfb" stroke-width="0.8" opacity="0.42"/>
+  <line x1="35.7" y1="400" x2="64.3" y2="400" stroke="#fdfdfb" stroke-width="0.8" opacity="0.42"/>
+</svg>
