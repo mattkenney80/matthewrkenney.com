@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 680">
+  <defs>
+    <style>
+      .ink { fill: none; stroke: #1a1a1a; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+      .thin { fill: none; stroke: #1a1a1a; stroke-width: 1.6; stroke-linecap: round; }
+      .cap { font-family: Georgia, "Times New Roman", serif; font-style: italic; font-size: 24px; fill: #1a1a1a; }
+      .dot { fill: #1a1a1a; }
+    </style>
+  </defs>
+
+  <!-- panel -->
+  <rect x="12" y="12" width="876" height="656" fill="#fafaf8"/>
+  <rect x="12" y="12" width="876" height="656" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  <!-- caption divider -->
+  <line x1="12" y1="556" x2="888" y2="556" stroke="#1a1a1a" stroke-width="2"/>
+
+  <!-- ground -->
+  <line x1="55" y1="470" x2="845" y2="470" class="ink"/>
+
+  <!-- ===== fallen cyclist (left) ===== -->
+  <!-- head -->
+  <circle cx="178" cy="430" r="24" class="ink"/>
+  <!-- reaching arm + small tumbled square (a phone/wallet) -->
+  <path d="M198 442 Q214 424 232 416" class="ink"/>
+  <rect x="236" y="404" width="20" height="20" transform="rotate(18 246 414)" class="thin"/>
+  <!-- body sprawled to the ground -->
+  <path d="M188 452 Q220 462 250 468" class="ink"/>
+  <!-- bent legs in the air -->
+  <path d="M250 468 L236 440 L256 430" class="ink"/>
+  <path d="M250 468 L276 462" class="ink"/>
+  <!-- sprawl / skid line along the road -->
+  <path d="M256 470 L430 470" class="thin"/>
+  <!-- rock in the road -->
+  <path d="M430 470 L448 452 L470 470" class="ink"/>
+
+  <!-- ===== bicycle, front wheel gone (center) ===== -->
+  <!-- rear wheel -->
+  <circle cx="590" cy="438" r="32" class="ink"/>
+  <circle cx="590" cy="438" r="2.5" class="dot"/>
+  <!-- frame -->
+  <path d="M590 438 L632 452 L648 402 Z" class="ink"/>
+  <path d="M632 452 L700 452" class="thin"/>
+  <path d="M648 402 L706 406" class="ink"/>
+  <path d="M700 452 L706 406" class="ink"/>
+  <!-- seat -->
+  <line x1="636" y1="398" x2="662" y2="398" class="ink"/>
+  <!-- handlebars -->
+  <path d="M706 406 L706 388 L724 384" class="ink"/>
+  <line x1="700" y1="388" x2="716" y2="386" class="thin"/>
+  <!-- empty front fork (the wheel that left) -->
+  <path d="M706 406 L712 452" class="ink"/>
+  <!-- crank + pedal -->
+  <circle cx="700" cy="452" r="3" class="dot"/>
+  <path d="M700 452 L690 466 L678 464" class="thin"/>
+
+  <!-- ===== bystander with the detached wheel (right) ===== -->
+  <!-- head + puzzled mouth -->
+  <circle cx="762" cy="412" r="20" class="ink"/>
+  <line x1="756" y1="418" x2="768" y2="418" class="thin"/>
+  <!-- body -->
+  <line x1="762" y1="432" x2="762" y2="460" class="ink"/>
+  <!-- arm gesturing at the wheel -->
+  <path d="M762 442 Q782 444 800 442" class="ink"/>
+  <!-- other arm -->
+  <path d="M762 442 L748 456" class="ink"/>
+  <!-- legs -->
+  <path d="M762 460 L752 470" class="ink"/>
+  <path d="M762 460 L772 470" class="ink"/>
+
+  <!-- the runaway front wheel, propped up -->
+  <circle cx="826" cy="432" r="34" class="ink"/>
+  <circle cx="826" cy="432" r="3" class="dot"/>
+  <!-- 8 spokes -->
+  <line x1="826" y1="432" x2="826" y2="398" class="thin"/>
+  <line x1="826" y1="432" x2="826" y2="466" class="thin"/>
+  <line x1="826" y1="432" x2="792" y2="432" class="thin"/>
+  <line x1="826" y1="432" x2="860" y2="432" class="thin"/>
+  <line x1="826" y1="432" x2="802" y2="408" class="thin"/>
+  <line x1="826" y1="432" x2="850" y2="408" class="thin"/>
+  <line x1="826" y1="432" x2="802" y2="456" class="thin"/>
+  <line x1="826" y1="432" x2="850" y2="456" class="thin"/>
+  <!-- little prop stand -->
+  <path d="M812 462 L806 470" class="thin"/>
+  <path d="M840 462 L846 470" class="thin"/>
+
+  <!-- ===== caption ===== -->
+  <text x="450" y="596" text-anchor="middle" class="cap">the wheel rolled off down the street</text>
+  <text x="450" y="624" text-anchor="middle" class="cap">like everything else that ever left me.</text>
+  <text x="450" y="652" text-anchor="middle" class="cap">some guy asked if i wanted to sue.</text>
+</svg>
