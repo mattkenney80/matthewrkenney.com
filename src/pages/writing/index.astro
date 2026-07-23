@@ -3,7 +3,7 @@ export const prerender = false;
 
 import { env } from "cloudflare:workers";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { articleTags, formatDate, type Article } from "../../lib/articles";
+import { articleTags, formatDate, slugify, type Article } from "../../lib/articles";
 import { isSectionVisible } from "../../lib/settings";
 
 const { DB } = env;
@@ -16,6 +16,11 @@ const { results } = await DB.prepare(
   "SELECT * FROM articles WHERE published = 1 ORDER BY date DESC, id DESC"
 ).all<Article>();
 const posts = results ?? [];
+
+// Every unique tag across published writing, for the browse row.
+const allTags = [...new Set(posts.flatMap((post) => articleTags(post)))].sort((a, b) =>
+  a.localeCompare(b, "en", { sensitivity: "base" })
+);
 ---
 
 <BaseLayout title="Writing" description="Essays, notes, and short posts.">
@@ -23,15 +28,27 @@ const posts = results ?? [];
   {posts.length === 0 ? (
     <p class="lede">Nothing published yet.</p>
   ) : (
-    <ul class="post-list">
-      {posts.map((post) => (
-        <li>
-          <a class="post-list__title" href={`/writing/${post.slug}`}>{post.title}</a>
-          <p class="meta">{formatDate(post.date)}</p>
-          {post.description && <p>{post.description}</p>}
-          {articleTags(post).map((tag) => <span class="tag">{tag}</span>)}
-        </li>
-      ))}
-    </ul>
+    <>
+      {allTags.length > 0 && (
+        <p class="tag-row">
+          <span class="tag-row__label">Browse by tag:</span>
+          {allTags.map((tag) => (
+            <a class="tag" href={`/writing/tag/${slugify(tag)}`}>{tag}</a>
+          ))}
+        </p>
+      )}
+      <ul class="post-list">
+        {posts.map((post) => (
+          <li>
+            <a class="post-list__title" href={`/writing/${post.slug}`}>{post.title}</a>
+            <p class="meta">{formatDate(post.date)}</p>
+            {post.description && <p>{post.description}</p>}
+            {articleTags(post).map((tag) => (
+              <a class="tag" href={`/writing/tag/${slugify(tag)}`}>{tag}</a>
+            ))}
+          </li>
+        ))}
+      </ul>
+    </>
   )}
 </BaseLayout>

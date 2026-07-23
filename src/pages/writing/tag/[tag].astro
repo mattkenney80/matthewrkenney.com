@@ -1,0 +1,51 @@
+---
+export const prerender = false;
+
+import { env } from "cloudflare:workers";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { articleTags, formatDate, slugify, type Article } from "../../../lib/articles";
+import { isSectionVisible } from "../../../lib/settings";
+
+const { DB } = env;
+
+// Hidden section => individual tag pages are unreachable too.
+if (!(await isSectionVisible(DB, "writing"))) {
+  return Astro.rewrite("/404");
+}
+
+const param = slugify(String(Astro.params.tag ?? ""));
+
+const { results } = await DB.prepare(
+  "SELECT * FROM articles WHERE published = 1 ORDER BY date DESC, id DESC"
+).all<Article>();
+const all = results ?? [];
+
+const posts = all.filter((post) => articleTags(post).some((t) => slugify(t) === param));
+
+// Unknown tag (or no published posts under it) => 404.
+if (posts.length === 0) {
+  return Astro.rewrite("/404");
+}
+
+// Show the tag's original casing rather than the slug.
+const label = articleTags(posts[0]).find((t) => slugify(t) === param) ?? param;
+---
+
+<BaseLayout title={`Writing tagged “${label}”`} description={`Essays and notes tagged ${label}.`}>
+  <p class="meta" style="margin-bottom: 0.5rem;"><a href="/writing">&larr; All writing</a></p>
+  <h1>Tagged: {label}</h1>
+  <p class="lede">{posts.length} {posts.length === 1 ? "piece" : "pieces"}.</p>
+
+  <ul class="post-list" style="margin-top: 1.5rem;">
+    {posts.map((post) => (
+      <li>
+        <a class="post-list__title" href={`/writing/${post.slug}`}>{post.title}</a>
+        <p class="meta">{formatDate(post.date)}</p>
+        {post.description && <p>{post.description}</p>}
+        {articleTags(post).map((tag) => (
+          <a class="tag" href={`/writing/tag/${slugify(tag)}`}>{tag}</a>
+        ))}
+      </li>
+    ))}
+  </ul>
+</BaseLayout>

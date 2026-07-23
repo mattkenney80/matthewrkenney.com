@@ -4,7 +4,7 @@ export const prerender = false;
 import { env } from "cloudflare:workers";
 import { marked } from "marked";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { articleTags, formatDate, type Article } from "../../lib/articles";
+import { articleTags, formatDate, slugify, type Article } from "../../lib/articles";
 import { isSectionVisible } from "../../lib/settings";
 
 const { DB } = env;
@@ -36,7 +36,7 @@ const html = marked.parse(post.body);
   <article>
     <h1>{post.title}</h1>
     <p class="meta">{formatDate(post.date)}</p>
-    {articleTags(post).map((tag) => <span class="tag">{tag}</span>)}
+    {articleTags(post).map((tag) => <a class="tag" href={`/writing/tag/${slugify(tag)}`}>{tag}</a>)}
     <div class="prose" style="margin-top: 1.5rem;" set:html={html} />
   </article>
   <p><a href="/writing">&larr; All writing</a></p>

@@ -171,6 +171,32 @@ h2 { font-size: 1.375rem; margin: 0 0 var(--space-1); }
   margin-right: var(--space-1);
 }
 
+/* Tags that link to a filtered view. */
+a.tag {
+  text-decoration: none;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+a.tag:hover {
+  color: var(--color-ink);
+  border-color: var(--color-ink);
+}
+
+/* "Browse by tag" row on the writing index. */
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1);
+  margin: 0 0 var(--space-5);
+}
+
+.tag-row__label {
+  font-size: 0.75rem;
+  color: var(--color-ink-soft);
+  margin-right: var(--space-1);
+}
+
 /* Photography: intro text above a gallery */
 
 .gallery-intro {
