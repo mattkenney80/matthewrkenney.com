@@ -26,11 +26,21 @@ html {
 
 body {
   margin: 0;
-  background: var(--color-bg);
+  background-color: var(--color-bg);
+  /* Faint graph-paper grid (26px cells, ~4% ink). */
+  background-image:
+    linear-gradient(rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+  background-size: 26px 26px;
   color: var(--color-ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   line-height: 1.5;
+}
+
+/* Article pages stay plain for comfortable long-form reading. */
+body.no-grid {
+  background-image: none;
 }
 
 a {

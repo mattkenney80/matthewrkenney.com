@@ -28,6 +28,9 @@ const nav = await getNavVisibility(env?.DB);
 const isActive = (href: string) =>
   href === "/" ? pathname === "/" : pathname.startsWith(href);
 
+// Article pages render plain (no grid) for comfortable long-form reading.
+const plainReading = type === "article";
+
 const pageTitle = title === "Home" ? "Matthew R. Kenney" : `${title} · Matthew R. Kenney`;
 const canonicalURL = Astro.url.href;
 const imageURL = new URL(image, Astro.url.origin).href;
@@ -61,7 +64,7 @@ const imageURL = new URL(image, Astro.url.origin).href;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet" />
   </head>
-  <body>
+  <body class={plainReading ? "no-grid" : undefined}>
     <div class={`site ${wide ? "site--wide" : ""}`}>
       <nav class="nav">
         <a class="nav__name" href="/">Matthew R. Kenney</a>
