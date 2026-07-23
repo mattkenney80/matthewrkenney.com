@@ -9,6 +9,12 @@ if (!(await isSectionVisible(env?.DB, "movies"))) {
 
 const movies: { title: string; year: string; imdb: string; description: string }[] = [
   {
+    title: "Locke",
+    year: "2013",
+    imdb: "https://www.imdb.com/title/tt2692904/",
+    description: "Locke is the greatest film ever made about project management, and I will not be taking questions. Ivan Locke, played by Tom Hardy at the absolute peak of his quiet-menace powers, spends the entire runtime doing what every project manager dreads: managing a critical delivery remotely, at night, with no margin for error, while his personal life comes apart on the other lines. The next morning is the largest concrete pour in European history outside of nuclear and military projects, and Locke is not going to be there. So he does the only thing a real professional can do. He gets in the car, he opens his contact list, and he project-manages the whole thing by phone at seventy miles an hour. The concrete is poor. The rebar might be wrong. Nobody confirmed the road closures. His deputy is drunk and terrified. And Locke, calm as a man working a problem he built himself, takes it one call at a time. Here is the clever thing the film understands about concrete: once you mix it, it cannot be unmixed. There is a window, and then the window closes, and whatever you poured is what you have forever. It is exactly like getting somebody pregnant. The moment happens, the chemistry starts, and a fuse is lit that no phone call can put out. That is the engine of the whole movie. Locke made a decision months ago in a hotel room, and now the concrete of that choice is setting whether he likes it or not, right alongside the actual pour he cannot stop and the actual child being born on line two. The concrete and the marriage and the pregnancy are all the same problem: an irreversible reaction with a timer running. Every relationship is a load-bearing wall, and he is watching them fail inspection in real time. It is all dialogue, all in one car, all in one take of a life coming apart, and it never once feels small. Flawless concept, flawless execution. Five stars, would let this man manage my sprint.",
+  },
+  {
     title: "Sneakers",
     year: "1992",
     imdb: "https://www.imdb.com/title/tt0105435/",
@@ -84,17 +90,18 @@ const movies: { title: string; year: string; imdb: string; description: string }
   <div class="movies-list" style="margin-top: 1.5rem;">
     {movies.map((movie, index) => {
       const cartoonMap: { [key: number]: string } = {
-        0: "sneakers",
-        1: "margin-call",
-        2: "sorcerer",
-        3: "enter-the-void",
-        4: "sexy-beast",
-        5: "michael-clayton",
-        6: "rogue-trader",
-        7: "dear-zachary",
-        8: "wonder-boys",
-        9: "shotgun-stories",
-        10: "overnight",
+        0: "locke",
+        1: "sneakers",
+        2: "margin-call",
+        3: "sorcerer",
+        4: "enter-the-void",
+        5: "sexy-beast",
+        6: "michael-clayton",
+        7: "rogue-trader",
+        8: "dear-zachary",
+        9: "wonder-boys",
+        10: "shotgun-stories",
+        11: "overnight",
       };
       return (
         <article class="movie-card">

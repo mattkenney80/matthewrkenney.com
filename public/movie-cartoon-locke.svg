@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 320">
+  <defs>
+    <style>
+      .cartoon-text { font-family: Georgia, serif; font-size: 12px; fill: #1a1a1a; }
+      .cartoon-quote { font-family: Georgia, serif; font-size: 11px; fill: #555; font-style: italic; }
+      .ink { fill: none; stroke: #1a1a1a; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .thin { fill: none; stroke: #1a1a1a; stroke-width: 1.2; stroke-linecap: round; }
+      .dot { fill: #1a1a1a; }
+    </style>
+  </defs>
+
+  <rect width="560" height="320" fill="#fafaf8"/>
+  <rect x="8" y="8" width="544" height="304" fill="none" stroke="#333" stroke-width="1.5"/>
+
+  <!-- ground -->
+  <line x1="40" y1="220" x2="520" y2="220" class="ink"/>
+  <line x1="70" y1="212" x2="82" y2="205" class="thin"/>
+  <line x1="90" y1="214" x2="102" y2="207" class="thin"/>
+  <line x1="250" y1="214" x2="262" y2="207" class="thin"/>
+  <line x1="470" y1="212" x2="482" y2="205" class="thin"/>
+
+  <!-- ===== two figures with halos (a couple) ===== -->
+  <!-- figure 1 -->
+  <ellipse cx="120" cy="90" rx="26" ry="8" class="ink"/>
+  <circle cx="120" cy="112" r="14" class="ink"/>
+  <line x1="120" y1="126" x2="120" y2="175" class="ink"/>
+  <path d="M120 138 L96 158" class="ink"/>
+  <path d="M120 138 L150 128" class="ink"/>
+  <path d="M120 175 L104 220" class="ink"/>
+  <path d="M120 175 L136 220" class="ink"/>
+
+  <!-- figure 2 (arm raised toward the belly) -->
+  <ellipse cx="180" cy="96" rx="26" ry="8" class="ink"/>
+  <circle cx="180" cy="118" r="14" class="ink"/>
+  <line x1="180" y1="132" x2="180" y2="178" class="ink"/>
+  <path d="M180 144 L152 132" class="ink"/>
+  <path d="M180 144 L214 156" class="ink"/>
+  <path d="M180 178 L164 220" class="ink"/>
+  <path d="M180 178 L196 220" class="ink"/>
+
+  <!-- ===== the belly (a pregnant swell / a poured mound) ===== -->
+  <!-- mound at the base -->
+  <path d="M300 220 Q322 196 348 220 Z" fill="#e6e4de" stroke="#1a1a1a" stroke-width="1.6"/>
+  <!-- motion lines rising from the mound -->
+  <path d="M318 196 Q314 184 320 174" class="thin"/>
+  <path d="M328 196 Q326 182 330 172" class="thin"/>
+  <path d="M338 198 Q338 184 342 176" class="thin"/>
+  <!-- neck / stem up to the big round belly -->
+  <path d="M320 196 L360 150" class="ink"/>
+  <path d="M338 200 L372 158" class="ink"/>
+  <!-- the swell -->
+  <ellipse cx="430" cy="120" rx="78" ry="66" class="ink"/>
+  <!-- navel -->
+  <circle cx="430" cy="128" r="6" class="ink"/>
+  <!-- stretch marks / shine lines -->
+  <line x1="392" y1="88" x2="410" y2="76" class="thin"/>
+  <line x1="404" y1="82" x2="424" y2="72" class="thin"/>
+  <line x1="418" y1="80" x2="438" y2="72" class="thin"/>
+  <line x1="386" y1="100" x2="404" y2="92" class="thin"/>
+
+  <!-- quote -->
+  <text x="30" y="272" class="cartoon-quote" text-anchor="start">
+    "The thing about concrete, kid, is it sets. Same as a belly.
+  </text>
+  <text x="30" y="287" class="cartoon-quote" text-anchor="start">
+    Nobody ever poured either one back into the truck."
+  </text>
+
+  <text x="30" y="303" class="cartoon-text" font-size="10" text-anchor="start" fill="#999">
+    — Locke
+  </text>
+</svg>
