@@ -24,7 +24,12 @@ const series = (await getCollection("photography", ({ data }) => !data.draft)).s
         <a class="gallery-card" href={`/photography/${entry.id}`}>
           <div class="cover-frame">
             {entry.data.cover && (
-              <Image src={entry.data.cover} alt={entry.data.title} width={800} />
+              <Image
+                src={entry.data.cover}
+                alt={entry.data.title}
+                widths={[400, 800]}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+              />
             )}
           </div>
           <span class="gallery-card__title">{entry.data.title}</span>
