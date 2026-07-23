@@ -49,9 +49,9 @@ body.no-grid {
   position: fixed;
   right: clamp(0.5rem, 3vw, 2.5rem);
   bottom: 0;
-  height: min(56vh, 440px);
+  height: min(62vh, 485px);
   width: auto;
-  opacity: 0.2;
+  opacity: 0.26;
   z-index: -1;
   pointer-events: none;
   user-select: none;

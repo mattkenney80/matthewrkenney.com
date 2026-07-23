@@ -1,5 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 480" role="img" aria-label="Brick smokestack">
-  <path d="M34,470 L39,60 L36,50 L35,42 L37,38 L63,38 L65,42 L64,50 L61,60 L66,470 L34,470 Z" fill="#3a3a38"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -110 100 580" role="img" aria-label="Brick smokestack with a light wisp of smoke">
+  <!-- light smoke rising and fanning out from the top -->
+  <g fill="none" stroke="#8f8f8c" stroke-linecap="round">
+    <path d="M48,32 C45,14 52,0 47,-22 C42,-44 48,-62 43,-90" stroke-width="2.2" opacity="0.48"/>
+    <path d="M54,32 C58,16 51,2 57,-20 C62,-40 57,-58 62,-84" stroke-width="2" opacity="0.4"/>
+    <path d="M51,32 C50,22 53,12 51,-4" stroke-width="1.7" opacity="0.3"/>
+  </g>
+  <ellipse cx="52" cy="-86" rx="9" ry="6" fill="#8f8f8c" opacity="0.12"/>
+
+  <!-- the stack -->
+  <path d="M34,470 L39,60 L36,50 L35,42 L37,38 L63,38 L65,42 L64,50 L61,60 L66,470 L34,470 Z" fill="#333331"/>
   <!-- cap bands -->
   <line x1="35" y1="42" x2="65" y2="42" stroke="#fdfdfb" stroke-width="1" opacity="0.5"/>
   <line x1="36" y1="50" x2="64" y2="50" stroke="#fdfdfb" stroke-width="1" opacity="0.5"/>
