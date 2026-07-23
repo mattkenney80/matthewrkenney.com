@@ -1,0 +1,12 @@
+---
+export const prerender = false;
+
+import { env } from "cloudflare:workers";
+
+if (Astro.request.method === "POST") {
+  const { DB } = env;
+  await DB.prepare("DELETE FROM articles WHERE id = ?").bind(Astro.params.id).run();
+}
+
+return Astro.redirect("/admin");
+---

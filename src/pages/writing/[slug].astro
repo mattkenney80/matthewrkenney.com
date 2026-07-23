@@ -1,0 +1,43 @@
+---
+export const prerender = false;
+
+import { env } from "cloudflare:workers";
+import { marked } from "marked";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { articleTags, formatDate, type Article } from "../../lib/articles";
+import { isSectionVisible } from "../../lib/settings";
+
+const { DB } = env;
+
+// If the Writing section is hidden, individual articles are unreachable too.
+if (!(await isSectionVisible(DB, "writing"))) {
+  return Astro.rewrite("/404");
+}
+
+const post = await DB.prepare(
+  "SELECT * FROM articles WHERE slug = ? AND published = 1"
+)
+  .bind(Astro.params.slug)
+  .first<Article>();
+
+if (!post) {
+  return Astro.rewrite("/404");
+}
+
+const html = marked.parse(post.body);
+---
+
+<BaseLayout
+  title={post.title}
+  description={post.description ?? undefined}
+  image={`/og/writing/${post.slug}.png`}
+  type="article"
+>
+  <article>
+    <h1>{post.title}</h1>
+    <p class="meta">{formatDate(post.date)}</p>
+    {articleTags(post).map((tag) => <span class="tag">{tag}</span>)}
+    <div class="prose" style="margin-top: 1.5rem;" set:html={html} />
+  </article>
+  <p><a href="/writing">&larr; All writing</a></p>
+</BaseLayout>

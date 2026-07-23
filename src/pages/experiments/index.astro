@@ -1,5 +1,11 @@
 ---
+import { env } from "cloudflare:workers";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { isSectionVisible } from "../../lib/settings";
+
+if (!(await isSectionVisible(env?.DB, "experiments"))) {
+  return Astro.rewrite("/404");
+}
 
 const experiments: { title: string; description: string; href?: string }[] = [
   {

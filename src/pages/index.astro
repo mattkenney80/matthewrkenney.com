@@ -1,8 +1,11 @@
 ---
-
+import { env } from "cloudflare:workers";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getNavVisibility } from "../lib/settings";
+
+const nav = await getNavVisibility(env?.DB);
 
 const featuredMovie = {
   title: "Sorcerer",
@@ -25,31 +28,33 @@ const nightPhotoCover = nightPhotography?.data.cover;
     </p>
   </section>
 
-  <section style="margin-top: 2.5rem;">
-    <h2>Featured movie</h2>
-    <article style="margin-bottom: 1.5rem;">
-      <h3 style="margin: 0 0 0.25rem 0; font-size: 1.25rem; font-weight: 600;">
-        <a href={featuredMovie.imdb} target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
-          {featuredMovie.title}
-        </a>
-      </h3>
-      <p style="margin: 0 0 1.25rem 0; font-size: 0.875rem; color: var(--color-ink-soft);">{featuredMovie.year}</p>
+  {nav.movies && (
+    <section style="margin-top: 2.5rem;">
+      <h2>Featured movie</h2>
+      <article style="margin-bottom: 1.5rem;">
+        <h3 style="margin: 0 0 0.25rem 0; font-size: 1.25rem; font-weight: 600;">
+          <a href={featuredMovie.imdb} target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
+            {featuredMovie.title}
+          </a>
+        </h3>
+        <p style="margin: 0 0 1.25rem 0; font-size: 0.875rem; color: var(--color-ink-soft);">{featuredMovie.year}</p>
 
-      <div style="margin: 1.5rem 0; max-width: 550px;">
-        <img
-          src={`/movie-cartoon-${featuredMovie.cartoon}.svg`}
-          alt={`Cartoon for ${featuredMovie.title}`}
-          loading="lazy"
-          style="width: 100%; height: auto; display: block; border: 1px solid #e8e8e6; border-radius: 2px;"
-        />
-      </div>
+        <div style="margin: 1.5rem 0; max-width: 550px;">
+          <img
+            src={`/movie-cartoon-${featuredMovie.cartoon}.svg`}
+            alt={`Cartoon for ${featuredMovie.title}`}
+            loading="lazy"
+            style="width: 100%; height: auto; display: block; border: 1px solid #e8e8e6; border-radius: 2px;"
+          />
+        </div>
 
-      <p style="margin-top: 1.5rem; line-height: 1.6;">{featuredMovie.description}</p>
-    </article>
-    <p><a href="/movies">All movies &rarr;</a></p>
-  </section>
+        <p style="margin-top: 1.5rem; line-height: 1.6;">{featuredMovie.description}</p>
+      </article>
+      <p><a href="/movies">All movies &rarr;</a></p>
+    </section>
+  )}
 
-  {nightPhotography && (
+  {nav.photography && nightPhotography && (
     <section style="margin-top: 2.5rem;">
       <h2>Featured photos</h2>
       <a class="gallery-card" href="/photography/night-photography">

@@ -1,0 +1,86 @@
+---
+export const prerender = false;
+
+import { env } from "cloudflare:workers";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getNavVisibility, setSectionVisibility, SECTIONS, type SectionKey } from "../../lib/settings";
+
+const { DB } = env;
+let saved = false;
+
+if (Astro.request.method === "POST") {
+  const form = await Astro.request.formData();
+  for (const { key } of SECTIONS) {
+    // A checked box submits its value; an unchecked box submits nothing.
+    await setSectionVisibility(DB, key as SectionKey, form.get(`nav_${key}`) != null);
+  }
+  saved = true;
+}
+
+const nav = await getNavVisibility(DB);
+---
+
+<BaseLayout title="Admin · Site settings" robots="noindex, nofollow">
+  <div class="admin-bar">
+    <h1>Site settings</h1>
+    <a class="btn" href="/admin">&larr; Articles</a>
+  </div>
+
+  {saved && (
+    <p class="notice notice--ok">Saved.</p>
+  )}
+
+  <p class="lede">Show or hide entire sections. A hidden section disappears from the
+    nav and its pages return 404 for everyone.</p>
+
+  <form method="POST" class="settings-form">
+    {SECTIONS.map(({ key, label, href }) => (
+      <label class="toggle-row">
+        <input type="checkbox" name={`nav_${key}`} checked={nav[key]} />
+        <span class="toggle-row__label">{label}</span>
+        <span class="toggle-row__href">{href}</span>
+      </label>
+    ))}
+    <div style="margin-top: 1.5rem;">
+      <button class="btn btn--primary" type="submit">Save settings</button>
+    </div>
+  </form>
+</BaseLayout>
+
+<style>
+  .settings-form {
+    margin-top: 1.5rem;
+    max-width: 30rem;
+  }
+  .toggle-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--color-border, #e5e2da);
+    cursor: pointer;
+  }
+  .toggle-row input {
+    width: 1.1rem;
+    height: 1.1rem;
+    flex: none;
+  }
+  .toggle-row__label {
+    font-weight: 600;
+  }
+  .toggle-row__href {
+    margin-left: auto;
+    color: var(--color-ink-soft, #6b6862);
+    font-size: 0.875rem;
+  }
+  .notice {
+    padding: 0.6rem 0.9rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+  .notice--ok {
+    background: #e7f6ec;
+    border: 1px solid #97d3ab;
+    color: #1e7a42;
+  }
+</style>

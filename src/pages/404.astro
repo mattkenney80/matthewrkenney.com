@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+// Own the status so any `Astro.rewrite("/404")` returns a real 404.
+Astro.response.status = 404;
 ---
 
 <BaseLayout title="Not found">
