@@ -9,6 +9,12 @@ if (!(await isSectionVisible(env?.DB, "movies"))) {
 
 const movies: { title: string; year: string; imdb: string; description: string }[] = [
   {
+    title: "Sneakers",
+    year: "1992",
+    imdb: "https://www.imdb.com/title/tt0105435/",
+    description: "Some movies announce their greatness with spectacle. Sneakers (1992) does it with charm, wit, and a cast so deep you almost take it for granted. Robert Redford anchors the film as Martin Bishop, the reformed hacker leading a ragtag crew of security specialists into a caper involving a black box that can break any encryption on earth. But the miracle of Sneakers is that Redford, at his most effortlessly likable, is arguably only the third-most compelling person on screen. Ben Kingsley, as the old friend turned quiet zealot, gives the villainy a wounded conviction that lingers. River Phoenix, all youthful swagger and nervous energy, reminds you of everything the movies lost too soon. Pick a favorite, and you'll change your mind an hour later. That's not indecision. That's an ensemble working at full strength, with Poitier, Aykroyd, Strathairn, and McDonnell rounding out one of the great screen teams. What keeps Sneakers from being merely clever is that it never wastes a frame. The plot moves like clockwork, and the banter crackles without ever curdling into smugness. The film's ideas about privacy, secrets, and who really controls information feel less like a period piece and more like a prophecy. It is, from first scene to last, a genuine gem, the rare thriller that trusts its audience to be smart and rewards them for it. Somehow it has slipped through the culture's fingers, mentioned in passing when it should be a touchstone. It deserves far better. If you've never seen it, fix that. If you have, you already know it's perfect.",
+  },
+  {
     title: "Margin Call",
     year: "2011",
     imdb: "https://www.imdb.com/title/tt1615147/",
@@ -78,16 +84,17 @@ const movies: { title: string; year: string; imdb: string; description: string }
   <div class="movies-list" style="margin-top: 1.5rem;">
     {movies.map((movie, index) => {
       const cartoonMap: { [key: number]: string } = {
-        0: "margin-call",
-        1: "sorcerer",
-        2: "enter-the-void",
-        3: "sexy-beast",
-        4: "michael-clayton",
-        5: "rogue-trader",
-        6: "dear-zachary",
-        7: "wonder-boys",
-        8: "shotgun-stories",
-        9: "overnight",
+        0: "sneakers",
+        1: "margin-call",
+        2: "sorcerer",
+        3: "enter-the-void",
+        4: "sexy-beast",
+        5: "michael-clayton",
+        6: "rogue-trader",
+        7: "dear-zachary",
+        8: "wonder-boys",
+        9: "shotgun-stories",
+        10: "overnight",
       };
       return (
         <article class="movie-card">
