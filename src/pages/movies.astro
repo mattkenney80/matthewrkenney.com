@@ -9,6 +9,12 @@ if (!(await isSectionVisible(env?.DB, "movies"))) {
 
 const movies: { title: string; year: string; imdb: string; description: string }[] = [
   {
+    title: "Breakdown",
+    year: "1997",
+    imdb: "https://www.imdb.com/title/tt0118926/",
+    description: "Breakdown looks like a nothing thriller. Car dies in the desert, wife disappears, husband goes and gets her back, ninety minutes, roll credits. What sticks is that Jonathan Mostow made a movie about class and mostly kept his mouth shut about it. Kurt Russell plays Jeff Taylor soft, and he does it on purpose. Here is a man who could play Snake Plissken without waking up, and instead he gives you a jumpy Eastern transplant floating across the Southwest in a spotless new Jeep, off to some sunlit second act in San Diego. Russell sands every last bit of cool off himself and hands you a guy who flinches. The Jeep is the loudest thing on screen. It is money with the doors locked, and the locals read it the second it rolls past, the way a shark reads a limp in the water. The car does not quit on its own. Somebody got to it. Jeff was a mark before he said a word, and the movie caught this particular strain of American class dread about fifteen years before it was polite to bring up at parties. Which is what makes JT Walsh so bad for your blood pressure. One of his last parts, and he does not play a monster. He plays a trucker. Ballcap, gut, an easy reasonable way of talking, a wife, a kid, a house with the lights on. When he looks at Jeff and says, flat, that he has never laid eyes on him, the fear is not operatic. It is clerical. It is a working man who decided a while back that guys like Jeff are just inventory, and who drives home and sleeps like a baby. The resentment sits right there under the floorboards. These are people living in the busted country most films use as a backdrop, and they have done the math: the couple in the nice car has it, so now it is theirs. Mostow never stops to explain any of this, which is the whole reason it lands. The scene at Red's place turns the thing over in your hands. It is not a lair. It is a home. The ransom is just the family business. The horror of Breakdown was never that the wife is gone. It is that the man who took her figures he had it coming.",
+  },
+  {
     title: "The Insider",
     year: "1999",
     imdb: "https://www.imdb.com/title/tt0140888/",
@@ -96,19 +102,20 @@ const movies: { title: string; year: string; imdb: string; description: string }
   <div class="movies-list" style="margin-top: 1.5rem;">
     {movies.map((movie, index) => {
       const cartoonMap: { [key: number]: string } = {
-        0: "the-insider",
-        1: "locke",
-        2: "sneakers",
-        3: "margin-call",
-        4: "sorcerer",
-        5: "enter-the-void",
-        6: "sexy-beast",
-        7: "michael-clayton",
-        8: "rogue-trader",
-        9: "dear-zachary",
-        10: "wonder-boys",
-        11: "shotgun-stories",
-        12: "overnight",
+        0: "breakdown",
+        1: "the-insider",
+        2: "locke",
+        3: "sneakers",
+        4: "margin-call",
+        5: "sorcerer",
+        6: "enter-the-void",
+        7: "sexy-beast",
+        8: "michael-clayton",
+        9: "rogue-trader",
+        10: "dear-zachary",
+        11: "wonder-boys",
+        12: "shotgun-stories",
+        13: "overnight",
       };
       return (
         <article class="movie-card">

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 320">
+  <defs>
+    <style>
+      .cartoon-text { font-family: Georgia, serif; font-size: 12px; fill: #1a1a1a; }
+      .cartoon-quote { font-family: Georgia, serif; font-size: 11px; fill: #555; font-style: italic; }
+      .ink { fill: none; stroke: #1a1a1a; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+      .thin { fill: none; stroke: #1a1a1a; stroke-width: 1.1; stroke-linecap: round; }
+    </style>
+  </defs>
+
+  <rect width="560" height="320" fill="#fafaf8"/>
+  <rect x="8" y="8" width="544" height="304" fill="none" stroke="#333" stroke-width="1.5"/>
+
+  <!-- sun -->
+  <circle cx="470" cy="65" r="26" class="thin"/>
+
+  <!-- ground -->
+  <line x1="30" y1="222" x2="530" y2="222" class="ink"/>
+
+  <!-- rock/building block, left -->
+  <rect x="55" y="150" width="65" height="72" class="ink"/>
+
+  <!-- lone tree, right -->
+  <line x1="475" y1="222" x2="475" y2="165" class="ink"/>
+  <path d="M460 175 Q475 155 490 175" class="thin"/>
+
+  <!-- ===== the broken-down SUV ===== -->
+  <!-- body -->
+  <path d="M170 220 L170 190 L215 155 L305 155 L305 190 L330 190 L330 220 Z" class="ink"/>
+  <!-- window divider -->
+  <line x1="255" y1="155" x2="255" y2="190" class="thin"/>
+  <line x1="215" y1="155" x2="215" y2="190" class="thin"/>
+  <!-- door line -->
+  <line x1="255" y1="190" x2="255" y2="220" class="thin"/>
+  <line x1="260" y1="203" x2="270" y2="203" class="thin"/>
+  <!-- side mark -->
+  <line x1="200" y1="175" x2="200" y2="185" class="thin"/>
+
+  <!-- wheels -->
+  <circle cx="200" cy="222" r="16" class="ink"/>
+  <circle cx="290" cy="222" r="16" class="ink"/>
+
+  <!-- hood raised, propped open -->
+  <path d="M170 190 L145 155 L160 148" class="ink"/>
+  <!-- steam/heat lines rising from engine -->
+  <path d="M148 145 Q145 135 150 128" class="thin"/>
+  <path d="M158 143 Q155 132 160 124" class="thin"/>
+  <path d="M168 148 Q167 138 172 130" class="thin"/>
+  <!-- radiator grille under the hood -->
+  <rect x="150" y="185" width="20" height="28" class="thin"/>
+  <line x1="150" y1="195" x2="170" y2="195" class="thin"/>
+  <line x1="150" y1="204" x2="170" y2="204" class="thin"/>
+
+  <!-- driver, leaning out the window, ballcap -->
+  <circle cx="280" cy="147" r="12" class="ink"/>
+  <path d="M270 141 Q280 132 292 140" class="thin"/>
+  <line x1="288" y1="152" x2="300" y2="158" class="thin"/>
+
+  <!-- quote -->
+  <text x="30" y="257" class="cartoon-quote" text-anchor="start">
+    "Fifty grand of engine, zero grand of luck.
+  </text>
+  <text x="30" y="272" class="cartoon-quote" text-anchor="start">
+    Out here, the desert don't take trade-ins."
+  </text>
+
+  <text x="30" y="293" class="cartoon-text" font-size="10" text-anchor="start" fill="#999">
+    — Breakdown
+  </text>
+</svg>
