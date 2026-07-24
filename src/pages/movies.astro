@@ -9,6 +9,12 @@ if (!(await isSectionVisible(env?.DB, "movies"))) {
 
 const movies: { title: string; year: string; imdb: string; description: string }[] = [
   {
+    title: "Bone Tomahawk",
+    year: "2015",
+    imdb: "https://www.imdb.com/title/tt1596345/",
+    description: "Ninety of this movie's 132 minutes are four men on horses talking about hotel bathtubs. Half the people who bounce off this film bounce off exactly there, and I want to be clear that it's the good part. Zahler builds a horror western the way you'd build a trap, which is patiently and mostly out of materials that don't look like a trap: a flea circus anecdote, an argument about whether a book survives being read in the tub, a limp that gets a little worse every day until that limp is the only clock the movie has. Kurt Russell plays the sheriff as ballast, an enormous movie star who spends two hours declining to do anything interesting, on purpose. Richard Jenkins takes all the room that leaves him and turns the comic sidekick into the loneliest man in the territory. Nobody here gets a lesson. Brooder is an unrepentant bigot and also the most competent man on the trip, and the movie flatly declines to reconcile that for you. The cave people are a blank, and I think the film knows it. Its anthropology is pointed at the four men on the horses. Then it makes you pay for the company. When the film finally does the thing it's infamous for, it holds wide and lets it happen in silence, no score, no cutting, no relish, like a man writing down what he saw. That's the whole method, and it's why the film respects your attention in a way almost nothing else does. It assumes you'll sit through an hour of men discussing bathtubs because men discussing bathtubs is interesting, and it's right, and it knows exactly what that hour has bought. The rescue succeeds and is still a catastrophe. The last scene is two men who can't walk, sitting in the dirt, waiting. It's a film built on the wager that if you make an audience care first you never have to manipulate them later, and Zahler wins the bet.",
+  },
+  {
     title: "Breakdown",
     year: "1997",
     imdb: "https://www.imdb.com/title/tt0118926/",
@@ -102,20 +108,21 @@ const movies: { title: string; year: string; imdb: string; description: string }
   <div class="movies-list" style="margin-top: 1.5rem;">
     {movies.map((movie, index) => {
       const cartoonMap: { [key: number]: string } = {
-        0: "breakdown",
-        1: "the-insider",
-        2: "locke",
-        3: "sneakers",
-        4: "margin-call",
-        5: "sorcerer",
-        6: "enter-the-void",
-        7: "sexy-beast",
-        8: "michael-clayton",
-        9: "rogue-trader",
-        10: "dear-zachary",
-        11: "wonder-boys",
-        12: "shotgun-stories",
-        13: "overnight",
+        0: "bone-tomahawk",
+        1: "breakdown",
+        2: "the-insider",
+        3: "locke",
+        4: "sneakers",
+        5: "margin-call",
+        6: "sorcerer",
+        7: "enter-the-void",
+        8: "sexy-beast",
+        9: "michael-clayton",
+        10: "rogue-trader",
+        11: "dear-zachary",
+        12: "wonder-boys",
+        13: "shotgun-stories",
+        14: "overnight",
       };
       return (
         <article class="movie-card">

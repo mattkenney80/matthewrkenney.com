@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 320">
+  <defs>
+    <style>
+      .cartoon-text { font-family: Georgia, serif; font-size: 12px; fill: #1a1a1a; }
+      .cartoon-quote { font-family: Georgia, serif; font-size: 11px; fill: #555; font-style: italic; }
+      .ink { fill: none; stroke: #1a1a1a; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+      .thin { fill: none; stroke: #1a1a1a; stroke-width: 1; stroke-linecap: round; }
+    </style>
+  </defs>
+
+  <rect width="560" height="320" fill="#fafaf8"/>
+  <rect x="8" y="8" width="544" height="304" fill="none" stroke="#333" stroke-width="1.5"/>
+
+  <!-- distant cloud lines -->
+  <path d="M40 45 Q80 40 115 45" class="thin"/>
+  <path d="M420 35 Q470 30 510 35" class="thin"/>
+  <path d="M430 50 Q460 47 490 50" class="thin"/>
+
+  <!-- mesa, background -->
+  <path d="M30 150 L95 150 L120 118 L175 118 L200 150 L280 150" class="ink"/>
+  <line x1="128" y1="118" x2="128" y2="150" class="thin"/>
+  <line x1="143" y1="118" x2="143" y2="150" class="thin"/>
+  <line x1="158" y1="118" x2="158" y2="150" class="thin"/>
+  <line x1="173" y1="118" x2="173" y2="150" class="thin"/>
+
+  <!-- circling birds -->
+  <path d="M300 140 Q315 122 330 140 Q345 122 360 140" class="thin"/>
+
+  <!-- horizon line -->
+  <path d="M20 165 Q280 158 540 168" class="ink"/>
+
+  <!-- scrub brush marks -->
+  <path d="M45 200 q6 -6 12 0" class="thin"/>
+  <path d="M85 240 q6 -6 12 0" class="thin"/>
+  <path d="M470 205 q6 -6 12 0" class="thin"/>
+
+  <!-- ===== four riders, evenly spaced ===== -->
+  <!-- rider 1 -->
+  <g transform="translate(130,0)">
+    <ellipse cx="0" cy="192" rx="34" ry="17" fill="#1a1a1a"/>
+    <path d="M-30 192 L-34 218" class="thin"/>
+    <line x1="-16" y1="205" x2="-16" y2="228" class="thin"/>
+    <line x1="16" y1="205" x2="16" y2="228" class="thin"/>
+    <line x1="-24" y1="230" x2="-8" y2="230" class="thin"/>
+    <line x1="8" y1="234" x2="24" y2="234" class="thin"/>
+    <path d="M6 178 L20 168" class="ink"/>
+    <circle cx="26" cy="164" r="6" fill="#1a1a1a"/>
+    <circle cx="4" cy="170" r="9" fill="#1a1a1a"/>
+    <path d="M-4 163 L12 160 L11 166 L-3 168 Z" fill="#1a1a1a"/>
+  </g>
+
+  <!-- rider 2 -->
+  <g transform="translate(240,6)">
+    <ellipse cx="0" cy="190" rx="32" ry="16" fill="#1a1a1a"/>
+    <path d="M-28 190 L-32 214" class="thin"/>
+    <line x1="-15" y1="202" x2="-15" y2="223" class="thin"/>
+    <line x1="15" y1="202" x2="15" y2="223" class="thin"/>
+    <line x1="-22" y1="225" x2="-7" y2="225" class="thin"/>
+    <line x1="7" y1="229" x2="22" y2="229" class="thin"/>
+    <path d="M6 176 L19 167" class="ink"/>
+    <circle cx="24" cy="163" r="5.5" fill="#1a1a1a"/>
+    <circle cx="4" cy="168" r="8.5" fill="#1a1a1a"/>
+    <path d="M-3 161 L11 158 L10 164 L-2 166 Z" fill="#1a1a1a"/>
+  </g>
+
+  <!-- rider 3 -->
+  <g transform="translate(360,4)">
+    <ellipse cx="0" cy="191" rx="33" ry="16.5" fill="#1a1a1a"/>
+    <path d="M-29 191 L-33 216" class="thin"/>
+    <line x1="-15" y1="203" x2="-15" y2="225" class="thin"/>
+    <line x1="15" y1="203" x2="15" y2="225" class="thin"/>
+    <line x1="-23" y1="227" x2="-7" y2="227" class="thin"/>
+    <line x1="7" y1="231" x2="23" y2="231" class="thin"/>
+    <path d="M6 177 L19 168" class="ink"/>
+    <circle cx="25" cy="164" r="5.8" fill="#1a1a1a"/>
+    <circle cx="4" cy="169" r="8.8" fill="#1a1a1a"/>
+    <path d="M-3 162 L11 159 L10 165 L-2 167 Z" fill="#1a1a1a"/>
+  </g>
+
+  <!-- rider 4 -->
+  <g transform="translate(470,2)">
+    <ellipse cx="0" cy="192" rx="34" ry="17" fill="#1a1a1a"/>
+    <path d="M-30 192 L-34 218" class="thin"/>
+    <line x1="-16" y1="205" x2="-16" y2="228" class="thin"/>
+    <line x1="16" y1="205" x2="16" y2="228" class="thin"/>
+    <line x1="-24" y1="230" x2="-8" y2="230" class="thin"/>
+    <line x1="8" y1="234" x2="24" y2="234" class="thin"/>
+    <path d="M6 178 L20 168" class="ink"/>
+    <circle cx="26" cy="164" r="6" fill="#1a1a1a"/>
+    <circle cx="4" cy="170" r="9" fill="#1a1a1a"/>
+    <path d="M-4 163 L12 160 L11 166 L-3 168 Z" fill="#1a1a1a"/>
+  </g>
+
+  <!-- quote -->
+  <text x="30" y="257" class="cartoon-quote" text-anchor="start">
+    "I rode out here to save a woman and mostly
+  </text>
+  <text x="30" y="272" class="cartoon-quote" text-anchor="start">
+    I've been thinking about a bathtub."
+  </text>
+
+  <text x="30" y="293" class="cartoon-text" font-size="10" text-anchor="start" fill="#999">
+    — Bone Tomahawk
+  </text>
+</svg>
