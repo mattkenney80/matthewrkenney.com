@@ -9,6 +9,12 @@ if (!(await isSectionVisible(env?.DB, "movies"))) {
 
 const movies: { title: string; year: string; imdb: string; description: string }[] = [
   {
+    title: "The Insider",
+    year: "1999",
+    imdb: "https://www.imdb.com/title/tt0140888/",
+    description: "Michael Mann's The Insider is a thriller where the ticking clock is a man's conscience. Russell Crowe, buried under prosthetic weight and twenty extra years, plays biochemist Jeffrey Wigand, who understood exactly what \"impact boosting\" meant: ammonia chemistry to free the nicotine, a delivery system engineered to keep you hooked. That's the horror of it. Crowe doesn't play a saint who stumbles onto the truth. He plays a specialist whose entire value is being very good at a thing, and the thing is poison. He took the job to keep his kids insured, and the movie never lets him off the hook for that math. It just makes you sit inside it. What Mann nails is how a technical brain metabolizes a moral crisis: slowly, defensively, in the language of NDAs and risk assessment. Wigand doesn't have an epiphany. He runs the calculation until the numbers stop protecting him. Al Pacino's producer, all agitated conviction against Crowe's coiled hesitation, is the engine that finally forces it. It's a movie about what expertise costs the person who has it, the loneliness of being the only guy in the room who understands the chemistry and therefore the only one who can't pretend he doesn't. Heavier to carry than any car chase.",
+  },
+  {
     title: "Locke",
     year: "2013",
     imdb: "https://www.imdb.com/title/tt2692904/",
@@ -90,18 +96,19 @@ const movies: { title: string; year: string; imdb: string; description: string }
   <div class="movies-list" style="margin-top: 1.5rem;">
     {movies.map((movie, index) => {
       const cartoonMap: { [key: number]: string } = {
-        0: "locke",
-        1: "sneakers",
-        2: "margin-call",
-        3: "sorcerer",
-        4: "enter-the-void",
-        5: "sexy-beast",
-        6: "michael-clayton",
-        7: "rogue-trader",
-        8: "dear-zachary",
-        9: "wonder-boys",
-        10: "shotgun-stories",
-        11: "overnight",
+        0: "the-insider",
+        1: "locke",
+        2: "sneakers",
+        3: "margin-call",
+        4: "sorcerer",
+        5: "enter-the-void",
+        6: "sexy-beast",
+        7: "michael-clayton",
+        8: "rogue-trader",
+        9: "dear-zachary",
+        10: "wonder-boys",
+        11: "shotgun-stories",
+        12: "overnight",
       };
       return (
         <article class="movie-card">
