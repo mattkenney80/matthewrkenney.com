@@ -9,6 +9,12 @@ if (!(await isSectionVisible(env?.DB, "movies"))) {
 
 const movies: { title: string; year: string; imdb: string; description: string }[] = [
   {
+    title: "Collateral",
+    year: "2004",
+    imdb: "https://www.imdb.com/title/tt0369339/",
+    description: "I think this is Cruise's greatest role. There's something in this movie. It even opens with a Jason Statham cameo in the first 20 seconds, handing off the briefcase to Vincent at the airport, and Jason Statham makes everything better. Vincent is almost biblical. He just looks at the world in calculations. He's so fast and so efficient, and the way he speaks, the short sentences, the clarity of it, is kind of chilling. Mann takes the most hopeful movie star alive and drains all of it out of him. Gray hair, gray suit, a guy dressed like the concrete he moves through. What's left is pure calculation with nothing behind it, and that's what makes him so scary. Max is the opposite. He has a lot of hope. He's hopeful in the world, and he just seems like he's hoping for a better life. But the movie is honest about the fact that his hope is also his prison. Twelve years driving a cab \"temporarily.\" His limo company is a laminated postcard on his visor, a vacation he takes in his head instead of a life he actually builds. Vincent sees that right away and goes after it, and the strange part is he's the only person in Max's life telling him the truth. He doesn't just terrorize Max, he accidentally builds him. By the time Max wrecks the cab he's using Vincent's own adapt-or-die logic against him, and the roles flip. Max gets decisive, and Vincent dies exactly like the story he told at the start. A guy on the MTA, and nobody notices. Mann shot this on digital video because it could see the LA night in a way film couldn't. The hazy orange sky, the empty streets, the coyotes crossing the road while both men watch. The city is the third character, huge and indifferent, the perfect stage for a debate between a man who believes in nothing and a man who believes in someday. And Max wins, but only barely, and only once his hope stops being a postcard and becomes something he actually acts on. That's what stays with you.",
+  },
+  {
     title: "Bone Tomahawk",
     year: "2015",
     imdb: "https://www.imdb.com/title/tt1596345/",
@@ -108,21 +114,22 @@ const movies: { title: string; year: string; imdb: string; description: string }
   <div class="movies-list" style="margin-top: 1.5rem;">
     {movies.map((movie, index) => {
       const cartoonMap: { [key: number]: string } = {
-        0: "bone-tomahawk",
-        1: "breakdown",
-        2: "the-insider",
-        3: "locke",
-        4: "sneakers",
-        5: "margin-call",
-        6: "sorcerer",
-        7: "enter-the-void",
-        8: "sexy-beast",
-        9: "michael-clayton",
-        10: "rogue-trader",
-        11: "dear-zachary",
-        12: "wonder-boys",
-        13: "shotgun-stories",
-        14: "overnight",
+        0: "collateral",
+        1: "bone-tomahawk",
+        2: "breakdown",
+        3: "the-insider",
+        4: "locke",
+        5: "sneakers",
+        6: "margin-call",
+        7: "sorcerer",
+        8: "enter-the-void",
+        9: "sexy-beast",
+        10: "michael-clayton",
+        11: "rogue-trader",
+        12: "dear-zachary",
+        13: "wonder-boys",
+        14: "shotgun-stories",
+        15: "overnight",
       };
       return (
         <article class="movie-card">

@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 320">
+  <defs>
+    <style>
+      .cartoon-text { font-family: Georgia, serif; font-size: 12px; fill: #1a1a1a; }
+      .cartoon-quote { font-family: Georgia, serif; font-size: 11px; fill: #555; font-style: italic; }
+      .ink { fill: none; stroke: #1a1a1a; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+      .thin { fill: none; stroke: #1a1a1a; stroke-width: 1; stroke-linecap: round; }
+    </style>
+  </defs>
+
+  <rect width="560" height="320" fill="#fafaf8"/>
+  <rect x="8" y="8" width="544" height="304" fill="none" stroke="#333" stroke-width="1.5"/>
+
+  <!-- moon -->
+  <circle cx="490" cy="42" r="16" class="thin"/>
+  <path d="M486 34 Q492 40 486 46" class="thin"/>
+
+  <!-- skyline, left cluster -->
+  <rect x="45" y="90" width="24" height="60" class="thin"/>
+  <rect x="72" y="65" width="30" height="85" class="thin"/>
+  <rect x="105" y="105" width="26" height="45" class="thin"/>
+  <line x1="50" y1="102" x2="58" y2="102" class="thin"/>
+  <line x1="50" y1="114" x2="58" y2="114" class="thin"/>
+  <line x1="78" y1="78" x2="86" y2="78" class="thin"/>
+  <line x1="78" y1="92" x2="86" y2="92" class="thin"/>
+  <line x1="78" y1="106" x2="86" y2="106" class="thin"/>
+  <line x1="110" y1="115" x2="117" y2="115" class="thin"/>
+  <line x1="110" y1="128" x2="117" y2="128" class="thin"/>
+
+  <!-- skyline, right cluster -->
+  <rect x="405" y="98" width="28" height="52" class="thin"/>
+  <rect x="437" y="118" width="24" height="32" class="thin"/>
+  <rect x="465" y="88" width="30" height="62" class="thin"/>
+  <line x1="410" y1="110" x2="418" y2="110" class="thin"/>
+  <line x1="410" y1="122" x2="418" y2="122" class="thin"/>
+  <line x1="470" y1="100" x2="478" y2="100" class="thin"/>
+  <line x1="470" y1="113" x2="478" y2="113" class="thin"/>
+  <line x1="470" y1="126" x2="478" y2="126" class="thin"/>
+
+  <!-- horizon / road -->
+  <line x1="20" y1="150" x2="540" y2="150" class="ink"/>
+
+  <!-- speed lines -->
+  <line x1="30" y1="192" x2="65" y2="192" class="thin"/>
+  <line x1="35" y1="204" x2="75" y2="204" class="thin"/>
+
+  <!-- ===== the car ===== -->
+  <path d="M95 225 Q95 200 130 198 L150 172 Q160 162 178 162 L205 162 Q212 162 214 170 L216 198 L300 198 Q320 175 345 172 Q360 170 368 182 L378 225 Z" class="ink"/>
+  <!-- roofline detail -->
+  <path d="M150 172 L178 172" class="thin"/>
+  <!-- windshield/door pillar -->
+  <line x1="216" y1="170" x2="216" y2="222" class="thin"/>
+  <!-- driver head/shoulders -->
+  <circle cx="190" cy="192" r="11" class="ink"/>
+  <path d="M180 200 L180 222" class="thin"/>
+  <path d="M182 188 Q190 183 198 188" class="thin"/>
+  <!-- passenger head/shoulders -->
+  <circle cx="255" cy="188" r="11" class="ink"/>
+  <path d="M244 196 L244 222" class="thin"/>
+  <rect x="245" y="205" width="20" height="14" fill="#e6e4de" stroke="#1a1a1a" stroke-width="1"/>
+  <!-- laminated postcard on the visor -->
+  <rect x="176" y="182" width="16" height="12" fill="#e6e4de" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(-8 184 188)"/>
+  <!-- wheels -->
+  <circle cx="145" cy="225" r="17" class="ink"/>
+  <circle cx="145" cy="225" r="6" class="ink"/>
+  <circle cx="340" cy="225" r="17" class="ink"/>
+  <circle cx="340" cy="225" r="6" class="ink"/>
+  <!-- ground shadow marks -->
+  <line x1="205" y1="230" x2="255" y2="230" class="thin"/>
+  <line x1="380" y1="220" x2="400" y2="215" class="thin"/>
+
+  <!-- quote -->
+  <text x="30" y="255" class="cartoon-quote" text-anchor="start">
+    "Hope is just despair that hasn't checked the meter yet."
+  </text>
+
+  <text x="30" y="276" class="cartoon-text" font-size="10" text-anchor="start" fill="#999">
+    — Collateral
+  </text>
+</svg>
