@@ -9,6 +9,12 @@ if (!(await isSectionVisible(env?.DB, "movies"))) {
 
 const movies: { title: string; year: string; imdb: string; description: string }[] = [
   {
+    title: "Pacific Heights",
+    year: "1990",
+    imdb: "https://www.imdb.com/title/tt0100427/",
+    description: "I keep coming back to Pacific Heights because it is the only horror movie I know of where the monster's weapon is paperwork. Michael Keaton's Carter Hayes barely raises his voice. He just moves in, stops paying, learns the tenant statutes better than the people who own the building, and lets time do the rest. I grew up in a house like that one. My mother bought something a little past what she should have, though she could carry it. Then my grandmother got sick, and every plan we had for that house stopped. My uncles ended up living there. They never put a hole in a wall or bred anything in the crawlspace. The damage they did was the kind that doesn't show up on a walkthrough. That is Carter exactly. He doesn't destroy the building so much as he destroys the people who thought owning it meant they were in charge. The performance I can't shake, though, is Matthew Modine as Drake Goodwin. Modine plays a yuppie the way you'd play a man who has never once been told no, with total sincerity and zero self-awareness. He wants the Victorian, cannot afford the Victorian, buys it anyway, and figures the tenants will cover the gap. When the numbers get tight he stops screening people and starts hoping. He is horrid in that role, and I mean that as a compliment so complete that I can't look at him in anything else now. I see him in Full Metal Jacket and some part of my brain is still waiting for him to co-sign a loan. John Schlesinger shoots San Francisco real estate the way other directors shoot haunted houses, like the address itself is the threat. The smartest thing he does is hand the climax to Melanie Griffith instead of Drake. She has to clean up a mess she was never fully consulted on. I know what that feels like. I watched my mother do it.",
+  },
+  {
     title: "Collateral",
     year: "2004",
     imdb: "https://www.imdb.com/title/tt0369339/",
@@ -114,22 +120,23 @@ const movies: { title: string; year: string; imdb: string; description: string }
   <div class="movies-list" style="margin-top: 1.5rem;">
     {movies.map((movie, index) => {
       const cartoonMap: { [key: number]: string } = {
-        0: "collateral",
-        1: "bone-tomahawk",
-        2: "breakdown",
-        3: "the-insider",
-        4: "locke",
-        5: "sneakers",
-        6: "margin-call",
-        7: "sorcerer",
-        8: "enter-the-void",
-        9: "sexy-beast",
-        10: "michael-clayton",
-        11: "rogue-trader",
-        12: "dear-zachary",
-        13: "wonder-boys",
-        14: "shotgun-stories",
-        15: "overnight",
+        0: "pacific-heights",
+        1: "collateral",
+        2: "bone-tomahawk",
+        3: "breakdown",
+        4: "the-insider",
+        5: "locke",
+        6: "sneakers",
+        7: "margin-call",
+        8: "sorcerer",
+        9: "enter-the-void",
+        10: "sexy-beast",
+        11: "michael-clayton",
+        12: "rogue-trader",
+        13: "dear-zachary",
+        14: "wonder-boys",
+        15: "shotgun-stories",
+        16: "overnight",
       };
       return (
         <article class="movie-card">

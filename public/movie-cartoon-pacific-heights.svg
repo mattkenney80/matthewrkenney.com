@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 320">
+  <defs>
+    <style>
+      .cartoon-text { font-family: Georgia, serif; font-size: 12px; fill: #1a1a1a; }
+      .cartoon-quote { font-family: Georgia, serif; font-size: 11px; fill: #555; font-style: italic; }
+      .ink { fill: none; stroke: #1a1a1a; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+      .thin { fill: none; stroke: #1a1a1a; stroke-width: 1; stroke-linecap: round; }
+    </style>
+  </defs>
+
+  <rect width="560" height="320" fill="#fafaf8"/>
+  <rect x="8" y="8" width="544" height="304" fill="none" stroke="#333" stroke-width="1.5"/>
+
+  <!-- moon -->
+  <circle cx="470" cy="45" r="16" class="thin"/>
+
+  <!-- drifting clouds -->
+  <ellipse cx="120" cy="55" rx="55" ry="7" class="thin"/>
+  <ellipse cx="60" cy="72" rx="45" ry="6" class="thin"/>
+  <ellipse cx="380" cy="80" rx="60" ry="7" class="thin"/>
+
+  <!-- neighboring rooftops, low, both sides -->
+  <rect x="55" y="150" width="60" height="72" class="thin"/>
+  <line x1="65" y1="168" x2="75" y2="168" class="thin"/>
+  <line x1="90" y1="168" x2="100" y2="168" class="thin"/>
+  <line x1="65" y1="190" x2="75" y2="190" class="thin"/>
+  <line x1="90" y1="190" x2="100" y2="190" class="thin"/>
+
+  <rect x="445" y="145" width="58" height="77" class="thin"/>
+  <line x1="454" y1="163" x2="464" y2="163" class="thin"/>
+  <line x1="478" y1="163" x2="488" y2="163" class="thin"/>
+  <line x1="454" y1="185" x2="464" y2="185" class="thin"/>
+  <line x1="478" y1="185" x2="488" y2="185" class="thin"/>
+
+  <!-- ground -->
+  <line x1="20" y1="222" x2="540" y2="222" class="ink"/>
+
+  <!-- ===== the Victorian rowhouse ===== -->
+  <!-- peaked roof -->
+  <path d="M195 100 L280 55 L365 100" class="ink"/>
+  <line x1="280" y1="55" x2="280" y2="72" class="thin"/>
+
+  <!-- facade -->
+  <rect x="205" y="100" width="150" height="122" class="ink"/>
+
+  <!-- three floor divider lines -->
+  <line x1="205" y1="138" x2="355" y2="138" class="thin"/>
+  <line x1="205" y1="176" x2="355" y2="176" class="thin"/>
+
+  <!-- windows, top floor -->
+  <rect x="222" y="112" width="20" height="24" class="thin"/>
+  <rect x="270" y="112" width="20" height="24" class="thin"/>
+  <rect x="318" y="112" width="20" height="24" class="thin"/>
+
+  <!-- windows, middle floor -->
+  <rect x="222" y="150" width="20" height="24" class="thin"/>
+  <rect x="270" y="150" width="20" height="24" class="thin"/>
+  <rect x="318" y="150" width="20" height="24" class="thin"/>
+
+  <!-- windows, lower floor: one lit -->
+  <rect x="222" y="188" width="20" height="24" class="thin"/>
+  <rect x="270" y="188" width="20" height="24" class="thin"/>
+  <rect x="318" y="188" width="20" height="24" fill="#f4d976" stroke="#1a1a1a" stroke-width="1"/>
+
+  <!-- door -->
+  <rect x="265" y="200" width="30" height="22" class="thin"/>
+  <circle cx="288" cy="211" r="1.4" fill="#1a1a1a"/>
+  <line x1="255" y1="222" x2="305" y2="222" class="thin"/>
+
+  <!-- quote -->
+  <text x="30" y="248" class="cartoon-quote" text-anchor="start">
+    "I paid for the roof. He lived under it. The bank called it
+  </text>
+  <text x="30" y="263" class="cartoon-quote" text-anchor="start">
+    equity. I called it a light left on all night."
+  </text>
+
+  <text x="30" y="284" class="cartoon-text" font-size="10" text-anchor="start" fill="#999">
+    — Pacific Heights
+  </text>
+</svg>
