@@ -9,6 +9,12 @@ if (!(await isSectionVisible(env?.DB, "movies"))) {
 
 const movies: { title: string; year: string; imdb: string; description: string }[] = [
   {
+    title: "Sleepers",
+    year: "1996",
+    imdb: "https://www.imdb.com/title/tt0117665/",
+    description: "Sleepers is a movie about the worst thing that can happen to a kid, and Levinson has the nerve to make you wait for it. Hell's Kitchen in 1966 gets a whole act before anything goes wrong: the stoops, the church basement, the fire escapes, the specific way four boys can own eight square blocks and think that's the entire world. I'm Irish Catholic and had a childhood I'd call eventful, so I'll cop to the neighborhood landing on me harder than it might on you. But the patience isn't nostalgia, it's construction. Levinson makes you love the place first, so that Wilkinson reads as an eviction instead of a plot point. It also means the thirteen years of drift afterward feel like something done to these men rather than something they chose. Most revenge movies are in a hurry. This one behaves like it has all the time in the world, because the damage did too. The scaffolding is The Count of Monte Cristo, and the movie is honest about it. Father Bobby reads it aloud to the boys, they argue about whether Dantès got what he wanted, and then the back half quietly runs the same play: the wrongful confinement, the long silence, the accidental encounter, the accounting. It gives those later scenes a shape that a straight courtroom picture wouldn't have earned. That structure delivers you to the Kevin Bacon scene, which is top five for me. Nokes at a table with a beer, John and Tommy in the door, the half-second where his face does the arithmetic, and then the line I love most in the whole picture: \"We'll take those brisket sandwiches to go.\" Under it runs \"Witchi Tai To\" by Everything Is Everything, which is marvelous and haunting and doing something no orchestral swell could manage. No monologue, no speech about justice, just that drifting chant over a man who has run out of road. Levinson spends two hours building toward it and then spends less than a minute on it, and the whole movie holds because of that ratio.",
+  },
+  {
     title: "Pacific Heights",
     year: "1990",
     imdb: "https://www.imdb.com/title/tt0100427/",
@@ -120,23 +126,24 @@ const movies: { title: string; year: string; imdb: string; description: string }
   <div class="movies-list" style="margin-top: 1.5rem;">
     {movies.map((movie, index) => {
       const cartoonMap: { [key: number]: string } = {
-        0: "pacific-heights",
-        1: "collateral",
-        2: "bone-tomahawk",
-        3: "breakdown",
-        4: "the-insider",
-        5: "locke",
-        6: "sneakers",
-        7: "margin-call",
-        8: "sorcerer",
-        9: "enter-the-void",
-        10: "sexy-beast",
-        11: "michael-clayton",
-        12: "rogue-trader",
-        13: "dear-zachary",
-        14: "wonder-boys",
-        15: "shotgun-stories",
-        16: "overnight",
+        0: "sleepers",
+        1: "pacific-heights",
+        2: "collateral",
+        3: "bone-tomahawk",
+        4: "breakdown",
+        5: "the-insider",
+        6: "locke",
+        7: "sneakers",
+        8: "margin-call",
+        9: "sorcerer",
+        10: "enter-the-void",
+        11: "sexy-beast",
+        12: "michael-clayton",
+        13: "rogue-trader",
+        14: "dear-zachary",
+        15: "wonder-boys",
+        16: "shotgun-stories",
+        17: "overnight",
       };
       return (
         <article class="movie-card">
