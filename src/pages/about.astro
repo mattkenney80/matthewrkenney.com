@@ -18,8 +18,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <p>&ldquo;There was that law of life, so cruel and so just, that one must grow or else pay more for remaining the same.&rdquo;</p>
     <cite>&mdash; Norman Mailer, 1955, <em>The Deer Park</em></cite>
   </blockquote>
+  <img src="/about-dogs.jpg" alt="The author's two dogs sharing an armchair" class="about-photo" />
   <p class="meta">
-    Matthew R. Kenney, Bloomfield, New Jersey, father of three, owner of two dogs with PTSD.
+    Matthew R. Kenney lives in Bloomfield, New Jersey, with his wife, three children, and two dogs
+    with PTSD. He is Catholic, and he is working on it.
   </p>
 </BaseLayout>
 
@@ -41,5 +43,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     font-style: normal;
     font-size: 0.875rem;
     color: var(--color-ink-soft);
+  }
+
+  .about-photo {
+    display: block;
+    width: 100%;
+    max-width: var(--measure);
+    height: auto;
+    border-radius: 2px;
+    margin: 2rem 0 1.5rem;
   }
 </style>
