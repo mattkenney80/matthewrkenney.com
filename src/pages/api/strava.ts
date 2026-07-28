@@ -1,10 +1,7 @@
-import type { PagesFunction } from '@cloudflare/workers-types';
+import type { APIRoute } from "astro";
+import { env } from "cloudflare:workers";
 
-interface Env {
-  STRAVA_CLIENT_ID?: string;
-  STRAVA_CLIENT_SECRET?: string;
-  STRAVA_REFRESH_TOKEN?: string;
-}
+export const prerender = false;
 
 const TTL_SECONDS = 12 * 60 * 60;
 const PER_PAGE = 200;
@@ -31,7 +28,7 @@ const slim = (a: any, locationLabel: string) => ({
   kudos: a.kudos_count ?? 0,
 });
 
-async function accessToken(env: Env): Promise<string> {
+async function accessToken(): Promise<string> {
   const r = await fetch("https://www.strava.com/oauth/token", {
     method: "POST",
     headers: { "content-type": "application/json" },
@@ -69,7 +66,12 @@ function clusterByStart(acts: any[]): { centroid: [number, number]; activities: 
     const ll = a.start_latlng;
     if (!Array.isArray(ll) || ll.length !== 2) continue;
     const key = ll.map((n: number) => n.toFixed(CLUSTER_PRECISION)).join(",");
-    (groups.get(key) ?? groups.set(key, []).get(key)!).push(a);
+    let bucket = groups.get(key);
+    if (!bucket) {
+      bucket = [];
+      groups.set(key, bucket);
+    }
+    bucket.push(a);
   }
   return [...groups.values()]
     .filter((g) => g.length >= MIN_CLUSTER_SIZE)
@@ -81,7 +83,10 @@ function clusterByStart(acts: any[]): { centroid: [number, number]; activities: 
     });
 }
 
-async function reverseGeocode(lat: number, lon: number): Promise<{ label: string; countryCode: string | null } | null> {
+async function reverseGeocode(
+  lat: number,
+  lon: number,
+): Promise<{ label: string; countryCode: string | null } | null> {
   const url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lon}&zoom=10&addressdetails=1`;
   const r = await fetch(url, {
     headers: {
@@ -113,16 +118,11 @@ async function labelByLocation(activities: any[]): Promise<Map<number, string>> 
   return labels;
 }
 
-export const onRequestGet: PagesFunction<Env> = async (context) => {
-  const { env, request } = context;
-
+export const GET: APIRoute = async ({ request }) => {
   if (!env.STRAVA_CLIENT_ID || !env.STRAVA_CLIENT_SECRET || !env.STRAVA_REFRESH_TOKEN) {
     return new Response(
-      JSON.stringify({
-        error: "not_configured",
-        detail: "Missing Strava credentials",
-      }),
-      { status: 503, headers: { "content-type": "application/json; charset=utf-8" } }
+      JSON.stringify({ error: "not_configured", detail: "Missing Strava credentials" }),
+      { status: 503, headers: { "content-type": "application/json; charset=utf-8" } },
     );
   }
 
@@ -132,7 +132,7 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
   if (hit) return hit;
 
   try {
-    const token = await accessToken(env);
+    const token = await accessToken();
     const list = await fetchAllActivities(token);
     const labels = await labelByLocation(list);
 
@@ -154,15 +154,12 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
         "cache-control": `public, max-age=${TTL_SECONDS}`,
       },
     });
-    context.waitUntil(cache.put(cacheKey, res.clone()));
+    await cache.put(cacheKey, res.clone());
     return res;
   } catch (err) {
-    return new Response(
-      JSON.stringify({ error: "upstream_failed", detail: String(err) }),
-      {
-        status: 502,
-        headers: { "content-type": "application/json; charset=utf-8" },
-      },
-    );
+    return new Response(JSON.stringify({ error: "upstream_failed", detail: String(err) }), {
+      status: 502,
+      headers: { "content-type": "application/json; charset=utf-8" },
+    });
   }
 };
