@@ -1,0 +1,64 @@
+---
+import { env } from "cloudflare:workers";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { isSectionVisible } from "../lib/settings";
+
+if (!(await isSectionVisible(env?.DB, "cartoons"))) {
+  return Astro.rewrite("/404");
+}
+
+const cartoons: { image: string; alt: string; caption: string }[] = [
+  {
+    image: "/cartoon-the-confessional.png",
+    alt: "A pristine institution on a hill draining a dark stream down into a city where people wait in line",
+    caption:
+      "It was the neatest theft in the republic's history: they took class, which is a thing you can count, and swapped it for identity, which is a thing you can only confess, and then charged tuition for the confessional.",
+  },
+];
+---
+
+<BaseLayout title="Cartoons" description="Editorial illustrations and the lines that go with them." wide>
+  <h1>Cartoons</h1>
+  <p class="lede">Images and the lines that go with them.</p>
+
+  <div class="cartoons-list">
+    {cartoons.map((c) => (
+      <figure class="cartoon-card">
+        <img src={c.image} alt={c.alt} loading="lazy" />
+        <figcaption class="cartoon-card__caption">{c.caption}</figcaption>
+      </figure>
+    ))}
+  </div>
+</BaseLayout>
+
+<style>
+  .cartoons-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    max-width: 46rem;
+    margin: 2rem auto 0;
+  }
+
+  .cartoon-card {
+    margin: 0;
+  }
+
+  .cartoon-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 2px;
+    border: 1px solid #e8e8e6;
+  }
+
+  .cartoon-card__caption {
+    margin-top: 1.25rem;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: var(--color-ink);
+    text-align: center;
+  }
+</style>
