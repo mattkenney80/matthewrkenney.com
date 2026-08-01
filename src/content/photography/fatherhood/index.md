@@ -40,6 +40,14 @@ photos:
     alt: "Fatherhood, photo 17"
   - src: "./IMG_6566.jpg"
     alt: "Fatherhood, photo 18"
+  - src: "./kids-maine.jpg"
+    alt: "Fatherhood, photo 19"
+  - src: "./seb-boat.jpg"
+    alt: "Fatherhood, photo 20"
+  - src: "./seb-fog.jpg"
+    alt: "Fatherhood, photo 21"
+  - src: "./seb-fog2.jpg"
+    alt: "Fatherhood, photo 22"
 ---
 
 My father passed away when I was ten. My parents divorced when I was two. His own father had abandoned him. Growing up, I was raised by women, which was a good thing. It taught me how to think from two different perspectives, and on balance that has been an asset my whole life.
