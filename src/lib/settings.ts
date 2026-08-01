@@ -2,20 +2,20 @@
 // Currently used for per-section nav visibility. Robust to a missing table or
 // rows: anything not explicitly turned off defaults to visible.
 
-export type SectionKey = "writing" | "photography" | "experiments" | "movies" | "cartoons";
+export type SectionKey = "writing" | "photography" | "experiments" | "movies" | "emblems";
 
 export const SECTIONS: { key: SectionKey; label: string; href: string }[] = [
   { key: "writing", label: "Writing", href: "/writing" },
   { key: "photography", label: "Photography", href: "/photography" },
   { key: "experiments", label: "Experiments", href: "/experiments" },
   { key: "movies", label: "Movies", href: "/movies" },
-  { key: "cartoons", label: "Cartoons", href: "/cartoons" },
+  { key: "emblems", label: "Emblems", href: "/emblems" },
 ];
 
 export type NavVisibility = Record<SectionKey, boolean>;
 
 function allVisible(): NavVisibility {
-  return { writing: true, photography: true, experiments: true, movies: true, cartoons: true };
+  return { writing: true, photography: true, experiments: true, movies: true, emblems: true };
 }
 
 // Read visibility for every section. Missing table/rows => visible.
