@@ -8,7 +8,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 let sent = false;
 let error: string | undefined;
-let draft = { name: "", email: "", city: "", favorites: "" };
+let draft = { name: "", email: "", city: "", favorites: "", question: "" };
 
 if (Astro.request.method === "POST") {
   const form = await Astro.request.formData();
@@ -16,9 +16,10 @@ if (Astro.request.method === "POST") {
   const email = String(form.get("email") ?? "").trim();
   const city = String(form.get("city") ?? "").trim();
   const favorites = String(form.get("favorites") ?? "").trim();
+  const question = String(form.get("question") ?? "").trim();
   const honeypot = String(form.get("website") ?? "").trim();
 
-  draft = { name, email, city, favorites };
+  draft = { name, email, city, favorites, question };
 
   if (honeypot) {
     // Bot filled the hidden field; pretend everything worked.
@@ -34,7 +35,7 @@ if (Astro.request.method === "POST") {
       msg.setSubject(`Contact form: ${name}`);
       msg.addMessage({
         contentType: "text/plain",
-        data: `Name: ${name}\nEmail: ${email}\nCity: ${city}\n\nFavorite Band, Book or Movie (or all):\n${favorites}\n`,
+        data: `Name: ${name}\nEmail: ${email}\nCity: ${city}\n\nFavorite Band, Book or Movie (or all):\n${favorites}\n\nQuestion:\n${question || "(none)"}\n`,
       });
 
       await env.CONTACT_EMAIL.send(
@@ -94,6 +95,10 @@ if (Astro.request.method === "POST") {
   ) : (
     <>
       <p class="lede">Have something to say? I read everything that comes through here.</p>
+      <p class="lede">
+        I'll mail you a free photo. Just let me know what size you want it printed in.
+        You got to buy your own frame.
+      </p>
       {error && <p class="admin-notice">{error}</p>}
       <form method="POST" style="max-width: var(--measure);">
         <div class="field">
@@ -111,6 +116,10 @@ if (Astro.request.method === "POST") {
         <div class="field">
           <label for="favorites">What is your favorite Band, Book or Movie or all?</label>
           <textarea id="favorites" name="favorites" rows="6" required>{draft.favorites}</textarea>
+        </div>
+        <div class="field">
+          <label for="question">What is your question?</label>
+          <textarea id="question" name="question" rows="6">{draft.question}</textarea>
         </div>
         <div class="field" style="position: absolute; left: -9999px;" aria-hidden="true">
           <label for="website">Website</label>

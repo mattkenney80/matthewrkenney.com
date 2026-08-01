@@ -50,6 +50,11 @@ const emblems: { image: string; alt: string; caption: string }[] = [
 <BaseLayout title="Emblems" description="Editorial illustrations and the lines that go with them." wide>
   <h1>Emblems</h1>
   <p class="lede">Images and the lines that go with them.</p>
+  <p class="emblems-note">
+    All the words on this page are mine. The images are made with Midjourney, which
+    I've been training toward a specific aesthetic. I do enjoy them. The pictures are
+    AI-generated. The text is not.
+  </p>
 
   <div class="emblems-list">
     {emblems.map((e) => {
@@ -68,6 +73,14 @@ const emblems: { image: string; alt: string; caption: string }[] = [
 </BaseLayout>
 
 <style>
+  .emblems-note {
+    max-width: var(--measure);
+    color: var(--color-ink-soft);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin: 0.75rem 0 0;
+  }
+
   .emblems-list {
     display: flex;
     flex-direction: column;
