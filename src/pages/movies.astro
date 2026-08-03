@@ -1,5 +1,8 @@
 ---
+export const prerender = false;
+
 import { env } from "cloudflare:workers";
+import { marked } from "marked";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { isSectionVisible } from "../lib/settings";
 
@@ -7,7 +10,25 @@ if (!(await isSectionVisible(env?.DB, "movies"))) {
   return Astro.rewrite("/404");
 }
 
-const movies: { title: string; year: string; imdb: string; description: string }[] = [
+// Some entries are full essays that also live in /writing. Rather than keeping two
+// copies of the text, those pull their body straight from the same D1 row, so an
+// edit to the article shows up in both places.
+type Movie = {
+  title: string;
+  year: string;
+  imdb: string;
+  description: string;
+  essaySlug?: string;
+};
+
+const movies: Movie[] = [
+  {
+    title: "Donnie Brasco",
+    year: "1997",
+    imdb: "https://www.imdb.com/title/tt0119008/",
+    description: "Donnie Brasco is not a movie about the Mafia. It is a movie about a job. Mike Newell shoots organized crime like a failing regional sales office, and Pacino plays Lefty Ruggiero as a middle manager who never got promoted. My father was an undercover DEA agent who died at forty, so I have never once watched this for pleasure.",
+    essaySlug: "the-job-i-didnt-take",
+  },
   {
     title: "Sleepers",
     year: "1996",
@@ -117,6 +138,24 @@ const movies: { title: string; year: string; imdb: string; description: string }
     description: "A documentary about Troy Duffy, the Boston bartender Harvey Weinstein handed a movie deal, a record deal, and half a bar, and who torched every bit of it through sheer ego. A man given too much who appreciated none of it. It plays like a Greek tragedy, not to sound like a hack, except the gods are Miramax and the fatal flaw is being insufferable. Beautiful, in its awful way.",
   },
 ];
+
+// Fetch the bodies for any entries that are backed by a published article.
+const essaySlugs = movies.map((m) => m.essaySlug).filter((s): s is string => Boolean(s));
+const essayHtml = new Map<string, string>();
+
+for (const slug of essaySlugs) {
+  try {
+    const row = await env.DB.prepare(
+      "SELECT body FROM articles WHERE slug = ? AND published = 1"
+    )
+      .bind(slug)
+      .first<{ body: string }>();
+    if (row) essayHtml.set(slug, marked.parse(row.body) as string);
+  } catch {
+    // If the article can't be read, fall back to the short description below
+    // rather than taking the whole page down.
+  }
+}
 ---
 
 <BaseLayout title="Movie Recommendations" description="Movies worth your time, with links to IMDB.">
@@ -124,27 +163,31 @@ const movies: { title: string; year: string; imdb: string; description: string }
   <p class="lede">A running list of films worth your time.</p>
 
   <div class="movies-list" style="margin-top: 1.5rem;">
-    {movies.map((movie, index) => {
-      const cartoonMap: { [key: number]: string } = {
-        0: "sleepers",
-        1: "pacific-heights",
-        2: "collateral",
-        3: "bone-tomahawk",
-        4: "breakdown",
-        5: "the-insider",
-        6: "locke",
-        7: "sneakers",
-        8: "margin-call",
-        9: "sorcerer",
-        10: "enter-the-void",
-        11: "sexy-beast",
-        12: "michael-clayton",
-        13: "rogue-trader",
-        14: "dear-zachary",
-        15: "wonder-boys",
-        16: "shotgun-stories",
-        17: "overnight",
+    {movies.map((movie) => {
+      // Keyed by title, not list position, so reordering or inserting an entry
+      // never shifts the cartoons onto the wrong films.
+      const cartoonMap: { [key: string]: string } = {
+        "Sleepers": "sleepers",
+        "Pacific Heights": "pacific-heights",
+        "Collateral": "collateral",
+        "Bone Tomahawk": "bone-tomahawk",
+        "Breakdown": "breakdown",
+        "The Insider": "the-insider",
+        "Locke": "locke",
+        "Sneakers": "sneakers",
+        "Margin Call": "margin-call",
+        "Sorcerer": "sorcerer",
+        "Enter the Void": "enter-the-void",
+        "Sexy Beast": "sexy-beast",
+        "Michael Clayton": "michael-clayton",
+        "Rogue Trader": "rogue-trader",
+        "Dear Zachary: A Letter to a Son About His Father": "dear-zachary",
+        "Wonder Boys": "wonder-boys",
+        "Shotgun Stories": "shotgun-stories",
+        "Overnight": "overnight",
       };
+      const cartoon = cartoonMap[movie.title];
+      const essay = movie.essaySlug ? essayHtml.get(movie.essaySlug) : undefined;
       return (
         <article class="movie-card">
           <h2>
@@ -154,15 +197,27 @@ const movies: { title: string; year: string; imdb: string; description: string }
           </h2>
           <p class="meta">{movie.year}</p>
 
-          <div class="movie-cartoon">
-            <img
-              src={`/movie-cartoon-${cartoonMap[index]}.svg`}
-              alt={`Cartoon for ${movie.title}`}
-              loading="lazy"
-            />
-          </div>
+          {cartoon && (
+            <div class="movie-cartoon">
+              <img
+                src={`/movie-cartoon-${cartoon}.svg`}
+                alt={`Cartoon for ${movie.title}`}
+                loading="lazy"
+              />
+            </div>
+          )}
 
-          <p style="margin-top: 1.5rem; line-height: 1.6;">{movie.description}</p>
+          {essay ? (
+            <div class="prose movie-essay" set:html={essay} />
+          ) : (
+            <p style="margin-top: 1.5rem; line-height: 1.6;">{movie.description}</p>
+          )}
+
+          {movie.essaySlug && (
+            <p class="meta" style="margin-top: 1.25rem;">
+              <a href={`/writing/${movie.essaySlug}`}>Read this in Writing &rarr;</a>
+            </p>
+          )}
         </article>
       );
     })}
@@ -203,6 +258,19 @@ const movies: { title: string; year: string; imdb: string; description: string }
       height: auto;
       display: block;
       border: 1px solid #e8e8e6;
+      border-radius: 2px;
+    }
+
+    /* Entries backed by a full essay get article-style prose and image handling. */
+    .movie-essay {
+      margin-top: 1.5rem;
+    }
+
+    .movie-essay :global(img) {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 1.75rem 0;
       border-radius: 2px;
     }
   </style>
