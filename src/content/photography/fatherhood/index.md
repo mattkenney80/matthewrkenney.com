@@ -50,8 +50,12 @@ photos:
     alt: "Fatherhood, photo 22"
 ---
 
-My father passed away when I was ten. My parents divorced when I was two. His own father had abandoned him. Growing up, I was raised by women, which was a good thing. It taught me how to think from two different perspectives, and on balance that has been an asset my whole life.
+My father died when I was ten. My parents divorced when I was two. His own father had abandoned him. Fatherhood, in my family, was something that happened briefly and then stopped.
 
-That said, for almost all of my life, up until my early thirties, before I met my wife, I saw fathers as a general nuisance, something odd, something I didn't understand. I knew they were needed for a little while, but after that, I figured the mom could run with it. Then my father-in-law passed away, and it showed me what a father really is.
+I was raised by women, and it taught me to see a thing from more than one side, which has been useful my whole life. But as a kid I looked at all dads with deep suspicion. A father was a general nuisance, an odd man who lived in the houses of my friends. Necessary for a little while, I figured, and after that the mom could run with it. I thought that until my early thirties.
 
-*These photos are dedicated to Dr. Sebastian Sora.*
+Then I met my wife. Then I met her father.
+
+Dr. Sebastian Sora showed me what a father could be, and then, without ever making a lesson of it, how to be one. I have three kids now. When I don't know what to do, I still look for him. He is the light I steer by.
+
+*These photos are dedicated to him.*
