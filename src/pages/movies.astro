@@ -17,15 +17,44 @@ type Movie = {
   title: string;
   year: string;
   imdb: string;
+  director: string;
+  writer: string;
+  dp: string;
   description: string;
   essaySlug?: string;
+  // Photographs shown side by side above the write-up.
+  photos?: { src: string; alt: string }[];
 };
 
 const movies: Movie[] = [
   {
+    title: "Bully",
+    year: "2001",
+    imdb: "https://www.imdb.com/title/tt0242193/",
+    director: "Larry Clark",
+    writer: "David McKenna",
+    dp: "Steve Gainer",
+    photos: [
+      {
+        src: "/images/movies/bully-subdivision.png",
+        alt: "Aerial view of a South Florida subdivision, red tile roofs and a retention pond beside a highway",
+      },
+      {
+        src: "/images/movies/bully-culdesac.png",
+        alt: "A South Florida house at dusk, palms over an empty driveway",
+      },
+    ],
+    description: `Larry Clark is a creep. This is not a knock on him, or not only a knock. It is the working condition of his art, and he has never once pretended otherwise, which is more than you can say for most of the men who make movies about teenagers. Tulsa came out in 1971 and rearranged how I take pictures, permanently. Clark did not photograph those kids from across the room with a long lens and a social worker's frown. He was in the room. He was on the couch. The camera is at eye level because his eye was at that level, and the discomfort you feel looking at the pictures is the discomfort of being handed something the photographer had no business having and no intention of giving back. Kids did the same thing in 1995 and got him called a pornographer by people who had not seen it. What nobody wants to admit is that the leering is the point. A polite version of Tulsa would be a lie, and Clark's whole career is the refusal to tell it.
+
+Which brings me to Bully, in 2001, which I think is perfect. I grew up in South Florida and I have never seen anything else get it right. Not close. Movies set down there give you neon and pastel and a speedboat. Clark gives you the actual thing: the strip mall, the drained heat, the carpet in a house nobody's parents are ever in, the specific boredom of a place built ten minutes ago on a swamp where there is nothing to do and no adult has looked up in years. Bobby Kent got killed in Broward County in 1993 by his friends, who were so bad at it that they got caught almost immediately and confessed almost eagerly, and Clark's insight is that the murder is not the interesting part. The interesting part is the forty minutes before it, in which a half dozen kids talk themselves into it with the same flat, unhurried, sunburnt affect they'd use to decide on Chili's. It is a disturbing film and I am not going to pretend it isn't. Brad Renfro, who plays Marty, was dead of an overdose at twenty-five. The movie already knew.`,
+  },
+  {
     title: "Donnie Brasco",
     year: "1997",
     imdb: "https://www.imdb.com/title/tt0119008/",
+    director: "Mike Newell",
+    writer: "Paul Attanasio",
+    dp: "Peter Sova",
     description: "Donnie Brasco is not a movie about the Mafia. It is a movie about a job. Mike Newell shoots organized crime like a failing regional sales office, and Pacino plays Lefty Ruggiero as a middle manager who never got promoted. My father was an undercover DEA agent who died at forty, so I have never once watched this for pleasure.",
     essaySlug: "the-job-i-didnt-take",
   },
@@ -33,108 +62,162 @@ const movies: Movie[] = [
     title: "Sleepers",
     year: "1996",
     imdb: "https://www.imdb.com/title/tt0117665/",
+    director: "Barry Levinson",
+    writer: "Barry Levinson",
+    dp: "Michael Ballhaus",
     description: "Sleepers is a movie about the worst thing that can happen to a kid, and Levinson has the nerve to make you wait for it. Hell's Kitchen in 1966 gets a whole act before anything goes wrong: the stoops, the church basement, the fire escapes, the specific way four boys can own eight square blocks and think that's the entire world. I'm Irish Catholic and had a childhood I'd call eventful, so I'll cop to the neighborhood landing on me harder than it might on you. But the patience isn't nostalgia, it's construction. Levinson makes you love the place first, so that Wilkinson reads as an eviction instead of a plot point. It also means the thirteen years of drift afterward feel like something done to these men rather than something they chose. Most revenge movies are in a hurry. This one behaves like it has all the time in the world, because the damage did too. The scaffolding is The Count of Monte Cristo, and the movie is honest about it. Father Bobby reads it aloud to the boys, they argue about whether Dantès got what he wanted, and then the back half quietly runs the same play: the wrongful confinement, the long silence, the accidental encounter, the accounting. It gives those later scenes a shape that a straight courtroom picture wouldn't have earned. That structure delivers you to the Kevin Bacon scene, which is top five for me. Nokes at a table with a beer, John and Tommy in the door, the half-second where his face does the arithmetic, and then the line I love most in the whole picture: \"We'll take those brisket sandwiches to go.\" Under it runs \"Witchi Tai To\" by Everything Is Everything, which is marvelous and haunting and doing something no orchestral swell could manage. No monologue, no speech about justice, just that drifting chant over a man who has run out of road. Levinson spends two hours building toward it and then spends less than a minute on it, and the whole movie holds because of that ratio.",
   },
   {
     title: "Pacific Heights",
     year: "1990",
-    imdb: "https://www.imdb.com/title/tt0100427/",
+    imdb: "https://www.imdb.com/title/tt0100318/",
+    director: "John Schlesinger",
+    writer: "Daniel Pyne",
+    dp: "Amir Mokri",
     description: "I keep coming back to Pacific Heights because it is the only horror movie I know of where the monster's weapon is paperwork. Michael Keaton's Carter Hayes barely raises his voice. He just moves in, stops paying, learns the tenant statutes better than the people who own the building, and lets time do the rest. I grew up in a house like that one. My mother bought something a little past what she should have, though she could carry it. Then my grandmother got sick, and every plan we had for that house stopped. My uncles ended up living there. They never put a hole in a wall or bred anything in the crawlspace. The damage they did was the kind that doesn't show up on a walkthrough. That is Carter exactly. He doesn't destroy the building so much as he destroys the people who thought owning it meant they were in charge. The performance I can't shake, though, is Matthew Modine as Drake Goodwin. Modine plays a yuppie the way you'd play a man who has never once been told no, with total sincerity and zero self-awareness. He wants the Victorian, cannot afford the Victorian, buys it anyway, and figures the tenants will cover the gap. When the numbers get tight he stops screening people and starts hoping. He is horrid in that role, and I mean that as a compliment so complete that I can't look at him in anything else now. I see him in Full Metal Jacket and some part of my brain is still waiting for him to co-sign a loan. John Schlesinger shoots San Francisco real estate the way other directors shoot haunted houses, like the address itself is the threat. The smartest thing he does is hand the climax to Melanie Griffith instead of Drake. She has to clean up a mess she was never fully consulted on. I know what that feels like. I watched my mother do it.",
   },
   {
     title: "Collateral",
     year: "2004",
     imdb: "https://www.imdb.com/title/tt0369339/",
+    director: "Michael Mann",
+    writer: "Stuart Beattie",
+    dp: "Dion Beebe, Paul Cameron",
     description: "I think this is Cruise's greatest role. There's something in this movie. It even opens with a Jason Statham cameo in the first 20 seconds, handing off the briefcase to Vincent at the airport, and Jason Statham makes everything better. Vincent is almost biblical. He just looks at the world in calculations. He's so fast and so efficient, and the way he speaks, the short sentences, the clarity of it, is kind of chilling. Mann takes the most hopeful movie star alive and drains all of it out of him. Gray hair, gray suit, a guy dressed like the concrete he moves through. What's left is pure calculation with nothing behind it, and that's what makes him so scary. Max is the opposite. He has a lot of hope. He's hopeful in the world, and he just seems like he's hoping for a better life. But the movie is honest about the fact that his hope is also his prison. Twelve years driving a cab \"temporarily.\" His limo company is a laminated postcard on his visor, a vacation he takes in his head instead of a life he actually builds. Vincent sees that right away and goes after it, and the strange part is he's the only person in Max's life telling him the truth. He doesn't just terrorize Max, he accidentally builds him. By the time Max wrecks the cab he's using Vincent's own adapt-or-die logic against him, and the roles flip. Max gets decisive, and Vincent dies exactly like the story he told at the start. A guy on the MTA, and nobody notices. Mann shot this on digital video because it could see the LA night in a way film couldn't. The hazy orange sky, the empty streets, the coyotes crossing the road while both men watch. The city is the third character, huge and indifferent, the perfect stage for a debate between a man who believes in nothing and a man who believes in someday. And Max wins, but only barely, and only once his hope stops being a postcard and becomes something he actually acts on. That's what stays with you.",
   },
   {
     title: "Bone Tomahawk",
     year: "2015",
-    imdb: "https://www.imdb.com/title/tt1596345/",
+    imdb: "https://www.imdb.com/title/tt2494362/",
+    director: "S. Craig Zahler",
+    writer: "S. Craig Zahler",
+    dp: "Benji Bakshi",
     description: "Ninety of this movie's 132 minutes are four men on horses talking about hotel bathtubs. Half the people who bounce off this film bounce off exactly there, and I want to be clear that it's the good part. Zahler builds a horror western the way you'd build a trap, which is patiently and mostly out of materials that don't look like a trap: a flea circus anecdote, an argument about whether a book survives being read in the tub, a limp that gets a little worse every day until that limp is the only clock the movie has. Kurt Russell plays the sheriff as ballast, an enormous movie star who spends two hours declining to do anything interesting, on purpose. Richard Jenkins takes all the room that leaves him and turns the comic sidekick into the loneliest man in the territory. Nobody here gets a lesson. Brooder is an unrepentant bigot and also the most competent man on the trip, and the movie flatly declines to reconcile that for you. The cave people are a blank, and I think the film knows it. Its anthropology is pointed at the four men on the horses. Then it makes you pay for the company. When the film finally does the thing it's infamous for, it holds wide and lets it happen in silence, no score, no cutting, no relish, like a man writing down what he saw. That's the whole method, and it's why the film respects your attention in a way almost nothing else does. It assumes you'll sit through an hour of men discussing bathtubs because men discussing bathtubs is interesting, and it's right, and it knows exactly what that hour has bought. The rescue succeeds and is still a catastrophe. The last scene is two men who can't walk, sitting in the dirt, waiting. It's a film built on the wager that if you make an audience care first you never have to manipulate them later, and Zahler wins the bet.",
   },
   {
     title: "Breakdown",
     year: "1997",
-    imdb: "https://www.imdb.com/title/tt0118926/",
+    imdb: "https://www.imdb.com/title/tt0118771/",
+    director: "Jonathan Mostow",
+    writer: "Jonathan Mostow, Sam Montgomery",
+    dp: "Douglas Milsome",
     description: "Breakdown looks like a nothing thriller. Car dies in the desert, wife disappears, husband goes and gets her back, ninety minutes, roll credits. What sticks is that Jonathan Mostow made a movie about class and mostly kept his mouth shut about it. Kurt Russell plays Jeff Taylor soft, and he does it on purpose. Here is a man who could play Snake Plissken without waking up, and instead he gives you a jumpy Eastern transplant floating across the Southwest in a spotless new Jeep, off to some sunlit second act in San Diego. Russell sands every last bit of cool off himself and hands you a guy who flinches. The Jeep is the loudest thing on screen. It is money with the doors locked, and the locals read it the second it rolls past, the way a shark reads a limp in the water. The car does not quit on its own. Somebody got to it. Jeff was a mark before he said a word, and the movie caught this particular strain of American class dread about fifteen years before it was polite to bring up at parties. Which is what makes JT Walsh so bad for your blood pressure. One of his last parts, and he does not play a monster. He plays a trucker. Ballcap, gut, an easy reasonable way of talking, a wife, a kid, a house with the lights on. When he looks at Jeff and says, flat, that he has never laid eyes on him, the fear is not operatic. It is clerical. It is a working man who decided a while back that guys like Jeff are just inventory, and who drives home and sleeps like a baby. The resentment sits right there under the floorboards. These are people living in the busted country most films use as a backdrop, and they have done the math: the couple in the nice car has it, so now it is theirs. Mostow never stops to explain any of this, which is the whole reason it lands. The scene at Red's place turns the thing over in your hands. It is not a lair. It is a home. The ransom is just the family business. The horror of Breakdown was never that the wife is gone. It is that the man who took her figures he had it coming.",
   },
   {
     title: "The Insider",
     year: "1999",
-    imdb: "https://www.imdb.com/title/tt0140888/",
+    imdb: "https://www.imdb.com/title/tt0140352/",
+    director: "Michael Mann",
+    writer: "Eric Roth, Michael Mann",
+    dp: "Dante Spinotti",
     description: "Michael Mann's The Insider is a thriller where the ticking clock is a man's conscience. Russell Crowe, buried under prosthetic weight and twenty extra years, plays biochemist Jeffrey Wigand, who understood exactly what \"impact boosting\" meant: ammonia chemistry to free the nicotine, a delivery system engineered to keep you hooked. That's the horror of it. Crowe doesn't play a saint who stumbles onto the truth. He plays a specialist whose entire value is being very good at a thing, and the thing is poison. He took the job to keep his kids insured, and the movie never lets him off the hook for that math. It just makes you sit inside it. What Mann nails is how a technical brain metabolizes a moral crisis: slowly, defensively, in the language of NDAs and risk assessment. Wigand doesn't have an epiphany. He runs the calculation until the numbers stop protecting him. Al Pacino's producer, all agitated conviction against Crowe's coiled hesitation, is the engine that finally forces it. It's a movie about what expertise costs the person who has it, the loneliness of being the only guy in the room who understands the chemistry and therefore the only one who can't pretend he doesn't. Heavier to carry than any car chase.",
   },
   {
     title: "Locke",
     year: "2013",
     imdb: "https://www.imdb.com/title/tt2692904/",
+    director: "Steven Knight",
+    writer: "Steven Knight",
+    dp: "Haris Zambarloukos",
     description: "Locke is the greatest film ever made about project management, and I will not be taking questions. Ivan Locke, played by Tom Hardy at the absolute peak of his quiet-menace powers, spends the entire runtime doing what every project manager dreads: managing a critical delivery remotely, at night, with no margin for error, while his personal life comes apart on the other lines. The next morning is the largest concrete pour in European history outside of nuclear and military projects, and Locke is not going to be there. So he does the only thing a real professional can do. He gets in the car, he opens his contact list, and he project-manages the whole thing by phone at seventy miles an hour. The concrete is poor. The rebar might be wrong. Nobody confirmed the road closures. His deputy is drunk and terrified. And Locke, calm as a man working a problem he built himself, takes it one call at a time. Here is the clever thing the film understands about concrete: once you mix it, it cannot be unmixed. There is a window, and then the window closes, and whatever you poured is what you have forever. It is exactly like getting somebody pregnant. The moment happens, the chemistry starts, and a fuse is lit that no phone call can put out. That is the engine of the whole movie. Locke made a decision months ago in a hotel room, and now the concrete of that choice is setting whether he likes it or not, right alongside the actual pour he cannot stop and the actual child being born on line two. The concrete and the marriage and the pregnancy are all the same problem: an irreversible reaction with a timer running. Every relationship is a load-bearing wall, and he is watching them fail inspection in real time. It is all dialogue, all in one car, all in one take of a life coming apart, and it never once feels small. Flawless concept, flawless execution. Five stars, would let this man manage my sprint.",
   },
   {
     title: "Sneakers",
     year: "1992",
     imdb: "https://www.imdb.com/title/tt0105435/",
+    director: "Phil Alden Robinson",
+    writer: "Phil Alden Robinson, Lawrence Lasker, Walter F. Parkes",
+    dp: "John Lindley",
     description: "Some movies announce their greatness with spectacle. Sneakers (1992) does it with charm, wit, and a cast so deep you almost take it for granted. Robert Redford anchors the film as Martin Bishop, the reformed hacker leading a ragtag crew of security specialists into a caper involving a black box that can break any encryption on earth. But the miracle of Sneakers is that Redford, at his most effortlessly likable, is arguably only the third-most compelling person on screen. Ben Kingsley, as the old friend turned quiet zealot, gives the villainy a wounded conviction that lingers. River Phoenix, all youthful swagger and nervous energy, reminds you of everything the movies lost too soon. Pick a favorite, and you'll change your mind an hour later. That's not indecision. That's an ensemble working at full strength, with Poitier, Aykroyd, Strathairn, and McDonnell rounding out one of the great screen teams. What keeps Sneakers from being merely clever is that it never wastes a frame. The plot moves like clockwork, and the banter crackles without ever curdling into smugness. The film's ideas about privacy, secrets, and who really controls information feel less like a period piece and more like a prophecy. It is, from first scene to last, a genuine gem, the rare thriller that trusts its audience to be smart and rewards them for it. Somehow it has slipped through the culture's fingers, mentioned in passing when it should be a touchstone. It deserves far better. If you've never seen it, fix that. If you have, you already know it's perfect.",
   },
   {
     title: "Margin Call",
     year: "2011",
     imdb: "https://www.imdb.com/title/tt1615147/",
+    director: "J.C. Chandor",
+    writer: "J.C. Chandor",
+    dp: "Frankie DeMarco",
     description: "Margin Call is probably my favorite movie about finance. It's criminally underrated, but those who know it light up when you mention it, like you've found a fellow member of a small club. The story unfolds in about four rooms over a single sleepless night, and it never feels small. There's no crash montage or chaotic trading floor, just people in offices talking. Somehow, that's more tense than any thriller with a body count. Every performance is top-notch, and Jeremy Irons plays one of the most incredible characters in film history. He's so good as the CEO that I often have to pause the movie just to absorb what he's doing before I can continue. Sometimes, I'll go to YouTube and watch him speak in that movie, no plot, no context, just him talking. It's an unbelievable film, and one of my favorite scenes features Kevin Spacey in Brooklyn Heights. He talks about being an engineer and building a bridge, counting all the years and lives he supposedly saved with it. He thinks he has a profound point, and then Paul Bettany cuts in with, Some people want to take the long ride home, and it's brilliant. That exchange captures the essence of the whole movie. Every grand justification meets a flat, honest line that deflates it. It's one of the best movies ever made, and I'd argue nothing else comes close to capturing the quiet, bloodless way real money actually blows up.",
   },
   {
     title: "Sorcerer",
     year: "1977",
     imdb: "https://www.imdb.com/title/tt0076740/",
+    director: "William Friedkin",
+    writer: "Walon Green",
+    dp: "John M. Stephens, Dick Bush",
     description: "Sorcerer (1977) is William Friedkin's hidden gem. While it's a remake of The Wages of Fear, that label doesn't do it justice. Four men from different backgrounds end up in a decaying South American oil town: a getaway driver, a French banker, a Palestinian militant, and a hitman. They all hide from pasts that catch up with them. When a well catches fire in the jungle, one man must drive two hundred miles of treacherous mountain roads with a truckload of unstable dynamite. The pay offers a way out, but most won't make it. Friedkin uses the first act to show how each man earned his spot in hell. By the time the trucks roll, you realize the drive isn't just about money. It's about men trying to escape fate in vehicles that could kill them at any moment. The film's climax features two forty-ton trucks crossing a rope bridge in a raging storm. They creep across a crumbling span over a boiling river, creating one of the most terrifying scenes ever filmed. There are no CGI tricks, only months of hardship that almost derailed the production. Tangerine Dream's electronic score transforms the jungle into something eerie and cosmic. The title reflects this; it's painted on a truck, but Friedkin uses it to symbolize fate itself, an evil sorcerer nobody can escape. The film is bleak and deliberate, pushing boundaries and ending with a cruel twist. Audiences in 1977 wanted Star Wars but got a grim existential tale instead. It flopped and marked the end of Friedkin's golden era. Time has proven them wrong.",
   },
   {
     title: "Enter the Void",
     year: "2009",
-    imdb: "https://www.imdb.com/title/tt0387564/",
+    imdb: "https://www.imdb.com/title/tt1191111/",
+    director: "Gaspar Noé",
+    writer: "Gaspar Noé, Lucile Hadžihalilović",
+    dp: "Benoît Debie",
     description: "Enter the Void (2009) is Gaspar Noé's challenge to look away. The film's nerve lies in its camera work. We don't just watch Oscar, a young dealer in neon Tokyo. We see through his eyes, blinks and all. Then, twenty minutes in, he's shot dead. The film pulls its best trick: the camera keeps moving. It lifts off his corpse and turns into a spirit, floating over the city. It phases through walls and revisits his memories like a ghost that can't let go. This impossible motion is key. Drawing from the Tibetan Book of the Dead, Noé shows a dead man's perspective. It follows one stubborn consciousness circling its wreckage: the grief, the drugs, and the sister he can't leave behind. This journey drifts toward something like rebirth. You don't follow a story; you experience a mind dissolving. Noé ensures you feel death from the inside, not just as a spectator.",
   },
   {
     title: "Sexy Beast",
     year: "2000",
-    imdb: "https://www.imdb.com/title/tt0274518/",
+    imdb: "https://www.imdb.com/title/tt0203119/",
+    director: "Jonathan Glazer",
+    writer: "Louis Mellis, David Scinto",
+    dp: "Ivan Bird",
     description: "Sexy Beast might be the most beautiful film ever made about a man who just wants to be left alone. Every frame looks incredible. The baking Spanish sun, the impossibly blue pool, a boulder rolling down the hill in the first five minutes like a bad omen with a great cinematographer. Gal Dove did the impossible. He got out. Did his time, made his money, retired to a villa with the woman he loves and a tan he earned. He finished on top, which almost nobody in his trade ever does. Then Don Logan shows up. Ben Kingsley plays him as pure menace in a golf shirt, a psychopath who takes the word \"no\" as a personal insult, and one of the great screen villains because he never needs a weapon when he can just wear you down instead. That's the whole film. One man's small perfect paradise against a force of nature that wants him back in the muck. Gorgeous, tense, remarkable.",
   },
   {
     title: "Michael Clayton",
     year: "2007",
     imdb: "https://www.imdb.com/title/tt0465538/",
+    director: "Tony Gilroy",
+    writer: "Tony Gilroy",
+    dp: "Robert Elswit",
     description: "George Clooney plays a law firm's janitor, the guy who mops up messes for men richer than he will ever be. It's a legal thriller, technically, but really it's about being middle-aged in corporate America and realizing you took your one shot and missed. The question the movie asks is what's left of a man after that, and the answer, delivered in a silent cab ride over the closing credits, is: maybe just enough.",
   },
   {
     title: "Rogue Trader",
     year: "1999",
-    imdb: "https://www.imdb.com/title/tt0140352/",
+    imdb: "https://www.imdb.com/title/tt0131566/",
+    director: "James Dearden",
+    writer: "James Dearden",
+    dp: "Jean-François Robin",
     description: "Ewan McGregor plays Nick Leeson, the trader who vaporized Barings Bank, a 233-year-old institution, from a desk in Singapore. The plot is simple: get cocky, dig a hole, lie about the hole, dig faster. Not a masterpiece, but a perfect little fable about the secret account where we all stash our losses, and what happens when the bill finally clears.",
   },
   {
     title: "Dear Zachary: A Letter to a Son About His Father",
     year: "2008",
     imdb: "https://www.imdb.com/title/tt1152758/",
+    director: "Kurt Kuenne",
+    writer: "Kurt Kuenne",
+    dp: "Kurt Kuenne",
     description: "I'm not going to tell you what happens. Kurt Kuenne set out to make a scrapbook film about his murdered best friend, Andrew Bagby, for the son Andrew never got to meet. Usually in these stories the man is the monster. Not this time. Andrew was, by every account, one of the good ones, and what happened to his family is the hardest thing a documentary has ever asked me to sit through. It will make you cry. Watch it anyway.",
   },
   {
     title: "Wonder Boys",
     year: "2000",
-    imdb: "https://www.imdb.com/title/tt0185037/",
+    imdb: "https://www.imdb.com/title/tt0185014/",
+    director: "Curtis Hanson",
+    writer: "Steve Kloves",
+    dp: "Dante Spinotti",
     description: "Michael Douglas as a pot-smoking novelist seven years and two thousand pages into a book that refuses to end. The most honest movie about creative work I know, because it admits that most of the artistic life isn't inspiration, it's driving around Pittsburgh with a dead dog in your trunk while your editor asks how it's coming. Warm, shaggy, and criminally underseen.",
   },
   {
     title: "Shotgun Stories",
     year: "2007",
-    imdb: "https://www.imdb.com/title/tt0850644/",
+    imdb: "https://www.imdb.com/title/tt0952682/",
+    director: "Jeff Nichols",
+    writer: "Jeff Nichols",
+    dp: "Adam Stone",
     description: "Jeff Nichols' first film, and within five minutes you know you're watching an auteur. Michael Shannon and his brothers (Son, Boy, and Kid, which is what their father bothered to name them) go to war with the second family their dad raised after he sobered up and became somebody else's good father. It's a movie about dads, mostly the craters they leave. Quiet, Southern, and it goes off exactly like its title.",
   },
   {
     title: "Overnight",
     year: "2003",
-    imdb: "https://www.imdb.com/title/tt0390622/",
+    imdb: "https://www.imdb.com/title/tt0390336/",
+    director: "Tony Montana, Mark Brian Smith",
+    writer: "Tony Montana, Mark Brian Smith",
+    dp: "Mark Brian Smith",
     description: "A documentary about Troy Duffy, the Boston bartender Harvey Weinstein handed a movie deal, a record deal, and half a bar, and who torched every bit of it through sheer ego. A man given too much who appreciated none of it. It plays like a Greek tragedy, not to sound like a hack, except the gods are Miramax and the fatal flaw is being insufferable. Beautiful, in its awful way.",
   },
 ];
@@ -197,6 +280,12 @@ for (const slug of essaySlugs) {
           </h2>
           <p class="meta">{movie.year}</p>
 
+          <dl class="movie-credits">
+            <div><dt>Director</dt><dd>{movie.director}</dd></div>
+            <div><dt>Writer</dt><dd>{movie.writer}</dd></div>
+            <div><dt>Cinematography</dt><dd>{movie.dp}</dd></div>
+          </dl>
+
           {cartoon && (
             <div class="movie-cartoon">
               <img
@@ -207,10 +296,22 @@ for (const slug of essaySlugs) {
             </div>
           )}
 
+          {movie.photos && (
+            <div class="movie-photos">
+              {movie.photos.map((photo) => (
+                <img src={photo.src} alt={photo.alt} loading="lazy" />
+              ))}
+            </div>
+          )}
+
           {essay ? (
             <div class="prose movie-essay" set:html={essay} />
           ) : (
-            <p style="margin-top: 1.5rem; line-height: 1.6;">{movie.description}</p>
+            movie.description
+              .split("\n\n")
+              .map((para) => (
+                <p style="margin-top: 1.5rem; line-height: 1.6;">{para.trim()}</p>
+              ))
           )}
 
           {movie.essaySlug && (
@@ -258,6 +359,52 @@ for (const slug of essaySlugs) {
       height: auto;
       display: block;
       border: 1px solid #e8e8e6;
+      border-radius: 2px;
+    }
+
+    /* Attribution block: label above name, wrapping on narrow screens. */
+    .movie-credits {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 2rem;
+      margin: 0 0 1.25rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .movie-credits div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .movie-credits dt {
+      font-size: 0.6875rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-ink-soft);
+    }
+
+    .movie-credits dd {
+      margin: 0;
+      font-size: 0.9375rem;
+      line-height: 1.35;
+    }
+
+    /* Two photographs shown side by side, stacking on narrow screens. */
+    .movie-photos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.75rem;
+      margin: 1.5rem 0;
+    }
+
+    .movie-photos img {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      display: block;
       border-radius: 2px;
     }
 
