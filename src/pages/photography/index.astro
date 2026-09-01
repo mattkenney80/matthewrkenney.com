@@ -9,9 +9,18 @@ if (!(await isSectionVisible(env?.DB, "photography"))) {
   return Astro.rewrite("/404");
 }
 
-const series = (await getCollection("photography", ({ data }) => !data.draft)).sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
-);
+// Collections pinned to the front of the grid, in this order. Anything not
+// listed here follows, newest first.
+const PINNED = ["night-photography", "peaks-island", "bicycle-crimes"];
+
+const series = (await getCollection("photography", ({ data }) => !data.draft)).sort((a, b) => {
+  const ai = PINNED.indexOf(a.id);
+  const bi = PINNED.indexOf(b.id);
+  if (ai !== -1 && bi !== -1) return ai - bi;
+  if (ai !== -1) return -1;
+  if (bi !== -1) return 1;
+  return b.data.date.valueOf() - a.data.date.valueOf();
+});
 ---
 
 <BaseLayout title="Photography" description="Photo series and galleries." wide>
