@@ -14,6 +14,31 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     All photographs are actually for free. I will mail you one. Just give me your
     mailing address via the <a href="/contact">contact form</a>, and I will mail you a photo.
   </p>
+  <section class="about-process">
+    <p>
+      A note on process, because this form of expression is a little different for me.
+      It starts with pen and paper. I bullet out the theme and the hooks rattling around
+      in my head, then I read the page back and connect them out loud, dictating the essay
+      into the plain text editor I use for work, which is Sublime Text (shout out to
+      Sublime Text. I&rsquo;ve been using you for eighteen years, and I&rsquo;ve never paid for you).
+      I move that into Microsoft Word, and then I type more and edit what I spoke. Finally
+      I run it through Grammarly, because I can&rsquo;t spell. I think I have a dusting of
+      dyslexia&hellip;undiagnosed, but likely.
+    </p>
+    <p>The photos are mine. Some of the art is MidJourney.</p>
+    <p>
+      I&rsquo;m calling this &ldquo;brazed writing&rdquo;: the bullets are the jig that holds the pieces in
+      position, the spoken draft is the parent metal, never melted, and the edits are the
+      filler pulled into the joints. Essentially, I&rsquo;m converting the ideas in my head into
+      text using modern technology.
+    </p>
+    <p>
+      I&rsquo;ve worked in corporate innovation for eleven and a half years. I have advised
+      innovation labs and R&amp;D departments, probably over 200 of them in my career.
+      I&rsquo;m just taking my own advice with this new method.
+    </p>
+  </section>
+
   <blockquote class="about-quote">
     <p>&ldquo;There was that law of life, so cruel and so just, that one must grow or else pay more for remaining the same.&rdquo;</p>
     <cite>&mdash; Norman Mailer, 1955, <em>The Deer Park</em></cite>
@@ -26,6 +51,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 </BaseLayout>
 
 <style>
+.about-process {
+    max-width: var(--measure);
+    margin: 2rem 0 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-ink-soft);
+    font-size: 0.9375rem;
+    line-height: 1.65;
+  }
+
+  .about-process p {
+    margin: 0 0 0.875rem;
+  }
+
+  .about-process p:last-child {
+    margin-bottom: 0;
+  }
+
   .about-quote {
     margin: 2rem 0;
     padding-left: 1.25rem;
