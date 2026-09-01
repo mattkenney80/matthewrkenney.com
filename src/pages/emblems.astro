@@ -7,12 +7,34 @@ if (!(await isSectionVisible(env?.DB, "emblems"))) {
   return Astro.rewrite("/404");
 }
 
-const emblems: { image: string; alt: string; caption: string }[] = [
+const emblems: {
+  image: string;
+  alt: string;
+  caption: string;
+  note?: string;
+  poem?: { lines: string; attribution: string };
+}[] = [
   {
     image: "/emblem-the-machine.png",
     alt: "An empty rain-soaked field under floodlights, a dark vacant stage, and a single lit vending machine among scattered newspapers",
     caption:
       "the podium is empty, the floodlights are on, and the only thing still running is the machine that takes your money.",
+    note:
+      "I wrote this, I think, six weeks ago. About four weeks ago I was reading a book by Paul Kingsnorth called The Machine. He references the poem below. I feel like I was channeling it without knowing it, because I had not read it yet. It was very odd.",
+    poem: {
+      lines: [
+        "The machine appeared",
+        "In the distance, singing to itself",
+        "Of money. Its song was the web",
+        "They were caught in, men and women",
+        "Together. The villages were as flies",
+        "To be sucked empty. God secreted",
+        "A tear. Enough, enough,",
+        "He commanded, but the machine",
+        "Looked at him and went on singing.",
+      ].join("\n"),
+      attribution: "R.S. Thomas, 1972",
+    },
   },
   {
     image: "/cartoon-the-invoice.png",
@@ -72,6 +94,13 @@ const emblems: { image: string; alt: string; caption: string }[] = [
           <figcaption class={`emblem-card__caption ${isEssay ? "emblem-card__caption--essay" : ""}`}>
             {paragraphs.map((p) => <p>{p}</p>)}
           </figcaption>
+          {e.note && <p class="emblem-card__note">{e.note}</p>}
+          {e.poem && (
+            <blockquote class="emblem-card__poem">
+              <p>{e.poem.lines}</p>
+              <cite>{e.poem.attribution}</cite>
+            </blockquote>
+          )}
         </figure>
       );
     })}
@@ -105,6 +134,38 @@ const emblems: { image: string; alt: string; caption: string }[] = [
     height: auto;
     border-radius: 2px;
     border: 1px solid #e8e8e6;
+  }
+
+.emblem-card__note {
+    max-width: 38rem;
+    margin: 1.25rem auto 0;
+    font-family: var(--font-serif);
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--color-ink-soft);
+  }
+
+  .emblem-card__poem {
+    max-width: 38rem;
+    margin: 1.25rem auto 0;
+    padding-left: 1.25rem;
+    border-left: 2px solid var(--color-border);
+  }
+
+  .emblem-card__poem p {
+    margin: 0 0 0.5rem;
+    white-space: pre-line;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--color-ink);
+  }
+
+  .emblem-card__poem cite {
+    font-style: normal;
+    font-size: 0.875rem;
+    color: var(--color-ink-soft);
   }
 
   .emblem-card__caption {
