@@ -13,6 +13,15 @@ import {
   quoteFootnote,
 } from "../data/bicycles";
 
+const tocSections = [
+  { id: "films", label: "Films" },
+  { id: "riders", label: "Riders" },
+  { id: "creators", label: "Creators" },
+  { id: "books", label: "Books" },
+  { id: "websites", label: "Websites" },
+  { id: "quotes", label: "Quotes" },
+];
+
 if (!(await isSectionVisible(env?.DB, "bicycles"))) {
   return Astro.rewrite("/404");
 }
@@ -21,12 +30,24 @@ if (!(await isSectionVisible(env?.DB, "bicycles"))) {
 <BaseLayout
   title="Bicycle Resources"
   description="Films, books, riders, and sites worth your time, from someone who rides gravel, mountain, and dirt jumps."
+  wide
 >
-  <h1>Bicycle Resources</h1>
-  {intro.map((p) => <p class="lede">{p}</p>)}
+  <div class="bike-intro">
+    <h1>Bicycle Resources</h1>
+    {intro.map((p) => <p class="lede">{p}</p>)}
+  </div>
 
-  <section class="bike-section">
-    <h2>Films</h2>
+  <nav class="bike-toc" aria-label="Sections">
+    <ul>
+      {tocSections.map((s) => (
+        <li><a href={`#${s.id}`} data-toc={s.id}>{s.label}</a></li>
+      ))}
+    </ul>
+  </nav>
+
+  <!-- Films keep a single reading-width column: they are prose, not a list. -->
+  <section class="bike-section" id="films" aria-labelledby="films-h">
+    <h2 id="films-h">Films</h2>
     {filmSections.map((s) => (
       <div class="bike-subsection">
         <h3>{s.heading}</h3>
@@ -53,9 +74,9 @@ if (!(await isSectionVisible(env?.DB, "bicycles"))) {
     ))}
   </section>
 
-  <section class="bike-section">
-    <h2>Riders</h2>
-    <ul class="bike-list">
+  <section class="bike-section bike-section--wide" id="riders" aria-labelledby="riders-h">
+    <h2 id="riders-h">Riders</h2>
+    <ul class="bike-list bike-cols">
       {riders.map((r) => (
         <li>
           <span class="bike-list__name">
@@ -67,28 +88,30 @@ if (!(await isSectionVisible(env?.DB, "bicycles"))) {
     </ul>
   </section>
 
-  <section class="bike-section">
-    <h2>Creators and channels</h2>
-    {creatorGroups.map((g) => (
-      <div class="bike-subsection">
-        <h3>{g.heading}</h3>
-        <ul class="bike-list">
-          {g.items.map((i) => (
-            <li>
-              <span class="bike-list__name">
-                {i.href ? <a href={i.href} target="_blank" rel="noopener">{i.name}</a> : i.name}
-              </span>
-              {i.note && <span class="bike-list__note">{i.note}</span>}
-            </li>
-          ))}
-        </ul>
-      </div>
-    ))}
+  <section class="bike-section bike-section--wide" id="creators" aria-labelledby="creators-h">
+    <h2 id="creators-h">Creators and channels</h2>
+    <div class="bike-groups">
+      {creatorGroups.map((g) => (
+        <div class="bike-subsection">
+          <h3>{g.heading}</h3>
+          <ul class="bike-list">
+            {g.items.map((i) => (
+              <li>
+                <span class="bike-list__name">
+                  {i.href ? <a href={i.href} target="_blank" rel="noopener">{i.name}</a> : i.name}
+                </span>
+                {i.note && <span class="bike-list__note">{i.note}</span>}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
   </section>
 
-  <section class="bike-section">
-    <h2>Books</h2>
-    <ul class="bike-books">
+  <section class="bike-section bike-section--wide" id="books" aria-labelledby="books-h">
+    <h2 id="books-h">Books</h2>
+    <ul class="bike-books bike-cols">
       {books.map((b) => (
         <li>
           <p class="bike-film__head">
@@ -101,28 +124,30 @@ if (!(await isSectionVisible(env?.DB, "bicycles"))) {
     </ul>
   </section>
 
-  <section class="bike-section">
-    <h2>Websites and forums</h2>
-    {siteGroups.map((g) => (
-      <div class="bike-subsection">
-        <h3>{g.heading}</h3>
-        <ul class="bike-list">
-          {g.items.map((i) => (
-            <li>
-              <span class="bike-list__name">
-                {i.href ? <a href={i.href} target="_blank" rel="noopener">{i.name}</a> : i.name}
-              </span>
-              {i.note && <span class="bike-list__note">{i.note}</span>}
-            </li>
-          ))}
-        </ul>
-      </div>
-    ))}
+  <section class="bike-section bike-section--wide" id="websites" aria-labelledby="websites-h">
+    <h2 id="websites-h">Websites and forums</h2>
+    <div class="bike-groups">
+      {siteGroups.map((g) => (
+        <div class="bike-subsection">
+          <h3>{g.heading}</h3>
+          <ul class="bike-list">
+            {g.items.map((i) => (
+              <li>
+                <span class="bike-list__name">
+                  {i.href ? <a href={i.href} target="_blank" rel="noopener">{i.name}</a> : i.name}
+                </span>
+                {i.note && <span class="bike-list__note">{i.note}</span>}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
   </section>
 
-  <section class="bike-section">
-    <h2>Quotes</h2>
-    <div class="bike-quotes">
+  <section class="bike-section bike-section--wide" id="quotes" aria-labelledby="quotes-h">
+    <h2 id="quotes-h">Quotes</h2>
+    <div class="bike-quotes bike-cols">
       {quotes.map((q) => (
         <blockquote class="bike-quote">
           <p>{q.text}</p>
@@ -135,12 +160,92 @@ if (!(await isSectionVisible(env?.DB, "bicycles"))) {
       <a href={quoteFootnote.href} target="_blank" rel="noopener">Quote Investigator &rarr;</a>
     </p>
   </section>
+
+  <p class="bike-top"><a href="#top">Back to top</a></p>
 </BaseLayout>
 
+<script>
+  // Jump-nav highlighting. Two paths so it degrades well:
+  //  1. a click sets the active tab immediately (works everywhere)
+  //  2. an IntersectionObserver keeps it in sync during free scrolling
+  const links = [...document.querySelectorAll<HTMLAnchorElement>(".bike-toc a")];
+  const byId = new Map(links.map((a) => [a.dataset.toc, a]));
+  const sections = [...document.querySelectorAll(".bike-section[id]")];
+
+  const setActive = (id?: string | null) => {
+    if (!id || !byId.has(id)) return;
+    links.forEach((a) => a.classList.remove("is-active"));
+    byId.get(id)!.classList.add("is-active");
+  };
+
+  links.forEach((a) => a.addEventListener("click", () => setActive(a.dataset.toc)));
+
+  if (sections.length && "IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        const top = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+        if (top) setActive(top.target.id);
+      },
+      { rootMargin: "-15% 0px -70% 0px", threshold: 0 }
+    );
+    sections.forEach((s) => io.observe(s));
+  }
+
+  // Deep link straight to a section.
+  if (location.hash) setActive(location.hash.slice(1));
+</script>
+
 <style>
+  .bike-intro {
+    max-width: var(--measure);
+  }
+
+  /* Jump nav: sticks to the top so any section is one click away. */
+  .bike-toc {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    margin-top: 2rem;
+    padding: 0.625rem 0;
+    background: var(--color-bg);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .bike-toc ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .bike-toc a {
+    display: inline-block;
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-ink-soft);
+    padding: 0.125rem 0;
+    border-bottom: 1px solid transparent;
+  }
+
+  .bike-toc a:hover { color: var(--color-ink); }
+
+  .bike-toc a.is-active {
+    color: var(--color-ink);
+    border-bottom-color: var(--color-accent);
+  }
+
   .bike-section {
     max-width: var(--measure);
     margin-top: 3rem;
+    /* keep a jumped-to heading clear of the sticky bar */
+    scroll-margin-top: 4.5rem;
   }
 
   .bike-section > h2 {
@@ -148,9 +253,7 @@ if (!(await isSectionVisible(env?.DB, "bicycles"))) {
     border-bottom: 1px solid var(--color-border);
   }
 
-  .bike-subsection {
-    margin-top: 2rem;
-  }
+  .bike-subsection { margin-top: 2rem; }
 
   .bike-subsection h3 {
     font-size: 1.0625rem;
@@ -164,7 +267,6 @@ if (!(await isSectionVisible(env?.DB, "bicycles"))) {
     margin: 0 0 1.25rem;
   }
 
-  /* Films and books: title and year on one line, the description beneath. */
   .bike-films,
   .bike-books {
     list-style: none;
@@ -178,10 +280,7 @@ if (!(await isSectionVisible(env?.DB, "bicycles"))) {
     border-bottom: 1px solid var(--color-border);
   }
 
-  .bike-films li:last-child,
-  .bike-books li:last-child {
-    border-bottom: none;
-  }
+  .bike-films li:last-child { border-bottom: none; }
 
   .bike-film__head {
     display: flex;
@@ -217,7 +316,6 @@ if (!(await isSectionVisible(env?.DB, "bicycles"))) {
     font-size: 0.875rem;
   }
 
-  /* Simple name + note lists for riders, creators, and sites. */
   .bike-list {
     list-style: none;
     margin: 0;
@@ -231,27 +329,20 @@ if (!(await isSectionVisible(env?.DB, "bicycles"))) {
     line-height: 1.55;
   }
 
-  .bike-list li:last-child {
-    border-bottom: none;
-  }
+  .bike-list li:last-child { border-bottom: none; }
 
-  .bike-list__name {
-    font-weight: 500;
-  }
+  .bike-list__name { font-weight: 500; }
 
   .bike-list__note {
     color: var(--color-ink-soft);
     display: block;
   }
 
-  .bike-quotes {
-    margin-top: 1.5rem;
-  }
-
   .bike-quote {
     margin: 0 0 1.5rem;
     padding-left: 1.25rem;
     border-left: 2px solid var(--color-border);
+    break-inside: avoid;
   }
 
   .bike-quote p {
@@ -269,6 +360,7 @@ if (!(await isSectionVisible(env?.DB, "bicycles"))) {
   }
 
   .bike-footnote {
+    max-width: var(--measure);
     margin-top: 2rem;
     padding-top: 1.25rem;
     border-top: 1px solid var(--color-border);
@@ -277,15 +369,38 @@ if (!(await isSectionVisible(env?.DB, "bicycles"))) {
     color: var(--color-ink-soft);
   }
 
-  @media (min-width: 40rem) {
-    .bike-list li {
+  .bike-top {
+    margin-top: 3rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.875rem;
+  }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  /* On a wide screen the list sections pair up, which roughly halves their
+     height. Films stay one column because they are prose. */
+  @media (min-width: 56rem) {
+    .bike-section--wide { max-width: none; }
+
+    .bike-cols,
+    .bike-groups {
       display: grid;
-      grid-template-columns: 13rem 1fr;
-      gap: 1rem;
-      align-items: baseline;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 3rem;
+      align-items: start;
     }
-    .bike-list__note {
-      display: inline;
+
+    .bike-books li,
+    .bike-groups .bike-subsection {
+      break-inside: avoid;
+    }
+
+    .bike-groups .bike-subsection:nth-child(-n + 2) {
+      margin-top: 1.5rem;
     }
   }
 </style>
