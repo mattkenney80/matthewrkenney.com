@@ -5,7 +5,8 @@
 // renderer prints an unlinked name rather than guessing at a URL.
 
 export type Entry = { name: string; note?: string; href?: string };
-export type Film = { title: string; year: string; what: string; where?: string; href?: string };
+export type Link = { label: string; href: string };
+export type Film = { title: string; year: string; what: string; links?: Link[] };
 export type Book = { title: string; author: string; year: string; why: string };
 export type Quote = { text: string; source: string };
 export type Group = { heading: string; blurb?: string; items: Entry[] };
@@ -25,40 +26,58 @@ export const filmSections: { heading: string; blurb?: string; films: Film[] }[] 
         title: "Thereabouts",
         year: "2014",
         what: "The brothers ride from their childhood home in Port Macquarie to Uluru, about 2,500 km, after Lachlan burns out on pro racing. Directed by Scott Mitchell.",
+        links: [{ label: "Watch on YouTube", href: "https://www.youtube.com/watch?v=QqoKsDBQCTY" }],
+      },
+      {
+        title: "Thereabouts Reprise #2",
+        year: "2015",
+        what: "The second film. Confirmed on the Thereabouts channel under this title rather than the Thereabouts 2 the press used.",
+        links: [{ label: "Watch on YouTube", href: "https://www.youtube.com/watch?v=QU5OUp2co_8" }],
       },
       {
         title: "Thereabouts Colombia",
         year: "2017",
         what: "Colombia's brutal climbs and cycling culture, plus the brothers returning to racing together.",
+        links: [{ label: "Watch on YouTube", href: "https://www.youtube.com/watch?v=1eMmVd401Z4" }],
       },
       {
         title: "Outskirts",
         year: "2018 to 2019",
         what: "The second season of Thereabouts, made with Rapha. Three parts. Part 3, The Shadow of the East, is a 70 minute, seven country, 1,600 km ride from Montenegro to Turkey. The best of the set.",
-        where: "Bikepacking.com writeup",
-        href: "https://bikepacking.com/news/outskirts-3-video/",
+        links: [
+          { label: "1. Route 66", href: "https://www.youtube.com/watch?v=Dh25fH5diwQ" },
+          { label: "2. The Big Land", href: "https://www.youtube.com/watch?v=AsC3ZKzObNQ" },
+          { label: "3. The Shadow of the East", href: "https://www.youtube.com/watch?v=XuLfbKwcJ6Y" },
+        ],
+
       },
       {
         title: "The Alt Tour",
         year: "2021",
         what: "Every stage and every transfer of the 2021 Tour de France, solo and self supported. About 5,500 km in 23 days. He beat the peloton to Paris and raised money for World Bicycle Relief. 38 minutes.",
+        links: [{ label: "Watch on YouTube", href: "https://www.youtube.com/watch?v=eujxv77lGOI" }],
       },
       {
         title: "EF Gone Racing",
         year: "2019 onward",
         what: "Short films on the alt calendar rides: Badlands, GBDURO, Unbound, Munich to the Ukrainian border, and more.",
+        links: [{ label: "Start with Kanza, episode 001", href: "https://www.youtube.com/watch?v=kPODHtTdO24" }],
       },
       {
         title: "The Divide",
         year: "2023 to 2024",
         what: "His 2023 Tour Divide ride, Banff to Antelope Wells, in 12 days, 12 hours, 21 minutes. Not an official record because of course deviations and the film crew, which is part of the story. EF's first full length film.",
+        links: [{ label: "Watch on YouTube", href: "https://www.youtube.com/watch?v=ZYRKjKsDgyQ" }],
       },
       {
         title: "The Great Southern Country",
         year: "2025",
         what: "The 2024 lap of Australia, 14,200 km in 30 days, 9 hours, 59 minutes. Gus filmed it. Strong on the Outback, the support crew, and the Indigenous communities along the route.",
-        where: "EF Pro Cycling",
-        href: "https://efprocycling.com/culture/the-great-southern-country-film-tour",
+        links: [
+          { label: "Watch on YouTube", href: "https://www.youtube.com/watch?v=XW1F79sfftA" },
+          { label: "EF Pro Cycling", href: "https://efprocycling.com/culture/the-great-southern-country-film-tour" },
+        ],
+
       },
     ],
   },
@@ -71,15 +90,13 @@ export const filmSections: { heading: string; blurb?: string; films: Film[] }[] 
         title: "Crossing Iceland",
         year: "2022",
         what: "First single push, human powered crossing of Iceland, north to south, Akureyri to Vik. 257 miles of highland doubletrack and glacial rivers in 19 hours 45 minutes, carrying 7,000 calories with no resupply. 13 minutes, shot with Chris Burkard.",
-        where: "Bikepacking.com",
-        href: "https://bikepacking.com/plog/crossing-iceland-video/",
+        links: [{ label: "Bikepacking.com", href: "https://bikepacking.com/plog/crossing-iceland-video/" }],
       },
       {
         title: "Crossing Tasmania",
         year: "2023",
         what: "360 miles and about 34,000 feet of climbing, west coast to the Bay of Fires, in 32 hours. Deliberately slower, about letting go of the clock. Route built with local bikepacker Emma Flukes. Ends on the Blue Derby trails. About 21 minutes.",
-        where: "Bikepacking.com",
-        href: "https://bikepacking.com/news/crossing-tasmania-film/",
+        links: [{ label: "Bikepacking.com", href: "https://bikepacking.com/news/crossing-tasmania-film/" }],
       },
     ],
   },
@@ -90,15 +107,13 @@ export const filmSections: { heading: string; blurb?: string; films: Film[] }[] 
         title: "Klunkerz: A Film About Mountain Bikes",
         year: "2006",
         what: "Billy Savage's history of the Marin County klunker scene on Mount Tamalpais. Repack, Schwinn Excelsiors pulled from dumps, Gary Fisher, Joe Breeze, Charlie Kelly, Tom Ritchey, and the Crested Butte and Cupertino crews. 83 minutes.",
-        where: "Green Planet Films",
-        href: "https://greenplanetfilms.org/products/klunkerz-a-film-about-mountain-biking",
+        links: [{ label: "Green Planet Films", href: "https://greenplanetfilms.org/products/klunkerz-a-film-about-mountain-biking" }],
       },
       {
         title: "Camera Corner",
         year: "2024",
         what: "Wende Cragg was the only woman riding with the original Marin crew, and her Rolling Dinosaur Archive is close to the only photographic record of that era. Named for the switchback on the Repack course where she shot. The Radavist's first feature, directed by Josh Weinberg. Released free online in December 2024.",
-        where: "The Radavist",
-        href: "https://theradavist.com/camera-corner-documentary-wende-cragg/",
+        links: [{ label: "The Radavist", href: "https://theradavist.com/camera-corner-documentary-wende-cragg/" }],
       },
     ],
   },

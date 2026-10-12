@@ -39,9 +39,11 @@ if (!(await isSectionVisible(env?.DB, "bicycles"))) {
                 <span class="bike-film__year">{f.year}</span>
               </p>
               <p class="bike-film__what">{f.what}</p>
-              {f.href && (
+              {f.links && f.links.length > 0 && (
                 <p class="bike-film__where">
-                  <a href={f.href} target="_blank" rel="noopener">{f.where ?? "Watch"} &rarr;</a>
+                  {f.links.map((l) => (
+                    <a href={l.href} target="_blank" rel="noopener">{l.label} &rarr;</a>
+                  ))}
                 </p>
               )}
             </li>
@@ -208,7 +210,10 @@ if (!(await isSectionVisible(env?.DB, "bicycles"))) {
   }
 
   .bike-film__where {
-    margin: 0.375rem 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.25rem;
+    margin: 0.5rem 0 0;
     font-size: 0.875rem;
   }
 
