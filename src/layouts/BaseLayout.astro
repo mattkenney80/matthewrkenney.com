@@ -75,6 +75,7 @@ const imageURL = new URL(image, Astro.url.origin).href;
           {nav.experiments && <li><a href="/experiments" aria-current={isActive("/experiments") ? "page" : undefined}>Experiments</a></li>}
           {nav.movies && <li><a href="/movies" aria-current={isActive("/movies") ? "page" : undefined}>Movies</a></li>}
           {nav.emblems && <li><a href="/emblems" aria-current={isActive("/emblems") ? "page" : undefined}>Emblems</a></li>}
+          {nav.bicycles && <li><a href="/bicycles" aria-current={isActive("/bicycles") ? "page" : undefined}>Bicycle Resources</a></li>}
           <li><a href="/about" aria-current={isActive("/about") ? "page" : undefined}>About</a></li>
           <li><a href="/contact" aria-current={isActive("/contact") ? "page" : undefined}>Contact</a></li>
         </ul>

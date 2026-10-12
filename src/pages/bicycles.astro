@@ -1,0 +1,286 @@
+---
+import { env } from "cloudflare:workers";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { isSectionVisible } from "../lib/settings";
+import {
+  intro,
+  filmSections,
+  riders,
+  creatorGroups,
+  books,
+  siteGroups,
+  quotes,
+  quoteFootnote,
+} from "../data/bicycles";
+
+if (!(await isSectionVisible(env?.DB, "bicycles"))) {
+  return Astro.rewrite("/404");
+}
+---
+
+<BaseLayout
+  title="Bicycle Resources"
+  description="Films, books, riders, and sites worth your time, from someone who rides gravel, mountain, and dirt jumps."
+>
+  <h1>Bicycle Resources</h1>
+  {intro.map((p) => <p class="lede">{p}</p>)}
+
+  <section class="bike-section">
+    <h2>Films</h2>
+    {filmSections.map((s) => (
+      <div class="bike-subsection">
+        <h3>{s.heading}</h3>
+        {s.blurb && <p class="bike-blurb">{s.blurb}</p>}
+        <ul class="bike-films">
+          {s.films.map((f) => (
+            <li>
+              <p class="bike-film__head">
+                <span class="bike-film__title">{f.title}</span>
+                <span class="bike-film__year">{f.year}</span>
+              </p>
+              <p class="bike-film__what">{f.what}</p>
+              {f.href && (
+                <p class="bike-film__where">
+                  <a href={f.href} target="_blank" rel="noopener">{f.where ?? "Watch"} &rarr;</a>
+                </p>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </section>
+
+  <section class="bike-section">
+    <h2>Riders</h2>
+    <ul class="bike-list">
+      {riders.map((r) => (
+        <li>
+          <span class="bike-list__name">
+            {r.href ? <a href={r.href} target="_blank" rel="noopener">{r.name}</a> : r.name}
+          </span>
+          {r.note && <span class="bike-list__note">{r.note}</span>}
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="bike-section">
+    <h2>Creators and channels</h2>
+    {creatorGroups.map((g) => (
+      <div class="bike-subsection">
+        <h3>{g.heading}</h3>
+        <ul class="bike-list">
+          {g.items.map((i) => (
+            <li>
+              <span class="bike-list__name">
+                {i.href ? <a href={i.href} target="_blank" rel="noopener">{i.name}</a> : i.name}
+              </span>
+              {i.note && <span class="bike-list__note">{i.note}</span>}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </section>
+
+  <section class="bike-section">
+    <h2>Books</h2>
+    <ul class="bike-books">
+      {books.map((b) => (
+        <li>
+          <p class="bike-film__head">
+            <span class="bike-film__title">{b.title}</span>
+            <span class="bike-film__year">{b.author}, {b.year}</span>
+          </p>
+          <p class="bike-film__what">{b.why}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="bike-section">
+    <h2>Websites and forums</h2>
+    {siteGroups.map((g) => (
+      <div class="bike-subsection">
+        <h3>{g.heading}</h3>
+        <ul class="bike-list">
+          {g.items.map((i) => (
+            <li>
+              <span class="bike-list__name">
+                {i.href ? <a href={i.href} target="_blank" rel="noopener">{i.name}</a> : i.name}
+              </span>
+              {i.note && <span class="bike-list__note">{i.note}</span>}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </section>
+
+  <section class="bike-section">
+    <h2>Quotes</h2>
+    <div class="bike-quotes">
+      {quotes.map((q) => (
+        <blockquote class="bike-quote">
+          <p>{q.text}</p>
+          <cite>{q.source}</cite>
+        </blockquote>
+      ))}
+    </div>
+    <p class="bike-footnote">
+      {quoteFootnote.text}{" "}
+      <a href={quoteFootnote.href} target="_blank" rel="noopener">Quote Investigator &rarr;</a>
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .bike-section {
+    max-width: var(--measure);
+    margin-top: 3rem;
+  }
+
+  .bike-section > h2 {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .bike-subsection {
+    margin-top: 2rem;
+  }
+
+  .bike-subsection h3 {
+    font-size: 1.0625rem;
+    margin: 0 0 0.5rem;
+  }
+
+  .bike-blurb {
+    color: var(--color-ink-soft);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin: 0 0 1.25rem;
+  }
+
+  /* Films and books: title and year on one line, the description beneath. */
+  .bike-films,
+  .bike-books {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .bike-films li,
+  .bike-books li {
+    padding: 0.875rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .bike-films li:last-child,
+  .bike-books li:last-child {
+    border-bottom: none;
+  }
+
+  .bike-film__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 0.75rem;
+    margin: 0 0 0.25rem;
+  }
+
+  .bike-film__title {
+    font-family: var(--font-serif);
+    font-size: 1.0625rem;
+  }
+
+  .bike-film__year {
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-ink-soft);
+  }
+
+  .bike-film__what {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  .bike-film__where {
+    margin: 0.375rem 0 0;
+    font-size: 0.875rem;
+  }
+
+  /* Simple name + note lists for riders, creators, and sites. */
+  .bike-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .bike-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.9375rem;
+    line-height: 1.55;
+  }
+
+  .bike-list li:last-child {
+    border-bottom: none;
+  }
+
+  .bike-list__name {
+    font-weight: 500;
+  }
+
+  .bike-list__note {
+    color: var(--color-ink-soft);
+    display: block;
+  }
+
+  .bike-quotes {
+    margin-top: 1.5rem;
+  }
+
+  .bike-quote {
+    margin: 0 0 1.5rem;
+    padding-left: 1.25rem;
+    border-left: 2px solid var(--color-border);
+  }
+
+  .bike-quote p {
+    margin: 0 0 0.25rem;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.0625rem;
+    line-height: 1.5;
+  }
+
+  .bike-quote cite {
+    font-style: normal;
+    font-size: 0.8125rem;
+    color: var(--color-ink-soft);
+  }
+
+  .bike-footnote {
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-ink-soft);
+  }
+
+  @media (min-width: 40rem) {
+    .bike-list li {
+      display: grid;
+      grid-template-columns: 13rem 1fr;
+      gap: 1rem;
+      align-items: baseline;
+    }
+    .bike-list__note {
+      display: inline;
+    }
+  }
+</style>

@@ -103,7 +103,10 @@ img {
 
 .nav__links {
   display: flex;
-  gap: var(--space-3);
+  /* Eight items with unbreakable labels need to wrap onto a second row on
+     narrow screens rather than scroll sideways. */
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -113,6 +116,8 @@ img {
   text-decoration: none;
   color: var(--color-ink-soft);
   font-size: 0.9375rem;
+  /* Keep multi-word nav labels on one line; the row wraps instead. */
+  white-space: nowrap;
 }
 
 .nav__links a:hover,
