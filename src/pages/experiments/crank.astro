@@ -1,0 +1,954 @@
+---
+// Turn the crank: scrub through the Bicycle Crimes photographs by pedaling.
+//
+// The drivetrain geometry is computed here, on the server, so the SVG paints
+// before any JavaScript runs. The client script only rotates three groups,
+// scrolls the chain, and swaps photographs. Image files and manifest.json are
+// produced by scripts/build_crank_images.py (Python, build time only).
+export const prerender = false;
+
+import { env } from "cloudflare:workers";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { isSectionVisible } from "../../lib/settings";
+
+if (!(await isSectionVisible(env?.DB, "experiments"))) {
+  return Astro.rewrite("/404");
+}
+
+const TAU = Math.PI * 2;
+const RING = { x: 150, y: 200, teeth: 46, tip: 119, root: 107 };
+const COG = { x: 420, y: 200, teeth: 17, tip: 47, root: 36 };
+const ARM = 100;
+const CHAIN_RING_R = 110;
+const CHAIN_COG_R = (CHAIN_RING_R * COG.teeth) / RING.teeth;
+
+const f = (n: number) => n.toFixed(2);
+
+// A toothed outline: one trapezoid per tooth, joined along the root circle.
+function teethPath(cx: number, cy: number, n: number, root: number, tip: number) {
+  const pitch = TAU / n;
+  const at = (r: number, a: number) => `${f(cx + r * Math.cos(a))},${f(cy + r * Math.sin(a))}`;
+  const parts: string[] = [];
+  for (let k = 0; k < n; k++) {
+    const a = k * pitch;
+    parts.push(
+      `${k === 0 ? "M" : "L"}${at(root, a - 0.46 * pitch)}`,
+      `L${at(tip, a - 0.2 * pitch)}`,
+      `L${at(tip, a + 0.2 * pitch)}`,
+      `L${at(root, a + 0.46 * pitch)}`
+    );
+  }
+  return parts.join(" ") + " Z";
+}
+
+// The chain: two external tangents joined by arcs around the ring and the cog.
+const d = COG.x - RING.x;
+const phi = Math.asin((CHAIN_RING_R - CHAIN_COG_R) / d);
+const sx = Math.sin(phi);
+const cy = Math.cos(phi);
+const p1t = `${f(RING.x + CHAIN_RING_R * sx)},${f(RING.y - CHAIN_RING_R * cy)}`;
+const p2t = `${f(COG.x + CHAIN_COG_R * sx)},${f(COG.y - CHAIN_COG_R * cy)}`;
+const p2b = `${f(COG.x + CHAIN_COG_R * sx)},${f(COG.y + CHAIN_COG_R * cy)}`;
+const p1b = `${f(RING.x + CHAIN_RING_R * sx)},${f(RING.y + CHAIN_RING_R * cy)}`;
+const chainD =
+  `M${p1t} L${p2t} A${f(CHAIN_COG_R)} ${f(CHAIN_COG_R)} 0 0 1 ${p2b} ` +
+  `L${p1b} A${CHAIN_RING_R} ${CHAIN_RING_R} 0 1 1 ${p1t} Z`;
+
+const ringTeeth = teethPath(RING.x, RING.y, RING.teeth, RING.root, RING.tip);
+const cogTeeth = teethPath(COG.x, COG.y, COG.teeth, COG.root, COG.tip);
+
+// Five spider arms and bolts for the chainring, evenly spaced.
+const spider = Array.from({ length: 5 }, (_, i) => {
+  const a = (i / 5) * TAU - Math.PI / 2;
+  return {
+    x: RING.x + 74 * Math.cos(a),
+    y: RING.y + 74 * Math.sin(a),
+  };
+});
+
+const armD =
+  `M${RING.x} ${RING.y - 16} L${RING.x + ARM} ${RING.y - 10} ` +
+  `A10 10 0 0 1 ${RING.x + ARM} ${RING.y + 10} L${RING.x} ${RING.y + 16} ` +
+  `A16 16 0 0 1 ${RING.x} ${RING.y - 16} Z`;
+---
+
+<BaseLayout
+  title="Turn the Crank"
+  description="Turn a bicycle crank to scrub through 131 Bicycle Crimes photographs in the order they were taken."
+  wide
+>
+  <p class="crank-eyebrow">Experiment &middot; SVG, JavaScript, and a little Python</p>
+  <h1>Turn the crank</h1>
+  <p class="lede">
+    131 photographs from the <a href="/photography/bicycle-crimes">Bicycle Crimes</a> series, in the
+    order I took them. Pedal forward through eight years. Pedal backward to rewind.
+  </p>
+
+  <section class="crank-app" id="crank-app" aria-label="Photograph viewer driven by a bicycle crank">
+    <figure class="crank-figure">
+      <div class="crank-frame" id="frame">
+        <img id="frame-img" alt="" decoding="async" />
+        <p class="crank-loading" id="loading">Loading photographs&hellip;</p>
+      </div>
+      <figcaption class="crank-caption">
+        <span class="crank-caption__date" id="cap-date">&nbsp;</span>
+        <span class="crank-caption__count" id="cap-count">&nbsp;</span>
+      </figcaption>
+    </figure>
+
+    <div class="crank-rig">
+      <div
+        class="crank-drive"
+        id="drive"
+        role="slider"
+        tabindex="0"
+        aria-label="Bicycle crank. Drag in circles, or use the arrow keys, to move through the photographs."
+        aria-valuemin="1"
+        aria-valuemax="1"
+        aria-valuenow="1"
+      >
+        <svg
+          id="crank-svg"
+          viewBox="0 0 480 400"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <rect width="480" height="400" fill="transparent"></rect>
+
+          <path id="chain" class="chain" d={chainD}></path>
+
+          <g id="cog" transform={`rotate(0 ${COG.x} ${COG.y})`}>
+            <path class="metal" d={cogTeeth}></path>
+            <circle class="line" cx={COG.x} cy={COG.y} r="24"></circle>
+            <circle class="solid" cx={COG.x} cy={COG.y} r="7"></circle>
+            {[0, 1, 2, 3].map((i) => {
+              const a = (i / 4) * TAU;
+              return (
+                <line
+                  class="line"
+                  x1={f(COG.x + 8 * Math.cos(a))}
+                  y1={f(COG.y + 8 * Math.sin(a))}
+                  x2={f(COG.x + 24 * Math.cos(a))}
+                  y2={f(COG.y + 24 * Math.sin(a))}
+                ></line>
+              );
+            })}
+          </g>
+
+          <g id="ring" transform={`rotate(0 ${RING.x} ${RING.y})`}>
+            <path class="metal" d={ringTeeth}></path>
+            <circle class="line" cx={RING.x} cy={RING.y} r="92"></circle>
+            {spider.map((b) => (
+              <>
+                <line class="line" x1={RING.x} y1={RING.y} x2={f(b.x)} y2={f(b.y)}></line>
+                <circle class="line" cx={f(b.x)} cy={f(b.y)} r="6"></circle>
+              </>
+            ))}
+            <path class="arm" d={armD}></path>
+            <g id="pedal" transform={`rotate(0 ${RING.x + ARM} ${RING.y})`}>
+              <rect class="pedal" x={RING.x + ARM - 19} y={RING.y - 8} width="38" height="16" rx="4"></rect>
+            </g>
+          </g>
+          <circle class="solid" cx={RING.x} cy={RING.y} r="9"></circle>
+        </svg>
+        <span class="crank-pulse" aria-hidden="true"></span>
+      </div>
+
+      <div class="crank-controls">
+        <button type="button" id="btn-back">Rewind</button>
+        <button type="button" id="btn-fwd">Forward</button>
+        <button type="button" id="btn-cruise" aria-pressed="false">Auto-pedal</button>
+      </div>
+
+      <p class="crank-readout">
+        <span>Cadence <output id="rpm">0</output> rpm</span>
+        <span>Gear {RING.teeth}&times;{COG.teeth}</span>
+      </p>
+    </div>
+
+    <div class="crank-spine-wrap">
+      <div class="crank-spine" id="spine" aria-hidden="true"></div>
+      <div class="crank-years" id="years" aria-hidden="true"></div>
+      <p class="crank-hint">
+        Each stripe is one photograph, colored by its dominant color. Drag across the strip to jump.
+      </p>
+    </div>
+  </section>
+
+  <noscript>
+    <p class="crank-noscript">
+      This one needs JavaScript. The same photographs are in the
+      <a href="/photography/bicycle-crimes">Bicycle Crimes gallery</a>.
+    </p>
+  </noscript>
+
+  <p class="crank-about">
+    How it was made: a Python script (Pillow) reduced 131 originals, 605 MB, to 21 MB of web images,
+    stripped their metadata, read each capture date, and pulled a dominant color from every frame.
+    The crank is SVG with a flywheel: let go and it coasts.
+  </p>
+  <p><a href="/experiments">&larr; All experiments</a></p>
+</BaseLayout>
+
+<script>
+  type Frame = {
+    id: string;
+    src: string;
+    w: number;
+    h: number;
+    date: string | null;
+    color: string;
+    lqip: string;
+  };
+
+  const TAU = Math.PI * 2;
+  const FRAMES_PER_REV = 12; // one revolution moves through 12 photographs
+  const RING = { x: 150, y: 200, teeth: 46 };
+  const COG = { x: 420, y: 200, teeth: 17 };
+  const ARM = 100;
+  const CHAIN_R = 110;
+  const FRICTION = 1.15; // flywheel drag, per second
+  const MAX_OMEGA = 16; // rad/s, about 150 rpm
+  const CRUISE_OMEGA = 3.4; // rad/s, about 32 rpm
+  const WINDOW = 18; // frames kept decoded on either side of the current one
+  const MAX_INFLIGHT = 6;
+  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const $ = <T extends Element>(id: string) => document.getElementById(id) as unknown as T;
+  const root = $<HTMLElement>("crank-app");
+  const frameEl = $<HTMLElement>("frame");
+  const imgEl = $<HTMLImageElement>("frame-img");
+  const loadingEl = $<HTMLElement>("loading");
+  const capDate = $<HTMLElement>("cap-date");
+  const capCount = $<HTMLElement>("cap-count");
+  const drive = $<HTMLElement>("drive");
+  const svg = $<SVGSVGElement>("crank-svg");
+  const ringEl = $<SVGGElement>("ring");
+  const pedalEl = $<SVGGElement>("pedal");
+  const cogEl = $<SVGGElement>("cog");
+  const chainEl = $<SVGPathElement>("chain");
+  const rpmEl = $<HTMLOutputElement>("rpm");
+  const spine = $<HTMLElement>("spine");
+  const yearsEl = $<HTMLElement>("years");
+  const btnBack = $<HTMLButtonElement>("btn-back");
+  const btnFwd = $<HTMLButtonElement>("btn-fwd");
+  const btnCruise = $<HTMLButtonElement>("btn-cruise");
+
+  let frames: Frame[] = [];
+  let n = 0;
+  let theta = 0; // total crank angle in radians; clockwise is forward
+  let omega = 0; // coasting angular velocity
+  let vel = 0; // velocity shown in the readout
+  let dragging = false;
+  let cruising = false;
+  let animTarget: number | null = null;
+  let current = -1;
+  let running = false;
+  let lastT = 0;
+  let shownRpm = -1;
+  let ticks: HTMLElement[] = [];
+
+  const mod = (a: number, m: number) => ((a % m) + m) % m;
+  const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v));
+  const circDist = (a: number, b: number) => {
+    const d = Math.abs(a - b);
+    return Math.min(d, n - d);
+  };
+
+  // ---------- image cache: a sliding window of decoded frames ----------
+  const cache = new Map<number, HTMLImageElement>();
+  const ready = new Set<number>();
+  const pending = new Set<number>();
+  const failed = new Set<number>();
+  let inflight = 0;
+
+  function load(i: number): Promise<void> {
+    const im = new Image();
+    im.decoding = "async";
+    im.src = frames[i].src;
+    return im
+      .decode()
+      .then(() => {
+        cache.set(i, im);
+        ready.add(i);
+      })
+      .catch(() => {
+        failed.add(i);
+      });
+  }
+
+  function nextCandidate(): number | null {
+    const dir = vel < 0 ? -1 : 1; // look further ahead in the direction of travel
+    for (let d = 0; d <= WINDOW; d++) {
+      for (const sign of [dir, -dir]) {
+        const i = mod(current + sign * d, n);
+        if (!ready.has(i) && !pending.has(i) && !failed.has(i)) return i;
+        if (d === 0) break;
+      }
+    }
+    return null;
+  }
+
+  function pump() {
+    while (inflight < MAX_INFLIGHT) {
+      const i = nextCandidate();
+      if (i === null) return;
+      pending.add(i);
+      inflight++;
+      load(i).then(() => {
+        pending.delete(i);
+        inflight--;
+        if (i === current) showImage(i);
+        pump();
+      });
+    }
+  }
+
+  function evict() {
+    for (const i of [...cache.keys()]) {
+      if (circDist(i, current) > WINDOW + 4) {
+        cache.delete(i);
+        ready.delete(i);
+      }
+    }
+  }
+
+  function showImage(i: number) {
+    if (!ready.has(i)) {
+      imgEl.style.opacity = "0";
+      return;
+    }
+    imgEl.src = frames[i].src;
+    imgEl.style.opacity = "1";
+    loadingEl.hidden = true;
+  }
+
+  // ---------- frame display ----------
+  const fmtDate = (iso: string | null) =>
+    iso
+      ? new Date(iso).toLocaleDateString("en-US", { month: "long", year: "numeric" })
+      : "Undated";
+
+  function setFrame(i: number) {
+    current = i;
+    const fr = frames[i];
+    root.style.setProperty("--tint", fr.color);
+    frameEl.style.backgroundImage = `url(${fr.lqip})`;
+    const label = `Photograph ${i + 1} of ${n}`;
+    imgEl.alt = `${label} from the Bicycle Crimes series, ${fmtDate(fr.date)}`;
+    capDate.textContent = fmtDate(fr.date);
+    capCount.textContent = `${String(i + 1).padStart(3, "0")} / ${n}`;
+    drive.setAttribute("aria-valuenow", String(i + 1));
+    drive.setAttribute("aria-valuetext", `${label}, ${fmtDate(fr.date)}`);
+    ticks.forEach((t) => t.classList.remove("is-active"));
+    ticks[i]?.classList.add("is-active");
+    showImage(i);
+    evict();
+    pump();
+  }
+
+  // ---------- crank rendering ----------
+  function render() {
+    if (n === 0) return;
+    const deg = (theta * 180) / Math.PI;
+    ringEl.setAttribute("transform", `rotate(${deg.toFixed(2)} ${RING.x} ${RING.y})`);
+    pedalEl.setAttribute("transform", `rotate(${(-deg).toFixed(2)} ${RING.x + ARM} ${RING.y})`);
+    cogEl.setAttribute(
+      "transform",
+      `rotate(${((deg * RING.teeth) / COG.teeth).toFixed(2)} ${COG.x} ${COG.y})`
+    );
+    chainEl.style.strokeDashoffset = String(-theta * CHAIN_R);
+
+    const idx = mod(Math.floor((theta / TAU) * FRAMES_PER_REV), n);
+    if (idx !== current) setFrame(idx);
+
+    const rpm = Math.round((Math.abs(vel) * 60) / TAU);
+    if (rpm !== shownRpm) {
+      shownRpm = rpm;
+      rpmEl.textContent = String(rpm);
+    }
+  }
+
+  // ---------- motion loop (runs only while something is moving) ----------
+  function tick(now: number) {
+    const dt = clamp((now - lastT) / 1000, 0.001, 0.05);
+    lastT = now;
+
+    if (animTarget !== null) {
+      const diff = animTarget - theta;
+      if (Math.abs(diff) < 0.002) {
+        theta = animTarget;
+        animTarget = null;
+      } else {
+        theta += diff * (1 - Math.exp(-16 * dt));
+      }
+      vel = 0;
+    } else if (cruising) {
+      omega += (CRUISE_OMEGA - omega) * (1 - Math.exp(-3 * dt));
+      theta += omega * dt;
+      vel = omega;
+    } else {
+      omega *= Math.exp(-FRICTION * dt);
+      if (Math.abs(omega) < 0.04) omega = 0;
+      theta += omega * dt;
+      vel = omega;
+    }
+    render();
+
+    const active = animTarget !== null || cruising || omega !== 0;
+    if (active && !dragging) {
+      requestAnimationFrame(tick);
+    } else {
+      running = false;
+      if (!dragging) {
+        vel = 0;
+        render();
+      }
+    }
+  }
+
+  function kick() {
+    if (running) return;
+    running = true;
+    lastT = performance.now();
+    requestAnimationFrame(tick);
+  }
+
+  function setCruise(on: boolean) {
+    cruising = on && !reduceMotion;
+    btnCruise.setAttribute("aria-pressed", String(cruising));
+    btnCruise.classList.toggle("is-on", cruising);
+    if (cruising) {
+      animTarget = null;
+      kick();
+    }
+  }
+
+  function stepBy(dir: number) {
+    setCruise(false);
+    omega = 0;
+    const f = Math.floor((theta / TAU) * FRAMES_PER_REV);
+    const target = ((f + dir + 0.5) * TAU) / FRAMES_PER_REV;
+    if (reduceMotion) {
+      theta = target;
+      render();
+    } else {
+      animTarget = target;
+      kick();
+    }
+  }
+
+  function seek(i: number) {
+    setCruise(false);
+    animTarget = null;
+    omega = 0;
+    vel = 0;
+    theta = ((clamp(i, 0, n - 1) + 0.5) * TAU) / FRAMES_PER_REV;
+    render();
+  }
+
+  // Capture keeps a drag alive when the pointer leaves the element. It can
+  // throw if the browser no longer recognizes the pointer, so never let that
+  // abort the handler: the drag still works without it.
+  function capture(el: Element, id: number) {
+    try {
+      el.setPointerCapture(id);
+    } catch {
+      /* drag continues without capture */
+    }
+  }
+
+  // ---------- dragging the crank ----------
+  let lastAngle = 0;
+  let lastMoveT = 0;
+  let emaVel = 0;
+
+  function pointerAngle(e: PointerEvent) {
+    const ctm = svg.getScreenCTM();
+    if (!ctm) return 0;
+    const c = new DOMPoint(RING.x, RING.y).matrixTransform(ctm);
+    return Math.atan2(e.clientY - c.y, e.clientX - c.x);
+  }
+
+  svg.addEventListener("pointerdown", (e) => {
+    if (n === 0) return;
+    e.preventDefault();
+    capture(svg, e.pointerId);
+    dragging = true;
+    setCruise(false);
+    animTarget = null;
+    omega = 0;
+    emaVel = 0;
+    lastAngle = pointerAngle(e);
+    lastMoveT = performance.now();
+    root.classList.add("is-used");
+    drive.focus({ preventScroll: true });
+  });
+
+  svg.addEventListener("pointermove", (e) => {
+    if (!dragging) return;
+    const a = pointerAngle(e);
+    let delta = a - lastAngle;
+    if (delta > Math.PI) delta -= TAU;
+    if (delta < -Math.PI) delta += TAU;
+    lastAngle = a;
+    const now = performance.now();
+    const dt = Math.max(0.001, (now - lastMoveT) / 1000);
+    lastMoveT = now;
+    emaVel = 0.55 * emaVel + 0.45 * (delta / dt);
+    vel = emaVel;
+    theta += delta;
+    render();
+  });
+
+  function release(e: PointerEvent) {
+    if (!dragging) return;
+    dragging = false;
+    try { svg.releasePointerCapture(e.pointerId); } catch { /* not captured */ }
+    const stale = performance.now() - lastMoveT > 90;
+    omega = reduceMotion || stale ? 0 : clamp(emaVel, -MAX_OMEGA, MAX_OMEGA);
+    if (Math.abs(omega) < 0.5) omega = 0;
+    if (omega !== 0) kick();
+    else {
+      vel = 0;
+      render();
+    }
+  }
+  svg.addEventListener("pointerup", release);
+  svg.addEventListener("pointercancel", release);
+
+  // ---------- keyboard and buttons ----------
+  drive.addEventListener("keydown", (e) => {
+    if (n === 0) return;
+    const keys: Record<string, () => void> = {
+      ArrowRight: () => stepBy(1),
+      ArrowUp: () => stepBy(1),
+      ArrowLeft: () => stepBy(-1),
+      ArrowDown: () => stepBy(-1),
+      PageUp: () => stepBy(FRAMES_PER_REV),
+      PageDown: () => stepBy(-FRAMES_PER_REV),
+      Home: () => seek(0),
+      End: () => seek(n - 1),
+      " ": () => setCruise(!cruising),
+    };
+    const action = keys[e.key];
+    if (action) {
+      e.preventDefault();
+      root.classList.add("is-used");
+      action();
+    }
+  });
+
+  btnBack.addEventListener("click", () => stepBy(-1));
+  btnFwd.addEventListener("click", () => stepBy(1));
+  btnCruise.addEventListener("click", () => {
+    root.classList.add("is-used");
+    setCruise(!cruising);
+  });
+  if (reduceMotion) {
+    btnCruise.disabled = true;
+    btnCruise.title = "Auto-pedal is off because your device asks for reduced motion.";
+  }
+
+  // ---------- the color spine ----------
+  function buildSpine() {
+    spine.textContent = "";
+    ticks = frames.map((fr) => {
+      const t = document.createElement("i");
+      t.style.background = fr.color;
+      spine.appendChild(t);
+      return t;
+    });
+
+    const seekFromEvent = (e: PointerEvent) => {
+      const r = spine.getBoundingClientRect();
+      seek(Math.floor(((e.clientX - r.left) / r.width) * n));
+    };
+    let scrubbing = false;
+    spine.addEventListener("pointerdown", (e) => {
+      scrubbing = true;
+      capture(spine, e.pointerId);
+      root.classList.add("is-used");
+      seekFromEvent(e);
+    });
+    spine.addEventListener("pointermove", (e) => scrubbing && seekFromEvent(e));
+    const end = (e: PointerEvent) => {
+      scrubbing = false;
+      try { spine.releasePointerCapture(e.pointerId); } catch { /* not captured */ }
+    };
+    spine.addEventListener("pointerup", end);
+    spine.addEventListener("pointercancel", end);
+  }
+
+  // Year labels, thinned so they never overlap at narrow widths.
+  function layoutYears() {
+    yearsEl.textContent = "";
+    if (n === 0) return;
+    const width = spine.getBoundingClientRect().width || 1;
+    let lastX = -Infinity;
+    let lastKey = "";
+    frames.forEach((fr, i) => {
+      const key = fr.date ? fr.date.slice(0, 4) : "undated";
+      if (key === lastKey) return;
+      lastKey = key;
+      const x = (i / n) * width;
+      if (x - lastX < 38) return;
+      lastX = x;
+      const s = document.createElement("span");
+      s.textContent = key;
+      s.style.left = `${(i / n) * 100}%`;
+      yearsEl.appendChild(s);
+    });
+  }
+
+  // ---------- boot ----------
+  fetch("/crank/manifest.json")
+    .then((r) => {
+      if (!r.ok) throw new Error(String(r.status));
+      return r.json();
+    })
+    .then((m: { frames: Frame[] }) => {
+      frames = m.frames;
+      n = frames.length;
+      drive.setAttribute("aria-valuemax", String(n));
+      buildSpine();
+      layoutYears();
+      new ResizeObserver(layoutYears).observe(spine);
+      theta = (0.5 * TAU) / FRAMES_PER_REV;
+      current = -1;
+      render();
+      root.dataset.state = "ready";
+    })
+    .catch(() => {
+      loadingEl.textContent = "Couldn't load the photographs. Reload to try again.";
+    });
+</script>
+
+<style>
+  .crank-eyebrow {
+    margin: 0 0 0.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-ink-soft);
+  }
+
+  .crank-app {
+    --tint: var(--color-accent);
+    margin-top: 2.5rem;
+    display: grid;
+    gap: 1.75rem;
+  }
+
+  /* ---- photograph ---- */
+  .crank-figure {
+    margin: 0;
+    min-width: 0;
+  }
+
+  .crank-frame {
+    position: relative;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: 2px;
+    background-color: #e9e6df;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 22px 50px -28px var(--tint);
+    transition: box-shadow 0.3s ease;
+  }
+
+  /* A soft veil keeps a letterboxed portrait from looking harsh on its mat. */
+  .crank-frame::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(253, 253, 251, 0.35);
+    backdrop-filter: blur(14px);
+  }
+
+  .crank-frame img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+  }
+
+  .crank-loading {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    margin: 0;
+    color: var(--color-ink-soft);
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .crank-loading[hidden] {
+    display: none;
+  }
+
+  .crank-caption {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 0.75rem;
+  }
+
+  .crank-caption__date {
+    font-family: var(--font-serif);
+    font-size: 1.375rem;
+    letter-spacing: -0.01em;
+    border-bottom: 2px solid var(--tint);
+    padding-bottom: 0.125rem;
+    transition: border-color 0.3s ease;
+  }
+
+  .crank-caption__count {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--color-ink-soft);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---- the drivetrain ---- */
+  .crank-rig {
+    min-width: 0;
+  }
+
+  .crank-drive {
+    position: relative;
+    outline: none;
+    border-radius: 4px;
+  }
+
+  .crank-drive:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+  }
+
+  .crank-drive svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    touch-action: none; /* dragging the crank must not scroll the page */
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .crank-drive svg:active {
+    cursor: grabbing;
+  }
+
+  .crank-drive .metal {
+    fill: rgba(26, 26, 26, 0.05);
+    stroke: var(--color-ink);
+    stroke-width: 1.6;
+    stroke-linejoin: round;
+  }
+
+  .crank-drive .line {
+    fill: none;
+    stroke: var(--color-ink);
+    stroke-width: 1.2;
+    stroke-opacity: 0.55;
+  }
+
+  .crank-drive .solid {
+    fill: var(--color-ink);
+  }
+
+  .crank-drive .arm {
+    fill: var(--color-ink);
+  }
+
+  .crank-drive .pedal {
+    fill: var(--tint);
+    stroke: var(--color-ink);
+    stroke-width: 1.4;
+    transition: fill 0.3s ease;
+  }
+
+  .crank-drive .chain {
+    fill: none;
+    stroke: var(--color-ink);
+    stroke-opacity: 0.7;
+    stroke-width: 5;
+    stroke-dasharray: 7 4;
+  }
+
+  /* A ring that invites the first drag, then goes away. */
+  .crank-pulse {
+    position: absolute;
+    left: calc(246.6 / 480 * 100%);
+    top: calc(225.9 / 400 * 100%);
+    width: 2.75rem;
+    height: 2.75rem;
+    margin: -1.375rem 0 0 -1.375rem;
+    border: 2px solid var(--tint);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .crank-app:not(.is-used)[data-state="ready"] .crank-pulse {
+      animation: crank-pulse 2.4s ease-out infinite;
+    }
+    @keyframes crank-pulse {
+      0% { transform: scale(0.6); opacity: 0.9; }
+      80%, 100% { transform: scale(1.6); opacity: 0; }
+    }
+  }
+
+  .crank-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .crank-controls button {
+    font: inherit;
+    font-size: 0.8125rem;
+    padding: 0.4rem 0.8rem;
+    color: var(--color-ink);
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .crank-controls button:hover:not(:disabled) {
+    border-color: var(--color-ink);
+  }
+
+  .crank-controls button:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  .crank-controls button.is-on {
+    background: var(--color-ink);
+    color: #fff;
+    border-color: var(--color-ink);
+  }
+
+  .crank-controls button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+
+  .crank-readout {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0.75rem 0 0;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-ink-soft);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .crank-readout output {
+    color: var(--color-ink);
+  }
+
+  /* ---- the color spine ---- */
+  .crank-spine-wrap {
+    min-width: 0;
+  }
+
+  .crank-spine {
+    display: flex;
+    height: 2.25rem;
+    border: 1px solid var(--color-border);
+    border-radius: 2px;
+    overflow: hidden;
+    touch-action: none;
+    cursor: ew-resize;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .crank-spine :global(i) {
+    flex: 1 1 0;
+    min-width: 0;
+    transition: transform 0.12s ease;
+  }
+
+  .crank-spine :global(i.is-active) {
+    transform: scaleY(1.5);
+    box-shadow: 0 0 0 1px var(--color-ink), 0 0 0 3px var(--color-bg);
+    z-index: 1;
+    position: relative;
+  }
+
+  .crank-years {
+    position: relative;
+    height: 1.25rem;
+    margin-top: 0.375rem;
+  }
+
+  .crank-years :global(span) {
+    position: absolute;
+    top: 0;
+    font-size: 0.6875rem;
+    letter-spacing: 0.06em;
+    color: var(--color-ink-soft);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .crank-hint {
+    margin: 0.5rem 0 0;
+    font-size: 0.8125rem;
+    color: var(--color-ink-soft);
+    max-width: var(--measure);
+  }
+
+  .crank-about {
+    max-width: var(--measure);
+    margin-top: 3rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-ink-soft);
+  }
+
+  .crank-noscript {
+    margin-top: 1.5rem;
+  }
+
+  /* ---- layout: photograph beside the crank on wide screens ---- */
+  @media (min-width: 58rem) {
+    .crank-app {
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      grid-template-areas:
+        "figure rig"
+        "spine  spine";
+      align-items: center;
+      column-gap: 2.5rem;
+    }
+    .crank-figure { grid-area: figure; }
+    .crank-rig { grid-area: rig; }
+    .crank-spine-wrap { grid-area: spine; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .crank-frame,
+    .crank-caption__date,
+    .crank-drive .pedal,
+    .crank-spine :global(i) {
+      transition: none;
+    }
+  }
+</style>

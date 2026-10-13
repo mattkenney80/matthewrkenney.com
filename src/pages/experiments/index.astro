@@ -9,6 +9,11 @@ if (!(await isSectionVisible(env?.DB, "experiments"))) {
 
 const experiments: { title: string; description: string; href?: string }[] = [
   {
+    title: "Turn the Crank",
+    description: "Pedal a bicycle crank to scrub through 131 Bicycle Crimes photographs in the order they were taken. SVG flywheel physics in the browser, with a Python script behind the images.",
+    href: "/experiments/crank",
+  },
+  {
     title: "Cycling on Strava",
     description: "Activity feed, stats, and riding patterns from Strava via OAuth2. Shows rides grouped by location with streak tracking and time-of-day analysis.",
     href: "/experiments/strava",
@@ -20,7 +25,7 @@ const experiments: { title: string; description: string; href?: string }[] = [
   <h1>Experiments</h1>
   <p class="lede">
     A freeform space for one-off layouts, interactions, and demos that don't belong in
-    writing or photography. Nothing here is precious — some of it may break.
+    writing or photography. Nothing here is precious. Some of it may break.
   </p>
 
   {experiments.length === 0 ? (
