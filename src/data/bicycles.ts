@@ -12,7 +12,10 @@ export type Quote = { text: string; source: string };
 export type Group = { heading: string; blurb?: string; items: Entry[] };
 
 export const intro = [
-  "A running library of cycling films, books, riders, creators, and quotes.",
+  "This page is a collection of things I love about bikes. Some of it is general bicycle knowledge. Some of it is pure inspiration: the films, books, riders, and creators that excite me or that I find deeply interesting.",
+  "Bikes have always been a big part of my life. After college I planned to move to Colorado for the sole purpose of mountain biking. Instead, life and a career landed me in Manhattan. The first time I rode a ten-speed through Manhattan traffic, I felt the same exhilaration I'd found on the mountain bike, with more taxis.",
+  "Now I have two boys, eight and ten, and they're catching the same bike bug I have. That part is amazing. I get to show them the world from a bike.",
+  "This page will always be a work in progress.",
 ];
 
 export const filmSections: { heading: string; blurb?: string; films: Film[] }[] = [

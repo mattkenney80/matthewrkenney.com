@@ -34,7 +34,9 @@ if (!(await isSectionVisible(env?.DB, "bicycles"))) {
 >
   <div class="bike-intro">
     <h1>Bicycle Resources</h1>
-    {intro.map((p) => <p class="lede">{p}</p>)}
+    {intro.map((p, i) =>
+      i === 0 ? <p class="lede">{p}</p> : <p class="bike-intro__p">{p}</p>
+    )}
   </div>
 
   <nav class="bike-toc" aria-label="Sections">
@@ -200,6 +202,17 @@ if (!(await isSectionVisible(env?.DB, "bicycles"))) {
 <style>
   .bike-intro {
     max-width: var(--measure);
+  }
+
+  /* Only the opening line is set as a lede; the rest reads as body prose. */
+  .bike-intro__p {
+    margin: 0 0 1rem;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .bike-intro__p:last-of-type {
+    margin-bottom: 0;
   }
 
   /* Jump nav: sticks to the top so any section is one click away. */
