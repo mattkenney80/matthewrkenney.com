@@ -4,10 +4,10 @@
 // Leave `href` off an entry when the destination has not been confirmed. The
 // renderer prints an unlinked name rather than guessing at a URL.
 
-export type Entry = { name: string; note?: string; href?: string };
 export type Link = { label: string; href: string };
+export type Entry = { name: string; note?: string; href?: string; links?: Link[] };
 export type Film = { title: string; year: string; what: string; links?: Link[] };
-export type Book = { title: string; author: string; year: string; why: string };
+export type Book = { title: string; author: string; year: string; why: string; href?: string };
 export type Quote = { text: string; source: string };
 export type Group = { heading: string; blurb?: string; items: Entry[] };
 
@@ -135,72 +135,77 @@ export const filmSections: { heading: string; blurb?: string; films: Film[] }[] 
   },
 ];
 
-export const riders: Entry[] = [
+// Renamed from "riders": the section covers people and places in bike culture,
+// not only racers. Every YouTube handle below was confirmed to resolve.
+export const culture: Entry[] = [
+  { name: "Ronnie Romance", note: "Ultraromance. Bags, odd gearing, and a whole aesthetic of riding unserious bikes seriously.", href: "https://www.youtube.com/@ultraromance", links: [{ label: "Instagram", href: "https://www.instagram.com/ultraromance/" }] },
+  { name: "Grant Petersen", note: "Rivendell Bicycle Works. The unracer. Lugged steel, upright bars, and an argument against the whole performance industry.", href: "https://www.newyorker.com/magazine/2024/09/23/the-art-of-taking-it-slow", links: [{ label: "Rivendell on YouTube", href: "https://www.youtube.com/@rivbikedotcom" }] },
   { name: "Lachlan Morton", note: "Alt calendar, ultra distance, and the human side of pro cycling.", href: "https://en.wikipedia.org/wiki/Lachlan_Morton" },
-  { name: "Gus Morton", note: "The filmmaker brother. Thereabouts." },
-  { name: "Payson McElveen", note: "Mountain and gravel racing, the Crossing films, and the podcast." },
-  { name: "Lael Wilcox", note: "Ultra distance bikepacking. Tour Divide and the round the world record." },
-  { name: "Chris Burkard", note: "Photographer and filmmaker. Shot Crossing Iceland." },
-  { name: "Rebecca Rusch", note: "Queen of Pain. Endurance mountain and gravel." },
-  { name: "Ted King", note: "Ex pro turned gravel. Vermont. Unbound winner." },
-  { name: "Wende Cragg", note: "A living link to the birth of the sport." },
+  { name: "Gus Morton", note: "The filmmaker brother. Thereabouts.", href: "https://www.youtube.com/@thereabouts" },
+  { name: "Payson McElveen", note: "Mountain and gravel racing, the Crossing films, and the podcast.", href: "https://www.youtube.com/@paysonmcelveen" },
+  { name: "Lael Wilcox", note: "Ultra distance bikepacking. Tour Divide and the round the world record.", href: "https://www.youtube.com/@laelwilcox6539" },
+  { name: "Chris Burkard", note: "Photographer and filmmaker. Shot Crossing Iceland.", href: "https://www.youtube.com/@ChrisburkardStudio" },
+  { name: "Rebecca Rusch", note: "Queen of Pain. Endurance mountain and gravel.", href: "https://www.youtube.com/@RebeccaRusch" },
+  { name: "Ted King", note: "Ex pro turned gravel. Vermont. Unbound winner.", href: "https://www.youtube.com/@iamtedking" },
+  { name: "Wende Cragg", note: "A living link to the birth of the sport.", href: "https://theradavist.com/camera-corner-documentary-wende-cragg/" },
 ];
 
 export const creatorGroups: Group[] = [
   {
     heading: "Mountain biking",
     items: [
-      { name: "Berm Peak", note: "Seth Alvo. Skills, builds, trail building. The trail building series is the one." },
-      { name: "BKXC", note: "Point of view trail tours from all over North America. Good for trip ideas." },
-      { name: "Skills with Phil", note: "Technique coaching." },
-      { name: "Pinkbike", note: "Especially Ben Cathro's How to Bike series.", href: "https://www.pinkbike.com/" },
-      { name: "GMBN", note: "Global Mountain Bike Network. The big all rounder." },
-      { name: "Fluidride", note: "Instruction library." },
-      { name: "Matt Jones and Brendan Fairclough", note: "Freeride and slopestyle entertainment." },
+      { name: "Berm Peak", note: "Seth Alvo. Skills, builds, trail building. The trail building series is the one.", href: "https://www.youtube.com/@SethsBikeHacks" },
+      { name: "BKXC", note: "Point of view trail tours from all over North America. Good for trip ideas.", href: "https://www.youtube.com/@BKXC" },
+      { name: "Skills with Phil", note: "Technique coaching.", href: "https://www.youtube.com/@SkillswithPhil" },
+      { name: "Pinkbike", note: "Especially Ben Cathro's How to Bike series.", href: "https://www.youtube.com/@pinkbike", links: [{ label: "Site", href: "https://www.pinkbike.com/" }] },
+      { name: "GMBN", note: "Global Mountain Bike Network. The big all rounder.", href: "https://www.youtube.com/@gmbn" },
+      { name: "Fluidride", note: "Instruction library.", href: "https://www.youtube.com/@fluidride" },
+      { name: "Matt Jones", note: "Freeride and slopestyle entertainment.", href: "https://www.youtube.com/@MattJonesMTB" },
+      { name: "Brendan Fairclough", note: "Freeride, racing, and general hooliganism.", href: "https://www.youtube.com/@BrendanFairclough" },
     ],
   },
   {
     heading: "Gravel and bikepacking",
     items: [
-      { name: "Bikepacking.com", note: "Videos and the Plog film roundups.", href: "https://bikepacking.com/" },
-      { name: "The Radavist", note: "Films, reportage, and Camera Corner.", href: "https://theradavist.com/" },
-      { name: "Dylan Johnson", note: "Evidence based gravel training." },
-      { name: "Path Less Pedaled", note: "Russ Roca and Laura Crawford. Touring and bikepacking." },
-      { name: "Chris Hall", note: "UK ultra distance and gravel adventures." },
+      { name: "Bikepacking.com", note: "Videos and the Plog film roundups.", href: "https://bikepacking.com/", links: [{ label: "YouTube", href: "https://www.youtube.com/@bikepackingcom" }] },
+      { name: "The Radavist", note: "Films, reportage, and Camera Corner.", href: "https://theradavist.com/", links: [{ label: "YouTube", href: "https://www.youtube.com/@theradavist666" }] },
+      { name: "Dylan Johnson", note: "Evidence based gravel training.", href: "https://www.youtube.com/@DylanJohnsonCycling" },
+      { name: "Path Less Pedaled", note: "Russ Roca and Laura Crawford. Touring and bikepacking.", href: "https://www.youtube.com/@PathLessPedaled" },
+      { name: "Chris Hall", note: "UK ultra distance and gravel adventures.", href: "https://www.youtube.com/@chrishallrides" },
     ],
   },
   {
     heading: "Dirt jump and trials",
     items: [
-      { name: "Danny MacAskill" },
-      { name: "Harry Main" },
+      { name: "Danny MacAskill", note: "The Ridge, Wee Day Out, and a decade of impossible street riding.", href: "https://www.youtube.com/@Danny_MacAskill" },
+      { name: "Harry Main", note: "BMX, big ramps, big tricks.", href: "https://www.youtube.com/@harrymain" },
       { name: "Martin Soderstrom" },
     ],
   },
   {
     heading: "Wrenching",
     items: [
-      { name: "Park Tool", note: "The YouTube channel and the repair help site.", href: "https://www.parktool.com/en-us/blog/repair-help" },
+      { name: "Park Tool", note: "The YouTube channel and the repair help site.", href: "https://www.youtube.com/@parktool", links: [{ label: "Repair Help", href: "https://www.parktool.com/en-us/blog/repair-help" }] },
       { name: "Sheldon Brown", note: "The late Sheldon Brown's technical archive. Still the reference.", href: "https://www.sheldonbrown.com/" },
     ],
   },
 ];
 
 export const books: Book[] = [
-  { title: "Bicycle Diaries", author: "David Byrne", year: "2009", why: "The Talking Heads frontman rides a folding bike through cities on tour and thinks about urbanism, art, and music." },
-  { title: "Fat Tire Flyer", author: "Charlie Kelly", year: "2014", why: "Repack and the birth of mountain biking, told by one of the founders. Pairs with Klunkerz and Camera Corner." },
-  { title: "Bicycle: The History", author: "David V. Herlihy", year: "2004", why: "The definitive history of the machine." },
-  { title: "The Lost Cyclist", author: "David V. Herlihy", year: "2010", why: "Frank Lenz's 1890s round the world ride, and his disappearance." },
-  { title: "Wheels of Change", author: "Sue Macy", year: "2011", why: "How women rode the bicycle to freedom. Context for the Susan B. Anthony line below." },
-  { title: "Roads Were Not Built for Cars", author: "Carlton Reid", year: "2014", why: "Cyclists, not motorists, pushed for paved roads." },
-  { title: "The Rider", author: "Tim Krabbe", year: "1978", why: "A single amateur race told from inside the rider's head. The cult classic." },
-  { title: "Full Tilt", author: "Dervla Murphy", year: "1965", why: "Ireland to India by bicycle. Solo, through Iran and Afghanistan, in 1963." },
-  { title: "Miles from Nowhere", author: "Barbara Savage", year: "1983", why: "A two year, 25 country round the world tour." },
-  { title: "Just Ride", author: "Grant Petersen", year: "2012", why: "Rivendell's founder against racer culture. The unracer manifesto." },
-  { title: "Need for the Bike", author: "Paul Fournel", year: "2001", why: "Short lyrical essays. Good source for pull quotes." },
-  { title: "The Wheels of Chance", author: "H. G. Wells", year: "1896", why: "A Victorian cycling holiday comedy. Public domain." },
-  { title: "Bike Snob", author: "Eben Weiss", year: "2010", why: "New York cycling humor." },
-  { title: "Zinn and the Art of Mountain Bike Maintenance", author: "Lennard Zinn", year: "many editions", why: "The shop manual." },
+  { title: "Bicycle Diaries", author: "David Byrne", year: "2009", why: "The Talking Heads frontman rides a folding bike through cities on tour and thinks about urbanism, art, and music.", href: "https://www.amazon.com/dp/0670021148" },
+  { title: "Fat Tire Flyer", author: "Charlie Kelly", year: "2014", why: "Repack and the birth of mountain biking, told by one of the founders. Pairs with Klunkerz and Camera Corner.", href: "https://www.amazon.com/dp/1937715167" },
+  { title: "Bicycle: The History", author: "David V. Herlihy", year: "2004", why: "The definitive history of the machine.", href: "https://www.amazon.com/dp/0300120478" },
+  { title: "The Lost Cyclist", author: "David V. Herlihy", year: "2010", why: "Frank Lenz's 1890s round the world ride, and his disappearance.", href: "https://www.amazon.com/dp/1845964322" },
+  { title: "Wheels of Change", author: "Sue Macy", year: "2011", why: "How women rode the bicycle to freedom. Context for the Susan B. Anthony line below.", href: "https://www.amazon.com/dp/1426307624" },
+  { title: "Roads Were Not Built for Cars", author: "Carlton Reid", year: "2014", why: "Cyclists, not motorists, pushed for paved roads.", href: "https://www.amazon.com/dp/1610916875" },
+  { title: "The Rider", author: "Tim Krabbe", year: "1978", why: "A single amateur race told from inside the rider's head. The cult classic.", href: "https://www.amazon.com/dp/1582342903" },
+  { title: "Full Tilt", author: "Dervla Murphy", year: "1965", why: "Ireland to India by bicycle. Solo, through Iran and Afghanistan, in 1963.", href: "https://www.amazon.com/dp/0879512482" },
+  { title: "Miles from Nowhere", author: "Barbara Savage", year: "1983", why: "A two year, 25 country round the world tour.", href: "https://www.amazon.com/dp/1594853940" },
+  { title: "Just Ride", author: "Grant Petersen", year: "2012", why: "Rivendell's founder against racer culture. The unracer manifesto.", href: "https://www.amazon.com/s?k=Just+Ride+Grant+Petersen" },
+  { title: "Need for the Bike", author: "Paul Fournel", year: "2001", why: "Short lyrical essays. Good source for pull quotes.", href: "https://www.amazon.com/dp/1788162692" },
+  { title: "The Wheels of Chance", author: "H. G. Wells", year: "1896", why: "A Victorian cycling holiday comedy. Public domain.", href: "https://www.amazon.com/dp/1374828548" },
+  { title: "Bike Snob", author: "Eben Weiss", year: "2010", why: "New York cycling humor.", href: "https://www.amazon.com/dp/0811869989" },
+  { title: "Zinn and the Art of Mountain Bike Maintenance", author: "Lennard Zinn", year: "many editions", why: "The shop manual.", href: "https://www.amazon.com/dp/1884737153" },
 ];
 
 export const siteGroups: Group[] = [

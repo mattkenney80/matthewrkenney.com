@@ -5,7 +5,7 @@ import { isSectionVisible } from "../lib/settings";
 import {
   intro,
   filmSections,
-  riders,
+  culture,
   creatorGroups,
   books,
   siteGroups,
@@ -15,7 +15,7 @@ import {
 
 const tocSections = [
   { id: "films", label: "Films" },
-  { id: "riders", label: "Riders" },
+  { id: "culture", label: "Bicycle Culture" },
   { id: "creators", label: "Creators" },
   { id: "books", label: "Books" },
   { id: "websites", label: "Websites" },
@@ -76,15 +76,22 @@ if (!(await isSectionVisible(env?.DB, "bicycles"))) {
     ))}
   </section>
 
-  <section class="bike-section bike-section--wide" id="riders" aria-labelledby="riders-h">
-    <h2 id="riders-h">Riders</h2>
+  <section class="bike-section bike-section--wide" id="culture" aria-labelledby="culture-h">
+    <h2 id="culture-h">Bicycle culture</h2>
     <ul class="bike-list bike-cols">
-      {riders.map((r) => (
+      {culture.map((r) => (
         <li>
           <span class="bike-list__name">
             {r.href ? <a href={r.href} target="_blank" rel="noopener">{r.name}</a> : r.name}
           </span>
           {r.note && <span class="bike-list__note">{r.note}</span>}
+          {r.links && (
+            <span class="bike-list__links">
+              {r.links.map((l) => (
+                <a href={l.href} target="_blank" rel="noopener">{l.label} &rarr;</a>
+              ))}
+            </span>
+          )}
         </li>
       ))}
     </ul>
@@ -103,6 +110,13 @@ if (!(await isSectionVisible(env?.DB, "bicycles"))) {
                   {i.href ? <a href={i.href} target="_blank" rel="noopener">{i.name}</a> : i.name}
                 </span>
                 {i.note && <span class="bike-list__note">{i.note}</span>}
+                {i.links && (
+                  <span class="bike-list__links">
+                    {i.links.map((l) => (
+                      <a href={l.href} target="_blank" rel="noopener">{l.label} &rarr;</a>
+                    ))}
+                  </span>
+                )}
               </li>
             ))}
           </ul>
@@ -117,7 +131,9 @@ if (!(await isSectionVisible(env?.DB, "bicycles"))) {
       {books.map((b) => (
         <li>
           <p class="bike-film__head">
-            <span class="bike-film__title">{b.title}</span>
+            <span class="bike-film__title">
+              {b.href ? <a href={b.href} target="_blank" rel="noopener">{b.title}</a> : b.title}
+            </span>
             <span class="bike-film__year">{b.author}, {b.year}</span>
           </p>
           <p class="bike-film__what">{b.why}</p>
@@ -139,6 +155,13 @@ if (!(await isSectionVisible(env?.DB, "bicycles"))) {
                   {i.href ? <a href={i.href} target="_blank" rel="noopener">{i.name}</a> : i.name}
                 </span>
                 {i.note && <span class="bike-list__note">{i.note}</span>}
+                {i.links && (
+                  <span class="bike-list__links">
+                    {i.links.map((l) => (
+                      <a href={l.href} target="_blank" rel="noopener">{l.label} &rarr;</a>
+                    ))}
+                  </span>
+                )}
               </li>
             ))}
           </ul>
@@ -349,6 +372,14 @@ if (!(await isSectionVisible(env?.DB, "bicycles"))) {
   .bike-list__note {
     color: var(--color-ink-soft);
     display: block;
+  }
+
+  .bike-list__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+    margin-top: 0.125rem;
+    font-size: 0.8125rem;
   }
 
   .bike-quote {
