@@ -146,11 +146,15 @@ if (!(await isSectionVisible(env?.DB, "experiments"))) {
     const m = Math.round((s % 3600) / 60);
     return h ? `${h}h ${m}m` : `${m}m`;
   };
+  // Strava's start_date_local is the wall clock time at the ride, just labeled
+  // with a "Z". Reading it in UTC gives the real local date and hour; reading it
+  // in the viewer's timezone would shift every ride by the viewer's UTC offset.
   const fmtDate = (iso: string) =>
     new Date(iso).toLocaleDateString(undefined, {
       month: "short",
       day: "numeric",
       year: "numeric",
+      timeZone: "UTC",
     });
 
   let allActivities: Activity[] = [];
@@ -328,7 +332,7 @@ if (!(await isSectionVisible(env?.DB, "experiments"))) {
 
     for (const a of allActivities) {
       const date = new Date(a.startDate);
-      const hour = date.getHours();
+      const hour = date.getUTCHours(); // see fmtDate: the field is already local time
       let period: keyof typeof timeOfDay;
 
       if (hour >= 5 && hour < 12) {
