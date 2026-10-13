@@ -117,12 +117,43 @@ export const filmSections: { heading: string; blurb?: string; films: Film[] }[] 
     ],
   },
   {
+    heading: "Doping and the sport",
+    blurb: "The films that open up what was going on behind the peloton.",
+    films: [
+      {
+        title: "Icarus",
+        year: "2017",
+        what: "Bryan Fogel sets out to test doping on himself and stumbles into a Russian state sponsored program, led by the lab director Grigory Rodchenkov. Netflix, Oscar winner for Best Documentary Feature.",
+        links: [
+          { label: "Netflix trailer", href: "https://www.youtube.com/watch?v=qXoRdSTrR-4" },
+          { label: "Wikipedia", href: "https://en.wikipedia.org/wiki/Icarus_(2017_film)" },
+        ],
+      },
+      {
+        title: "The Armstrong Lie",
+        year: "2013",
+        what: "Alex Gibney's look at Lance Armstrong, from the comeback through the doping confession and the collapse of the lie.",
+        links: [
+          { label: "Sony trailer", href: "https://www.youtube.com/watch?v=ukOJ_1b-8lQ" },
+          { label: "Wikipedia", href: "https://en.wikipedia.org/wiki/The_Armstrong_Lie" },
+        ],
+      },
+    ],
+  },
+  {
     heading: "Everything else",
     films: [
+      {
+        title: "Cycling the World",
+        year: "",
+        what: "An award winning adventure documentary by McKenzie Barney.",
+        links: [{ label: "Watch on YouTube", href: "https://www.youtube.com/watch?v=riosld1YI9w" }],
+      },
       {
         title: "A Sunday in Hell",
         year: "1976",
         what: "Jorgen Leth on Paris to Roubaix. Road, not dirt, but the foundational cycling film.",
+        links: [{ label: "Wikipedia", href: "https://en.wikipedia.org/wiki/A_Sunday_in_Hell" }],
       },
       { title: "Life Cycles", year: "2010", what: "Cinematic mountain biking, more art than edit." },
       { title: "The Moment", year: "2016", what: "The history of North Shore and freeride mountain biking." },
