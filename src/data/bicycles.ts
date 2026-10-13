@@ -12,8 +12,7 @@ export type Quote = { text: string; source: string };
 export type Group = { heading: string; blurb?: string; items: Entry[] };
 
 export const intro = [
-  "I ride gravel, mountain, and dirt jumps, from laps at Eagle Rock to Pittsburgh's Dirty Dozen.",
-  "This is the stuff I keep coming back to. Films mostly, plus the books, riders, and sites worth your time.",
+  "A running library of cycling films, books, riders, creators, and quotes.",
 ];
 
 export const filmSections: { heading: string; blurb?: string; films: Film[] }[] = [
