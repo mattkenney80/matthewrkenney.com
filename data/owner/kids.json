@@ -7,84 +7,96 @@
       "year": 1981,
       "status": "watched",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 85,
+      "resolved": "Raiders of the Lost Ark (1981)"
     },
     {
       "title": "Indiana Jones and the Temple of Doom",
       "year": 1984,
       "status": "watched",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 87,
+      "resolved": "Indiana Jones and the Temple of Doom (1984)"
     },
     {
       "title": "Indiana Jones and the Last Crusade",
       "year": 1989,
       "status": "watched",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 89,
+      "resolved": "Indiana Jones and the Last Crusade (1989)"
     },
     {
       "title": "Back to the Future",
       "year": 1985,
       "status": "watched",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 105,
+      "resolved": "Back to the Future (1985)"
     },
     {
       "title": "The Goonies",
       "year": 1985,
       "status": "watched",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 9340,
+      "resolved": "The Goonies (1985)"
     },
     {
       "title": "Predator",
       "year": 1987,
       "status": "watched",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 106,
+      "resolved": "Predator (1987)"
     },
     {
       "title": "Predator 2",
       "year": 1990,
       "status": "watched",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 169,
+      "resolved": "Predator 2 (1990)"
     },
     {
       "title": "Prey",
       "year": 2022,
       "status": "watched",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 766507,
+      "resolved": "Prey (2022)"
     },
     {
       "title": "Aliens",
       "year": 1986,
       "status": "watched",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 679,
+      "resolved": "Aliens (1986)"
     },
     {
       "title": "Prometheus",
       "year": 2012,
       "status": "watched",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 70981,
+      "resolved": "Prometheus (2012)"
     },
     {
       "title": "Labyrinth",
       "year": 1986,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 13597,
+      "resolved": "Labyrinth (1986)"
     },
     {
       "title": "Stand by Me",
       "year": 1986,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 235,
+      "resolved": "Stand by Me (1986)"
     },
     {
       "title": "It",
@@ -98,245 +110,280 @@
       "year": 1988,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 11967,
+      "resolved": "Young Guns (1988)"
     },
     {
       "title": "The Explorers",
       "year": 1985,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 9872,
+      "resolved": "Explorers (1985)"
     },
     {
       "title": "The Terminator",
       "year": 1984,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 218,
+      "resolved": "The Terminator (1984)"
     },
     {
       "title": "Terminator 2: Judgment Day",
       "year": 1991,
       "status": "watched",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 280,
+      "resolved": "Terminator 2: Judgment Day (1991)"
     },
     {
       "title": "Terminator Salvation",
       "year": 2009,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 534,
+      "resolved": "Terminator Salvation (2009)"
     },
     {
       "title": "National Treasure",
       "year": 2004,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 2059,
+      "resolved": "National Treasure (2004)"
     },
     {
       "title": "Time Bandits",
       "year": 1981,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 36819,
+      "resolved": "Time Bandits (1981)"
     },
     {
       "title": "Batman Begins",
       "year": 2005,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 272,
+      "resolved": "Batman Begins (2005)"
     },
     {
       "title": "The Dark Knight",
       "year": 2008,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 155,
+      "resolved": "The Dark Knight (2008)"
     },
     {
       "title": "The Dark Knight Rises",
       "year": 2012,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 49026,
+      "resolved": "The Dark Knight Rises (2012)"
     },
     {
       "title": "Point Break",
       "year": 1991,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 1089,
+      "resolved": "Point Break (1991)"
     },
     {
       "title": "Cliffhanger",
       "year": 1993,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 9350,
+      "resolved": "Cliffhanger (1993)"
     },
     {
       "title": "Sneakers",
       "year": 1992,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 2322,
+      "resolved": "Sneakers (1992)"
     },
     {
       "title": "Requiem for a Dream",
       "year": 2000,
       "status": "hold",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 641,
+      "resolved": "Requiem for a Dream (2000)"
     },
     {
       "title": "The Basketball Diaries",
       "year": 1995,
       "status": "hold",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 10474,
+      "resolved": "The Basketball Diaries (1995)"
     },
     {
       "title": "The Fugitive",
       "year": 1993,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 5503,
+      "resolved": "The Fugitive (1993)"
     },
     {
       "title": "The Ice Pirates",
       "year": 1984,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 10179,
+      "resolved": "The Ice Pirates (1984)"
     },
     {
       "title": "Mad Max",
       "year": 1979,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 9659,
+      "resolved": "Mad Max (1979)"
     },
     {
       "title": "Mad Max 2: The Road Warrior",
       "year": 1981,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 8810,
+      "resolved": "Mad Max 2 (1981)"
     },
     {
       "title": "Mad Max Beyond Thunderdome",
       "year": 1985,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 9355,
+      "resolved": "Mad Max Beyond Thunderdome (1985)"
     },
     {
       "title": "Apocalypto",
       "year": 2006,
       "status": "hold",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 1579,
+      "resolved": "Apocalypto (2006)"
     },
     {
       "title": "Trading Places",
       "year": 1983,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 1621,
+      "resolved": "Trading Places (1983)"
     },
     {
       "title": "Planes, Trains and Automobiles",
       "year": 1987,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 2609,
+      "resolved": "Planes, Trains and Automobiles (1987)"
     },
     {
       "title": "Twisters",
       "year": 2024,
       "status": "watched",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 718821,
+      "resolved": "Twisters (2024)"
     },
     {
       "title": "Twister",
       "year": 1996,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 664,
+      "resolved": "Twister (1996)"
     },
     {
       "title": "Glengarry Glen Ross",
       "year": 1992,
       "status": "hold",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 9504,
+      "resolved": "Glengarry Glen Ross (1992)"
     },
     {
       "title": "Jurassic Park",
       "year": 1993,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 329,
+      "resolved": "Jurassic Park (1993)"
     },
     {
       "title": "E.T. the Extra-Terrestrial",
       "year": 1982,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 601,
+      "resolved": "E.T. the Extra-Terrestrial (1982)"
     },
     {
       "title": "Lord of the Flies",
       "year": 1990,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 10847,
+      "resolved": "Lord of the Flies (1990)"
     },
     {
       "title": "Swiss Family Robinson",
       "year": 1960,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 18444,
+      "resolved": "Swiss Family Robinson (1960)"
     },
     {
       "title": "Dead Poets Society",
       "year": 1989,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 207,
+      "resolved": "Dead Poets Society (1989)"
     },
     {
       "title": "Willy Wonka & the Chocolate Factory",
       "year": 1971,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 252,
+      "resolved": "Willy Wonka & the Chocolate Factory (1971)"
     },
     {
       "title": "Speed",
       "year": 1994,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 1637,
+      "resolved": "Speed (1994)"
     },
     {
       "title": "Breakdown",
       "year": 1997,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 2163,
+      "resolved": "Breakdown (1997)"
     },
     {
       "title": "Pacific Heights",
       "year": 1990,
       "status": "queued",
       "tvMiniseries": false,
-      "tmdbId": null
+      "tmdbId": 2990,
+      "resolved": "Pacific Heights (1990)"
     }
   ]
 }

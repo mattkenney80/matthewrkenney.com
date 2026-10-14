@@ -3,465 +3,542 @@
     "slug": "creed-iii",
     "title": "Creed III",
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 677179,
+    "resolved": "Creed III (2023)"
   },
   {
     "slug": "pig-2021",
     "title": "Pig",
     "year": 2021,
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 635731,
+    "resolved": "Pig (2021)"
   },
   {
     "slug": "roadrunner-a-film-about-anthony-bourdain",
     "title": "Roadrunner: A Film About Anthony Bourdain",
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 642732,
+    "resolved": "Roadrunner: A Film About Anthony Bourdain (2021)"
   },
   {
     "slug": "you-should-have-left",
     "title": "You Should Have Left",
     "rating": 2,
-    "tmdbId": null
+    "tmdbId": 514593,
+    "resolved": "You Should Have Left (2020)"
   },
   {
     "slug": "richard-jewell",
     "title": "Richard Jewell",
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 292011,
+    "resolved": "Richard Jewell (2019)"
   },
   {
     "slug": "uncut-gems",
     "title": "Uncut Gems",
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 473033,
+    "resolved": "Uncut Gems (2019)"
   },
   {
     "slug": "ad-astra-2019",
     "title": "Ad Astra",
     "year": 2019,
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 419704,
+    "resolved": "Ad Astra (2019)"
   },
   {
     "slug": "parasite-2019",
     "title": "Parasite",
     "year": 2019,
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 496243,
+    "resolved": "Parasite (2019)"
   },
   {
     "slug": "once-upon-a-time-in-hollywood",
     "title": "Once Upon a Time in Hollywood",
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 466272,
+    "resolved": "Once Upon a Time... in Hollywood (2019)"
   },
   {
     "slug": "the-silence-2019",
     "title": "The Silence",
     "year": 2019,
     "rating": 2,
-    "tmdbId": null
+    "tmdbId": 527261,
+    "resolved": "The Silence (2019)"
   },
   {
     "slug": "roma-2018",
     "title": "Roma",
     "year": 2018,
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 426426,
+    "resolved": "Roma (2018)"
   },
   {
     "slug": "a-quiet-place-2018",
     "title": "A Quiet Place",
     "year": 2018,
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 447332,
+    "resolved": "A Quiet Place (2018)"
   },
   {
     "slug": "black-47",
     "title": "Black '47",
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 438145,
+    "resolved": "Black '47 (2018)"
   },
   {
     "slug": "annihilation",
     "title": "Annihilation",
     "rating": 3,
-    "tmdbId": null
+    "tmdbId": 300668,
+    "resolved": "Annihilation (2018)"
   },
   {
     "slug": "i-tonya",
     "title": "I, Tonya",
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 389015,
+    "resolved": "I, Tonya (2017)"
   },
   {
     "slug": "it-2017",
     "title": "It",
     "year": 2017,
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 346364,
+    "resolved": "It (2017)"
   },
   {
     "slug": "three-billboards-outside-ebbing-missouri",
     "title": "Three Billboards Outside Ebbing, Missouri",
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 359940,
+    "resolved": "Three Billboards Outside Ebbing, Missouri (2017)"
   },
   {
     "slug": "logan-lucky",
     "title": "Logan Lucky",
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 399170,
+    "resolved": "Logan Lucky (2017)"
   },
   {
     "slug": "dunkirk-2017",
     "title": "Dunkirk",
     "year": 2017,
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 374720,
+    "resolved": "Dunkirk (2017)"
   },
   {
     "slug": "atomic-homefront",
     "title": "Atomic Homefront",
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 479540,
+    "resolved": "Atomic Homefront (2017)"
   },
   {
     "slug": "good-time",
     "title": "Good Time",
-    "rating": 3,
-    "tmdbId": null
+    "rating": 5,
+    "tmdbId": 429200,
+    "letterboxdRating": 3,
+    "ratingNote": "Owner override 2026-10-13: Letterboxd shows 3 stars, owner says one of the greatest films ever made.",
+    "resolved": "Good Time (2017)"
   },
   {
     "slug": "logan-2017",
     "title": "Logan",
     "year": 2017,
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 263115,
+    "resolved": "Logan (2017)"
   },
   {
     "slug": "moonlight-2016",
     "title": "Moonlight",
     "year": 2016,
     "rating": null,
-    "tmdbId": null
+    "tmdbId": 376867,
+    "resolved": "Moonlight (2016)"
   },
   {
     "slug": "arrival-2016",
     "title": "Arrival",
     "year": 2016,
     "rating": 3,
-    "tmdbId": null
+    "tmdbId": 329865,
+    "resolved": "Arrival (2016)"
   },
   {
     "slug": "hell-or-high-water",
     "title": "Hell or High Water",
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 338766,
+    "resolved": "Hell or High Water (2016)"
   },
   {
     "slug": "bone-tomahawk",
     "title": "Bone Tomahawk",
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 294963,
+    "resolved": "Bone Tomahawk (2015)"
   },
   {
     "slug": "the-martian",
     "title": "The Martian",
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 286217,
+    "resolved": "The Martian (2015)"
   },
   {
     "slug": "green-room",
     "title": "Green Room",
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 313922,
+    "resolved": "Green Room (2016)"
   },
   {
     "slug": "mad-max-fury-road",
     "title": "Mad Max: Fury Road",
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 76341,
+    "resolved": "Mad Max: Fury Road (2015)"
   },
   {
     "slug": "ex-machina-2015",
     "title": "Ex Machina",
     "year": 2015,
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 264660,
+    "resolved": "Ex Machina (2015)"
   },
   {
     "slug": "interstellar",
     "title": "Interstellar",
     "rating": 3,
-    "tmdbId": null
+    "tmdbId": 157336,
+    "resolved": "Interstellar (2014)"
   },
   {
     "slug": "gone-girl",
     "title": "Gone Girl",
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 210577,
+    "resolved": "Gone Girl (2014)"
   },
   {
     "slug": "nightcrawler",
     "title": "Nightcrawler",
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 242582,
+    "resolved": "Nightcrawler (2014)"
   },
   {
     "slug": "birdman-or-the-unexpected-virtue-of-ignorance",
     "title": "Birdman or (The Unexpected Virtue of Ignorance)",
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 194662,
+    "resolved": "Birdman or (The Unexpected Virtue of Ignorance) (2014)"
   },
   {
     "slug": "the-wolf-of-wall-street",
     "title": "The Wolf of Wall Street",
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 106646,
+    "resolved": "The Wolf of Wall Street (2013)"
   },
   {
     "slug": "locke",
     "title": "Locke",
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 210479,
+    "resolved": "Locke (2014)"
   },
   {
     "slug": "gravity-2013",
     "title": "Gravity",
     "year": 2013,
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 49047,
+    "resolved": "Gravity (2013)"
   },
   {
     "slug": "premium-rush",
     "title": "Premium Rush",
     "rating": 3,
-    "tmdbId": null
+    "tmdbId": 49526,
+    "resolved": "Premium Rush (2012)"
   },
   {
     "slug": "the-dark-knight-rises",
     "title": "The Dark Knight Rises",
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 49026,
+    "resolved": "The Dark Knight Rises (2012)"
   },
   {
     "slug": "flight",
     "title": "Flight",
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 87502,
+    "resolved": "Flight (2012)"
   },
   {
     "slug": "drive-2011",
     "title": "Drive",
     "year": 2011,
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 64690,
+    "resolved": "Drive (2011)"
   },
   {
     "slug": "detachment",
     "title": "Detachment",
     "rating": 3,
-    "tmdbId": null
+    "tmdbId": 74308,
+    "resolved": "Detachment (2011)"
   },
   {
     "slug": "margin-call",
     "title": "Margin Call",
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 50839,
+    "resolved": "Margin Call (2011)"
   },
   {
     "slug": "the-social-network",
     "title": "The Social Network",
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 37799,
+    "resolved": "The Social Network (2010)"
   },
   {
     "slug": "inception",
     "title": "Inception",
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 27205,
+    "resolved": "Inception (2010)"
   },
   {
     "slug": "the-horseman-2008",
     "title": "The Horseman",
     "year": 2008,
     "rating": 3,
-    "tmdbId": null
+    "tmdbId": 33134,
+    "resolved": "The Horseman (2008)"
   },
   {
     "slug": "the-dark-knight",
     "title": "The Dark Knight",
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 155,
+    "resolved": "The Dark Knight (2008)"
   },
   {
     "slug": "no-country-for-old-men",
     "title": "No Country for Old Men",
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 6977,
+    "resolved": "No Country for Old Men (2007)"
   },
   {
     "slug": "collateral",
     "title": "Collateral",
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 1538,
+    "resolved": "Collateral (2004)"
   },
   {
     "slug": "eternal-sunshine-of-the-spotless-mind",
     "title": "Eternal Sunshine of the Spotless Mind",
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 38,
+    "resolved": "Eternal Sunshine of the Spotless Mind (2004)"
   },
   {
     "slug": "donnie-darko",
     "title": "Donnie Darko",
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 141,
+    "resolved": "Donnie Darko (2001)"
   },
   {
     "slug": "memento",
     "title": "Memento",
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 77,
+    "resolved": "Memento (2000)"
   },
   {
     "slug": "the-insider",
     "title": "The Insider",
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 9008,
+    "resolved": "The Insider (1999)"
   },
   {
     "slug": "fight-club",
     "title": "Fight Club",
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 550,
+    "resolved": "Fight Club (1999)"
   },
   {
     "slug": "eyes-wide-shut",
     "title": "Eyes Wide Shut",
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 345,
+    "resolved": "Eyes Wide Shut (1999)"
   },
   {
     "slug": "the-matrix",
     "title": "The Matrix",
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 603,
+    "resolved": "The Matrix (1999)"
   },
   {
     "slug": "the-truman-show",
     "title": "The Truman Show",
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 37165,
+    "resolved": "The Truman Show (1998)"
   },
   {
     "slug": "fargo",
     "title": "Fargo",
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 275,
+    "resolved": "Fargo (1996)"
   },
   {
     "slug": "se7en",
     "title": "Se7en",
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 807,
+    "resolved": "Se7en (1995)"
   },
   {
     "slug": "crimson-tide",
     "title": "Crimson Tide",
     "rating": 3,
-    "tmdbId": null
+    "tmdbId": 8963,
+    "resolved": "Crimson Tide (1995)"
   },
   {
     "slug": "the-shawshank-redemption",
     "title": "The Shawshank Redemption",
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 278,
+    "resolved": "The Shawshank Redemption (1994)"
   },
   {
     "slug": "forrest-gump",
     "title": "Forrest Gump",
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 13,
+    "resolved": "Forrest Gump (1994)"
   },
   {
     "slug": "pulp-fiction",
     "title": "Pulp Fiction",
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 680,
+    "resolved": "Pulp Fiction (1994)"
   },
   {
     "slug": "jurassic-park",
     "title": "Jurassic Park",
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 329,
+    "resolved": "Jurassic Park (1993)"
   },
   {
     "slug": "reservoir-dogs",
     "title": "Reservoir Dogs",
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 500,
+    "resolved": "Reservoir Dogs (1992)"
   },
   {
     "slug": "the-silence-of-the-lambs",
     "title": "The Silence of the Lambs",
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 274,
+    "resolved": "The Silence of the Lambs (1991)"
   },
   {
     "slug": "back-to-the-future",
     "title": "Back to the Future",
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 105,
+    "resolved": "Back to the Future (1985)"
   },
   {
     "slug": "blade-runner",
     "title": "Blade Runner",
     "rating": null,
-    "tmdbId": null
+    "tmdbId": 78,
+    "resolved": "Blade Runner (1982)"
   },
   {
     "slug": "blow-out",
     "title": "Blow Out",
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 11644,
+    "resolved": "Blow Out (1981)"
   },
   {
     "slug": "the-shining",
     "title": "The Shining",
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 694,
+    "resolved": "The Shining (1980)"
   },
   {
     "slug": "alien",
     "title": "Alien",
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 348,
+    "resolved": "Alien (1979)"
   },
   {
     "slug": "sorcerer",
     "title": "Sorcerer",
     "rating": 4,
-    "tmdbId": null
+    "tmdbId": 38985,
+    "resolved": "Sorcerer (1977)"
   },
   {
     "slug": "taxi-driver",
     "title": "Taxi Driver",
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 103,
+    "resolved": "Taxi Driver (1976)"
   },
   {
     "slug": "the-godfather",
     "title": "The Godfather",
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 238,
+    "resolved": "The Godfather (1972)"
   },
   {
     "slug": "a-clockwork-orange",
     "title": "A Clockwork Orange",
     "rating": 5,
-    "tmdbId": null
+    "tmdbId": 185,
+    "resolved": "A Clockwork Orange (1971)"
   }
 ]

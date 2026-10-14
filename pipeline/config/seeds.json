@@ -568,6 +568,10 @@
     "hops": 1,
     "minSharedFilmsToPromote": 2,
     "topBilledActors": 10,
-    "featureFilmsOnly": true
+    "featureFilmsOnly": true,
+    "minVoteCount": 25,
+    "actorMaxOrder": 15,
+    "promotedFilmCap": 25,
+    "maxPromoted": 400
   }
 }
