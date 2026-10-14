@@ -2,193 +2,545 @@
   "directors": [
     {
       "name": "Martin Scorsese",
-      "tmdbId": null
+      "tmdbId": 1032,
+      "matched": {
+        "name": "Martin Scorsese",
+        "department": "Directing",
+        "knownFor": "The Wolf of Wall Street",
+        "status": "ok"
+      }
     },
     {
       "name": "Quentin Tarantino",
-      "tmdbId": null
+      "tmdbId": 138,
+      "matched": {
+        "name": "Quentin Tarantino",
+        "department": "Directing",
+        "knownFor": "Pulp Fiction",
+        "status": "ok"
+      }
     },
     {
       "name": "Richard Linklater",
-      "tmdbId": null
+      "tmdbId": 564,
+      "matched": {
+        "name": "Richard Linklater",
+        "department": "Directing",
+        "knownFor": "The School of Rock",
+        "status": "ok"
+      }
     },
     {
       "name": "David Lynch",
-      "tmdbId": null
+      "tmdbId": 5602,
+      "matched": {
+        "name": "David Lynch",
+        "department": "Directing",
+        "knownFor": "Mulholland Drive",
+        "status": "ok"
+      }
     },
     {
       "name": "James Cameron",
-      "tmdbId": null
+      "tmdbId": 2710,
+      "matched": {
+        "name": "James Cameron",
+        "department": "Directing",
+        "knownFor": "Avatar",
+        "status": "ok"
+      }
     },
     {
       "name": "Spike Lee",
-      "tmdbId": null
+      "tmdbId": 5281,
+      "matched": {
+        "name": "Spike Lee",
+        "department": "Directing",
+        "knownFor": "BlacKkKlansman",
+        "status": "ok"
+      }
     },
     {
       "name": "Denis Villeneuve",
-      "tmdbId": null
+      "tmdbId": 137427,
+      "matched": {
+        "name": "Denis Villeneuve",
+        "department": "Directing",
+        "knownFor": "Arrival",
+        "status": "ok"
+      }
     },
     {
       "name": "Peter Berg",
-      "tmdbId": null
+      "tmdbId": 36602,
+      "matched": {
+        "name": "Peter Berg",
+        "department": "Directing",
+        "knownFor": "Hancock",
+        "status": "ok"
+      }
     },
     {
       "name": "Paul Verhoeven",
-      "tmdbId": null
+      "tmdbId": 10491,
+      "matched": {
+        "name": "Paul Verhoeven",
+        "department": "Directing",
+        "knownFor": "Total Recall",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 591520,
+            "department": "Directing",
+            "knownFor": "Heart of Stone"
+          },
+          {
+            "id": 1607532,
+            "department": "Directing",
+            "knownFor": "Teenagers"
+          }
+        ]
+      }
     },
     {
       "name": "Mel Gibson",
-      "tmdbId": null
+      "tmdbId": 2461,
+      "matched": {
+        "name": "Mel Gibson",
+        "department": "Acting",
+        "knownFor": "Braveheart",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 2677758,
+            "department": "Costume & Make-Up",
+            "knownFor": "Lord of the Flies"
+          },
+          {
+            "id": 3074545,
+            "department": "Acting",
+            "knownFor": "Heartlands"
+          }
+        ]
+      }
     },
     {
       "name": "Joel Coen",
-      "tmdbId": null
+      "tmdbId": 1223,
+      "matched": {
+        "name": "Joel Coen",
+        "department": "Directing",
+        "knownFor": "No Country for Old Men",
+        "status": "ok"
+      }
     },
     {
       "name": "Ethan Coen",
-      "tmdbId": null
+      "tmdbId": 1224,
+      "matched": {
+        "name": "Ethan Coen",
+        "department": "Writing",
+        "knownFor": "No Country for Old Men",
+        "status": "ok"
+      }
     },
     {
       "name": "Paul Thomas Anderson",
-      "tmdbId": null
+      "tmdbId": 4762,
+      "matched": {
+        "name": "Paul Thomas Anderson",
+        "department": "Directing",
+        "knownFor": "There Will Be Blood",
+        "status": "ok"
+      }
     },
     {
       "name": "Josh Safdie",
-      "tmdbId": null
+      "tmdbId": 129561,
+      "matched": {
+        "name": "Josh Safdie",
+        "department": "Directing",
+        "knownFor": "Uncut Gems",
+        "status": "ok"
+      }
     },
     {
       "name": "Benny Safdie",
-      "tmdbId": null
+      "tmdbId": 227564,
+      "matched": {
+        "name": "Benny Safdie",
+        "department": "Directing",
+        "knownFor": "Uncut Gems",
+        "status": "ok"
+      }
     },
     {
       "name": "Jeff Nichols",
-      "tmdbId": null
+      "tmdbId": 71872,
+      "matched": {
+        "name": "Jeff Nichols",
+        "department": "Directing",
+        "knownFor": "Mud",
+        "status": "ok"
+      }
     },
     {
       "name": "Woody Allen",
-      "tmdbId": null
+      "tmdbId": 1243,
+      "matched": {
+        "name": "Woody Allen",
+        "department": "Directing",
+        "knownFor": "Midnight in Paris",
+        "status": "ok"
+      }
     },
     {
       "name": "Michael Mann",
-      "tmdbId": null
+      "tmdbId": 638,
+      "matched": {
+        "name": "Michael Mann",
+        "department": "Directing",
+        "knownFor": "Heat",
+        "status": "ok"
+      }
     },
     {
       "name": "Christopher Nolan",
-      "tmdbId": null
+      "tmdbId": 525,
+      "matched": {
+        "name": "Christopher Nolan",
+        "department": "Directing",
+        "knownFor": "Interstellar",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 6279344,
+            "department": "Directing",
+            "knownFor": "thank you i guess"
+          }
+        ]
+      }
     },
     {
       "name": "David Fincher",
-      "tmdbId": null
+      "tmdbId": 7467,
+      "matched": {
+        "name": "David Fincher",
+        "department": "Directing",
+        "knownFor": "Fight Club",
+        "status": "ok"
+      }
     },
     {
       "name": "George Miller",
-      "tmdbId": null
+      "tmdbId": 20629,
+      "matched": {
+        "name": "George Miller",
+        "department": "Directing",
+        "knownFor": "Mad Max: Fury Road",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 2707262,
+            "department": "Directing",
+            "knownFor": "Dreams"
+          }
+        ]
+      }
     },
     {
       "name": "Alfonso Cuaron",
-      "tmdbId": null
+      "tmdbId": 11218,
+      "matched": {
+        "name": "Alfonso Cuarón",
+        "department": "Directing",
+        "knownFor": "Harry Potter and the Prisoner of Azkaban",
+        "status": "ok"
+      }
     }
   ],
   "actors": [
     {
       "name": "Harvey Keitel",
-      "tmdbId": null
+      "tmdbId": 1037,
+      "matched": {
+        "name": "Harvey Keitel",
+        "department": "Acting",
+        "knownFor": "Reservoir Dogs",
+        "status": "ok"
+      }
     },
     {
       "name": "Dennis Hopper",
-      "tmdbId": null
+      "tmdbId": 2778,
+      "matched": {
+        "name": "Dennis Hopper",
+        "department": "Acting",
+        "knownFor": "Speed",
+        "status": "ok"
+      }
     },
     {
       "name": "Michael Shannon",
-      "tmdbId": null
+      "tmdbId": 335,
+      "matched": {
+        "name": "Michael Shannon",
+        "department": "Acting",
+        "knownFor": "The Shape of Water",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 1184168,
+            "department": "Acting",
+            "knownFor": "Dark Shadows"
+          },
+          {
+            "id": 3232423,
+            "department": "Acting",
+            "knownFor": "Fix"
+          },
+          {
+            "id": 3555530,
+            "department": "Acting",
+            "knownFor": "All Creatures Great and Small"
+          }
+        ]
+      }
     },
     {
       "name": "Jake Gyllenhaal",
-      "tmdbId": null
+      "tmdbId": 131,
+      "matched": {
+        "name": "Jake Gyllenhaal",
+        "department": "Acting",
+        "knownFor": "Donnie Darko",
+        "status": "ok"
+      }
     },
     {
       "name": "Philip Seymour Hoffman",
-      "tmdbId": null
+      "tmdbId": 1233,
+      "matched": {
+        "name": "Philip Seymour Hoffman",
+        "department": "Acting",
+        "knownFor": "Mission: Impossible III",
+        "status": "ok"
+      }
     },
     {
       "name": "Christian Bale",
-      "tmdbId": null
+      "tmdbId": 3894,
+      "matched": {
+        "name": "Christian Bale",
+        "department": "Acting",
+        "knownFor": "The Dark Knight",
+        "status": "ok"
+      }
     },
     {
       "name": "Rose Byrne",
-      "tmdbId": null
+      "tmdbId": 9827,
+      "matched": {
+        "name": "Rose Byrne",
+        "department": "Acting",
+        "knownFor": "Insidious",
+        "status": "ok"
+      }
     },
     {
       "name": "Diane Lane",
-      "tmdbId": null
+      "tmdbId": 2882,
+      "matched": {
+        "name": "Diane Lane",
+        "department": "Acting",
+        "knownFor": "Man of Steel",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 3411281,
+            "department": "Acting",
+            "knownFor": "Wild Ride"
+          }
+        ]
+      }
     },
     {
       "name": "Clive Owen",
-      "tmdbId": null
+      "tmdbId": 2296,
+      "matched": {
+        "name": "Clive Owen",
+        "department": "Acting",
+        "knownFor": "Children of Men",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 3823736,
+            "department": "Acting",
+            "knownFor": "Our Yorkshire Farm"
+          }
+        ]
+      }
     },
     {
       "name": "Kurt Russell",
-      "tmdbId": null
+      "tmdbId": 6856,
+      "matched": {
+        "name": "Kurt Russell",
+        "department": "Acting",
+        "knownFor": "The Thing",
+        "status": "ok"
+      }
     }
   ],
   "writers": [
     {
       "name": "Stephen King",
-      "tmdbId": null
+      "tmdbId": 3027,
+      "matched": {
+        "name": "Stephen King",
+        "department": "Writing",
+        "knownFor": "The Shawshank Redemption",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 4802634,
+            "department": "Writing",
+            "knownFor": "The Boogeyman"
+          }
+        ]
+      }
     },
     {
       "name": "Paul Schrader",
-      "tmdbId": null
+      "tmdbId": 1035,
+      "matched": {
+        "name": "Paul Schrader",
+        "department": "Writing",
+        "knownFor": "Taxi Driver",
+        "status": "ok"
+      }
     },
     {
       "name": "Taylor Sheridan",
-      "tmdbId": null
+      "tmdbId": 1215399,
+      "matched": {
+        "name": "Taylor Sheridan",
+        "department": "Writing",
+        "knownFor": "Sicario",
+        "status": "ok"
+      }
     },
     {
       "name": "Tony Gilroy",
-      "tmdbId": null
+      "tmdbId": 19242,
+      "matched": {
+        "name": "Tony Gilroy",
+        "department": "Writing",
+        "knownFor": "Rogue One: A Star Wars Story",
+        "status": "ok"
+      }
     },
     {
       "name": "Eric Roth",
-      "tmdbId": null
+      "tmdbId": 27,
+      "matched": {
+        "name": "Eric Roth",
+        "department": "Writing",
+        "knownFor": "Forrest Gump",
+        "status": "ok"
+      }
     }
   ],
   "cinematographers": [
     {
       "name": "Roger Deakins",
-      "tmdbId": null
+      "tmdbId": 151,
+      "matched": {
+        "name": "Roger Deakins",
+        "department": "Camera",
+        "knownFor": "The Shawshank Redemption",
+        "status": "ok"
+      }
     },
     {
       "name": "Emmanuel Lubezki",
-      "tmdbId": null
+      "tmdbId": 4185,
+      "matched": {
+        "name": "Emmanuel Lubezki",
+        "department": "Camera",
+        "knownFor": "The Revenant",
+        "status": "ok"
+      }
     },
     {
       "name": "Robert Richardson",
-      "tmdbId": null
+      "tmdbId": 149,
+      "matched": {
+        "name": "Robert Richardson",
+        "department": "Camera",
+        "knownFor": "Django Unchained",
+        "status": "ok"
+      }
     },
     {
       "name": "Hoyte van Hoytema",
-      "tmdbId": null
+      "tmdbId": 74401,
+      "matched": {
+        "name": "Hoyte van Hoytema",
+        "department": "Camera",
+        "knownFor": "Interstellar",
+        "status": "ok"
+      }
     },
     {
       "name": "Darius Khondji",
-      "tmdbId": null
+      "tmdbId": 2240,
+      "matched": {
+        "name": "Darius Khondji",
+        "department": "Camera",
+        "knownFor": "Se7en",
+        "status": "ok"
+      }
     },
     {
       "name": "Robert Elswit",
-      "tmdbId": null
+      "tmdbId": 2950,
+      "matched": {
+        "name": "Robert Elswit",
+        "department": "Camera",
+        "knownFor": "Nightcrawler",
+        "status": "ok"
+      }
     },
     {
       "name": "Michael Chapman",
-      "tmdbId": null
+      "tmdbId": 1044,
+      "matched": {
+        "name": "Michael Chapman",
+        "department": "Camera",
+        "knownFor": "The Godfather",
+        "status": "ok"
+      }
     },
     {
       "name": "Dion Beebe",
-      "tmdbId": null
+      "tmdbId": 647,
+      "matched": {
+        "name": "Dion Beebe",
+        "department": "Camera",
+        "knownFor": "Edge of Tomorrow",
+        "status": "ok"
+      }
     },
     {
       "name": "Adam Stone",
-      "tmdbId": null
+      "tmdbId": 71880,
+      "matched": {
+        "name": "Adam Stone",
+        "department": "Camera",
+        "knownFor": "Mud",
+        "status": "ok"
+      }
     }
   ],
   "inferred": [
