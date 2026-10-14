@@ -541,7 +541,7 @@ function bind() {
 
 async function main() {
   try {
-    const get = (n) => fetch(`/film-repertory/${n}.json`).then((r) => { if (!r.ok) throw new Error(n); return r.json(); });
+    const get = (n) => fetch(`/film-repertory/${n}.json?v=${$("fr").dataset.v}`).then((r) => { if (!r.ok) throw new Error(n); return r.json(); });
     [people, films, collab, owner] = await Promise.all(["people", "films", "collaborations", "owner"].map(get));
   } catch (e) {
     status.textContent = "The credits data did not load. Try reloading the page.";

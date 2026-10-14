@@ -198,6 +198,7 @@ for (const [id, m] of [...feature].sort((a, b) => a[0] - b[0])) {
 writeJson(rel("data/build/people.json"), peopleOut);
 writeJson(rel("data/build/films.json"), filmsOut);
 writeJson(rel("data/build/collaborations.json"), collaborations);
+writeJson(rel("data/build/version.json"), { v: Date.now().toString(36) });
 writeJson(rel("data/build/crawl-meta.json"), {
   generated: new Date().toISOString(),
   config: X,

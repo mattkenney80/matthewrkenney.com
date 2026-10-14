@@ -7,6 +7,7 @@ export const prerender = false;
 import { env } from "cloudflare:workers";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { isSectionVisible } from "../../lib/settings";
+import version from "../../../data/build/version.json";
 
 if (!(await isSectionVisible(env?.DB, "experiments"))) {
   return Astro.rewrite("/404");
@@ -20,7 +21,7 @@ if (!(await isSectionVisible(env?.DB, "experiments"))) {
     kept it, and where the partnerships paused. Credits come from TMDB.
   </p>
 
-  <div class="fr" id="fr">
+  <div class="fr" id="fr" data-v={version.v}>
     <div class="fr-bar">
       <div class="fr-tabs" role="tablist" aria-label="View">
         <button role="tab" data-view="c" aria-selected="true">Constellation</button>
