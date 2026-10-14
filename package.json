@@ -11,7 +11,9 @@
     "preview": "astro preview",
     "astro": "astro",
     "generate-types": "wrangler types",
-    "films:resolve": "node pipeline/resolve-seeds.mjs"
+    "films:resolve": "node pipeline/resolve-seeds.mjs",
+    "prebuild": "node pipeline/publish.mjs",
+    "films:crawl": "node pipeline/crawl.mjs && node pipeline/report.mjs"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^14.1.1",

@@ -1,0 +1,137 @@
+---
+// Film Repertory: who keeps working with whom, built from TMDB credits.
+// The page is a shell; src/scripts/film-repertory.js draws everything from the JSON that
+// pipeline/publish.mjs copies into /film-repertory/ at build time.
+export const prerender = false;
+
+import { env } from "cloudflare:workers";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { isSectionVisible } from "../../lib/settings";
+
+if (!(await isSectionVisible(env?.DB, "experiments"))) {
+  return Astro.rewrite("/404");
+}
+---
+
+<BaseLayout title="Film Repertory" description="Directors, cinematographers, writers and the people they keep working with, drawn from TMDB credits." wide>
+  <h1>Film Repertory</h1>
+  <p class="lede">
+    Who keeps working with whom. Pick a person and see the company they keep, the years they
+    kept it, and where the partnerships paused. Credits come from TMDB.
+  </p>
+
+  <div class="fr" id="fr">
+    <div class="fr-bar">
+      <div class="fr-tabs" role="tablist" aria-label="View">
+        <button role="tab" data-view="c" aria-selected="true">Constellation</button>
+        <button role="tab" data-view="r" aria-selected="false">Career River</button>
+        <button role="tab" data-view="h" aria-selected="false">Heatmap</button>
+      </div>
+      <label class="fr-owner">
+        <input type="checkbox" id="fr-owner" />
+        <span>My layer</span>
+      </label>
+    </div>
+
+    <div class="fr-pick" id="fr-pick">
+      <label>Browse
+        <select id="fr-roleSel">
+          <option value="director">Directors</option>
+          <option value="cinematographer">Cinematographers</option>
+          <option value="writer">Writers</option>
+          <option value="actor">Actors</option>
+          <option value="editor">Editors</option>
+          <option value="composer">Composers</option>
+        </select>
+      </label>
+      <label>Person
+        <input id="fr-person" list="fr-people" autocomplete="off" spellcheck="false" />
+        <datalist id="fr-people"></datalist>
+      </label>
+      <label id="fr-ringWrap">Rings
+        <select id="fr-ring">
+          <option value="1">3 or more films</option>
+          <option value="2">2 or more films</option>
+          <option value="3">Every shared film</option>
+        </select>
+      </label>
+    </div>
+
+    <p class="fr-status" id="fr-status" role="status">Loading credits...</p>
+    <div class="fr-stage" id="fr-stage"></div>
+    <div class="fr-card" id="fr-card" hidden></div>
+    <div class="fr-detail" id="fr-detail"></div>
+    <div class="fr-legend" id="fr-legend"></div>
+  </div>
+
+  <p class="fr-attr">
+    This product uses the TMDB API but is not endorsed or certified by TMDB. Film and credit
+    data and images are from <a href="https://www.themoviedb.org/">The Movie Database</a>.
+  </p>
+</BaseLayout>
+
+<style is:global>
+  .fr { margin-top: var(--space-3); }
+  .fr-bar, .fr-pick { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-3); align-items: center; }
+  .fr-bar { justify-content: space-between; border-bottom: 1px solid var(--color-border); padding-bottom: var(--space-1); }
+  .fr-tabs { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+  .fr-tabs button, .fr-sub button { background: none; border: 0; padding: 0.4rem 0; font: inherit; color: var(--color-ink-soft); cursor: pointer; border-bottom: 2px solid transparent; }
+  .fr-tabs button[aria-selected="true"], .fr-sub button[aria-selected="true"] { color: var(--color-ink); border-bottom-color: var(--color-accent); }
+  .fr-owner { display: inline-flex; gap: 0.4rem; align-items: center; color: var(--color-ink-soft); font-size: 0.9rem; cursor: pointer; }
+  .fr-pick { margin: var(--space-2) 0; font-size: 0.85rem; color: var(--color-ink-soft); }
+  .fr-pick label { display: inline-flex; gap: 0.5rem; align-items: center; }
+  .fr select, .fr input[type="search"], .fr #fr-person { font: inherit; font-size: 0.9rem; padding: 0.3rem 0.5rem; border: 1px solid var(--color-border); background: var(--color-bg); color: var(--color-ink); border-radius: 0; }
+  .fr #fr-person { min-width: 14rem; }
+  .fr button:focus-visible, .fr select:focus-visible, .fr input:focus-visible, .fr-node:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+  .fr-status { color: var(--color-ink-soft); font-size: 0.9rem; min-height: 1.4em; margin: 0 0 var(--space-1); }
+  .fr-stage { position: relative; overflow-x: auto; }
+  .fr-stage svg { display: block; width: 100%; height: auto; }
+  .fr-stage svg text { font-family: inherit; fill: var(--color-ink); }
+  .fr-fade { animation: fr-in 0.3s ease both; }
+  @keyframes fr-in { from { opacity: 0; } to { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { .fr-fade { animation: none; } }
+  .fr-node { cursor: default; }
+  .fr-node.is-click { cursor: pointer; }
+  .fr-node circle { transition: stroke-width 0.1s; }
+  .fr-node:hover circle, .fr-node:focus circle { stroke: var(--color-ink); stroke-width: 2; }
+  .fr-guide { fill: none; stroke: var(--color-border); stroke-dasharray: 2 4; }
+  .fr-small { font-size: 9px; }
+  .fr-muted { fill: var(--color-ink-soft) !important; }
+  .fr-dim { opacity: 0.12; }
+  .fr-card { position: absolute; z-index: 5; width: 15rem; padding: 0.7rem; background: var(--color-bg); border: 1px solid var(--color-ink); font-size: 0.82rem; line-height: 1.35; pointer-events: none; display: grid; grid-template-columns: auto 1fr; gap: 0.2rem 0.7rem; }
+  .fr-card[hidden] { display: none; }
+  .fr-card img { width: 46px; height: 69px; object-fit: cover; background: var(--color-border); grid-row: span 3; }
+  .fr-card b { font-weight: 600; }
+  .fr-card .fr-sub2 { color: var(--color-ink-soft); }
+  .fr-card ul { grid-column: 1 / -1; margin: 0.3rem 0 0; padding-left: 1rem; color: var(--color-ink-soft); }
+  .fr-legend { display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; margin-top: var(--space-2); font-size: 0.8rem; color: var(--color-ink-soft); }
+  .fr-legend i { display: inline-block; width: 0.7rem; height: 0.7rem; margin-right: 0.35rem; vertical-align: -1px; }
+  .fr-sub { display: flex; gap: var(--space-3); flex-wrap: wrap; margin-bottom: var(--space-2); font-size: 0.9rem; }
+  .fr-hm { overflow-x: auto; }
+  .fr-hm table { border-collapse: collapse; font-size: 0.8rem; }
+  .fr-hm th, .fr-hm td { padding: 0; }
+  .fr-hm thead th { height: 9rem; vertical-align: bottom; font-weight: 400; }
+  .fr-hm thead button { writing-mode: vertical-rl; transform: rotate(180deg); white-space: nowrap; padding: 0.3rem 0; }
+  .fr-hm tbody th { text-align: right; padding-right: 0.7rem; white-space: nowrap; font-weight: 400; position: sticky; left: 0; background: var(--color-bg); }
+  .fr-hm button.fr-link { background: none; border: 0; font: inherit; color: var(--color-ink); cursor: pointer; }
+  .fr-hm button.fr-link:hover { color: var(--color-accent); }
+  .fr-hm td button { width: 1.65rem; height: 1.65rem; border: 1px solid var(--color-bg); font: inherit; font-size: 0.72rem; color: var(--color-ink); cursor: pointer; background: transparent; }
+  .fr-hm td button.on { color: #fff; }
+  .fr-rows { margin: var(--space-2) 0; font-size: 0.82rem; color: var(--color-ink-soft); }
+  .fr-rows summary { cursor: pointer; }
+  .fr-rows div { columns: 14rem; margin-top: var(--space-1); }
+  .fr-rows label { display: block; break-inside: avoid; }
+  .fr-detail { margin-top: var(--space-3); }
+  .fr-detail h2 { font-size: 1.1rem; }
+  .fr-detail ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: var(--space-2); }
+  .fr-detail li { display: flex; gap: 0.7rem; font-size: 0.85rem; }
+  .fr-detail img { width: 46px; height: 69px; object-fit: cover; background: var(--color-border); flex: none; }
+  .fr-detail .fr-sub2 { color: var(--color-ink-soft); }
+  .fr-detail a { color: var(--color-accent); }
+  .fr-attr { margin-top: var(--space-4); font-size: 0.78rem; color: var(--color-ink-soft); max-width: var(--measure); }
+  .fr-attr a { color: inherit; }
+</style>
+
+<script>
+  import "../../scripts/film-repertory.js";
+</script>

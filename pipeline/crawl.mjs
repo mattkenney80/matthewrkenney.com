@@ -176,10 +176,11 @@ const collaborations = [...collab.values()].sort((x, y) => x[0] - y[0] || x[2] -
 
 const usedPeople = new Set(collaborations.flatMap((c) => [c[0], c[2]]));
 for (const id of nodeIds) usedPeople.add(id);
+const promotedIds = new Set(promoted.map((p) => p.pid));
 const peopleOut = {};
 for (const id of [...usedPeople].sort((a, b) => a - b)) {
   const p = people.get(id);
-  peopleOut[id] = { n: p?.n ?? seeds.get(id)?.name ?? String(id), d: p?.d ?? null, p: p?.p ?? null, ...(seeds.has(id) ? { s: [...seeds.get(id).types] } : { pm: 1 }) };
+  peopleOut[id] = { n: p?.n ?? seeds.get(id)?.name ?? String(id), d: p?.d ?? null, p: p?.p ?? null, ...(seeds.has(id) ? { s: [...seeds.get(id).types] } : promotedIds.has(id) ? { pm: 1 } : {}) };
 }
 
 const usedFilms = new Set(collaborations.flatMap((c) => c[4]));

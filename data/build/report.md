@@ -1,15 +1,15 @@
 # Film Repertory: crawl report
 
-Generated 2026-10-14T02:50:22.144Z. Config: {"minVoteCount":25,"actorMaxOrder":15,"promotedFilmCap":25,"maxPromoted":200,"hops":1,"minSharedFilmsToPromote":2,"topBilledActors":10,"featureFilmsOnly":true}
+Generated 2026-10-14T02:55:58.152Z. Config: {"minVoteCount":25,"actorMaxOrder":15,"promotedFilmCap":25,"maxPromoted":200,"hops":1,"minSharedFilmsToPromote":2,"topBilledActors":10,"featureFilmsOnly":true}
 
 ## 0. Size
 
 | file | raw | gzip |
 |---|---|---|
-| people.json | 1.59 MB | 0.60 MB |
+| people.json | 1.45 MB | 0.58 MB |
 | films.json | 1.75 MB | 0.50 MB |
 | collaborations.json | 3.19 MB | 0.48 MB |
-| total | 6.52 MB | 1.57 MB |
+| total | 6.38 MB | 1.55 MB |
 
 Nodes: 46 seeds + 200 promoted = 246 full nodes. 19368 people and 3372 films appear in the data; 75786 collaboration rows.
 Handoff says to split per person and lazy load if the build passes a couple of MB. Gzipped total is 1.6 MB, so this is at that line. There was no earlier build in this repo to compare against.
