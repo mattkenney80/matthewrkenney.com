@@ -1,17 +1,17 @@
 # Film Repertory: crawl report
 
-Generated 2026-10-14T02:55:58.152Z. Config: {"minVoteCount":25,"actorMaxOrder":15,"promotedFilmCap":25,"maxPromoted":200,"hops":1,"minSharedFilmsToPromote":2,"topBilledActors":10,"featureFilmsOnly":true}
+Generated 2026-10-14T12:51:05.610Z. Config: {"minVoteCount":25,"actorMaxOrder":15,"promotedFilmCap":25,"maxPromoted":200,"hops":1,"minSharedFilmsToPromote":2,"topBilledActors":10,"featureFilmsOnly":true}
 
 ## 0. Size
 
 | file | raw | gzip |
 |---|---|---|
-| people.json | 1.45 MB | 0.58 MB |
-| films.json | 1.75 MB | 0.50 MB |
-| collaborations.json | 3.19 MB | 0.48 MB |
-| total | 6.38 MB | 1.55 MB |
+| people.json | 1.46 MB | 0.58 MB |
+| films.json | 1.76 MB | 0.50 MB |
+| collaborations.json | 3.23 MB | 0.48 MB |
+| total | 6.45 MB | 1.57 MB |
 
-Nodes: 46 seeds + 200 promoted = 246 full nodes. 19368 people and 3372 films appear in the data; 75786 collaboration rows.
+Nodes: 47 seeds + 200 promoted = 247 full nodes. 19528 people and 3403 films appear in the data; 77031 collaboration rows.
 Handoff says to split per person and lazy load if the build passes a couple of MB. Gzipped total is 1.6 MB, so this is at that line. There was no earlier build in this repo to compare against.
 
 ## 1. Seed directors
@@ -192,29 +192,37 @@ Handoff says to split per person and lazy load if the build passes a couple of M
 - writer: Richard LaGravenese (2), Carlos Cuarón (2), Isabel Coixet (1)
 - actor: Daniel Giménez Cacho (2), Gary Oldman (1), Ed Harris (1)
 
+### Sydney Pollack
+19 feature films, 1965 to 2005.
+- cinematographer: Owen Roizman (5), Duke Callaghan (3), Henri Decaë (2)
+- editor: Fredric Steinkamp (8), William Steinkamp (6), Sheldon Kahn (3)
+- composer: Dave Grusin (9), John Williams (1), James Newton Howard (1)
+- writer: David Rayfiel (5), Kurt Luedtke (3), Robert Towne (2)
+- actor: Robert Redford (7), Dabney Coleman (4), Wilford Brimley (3)
+
 ## 2. Crew jobs that looked like a key role but did not map
 
-Counted over the 311 films of the seed directors. Filter: job text mentions a key role word, minus assistant, associate, co-, supervisor, coordinator and similar.
+Counted over the 330 films of the seed directors. Filter: job text mentions a key role word, minus assistant, associate, co-, supervisor, coordinator and similar.
 
 | department / job | credits |
 |---|---|
-| Production / Executive Producer | 769 |
-| Camera / Still Photographer | 239 |
-| Production / Unit Production Manager | 221 |
-| Production / Production Accountant | 145 |
-| Production / Production Manager | 129 |
-| Production / Production Secretary | 89 |
-| Production / Executive In Charge Of Production | 43 |
+| Production / Executive Producer | 785 |
+| Camera / Still Photographer | 246 |
+| Production / Unit Production Manager | 225 |
+| Production / Production Accountant | 147 |
+| Production / Production Manager | 137 |
+| Production / Production Secretary | 90 |
+| Production / Executive In Charge Of Production | 45 |
 | Sound / Music | 32 |
 | Editing / Digital Intermediate Producer | 31 |
 | Production / Post Production Accountant | 29 |
-| Camera / Aerial Director of Photography | 26 |
-| Production / Production Executive | 24 |
+| Camera / Aerial Director of Photography | 27 |
+| Production / Production Executive | 25 |
+| Sound / Music Consultant | 22 |
 | Editing / Digital Intermediate Editor | 21 |
-| Sound / Music Consultant | 20 |
-| Sound / Music Producer | 20 |
-| Writing / Original Film Writer | 17 |
-| Sound / Music Arranger | 14 |
+| Sound / Music Producer | 21 |
+| Writing / Original Film Writer | 20 |
+| Sound / Music Arranger | 15 |
 | Production / Head of Production | 14 |
 | Production / Production Consultant | 10 |
 | Production / Executive In Charge Of Post Production | 9 |
@@ -222,9 +230,9 @@ Counted over the 311 films of the seed directors. Filter: job text mentions a ke
 | Production / Production Driver | 6 |
 | Editing / Online Editor | 6 |
 | Camera / Underwater Director of Photography | 6 |
+| Sound / Music Programmer | 5 |
 | Writing / Storyboard | 4 |
 | Sound / Music Score Producer | 4 |
-| Sound / Music Programmer | 4 |
 | Sound / Music Director | 3 |
 | Production / Post Production Producer | 3 |
 | Production / Director of Operations | 3 |
@@ -264,6 +272,7 @@ Credits excluded before fetching details (documentary or TV movie genre, video r
 | David Fincher (director) | 1 | 0 | 4 | 2 |
 | George Miller (director) | 2 | 0 | 0 | 3 |
 | Alfonso Cuaron (director) | 1 | 0 | 0 | 5 |
+| Sydney Pollack (director) | 2 | 0 | 1 | 0 |
 | Harvey Keitel (actor) | 1 | 10 | 0 | 54 |
 | Dennis Hopper (actor) | 24 | 10 | 2 | 51 |
 | Michael Shannon (actor) | 1 | 1 | 0 | 25 |

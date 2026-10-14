@@ -257,6 +257,16 @@
         "knownFor": "Harry Potter and the Prisoner of Azkaban",
         "status": "ok"
       }
+    },
+    {
+      "name": "Sydney Pollack",
+      "tmdbId": 2226,
+      "matched": {
+        "name": "Sydney Pollack",
+        "department": "Directing",
+        "knownFor": "The Firm",
+        "status": "ok"
+      }
     }
   ],
   "actors": [
