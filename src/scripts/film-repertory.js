@@ -401,7 +401,7 @@ function heatmap() {
   const rowRole = tab === "dps" ? "cinematographer" : "director";
   const colRoles = tab === "actors" ? ["actor"] : tab === "crew" ? ["cinematographer", "editor", "composer"] : tab === "writers" ? ["writer"] : ["director"];
   const candidates = nodesWithRole(rowRole);
-  heat.rows[rowRole] ??= new Set(seedsWithRole(rowRole));
+  heat.rows[rowRole] ??= new Set(seedsWithRole(rowRole).sort((a, b) => (filmCount.get(b) ?? 0) - (filmCount.get(a) ?? 0)).slice(0, 30));
   const rows = candidates.filter((id) => heat.rows[rowRole].has(id));
 
   const cell = new Map(); // col -> Map(row -> Set films)

@@ -267,6 +267,1064 @@
         "knownFor": "The Firm",
         "status": "ok"
       }
+    },
+    {
+      "name": "Jim Jarmusch",
+      "tmdbId": 4429,
+      "matched": {
+        "name": "Jim Jarmusch",
+        "department": "Directing",
+        "knownFor": "The Dead Don't Die",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "John Sayles",
+      "tmdbId": 102445,
+      "matched": {
+        "name": "John Sayles",
+        "department": "Directing",
+        "knownFor": "Lone Star",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Hal Hartley",
+      "tmdbId": 91343,
+      "matched": {
+        "name": "Hal Hartley",
+        "department": "Directing",
+        "knownFor": "Trust",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Kelly Reichardt",
+      "tmdbId": 56383,
+      "matched": {
+        "name": "Kelly Reichardt",
+        "department": "Directing",
+        "knownFor": "First Cow",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Richard Kelly",
+      "tmdbId": 1577,
+      "matched": {
+        "name": "Richard Kelly",
+        "department": "Directing",
+        "knownFor": "Donnie Darko",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Darren Aronofsky",
+      "tmdbId": 6431,
+      "matched": {
+        "name": "Darren Aronofsky",
+        "department": "Directing",
+        "knownFor": "Black Swan",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Wes Anderson",
+      "tmdbId": 5655,
+      "matched": {
+        "name": "Wes Anderson",
+        "department": "Directing",
+        "knownFor": "The Grand Budapest Hotel",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Noah Baumbach",
+      "tmdbId": 5656,
+      "matched": {
+        "name": "Noah Baumbach",
+        "department": "Directing",
+        "knownFor": "Marriage Story",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Todd Haynes",
+      "tmdbId": 16863,
+      "matched": {
+        "name": "Todd Haynes",
+        "department": "Directing",
+        "knownFor": "Carol",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Gus Van Sant",
+      "tmdbId": 5216,
+      "matched": {
+        "name": "Gus Van Sant",
+        "department": "Directing",
+        "knownFor": "Good Will Hunting",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Steven Soderbergh",
+      "tmdbId": 1884,
+      "matched": {
+        "name": "Steven Soderbergh",
+        "department": "Directing",
+        "knownFor": "The Hunger Games",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Spike Jonze",
+      "tmdbId": 5953,
+      "matched": {
+        "name": "Spike Jonze",
+        "department": "Directing",
+        "knownFor": "Her",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Michel Gondry",
+      "tmdbId": 201,
+      "matched": {
+        "name": "Michel Gondry",
+        "department": "Directing",
+        "knownFor": "Eternal Sunshine of the Spotless Mind",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Harmony Korine",
+      "tmdbId": 51918,
+      "matched": {
+        "name": "Harmony Korine",
+        "department": "Directing",
+        "knownFor": "Spring Breakers",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Larry Clark",
+      "tmdbId": 51917,
+      "matched": {
+        "name": "Larry Clark",
+        "department": "Directing",
+        "knownFor": "Kids",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 1123745,
+            "department": "Directing",
+            "knownFor": "Passing Through"
+          },
+          {
+            "id": 2320004,
+            "department": "Directing",
+            "knownFor": "Rituals of Guilt"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Abel Ferrara",
+      "tmdbId": 39104,
+      "matched": {
+        "name": "Abel Ferrara",
+        "department": "Directing",
+        "knownFor": "Bad Lieutenant",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Sean Baker",
+      "tmdbId": 118415,
+      "matched": {
+        "name": "Sean Baker",
+        "department": "Directing",
+        "knownFor": "Anora",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Ari Aster",
+      "tmdbId": 1145520,
+      "matched": {
+        "name": "Ari Aster",
+        "department": "Directing",
+        "knownFor": "Hereditary",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Robert Eggers",
+      "tmdbId": 138781,
+      "matched": {
+        "name": "Robert Eggers",
+        "department": "Directing",
+        "knownFor": "The Witch",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "David Lowery",
+      "tmdbId": 592493,
+      "matched": {
+        "name": "David Lowery",
+        "department": "Directing",
+        "knownFor": "A Ghost Story",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Jeremy Saulnier",
+      "tmdbId": 74655,
+      "matched": {
+        "name": "Jeremy Saulnier",
+        "department": "Directing",
+        "knownFor": "True Detective",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "S. Craig Zahler",
+      "tmdbId": 1018106,
+      "matched": {
+        "name": "S. Craig Zahler",
+        "department": "Directing",
+        "knownFor": "Bone Tomahawk",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "David Gordon Green",
+      "tmdbId": 64141,
+      "matched": {
+        "name": "David Gordon Green",
+        "department": "Directing",
+        "knownFor": "Halloween",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Alex Garland",
+      "tmdbId": 2036,
+      "matched": {
+        "name": "Alex Garland",
+        "department": "Writing",
+        "knownFor": "Ex Machina",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Yorgos Lanthimos",
+      "tmdbId": 122423,
+      "matched": {
+        "name": "Yorgos Lanthimos",
+        "department": "Directing",
+        "knownFor": "The Lobster",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Lynne Ramsay",
+      "tmdbId": 83287,
+      "matched": {
+        "name": "Lynne Ramsay",
+        "department": "Directing",
+        "knownFor": "We Need to Talk About Kevin",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Andrea Arnold",
+      "tmdbId": 71082,
+      "matched": {
+        "name": "Andrea Arnold",
+        "department": "Directing",
+        "knownFor": "Big Little Lies",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Barry Jenkins",
+      "tmdbId": 92784,
+      "matched": {
+        "name": "Barry Jenkins",
+        "department": "Directing",
+        "knownFor": "Moonlight",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Greta Gerwig",
+      "tmdbId": 45400,
+      "matched": {
+        "name": "Greta Gerwig",
+        "department": "Acting",
+        "knownFor": "Frances Ha",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Sofia Coppola",
+      "tmdbId": 1769,
+      "matched": {
+        "name": "Sofia Coppola",
+        "department": "Directing",
+        "knownFor": "Lost in Translation",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Kathryn Bigelow",
+      "tmdbId": 14392,
+      "matched": {
+        "name": "Kathryn Bigelow",
+        "department": "Directing",
+        "knownFor": "The Hurt Locker",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "David O. Russell",
+      "tmdbId": 17883,
+      "matched": {
+        "name": "David O. Russell",
+        "department": "Directing",
+        "knownFor": "Silver Linings Playbook",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Tom McCarthy",
+      "tmdbId": 17867,
+      "matched": {
+        "name": "Tom McCarthy",
+        "department": "Acting",
+        "knownFor": "Spotlight / Win Win (director credits)",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Debra Granik",
+      "tmdbId": 121873,
+      "matched": {
+        "name": "Debra Granik",
+        "department": "Directing",
+        "knownFor": "Winter's Bone",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Park Chan-wook",
+      "tmdbId": 10099,
+      "matched": {
+        "name": "Park Chan-wook",
+        "department": "Directing",
+        "knownFor": "Oldboy",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 3311495,
+            "department": "Directing",
+            "knownFor": "X1 PREMIER SHOW-CON"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Bong Joon-ho",
+      "tmdbId": 21684,
+      "matched": {
+        "name": "Bong Joon Ho",
+        "department": "Directing",
+        "knownFor": "Parasite",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Jonathan Glazer",
+      "tmdbId": 66728,
+      "matched": {
+        "name": "Jonathan Glazer",
+        "department": "Directing",
+        "knownFor": "Under the Skin",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Gaspar Noé",
+      "tmdbId": 14597,
+      "matched": {
+        "name": "Gaspar Noé",
+        "department": "Directing",
+        "knownFor": "Irreversible",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Nicolas Winding Refn",
+      "tmdbId": 21183,
+      "matched": {
+        "name": "Nicolas Winding Refn",
+        "department": "Directing",
+        "knownFor": "Drive",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Joe Carnahan",
+      "tmdbId": 40223,
+      "matched": {
+        "name": "Joe Carnahan",
+        "department": "Writing",
+        "knownFor": "Bad Boys for Life",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "J.C. Chandor",
+      "tmdbId": 556172,
+      "matched": {
+        "name": "J.C. Chandor",
+        "department": "Directing",
+        "knownFor": "Triple Frontier",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Jim Sheridan",
+      "tmdbId": 53334,
+      "matched": {
+        "name": "Jim Sheridan",
+        "department": "Directing",
+        "knownFor": "Brothers",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Steve McQueen",
+      "tmdbId": 72757,
+      "matched": {
+        "name": "Steve McQueen",
+        "department": "Directing",
+        "knownFor": "12 Years a Slave",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Derek Cianfrance",
+      "tmdbId": 139098,
+      "matched": {
+        "name": "Derek Cianfrance",
+        "department": "Directing",
+        "knownFor": "The Place Beyond the Pines",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Mike Judge",
+      "tmdbId": 17403,
+      "matched": {
+        "name": "Mike Judge",
+        "department": "Acting",
+        "knownFor": "Beavis and Butt-Head Do America",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 2252875,
+            "department": "Acting",
+            "knownFor": "The New York Hardcore Chronicles Film"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Rian Johnson",
+      "tmdbId": 67367,
+      "matched": {
+        "name": "Rian Johnson",
+        "department": "Directing",
+        "knownFor": "Breaking Bad",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "David Cronenberg",
+      "tmdbId": 224,
+      "matched": {
+        "name": "David Cronenberg",
+        "department": "Directing",
+        "knownFor": "The Fly",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Terrence Malick",
+      "tmdbId": 30715,
+      "matched": {
+        "name": "Terrence Malick",
+        "department": "Directing",
+        "knownFor": "The Thin Red Line",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Paul Greengrass",
+      "tmdbId": 25598,
+      "matched": {
+        "name": "Paul Greengrass",
+        "department": "Directing",
+        "knownFor": "The Bourne Ultimatum",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Ridley Scott",
+      "tmdbId": 578,
+      "matched": {
+        "name": "Ridley Scott",
+        "department": "Directing",
+        "knownFor": "The Martian",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Steven Spielberg",
+      "tmdbId": 488,
+      "matched": {
+        "name": "Steven Spielberg",
+        "department": "Directing",
+        "knownFor": "Jurassic Park",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Oliver Stone",
+      "tmdbId": 1152,
+      "matched": {
+        "name": "Oliver Stone",
+        "department": "Directing",
+        "knownFor": "Platoon",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Brian De Palma",
+      "tmdbId": 1150,
+      "matched": {
+        "name": "Brian De Palma",
+        "department": "Directing",
+        "knownFor": "Scarface",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Sidney Lumet",
+      "tmdbId": 39996,
+      "matched": {
+        "name": "Sidney Lumet",
+        "department": "Directing",
+        "knownFor": "12 Angry Men",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Francis Ford Coppola",
+      "tmdbId": 1776,
+      "matched": {
+        "name": "Francis Ford Coppola",
+        "department": "Directing",
+        "knownFor": "The Godfather",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "William Friedkin",
+      "tmdbId": 15175,
+      "matched": {
+        "name": "William Friedkin",
+        "department": "Directing",
+        "knownFor": "The Exorcist",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "John Carpenter",
+      "tmdbId": 11770,
+      "matched": {
+        "name": "John Carpenter",
+        "department": "Directing",
+        "knownFor": "The Thing",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 3399722,
+            "department": "Directing",
+            "knownFor": "Blood, Sweat and Gimp Masks"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Walter Hill",
+      "tmdbId": 1723,
+      "matched": {
+        "name": "Walter Hill",
+        "department": "Directing",
+        "knownFor": "The Warriors",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Kevin Smith",
+      "tmdbId": 19303,
+      "matched": {
+        "name": "Kevin Smith",
+        "department": "Directing",
+        "knownFor": "The Flash",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 4394269,
+            "department": "Directing",
+            "knownFor": "Devils Don't Say Thanks"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Robert Rodriguez",
+      "tmdbId": 2294,
+      "matched": {
+        "name": "Robert Rodriguez",
+        "department": "Directing",
+        "knownFor": "The Mandalorian",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 2086654,
+            "department": "Directing",
+            "knownFor": "n/a"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Danny Boyle",
+      "tmdbId": 2034,
+      "matched": {
+        "name": "Danny Boyle",
+        "department": "Directing",
+        "knownFor": "Slumdog Millionaire",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Guy Ritchie",
+      "tmdbId": 956,
+      "matched": {
+        "name": "Guy Ritchie",
+        "department": "Directing",
+        "knownFor": "Sherlock Holmes",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Bryan Singer",
+      "tmdbId": 9032,
+      "matched": {
+        "name": "Bryan Singer",
+        "department": "Directing",
+        "knownFor": "Bohemian Rhapsody",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Doug Liman",
+      "tmdbId": 11694,
+      "matched": {
+        "name": "Doug Liman",
+        "department": "Directing",
+        "knownFor": "Edge of Tomorrow",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Antoine Fuqua",
+      "tmdbId": 20907,
+      "matched": {
+        "name": "Antoine Fuqua",
+        "department": "Directing",
+        "knownFor": "The Equalizer",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Tony Scott",
+      "tmdbId": 893,
+      "matched": {
+        "name": "Tony Scott",
+        "department": "Directing",
+        "knownFor": "Top Gun",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Curtis Hanson",
+      "tmdbId": 323,
+      "matched": {
+        "name": "Curtis Hanson",
+        "department": "Directing",
+        "knownFor": "8 Mile",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "James Mangold",
+      "tmdbId": 366,
+      "matched": {
+        "name": "James Mangold",
+        "department": "Directing",
+        "knownFor": "Logan",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Alexander Payne",
+      "tmdbId": 13235,
+      "matched": {
+        "name": "Alexander Payne",
+        "department": "Directing",
+        "knownFor": "Downsizing",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Cameron Crowe",
+      "tmdbId": 11649,
+      "matched": {
+        "name": "Cameron Crowe",
+        "department": "Directing",
+        "knownFor": "Vanilla Sky",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Edward Zwick",
+      "tmdbId": 9181,
+      "matched": {
+        "name": "Edward Zwick",
+        "department": "Directing",
+        "knownFor": "Blood Diamond",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Ang Lee",
+      "tmdbId": 1614,
+      "matched": {
+        "name": "Ang Lee",
+        "department": "Directing",
+        "knownFor": "Life of Pi",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 5895733,
+            "department": "Directing",
+            "knownFor": "n/a"
+          }
+        ]
+      }
+    },
+    {
+      "name": "John Woo",
+      "tmdbId": 11401,
+      "matched": {
+        "name": "John Woo",
+        "department": "Directing",
+        "knownFor": "Mission: Impossible II",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 1463203,
+            "department": "Directing",
+            "knownFor": "Eight Crazy Nights"
+          },
+          {
+            "id": 2886926,
+            "department": "Directing",
+            "knownFor": "Find Makarov: Operation Kingfish"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Baz Luhrmann",
+      "tmdbId": 6201,
+      "matched": {
+        "name": "Baz Luhrmann",
+        "department": "Directing",
+        "knownFor": "The Great Gatsby",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "M. Night Shyamalan",
+      "tmdbId": 11614,
+      "matched": {
+        "name": "M. Night Shyamalan",
+        "department": "Directing",
+        "knownFor": "Split",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Sam Mendes",
+      "tmdbId": 39,
+      "matched": {
+        "name": "Sam Mendes",
+        "department": "Directing",
+        "knownFor": "Skyfall",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Sam Raimi",
+      "tmdbId": 7623,
+      "matched": {
+        "name": "Sam Raimi",
+        "department": "Directing",
+        "knownFor": "Spider-Man",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Peter Jackson",
+      "tmdbId": 108,
+      "matched": {
+        "name": "Peter Jackson",
+        "department": "Directing",
+        "knownFor": "The Lord of the Rings: The Fellowship of the Ring",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Neil Jordan",
+      "tmdbId": 17016,
+      "matched": {
+        "name": "Neil Jordan",
+        "department": "Directing",
+        "knownFor": "Interview with the Vampire",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "John McTiernan",
+      "tmdbId": 1090,
+      "matched": {
+        "name": "John McTiernan",
+        "department": "Directing",
+        "knownFor": "Die Hard",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Andrew Niccol",
+      "tmdbId": 8685,
+      "matched": {
+        "name": "Andrew Niccol",
+        "department": "Writing",
+        "knownFor": "The Truman Show",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Gregg Araki",
+      "tmdbId": 19224,
+      "matched": {
+        "name": "Gregg Araki",
+        "department": "Directing",
+        "knownFor": "Riverdale",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Whit Stillman",
+      "tmdbId": 78188,
+      "matched": {
+        "name": "Whit Stillman",
+        "department": "Writing",
+        "knownFor": "Love & Friendship",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Mike Leigh",
+      "tmdbId": 65452,
+      "matched": {
+        "name": "Mike Leigh",
+        "department": "Directing",
+        "knownFor": "Secrets & Lies",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Ken Loach",
+      "tmdbId": 15488,
+      "matched": {
+        "name": "Ken Loach",
+        "department": "Directing",
+        "knownFor": "I, Daniel Blake",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Todd Field",
+      "tmdbId": 5010,
+      "matched": {
+        "name": "Todd Field",
+        "department": "Acting",
+        "knownFor": "Eyes Wide Shut",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Lasse Hallström",
+      "tmdbId": 5306,
+      "matched": {
+        "name": "Lasse Hallström",
+        "department": "Directing",
+        "knownFor": "Hachi: A Dog's Tale",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Clint Eastwood",
+      "tmdbId": 190,
+      "matched": {
+        "name": "Clint Eastwood",
+        "department": "Acting",
+        "knownFor": "Gran Torino",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Robert Zemeckis",
+      "tmdbId": 24,
+      "matched": {
+        "name": "Robert Zemeckis",
+        "department": "Directing",
+        "knownFor": "Forrest Gump",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Ron Howard",
+      "tmdbId": 6159,
+      "matched": {
+        "name": "Ron Howard",
+        "department": "Directing",
+        "knownFor": "A Beautiful Mind",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Rob Reiner",
+      "tmdbId": 3026,
+      "matched": {
+        "name": "Rob Reiner",
+        "department": "Directing",
+        "knownFor": "Stand by Me",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Barry Levinson",
+      "tmdbId": 8246,
+      "matched": {
+        "name": "Barry Levinson",
+        "department": "Directing",
+        "knownFor": "Rain Man",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Mike Nichols",
+      "tmdbId": 5342,
+      "matched": {
+        "name": "Mike Nichols",
+        "department": "Directing",
+        "knownFor": "Closer",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 1923935,
+            "department": "Directing",
+            "knownFor": "Uncle David"
+          },
+          {
+            "id": 2975142,
+            "department": "Directing",
+            "knownFor": "n/a"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Peter Weir",
+      "tmdbId": 2690,
+      "matched": {
+        "name": "Peter Weir",
+        "department": "Directing",
+        "knownFor": "The Truman Show",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "David Mamet",
+      "tmdbId": 1255,
+      "matched": {
+        "name": "David Mamet",
+        "department": "Writing",
+        "knownFor": "The Untouchables",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Frank Darabont",
+      "tmdbId": 4027,
+      "matched": {
+        "name": "Frank Darabont",
+        "department": "Directing",
+        "knownFor": "The Shawshank Redemption",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Brad Bird",
+      "tmdbId": 7087,
+      "matched": {
+        "name": "Brad Bird",
+        "department": "Directing",
+        "knownFor": "The Incredibles",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Joseph Kosinski",
+      "tmdbId": 86270,
+      "matched": {
+        "name": "Joseph Kosinski",
+        "department": "Directing",
+        "knownFor": "Oblivion",
+        "status": "ok"
+      }
     }
   ],
   "actors": [
@@ -398,6 +1456,885 @@
         "name": "Kurt Russell",
         "department": "Acting",
         "knownFor": "The Thing",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Robert De Niro",
+      "tmdbId": 380,
+      "matched": {
+        "name": "Robert De Niro",
+        "department": "Acting",
+        "knownFor": "GoodFellas",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Al Pacino",
+      "tmdbId": 1158,
+      "matched": {
+        "name": "Al Pacino",
+        "department": "Acting",
+        "knownFor": "The Godfather Part II",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Jack Nicholson",
+      "tmdbId": 514,
+      "matched": {
+        "name": "Jack Nicholson",
+        "department": "Acting",
+        "knownFor": "The Shining",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Tom Hanks",
+      "tmdbId": 31,
+      "matched": {
+        "name": "Tom Hanks",
+        "department": "Acting",
+        "knownFor": "Forrest Gump",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Brad Pitt",
+      "tmdbId": 287,
+      "matched": {
+        "name": "Brad Pitt",
+        "department": "Acting",
+        "knownFor": "Inglourious Basterds",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Leonardo DiCaprio",
+      "tmdbId": 6193,
+      "matched": {
+        "name": "Leonardo DiCaprio",
+        "department": "Acting",
+        "knownFor": "Inception",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Matt Damon",
+      "tmdbId": 1892,
+      "matched": {
+        "name": "Matt Damon",
+        "department": "Acting",
+        "knownFor": "The Martian",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Ben Affleck",
+      "tmdbId": 880,
+      "matched": {
+        "name": "Ben Affleck",
+        "department": "Acting",
+        "knownFor": "Gone Girl",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Denzel Washington",
+      "tmdbId": 5292,
+      "matched": {
+        "name": "Denzel Washington",
+        "department": "Acting",
+        "knownFor": "The Equalizer",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Samuel L. Jackson",
+      "tmdbId": 2231,
+      "matched": {
+        "name": "Samuel L. Jackson",
+        "department": "Acting",
+        "knownFor": "The Hateful Eight",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Morgan Freeman",
+      "tmdbId": 192,
+      "matched": {
+        "name": "Morgan Freeman",
+        "department": "Acting",
+        "knownFor": "Se7en",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 2714289,
+            "department": "Acting",
+            "knownFor": "The Big Hit"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Tom Cruise",
+      "tmdbId": 500,
+      "matched": {
+        "name": "Tom Cruise",
+        "department": "Acting",
+        "knownFor": "Edge of Tomorrow",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 6092083,
+            "department": "Acting",
+            "knownFor": "Masacre Marcial IVX"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Johnny Depp",
+      "tmdbId": 85,
+      "matched": {
+        "name": "Johnny Depp",
+        "department": "Acting",
+        "knownFor": "Pirates of the Caribbean: The Curse of the Black Pearl",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Nicolas Cage",
+      "tmdbId": 2963,
+      "matched": {
+        "name": "Nicolas Cage",
+        "department": "Acting",
+        "knownFor": "The Croods",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "John Travolta",
+      "tmdbId": 8891,
+      "matched": {
+        "name": "John Travolta",
+        "department": "Acting",
+        "knownFor": "Pulp Fiction",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Bruce Willis",
+      "tmdbId": 62,
+      "matched": {
+        "name": "Bruce Willis",
+        "department": "Acting",
+        "knownFor": "The Sixth Sense",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Mark Wahlberg",
+      "tmdbId": 13240,
+      "matched": {
+        "name": "Mark Wahlberg",
+        "department": "Acting",
+        "knownFor": "Ted",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 1354848,
+            "department": "Acting",
+            "knownFor": "Yeti: A Love Story"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Joaquin Phoenix",
+      "tmdbId": 73421,
+      "matched": {
+        "name": "Joaquin Phoenix",
+        "department": "Acting",
+        "knownFor": "Joker",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Edward Norton",
+      "tmdbId": 819,
+      "matched": {
+        "name": "Edward Norton",
+        "department": "Acting",
+        "knownFor": "Fight Club",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 5781441,
+            "department": "Acting",
+            "knownFor": "The Single Track"
+          },
+          {
+            "id": 6470352,
+            "department": "Acting",
+            "knownFor": "The Epic of Everest"
+          },
+          {
+            "id": 3402466,
+            "department": "Acting",
+            "knownFor": "Kaer"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Sean Penn",
+      "tmdbId": 2228,
+      "matched": {
+        "name": "Sean Penn",
+        "department": "Acting",
+        "knownFor": "Mystic River",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 6034959,
+            "department": "Acting",
+            "knownFor": "Death Tunnel"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Ethan Hawke",
+      "tmdbId": 569,
+      "matched": {
+        "name": "Ethan Hawke",
+        "department": "Acting",
+        "knownFor": "The Purge",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Willem Dafoe",
+      "tmdbId": 5293,
+      "matched": {
+        "name": "Willem Dafoe",
+        "department": "Acting",
+        "knownFor": "Spider-Man",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Steve Buscemi",
+      "tmdbId": 884,
+      "matched": {
+        "name": "Steve Buscemi",
+        "department": "Acting",
+        "knownFor": "Monsters, Inc.",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "John Turturro",
+      "tmdbId": 1241,
+      "matched": {
+        "name": "John Turturro",
+        "department": "Acting",
+        "knownFor": "O Brother, Where Art Thou?",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Christopher Walken",
+      "tmdbId": 4690,
+      "matched": {
+        "name": "Christopher Walken",
+        "department": "Acting",
+        "knownFor": "Catch Me If You Can",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Gary Oldman",
+      "tmdbId": 64,
+      "matched": {
+        "name": "Gary Oldman",
+        "department": "Acting",
+        "knownFor": "The Dark Knight Rises",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Tommy Lee Jones",
+      "tmdbId": 2176,
+      "matched": {
+        "name": "Tommy Lee Jones",
+        "department": "Acting",
+        "knownFor": "Men in Black",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Javier Bardem",
+      "tmdbId": 3810,
+      "matched": {
+        "name": "Javier Bardem",
+        "department": "Acting",
+        "knownFor": "No Country for Old Men",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Adam Driver",
+      "tmdbId": 1023139,
+      "matched": {
+        "name": "Adam Driver",
+        "department": "Acting",
+        "knownFor": "Marriage Story",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Adam Sandler",
+      "tmdbId": 19292,
+      "matched": {
+        "name": "Adam Sandler",
+        "department": "Acting",
+        "knownFor": "Pixels",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Ryan Gosling",
+      "tmdbId": 30614,
+      "matched": {
+        "name": "Ryan Gosling",
+        "department": "Acting",
+        "knownFor": "La La Land",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Casey Affleck",
+      "tmdbId": 1893,
+      "matched": {
+        "name": "Casey Affleck",
+        "department": "Acting",
+        "knownFor": "Interstellar",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Oscar Isaac",
+      "tmdbId": 25072,
+      "matched": {
+        "name": "Oscar Isaac",
+        "department": "Acting",
+        "knownFor": "Star Wars: The Force Awakens",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Tom Hardy",
+      "tmdbId": 2524,
+      "matched": {
+        "name": "Tom Hardy",
+        "department": "Acting",
+        "knownFor": "Mad Max: Fury Road",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 1176487,
+            "department": "Acting",
+            "knownFor": "Passagem por Lisboa"
+          },
+          {
+            "id": 5729039,
+            "department": "Acting",
+            "knownFor": "Brotherhood"
+          },
+          {
+            "id": 6543083,
+            "department": "Acting",
+            "knownFor": "Crecista"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Matthew McConaughey",
+      "tmdbId": 10297,
+      "matched": {
+        "name": "Matthew McConaughey",
+        "department": "Acting",
+        "knownFor": "Interstellar",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Woody Harrelson",
+      "tmdbId": 57755,
+      "matched": {
+        "name": "Woody Harrelson",
+        "department": "Acting",
+        "knownFor": "Now You See Me",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 5728197,
+            "department": "Acting",
+            "knownFor": "n/a"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Josh Brolin",
+      "tmdbId": 16851,
+      "matched": {
+        "name": "Josh Brolin",
+        "department": "Acting",
+        "knownFor": "Deadpool 2",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Frances McDormand",
+      "tmdbId": 3910,
+      "matched": {
+        "name": "Frances McDormand",
+        "department": "Acting",
+        "knownFor": "Three Billboards Outside Ebbing, Missouri",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Julianne Moore",
+      "tmdbId": 1231,
+      "matched": {
+        "name": "Julianne Moore",
+        "department": "Acting",
+        "knownFor": "The Lost World: Jurassic Park",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Cate Blanchett",
+      "tmdbId": 112,
+      "matched": {
+        "name": "Cate Blanchett",
+        "department": "Acting",
+        "knownFor": "The Curious Case of Benjamin Button",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Natalie Portman",
+      "tmdbId": 524,
+      "matched": {
+        "name": "Natalie Portman",
+        "department": "Acting",
+        "knownFor": "V for Vendetta",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Charlize Theron",
+      "tmdbId": 6885,
+      "matched": {
+        "name": "Charlize Theron",
+        "department": "Acting",
+        "knownFor": "Mad Max: Fury Road",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Jodie Foster",
+      "tmdbId": 1038,
+      "matched": {
+        "name": "Jodie Foster",
+        "department": "Acting",
+        "knownFor": "The Silence of the Lambs",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Kate Winslet",
+      "tmdbId": 204,
+      "matched": {
+        "name": "Kate Winslet",
+        "department": "Acting",
+        "knownFor": "Titanic",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Uma Thurman",
+      "tmdbId": 139,
+      "matched": {
+        "name": "Uma Thurman",
+        "department": "Acting",
+        "knownFor": "Kill Bill: Vol. 1",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Scarlett Johansson",
+      "tmdbId": 1245,
+      "matched": {
+        "name": "Scarlett Johansson",
+        "department": "Acting",
+        "knownFor": "Lucy",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Robert Duvall",
+      "tmdbId": 3087,
+      "matched": {
+        "name": "Robert Duvall",
+        "department": "Acting",
+        "knownFor": "The Godfather Part II",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Gene Hackman",
+      "tmdbId": 193,
+      "matched": {
+        "name": "Gene Hackman",
+        "department": "Acting",
+        "knownFor": "The Royal Tenenbaums",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 5792396,
+            "department": "Acting",
+            "knownFor": "Golden Globe Awards"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Harrison Ford",
+      "tmdbId": 3,
+      "matched": {
+        "name": "Harrison Ford",
+        "department": "Acting",
+        "knownFor": "Blade Runner",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 148815,
+            "department": "Acting",
+            "knownFor": "Foolish Wives"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Kevin Costner",
+      "tmdbId": 1269,
+      "matched": {
+        "name": "Kevin Costner",
+        "department": "Acting",
+        "knownFor": "The Untouchables",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Keanu Reeves",
+      "tmdbId": 6384,
+      "matched": {
+        "name": "Keanu Reeves",
+        "department": "Acting",
+        "knownFor": "The Matrix",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Jeff Bridges",
+      "tmdbId": 1229,
+      "matched": {
+        "name": "Jeff Bridges",
+        "department": "Acting",
+        "knownFor": "The Big Lebowski",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Bill Murray",
+      "tmdbId": 1532,
+      "matched": {
+        "name": "Bill Murray",
+        "department": "Acting",
+        "knownFor": "Ghostbusters",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 4333163,
+            "department": "Acting",
+            "knownFor": "It Came from Dimension X"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Ben Mendelsohn",
+      "tmdbId": 77335,
+      "matched": {
+        "name": "Ben Mendelsohn",
+        "department": "Acting",
+        "knownFor": "Ready Player One",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Idris Elba",
+      "tmdbId": 17605,
+      "matched": {
+        "name": "Idris Elba",
+        "department": "Acting",
+        "knownFor": "Zootopia",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Sam Rockwell",
+      "tmdbId": 6807,
+      "matched": {
+        "name": "Sam Rockwell",
+        "department": "Acting",
+        "knownFor": "Moon",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Paul Giamatti",
+      "tmdbId": 13242,
+      "matched": {
+        "name": "Paul Giamatti",
+        "department": "Acting",
+        "knownFor": "The Truman Show",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "John C. Reilly",
+      "tmdbId": 4764,
+      "matched": {
+        "name": "John C. Reilly",
+        "department": "Acting",
+        "knownFor": "Wreck-It Ralph",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Robert Redford",
+      "tmdbId": 4135,
+      "matched": {
+        "name": "Robert Redford",
+        "department": "Acting",
+        "knownFor": "Captain America: The Winter Soldier",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Daniel Day-Lewis",
+      "tmdbId": 11856,
+      "matched": {
+        "name": "Daniel Day-Lewis",
+        "department": "Acting",
+        "knownFor": "There Will Be Blood",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Benicio del Toro",
+      "tmdbId": 1121,
+      "matched": {
+        "name": "Benicio del Toro",
+        "department": "Acting",
+        "knownFor": "Sicario",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Viggo Mortensen",
+      "tmdbId": 110,
+      "matched": {
+        "name": "Viggo Mortensen",
+        "department": "Acting",
+        "knownFor": "Green Book",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Mickey Rourke",
+      "tmdbId": 2295,
+      "matched": {
+        "name": "Mickey Rourke",
+        "department": "Acting",
+        "knownFor": "The Wrestler",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Ben Kingsley",
+      "tmdbId": 2282,
+      "matched": {
+        "name": "Ben Kingsley",
+        "department": "Acting",
+        "knownFor": "Schindler's List",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Cillian Murphy",
+      "tmdbId": 2037,
+      "matched": {
+        "name": "Cillian Murphy",
+        "department": "Acting",
+        "knownFor": "Oppenheimer",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Mahershala Ali",
+      "tmdbId": 932967,
+      "matched": {
+        "name": "Mahershala Ali",
+        "department": "Acting",
+        "knownFor": "Green Book",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Jesse Plemons",
+      "tmdbId": 88124,
+      "matched": {
+        "name": "Jesse Plemons",
+        "department": "Acting",
+        "knownFor": "El Camino: A Breaking Bad Movie",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Jeremy Renner",
+      "tmdbId": 17604,
+      "matched": {
+        "name": "Jeremy Renner",
+        "department": "Acting",
+        "knownFor": "Arrival",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Anthony Hopkins",
+      "tmdbId": 4173,
+      "matched": {
+        "name": "Anthony Hopkins",
+        "department": "Acting",
+        "knownFor": "The Silence of the Lambs",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Ralph Fiennes",
+      "tmdbId": 5469,
+      "matched": {
+        "name": "Ralph Fiennes",
+        "department": "Acting",
+        "knownFor": "The Grand Budapest Hotel",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Emily Blunt",
+      "tmdbId": 5081,
+      "matched": {
+        "name": "Emily Blunt",
+        "department": "Acting",
+        "knownFor": "A Quiet Place",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Margot Robbie",
+      "tmdbId": 234352,
+      "matched": {
+        "name": "Margot Robbie",
+        "department": "Acting",
+        "knownFor": "Barbie",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Jennifer Lawrence",
+      "tmdbId": 72129,
+      "matched": {
+        "name": "Jennifer Lawrence",
+        "department": "Acting",
+        "knownFor": "The Hunger Games",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 6245600,
+            "department": "Acting",
+            "knownFor": "Between Time: The Flower That Bloomed Too Late"
+          },
+          {
+            "id": 4863981,
+            "department": "Acting",
+            "knownFor": "Golfballs!"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Amy Adams",
+      "tmdbId": 9273,
+      "matched": {
+        "name": "Amy Adams",
+        "department": "Acting",
+        "knownFor": "Arrival",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 2865226,
+            "department": "Acting",
+            "knownFor": "The Fight"
+          },
+          {
+            "id": 4449985,
+            "department": "Acting",
+            "knownFor": "A Wedding Like That"
+          },
+          {
+            "id": 6546375,
+            "department": "Acting",
+            "knownFor": "Witch Story"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Jessica Chastain",
+      "tmdbId": 83002,
+      "matched": {
+        "name": "Jessica Chastain",
+        "department": "Acting",
+        "knownFor": "The Martian",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Tilda Swinton",
+      "tmdbId": 3063,
+      "matched": {
+        "name": "Tilda Swinton",
+        "department": "Acting",
+        "knownFor": "Doctor Strange",
         "status": "ok"
       }
     }
@@ -1006,8 +2943,8 @@
     "topBilledActors": 10,
     "featureFilmsOnly": true,
     "minVoteCount": 25,
-    "actorMaxOrder": 15,
-    "promotedFilmCap": 25,
+    "actorMaxOrder": 8,
+    "promotedFilmCap": 20,
     "maxPromoted": 200
   }
 }
