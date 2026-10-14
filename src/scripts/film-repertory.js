@@ -509,8 +509,7 @@ function setupSearch() {
     active = -1;
     paint();
   }
-  inp.addEventListener("focus", () => { inp.select(); update(true); });
-  inp.addEventListener("click", () => { if (box.hidden) update(true); });
+  inp.addEventListener("focus", () => inp.select());
   inp.addEventListener("input", () => update(false));
   inp.addEventListener("blur", () => { close(); inp.value = nameOf(state.p); });
   inp.addEventListener("keydown", (e) => {

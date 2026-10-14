@@ -34,7 +34,7 @@ if (!(await isSectionVisible(env?.DB, "experiments"))) {
     </div>
 
     <div class="fr-pick" id="fr-pick">
-      <label>Browse
+      <label>List
         <select id="fr-roleSel">
           <option value="director">Directors</option>
           <option value="cinematographer">Cinematographers</option>
@@ -46,7 +46,7 @@ if (!(await isSectionVisible(env?.DB, "experiments"))) {
       </label>
       <label>Search
         <span class="fr-combo">
-          <input id="fr-person" type="text" role="combobox" aria-expanded="false" aria-controls="fr-sugg" aria-autocomplete="list" autocomplete="off" spellcheck="false" placeholder="Type a name" />
+          <input id="fr-person" type="text" role="combobox" aria-expanded="false" aria-controls="fr-sugg" aria-autocomplete="list" autocomplete="off" spellcheck="false" placeholder="Search any name" />
           <ul id="fr-sugg" role="listbox" hidden></ul>
         </span>
       </label>
