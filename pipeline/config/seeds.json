@@ -1,0 +1,221 @@
+{
+  "directors": [
+    {
+      "name": "Martin Scorsese",
+      "tmdbId": null
+    },
+    {
+      "name": "Quentin Tarantino",
+      "tmdbId": null
+    },
+    {
+      "name": "Richard Linklater",
+      "tmdbId": null
+    },
+    {
+      "name": "David Lynch",
+      "tmdbId": null
+    },
+    {
+      "name": "James Cameron",
+      "tmdbId": null
+    },
+    {
+      "name": "Spike Lee",
+      "tmdbId": null
+    },
+    {
+      "name": "Denis Villeneuve",
+      "tmdbId": null
+    },
+    {
+      "name": "Peter Berg",
+      "tmdbId": null
+    },
+    {
+      "name": "Paul Verhoeven",
+      "tmdbId": null
+    },
+    {
+      "name": "Mel Gibson",
+      "tmdbId": null
+    },
+    {
+      "name": "Joel Coen",
+      "tmdbId": null
+    },
+    {
+      "name": "Ethan Coen",
+      "tmdbId": null
+    },
+    {
+      "name": "Paul Thomas Anderson",
+      "tmdbId": null
+    },
+    {
+      "name": "Josh Safdie",
+      "tmdbId": null
+    },
+    {
+      "name": "Benny Safdie",
+      "tmdbId": null
+    },
+    {
+      "name": "Jeff Nichols",
+      "tmdbId": null
+    },
+    {
+      "name": "Woody Allen",
+      "tmdbId": null
+    },
+    {
+      "name": "Michael Mann",
+      "tmdbId": null
+    },
+    {
+      "name": "Christopher Nolan",
+      "tmdbId": null
+    },
+    {
+      "name": "David Fincher",
+      "tmdbId": null
+    },
+    {
+      "name": "George Miller",
+      "tmdbId": null
+    },
+    {
+      "name": "Alfonso Cuaron",
+      "tmdbId": null
+    }
+  ],
+  "actors": [
+    {
+      "name": "Harvey Keitel",
+      "tmdbId": null
+    },
+    {
+      "name": "Dennis Hopper",
+      "tmdbId": null
+    },
+    {
+      "name": "Michael Shannon",
+      "tmdbId": null
+    },
+    {
+      "name": "Jake Gyllenhaal",
+      "tmdbId": null
+    },
+    {
+      "name": "Philip Seymour Hoffman",
+      "tmdbId": null
+    },
+    {
+      "name": "Christian Bale",
+      "tmdbId": null
+    },
+    {
+      "name": "Rose Byrne",
+      "tmdbId": null
+    },
+    {
+      "name": "Diane Lane",
+      "tmdbId": null
+    },
+    {
+      "name": "Clive Owen",
+      "tmdbId": null
+    },
+    {
+      "name": "Kurt Russell",
+      "tmdbId": null
+    }
+  ],
+  "writers": [
+    {
+      "name": "Stephen King",
+      "tmdbId": null
+    },
+    {
+      "name": "Paul Schrader",
+      "tmdbId": null
+    },
+    {
+      "name": "Taylor Sheridan",
+      "tmdbId": null
+    },
+    {
+      "name": "Tony Gilroy",
+      "tmdbId": null
+    },
+    {
+      "name": "Eric Roth",
+      "tmdbId": null
+    }
+  ],
+  "cinematographers": [
+    {
+      "name": "Roger Deakins",
+      "tmdbId": null
+    },
+    {
+      "name": "Emmanuel Lubezki",
+      "tmdbId": null
+    },
+    {
+      "name": "Robert Richardson",
+      "tmdbId": null
+    },
+    {
+      "name": "Hoyte van Hoytema",
+      "tmdbId": null
+    },
+    {
+      "name": "Darius Khondji",
+      "tmdbId": null
+    },
+    {
+      "name": "Robert Elswit",
+      "tmdbId": null
+    },
+    {
+      "name": "Michael Chapman",
+      "tmdbId": null
+    },
+    {
+      "name": "Dion Beebe",
+      "tmdbId": null
+    },
+    {
+      "name": "Adam Stone",
+      "tmdbId": null
+    }
+  ],
+  "inferred": [
+    "Michael Mann",
+    "Christopher Nolan",
+    "David Fincher",
+    "George Miller",
+    "Alfonso Cuaron",
+    "Kurt Russell",
+    "Paul Schrader",
+    "Taylor Sheridan",
+    "Tony Gilroy",
+    "Eric Roth",
+    "Roger Deakins",
+    "Emmanuel Lubezki",
+    "Robert Richardson",
+    "Hoyte van Hoytema",
+    "Darius Khondji",
+    "Robert Elswit",
+    "Michael Chapman",
+    "Dion Beebe",
+    "Adam Stone"
+  ],
+  "expansion": {
+    "hops": 1,
+    "minSharedFilmsToPromote": 2,
+    "topBilledActors": 10,
+    "featureFilmsOnly": true
+  }
+}

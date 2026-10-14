@@ -26,3 +26,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# film repertory pipeline: raw TMDB cache, rebuilt on demand
+data/raw/

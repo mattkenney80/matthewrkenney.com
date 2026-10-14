@@ -1,0 +1,342 @@
+{
+  "list": "With the boys",
+  "note": "Status only. Watch dates, grades, notes, and names are intentionally not stored in this public repo.",
+  "films": [
+    {
+      "title": "Raiders of the Lost Ark",
+      "year": 1981,
+      "status": "watched",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Indiana Jones and the Temple of Doom",
+      "year": 1984,
+      "status": "watched",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Indiana Jones and the Last Crusade",
+      "year": 1989,
+      "status": "watched",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Back to the Future",
+      "year": 1985,
+      "status": "watched",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "The Goonies",
+      "year": 1985,
+      "status": "watched",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Predator",
+      "year": 1987,
+      "status": "watched",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Predator 2",
+      "year": 1990,
+      "status": "watched",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Prey",
+      "year": 2022,
+      "status": "watched",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Aliens",
+      "year": 1986,
+      "status": "watched",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Prometheus",
+      "year": 2012,
+      "status": "watched",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Labyrinth",
+      "year": 1986,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Stand by Me",
+      "year": 1986,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "It",
+      "year": 1990,
+      "status": "queued",
+      "tvMiniseries": true,
+      "tmdbId": null
+    },
+    {
+      "title": "Young Guns",
+      "year": 1988,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "The Explorers",
+      "year": 1985,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "The Terminator",
+      "year": 1984,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Terminator 2: Judgment Day",
+      "year": 1991,
+      "status": "watched",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Terminator Salvation",
+      "year": 2009,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "National Treasure",
+      "year": 2004,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Time Bandits",
+      "year": 1981,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Batman Begins",
+      "year": 2005,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "The Dark Knight",
+      "year": 2008,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "The Dark Knight Rises",
+      "year": 2012,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Point Break",
+      "year": 1991,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Cliffhanger",
+      "year": 1993,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Sneakers",
+      "year": 1992,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Requiem for a Dream",
+      "year": 2000,
+      "status": "hold",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "The Basketball Diaries",
+      "year": 1995,
+      "status": "hold",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "The Fugitive",
+      "year": 1993,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "The Ice Pirates",
+      "year": 1984,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Mad Max",
+      "year": 1979,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Mad Max 2: The Road Warrior",
+      "year": 1981,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Mad Max Beyond Thunderdome",
+      "year": 1985,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Apocalypto",
+      "year": 2006,
+      "status": "hold",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Trading Places",
+      "year": 1983,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Planes, Trains and Automobiles",
+      "year": 1987,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Twisters",
+      "year": 2024,
+      "status": "watched",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Twister",
+      "year": 1996,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Glengarry Glen Ross",
+      "year": 1992,
+      "status": "hold",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Jurassic Park",
+      "year": 1993,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "E.T. the Extra-Terrestrial",
+      "year": 1982,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Lord of the Flies",
+      "year": 1990,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Swiss Family Robinson",
+      "year": 1960,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Dead Poets Society",
+      "year": 1989,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Willy Wonka & the Chocolate Factory",
+      "year": 1971,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Speed",
+      "year": 1994,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Breakdown",
+      "year": 1997,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    },
+    {
+      "title": "Pacific Heights",
+      "year": 1990,
+      "status": "queued",
+      "tvMiniseries": false,
+      "tmdbId": null
+    }
+  ]
+}
