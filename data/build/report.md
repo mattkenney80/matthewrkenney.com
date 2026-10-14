@@ -1,18 +1,18 @@
 # Film Repertory: crawl report
 
-Generated 2026-10-14T12:51:05.610Z. Config: {"minVoteCount":25,"actorMaxOrder":15,"promotedFilmCap":25,"maxPromoted":200,"hops":1,"minSharedFilmsToPromote":2,"topBilledActors":10,"featureFilmsOnly":true}
+Generated 2026-10-14T12:53:28.796Z. Config: {"minVoteCount":25,"actorMaxOrder":15,"promotedFilmCap":25,"maxPromoted":200,"hops":1,"minSharedFilmsToPromote":2,"topBilledActors":10,"featureFilmsOnly":true}
 
 ## 0. Size
 
 | file | raw | gzip |
 |---|---|---|
-| people.json | 1.46 MB | 0.58 MB |
-| films.json | 1.76 MB | 0.50 MB |
-| collaborations.json | 3.23 MB | 0.48 MB |
-| total | 6.45 MB | 1.57 MB |
+| people.json | 1.83 MB | 0.72 MB |
+| films.json | 2.03 MB | 0.58 MB |
+| collaborations.json | 4.18 MB | 0.62 MB |
+| total | 8.04 MB | 1.92 MB |
 
-Nodes: 47 seeds + 200 promoted = 247 full nodes. 19528 people and 3403 films appear in the data; 77031 collaboration rows.
-Handoff says to split per person and lazy load if the build passes a couple of MB. Gzipped total is 1.6 MB, so this is at that line. There was no earlier build in this repo to compare against.
+Nodes: 87 seeds + 200 promoted = 287 full nodes. 24416 people and 3978 films appear in the data; 97435 collaboration rows.
+Handoff says to split per person and lazy load if the build passes a couple of MB. Gzipped total is 1.9 MB, so this is at that line. There was no earlier build in this repo to compare against.
 
 ## 1. Seed directors
 
@@ -243,8 +243,8 @@ Mapped to a role by a judgment call, worth a glance: Composer, Screenstory, Tele
 
 Films in the build with no release year: 0.
 
-Dropped when TMDB details showed the film is not a released feature: 59.
-- short: 59. It's Not Just You, Murray! (1964); The Big Shave (1967); What's a Nice Girl Like You Doing in a Place Like This? (1963); The Audition (2015); Reservoir Dogs (1991); The Lost Chapter: Yuki's Revenge (2025); The Grandmother (1970); The Alphabet (1969); Boat (2003); Six Men Getting Sick (1967); The Amputee (1974); The Cowboy and the Frenchman (1988); ...
+Dropped when TMDB details showed the film is not a released feature: 76.
+- short: 76. It's Not Just You, Murray! (1964); The Big Shave (1967); What's a Nice Girl Like You Doing in a Place Like This? (1963); The Audition (2015); Reservoir Dogs (1991); The Lost Chapter: Yuki's Revenge (2025); The Grandmother (1970); The Alphabet (1969); Boat (2003); Six Men Getting Sick (1967); The Amputee (1974); The Cowboy and the Frenchman (1988); ...
 
 Credits excluded before fetching details (documentary or TV movie genre, video release, or fewer than 25 TMDB votes), seeds only:
 
@@ -297,6 +297,46 @@ Credits excluded before fetching details (documentary or TV movie genre, video r
 | Michael Chapman (cinematographer) | 3 | 1 | 0 | 4 |
 | Dion Beebe (cinematographer) | 3 | 1 | 0 | 7 |
 | Adam Stone (cinematographer) | 5 | 0 | 0 | 3 |
+| Gordon Willis (cinematographer) | 0 | 1 | 1 | 4 |
+| Vittorio Storaro (cinematographer) | 1 | 0 | 1 | 17 |
+| Conrad Hall (cinematographer) | 1 | 5 | 0 | 4 |
+| Vilmos Zsigmond (cinematographer) | 7 | 3 | 0 | 28 |
+| Jack Cardiff (cinematographer) | 12 | 0 | 0 | 13 |
+| Gregg Toland (cinematographer) | 1 | 0 | 0 | 32 |
+| Sven Nykvist (cinematographer) | 11 | 4 | 0 | 68 |
+| Freddie Young (cinematographer) | 0 | 5 | 0 | 66 |
+| Janusz Kamiński (cinematographer) | 0 | 3 | 0 | 11 |
+| Wally Pfister (cinematographer) | 1 | 4 | 0 | 18 |
+| Rodrigo Prieto (cinematographer) | 3 | 0 | 1 | 26 |
+| Greig Fraser (cinematographer) | 1 | 0 | 0 | 17 |
+| Robert D. Yeoman (cinematographer) | 2 | 2 | 1 | 9 |
+| Harris Savides (cinematographer) | 1 | 1 | 5 | 2 |
+| Christopher Doyle (cinematographer) | 6 | 0 | 0 | 35 |
+| Michael Ballhaus (cinematographer) | 6 | 10 | 1 | 36 |
+| Caleb Deschanel (cinematographer) | 2 | 0 | 0 | 4 |
+| John Alcott (cinematographer) | 1 | 0 | 0 | 2 |
+| Néstor Almendros (cinematographer) | 12 | 0 | 0 | 8 |
+| Haskell Wexler (cinematographer) | 29 | 1 | 2 | 19 |
+| Owen Roizman (cinematographer) | 1 | 0 | 1 | 4 |
+| Dante Spinotti (cinematographer) | 2 | 2 | 0 | 18 |
+| Jordan Cronenweth (cinematographer) | 4 | 4 | 1 | 7 |
+| Bruno Delbonnel (cinematographer) | 1 | 0 | 0 | 3 |
+| Matthew Libatique (cinematographer) | 2 | 2 | 0 | 9 |
+| Linus Sandgren (cinematographer) | 1 | 0 | 0 | 5 |
+| Jeff Cronenweth (cinematographer) | 2 | 0 | 1 | 2 |
+| Ellen Kuras (cinematographer) | 23 | 1 | 0 | 4 |
+| Rachel Morrison (cinematographer) | 1 | 1 | 0 | 3 |
+| Mandy Walker (cinematographer) | 1 | 1 | 1 | 10 |
+| Claudio Miranda (cinematographer) | 0 | 0 | 0 | 7 |
+| John Seale (cinematographer) | 1 | 0 | 0 | 5 |
+| Dean Semler (cinematographer) | 2 | 3 | 0 | 4 |
+| Barry Ackroyd (cinematographer) | 5 | 7 | 0 | 8 |
+| Seamus McGarvey (cinematographer) | 7 | 1 | 0 | 13 |
+| Edward Lachman (cinematographer) | 18 | 2 | 1 | 14 |
+| Sean Bobbitt (cinematographer) | 3 | 1 | 0 | 7 |
+| Jarin Blaschke (cinematographer) | 0 | 0 | 1 | 10 |
+| Robbie Ryan (cinematographer) | 5 | 0 | 0 | 32 |
+| Lawrence Sher (cinematographer) | 0 | 4 | 1 | 1 |
 
 ## 4. Seed name matches with more than one plausible candidate
 
@@ -308,6 +348,9 @@ Credits excluded before fetching details (documentary or TV movie genre, video r
 - Diane Lane: used id 2882 (Man of Steel). Alternates: 3411281 Acting Wild Ride
 - Clive Owen: used id 2296 (Children of Men). Alternates: 3823736 Acting Our Yorkshire Farm
 - Stephen King: used id 3027 (The Shawshank Redemption). Alternates: 4802634 Writing The Boogeyman
+- Conrad Hall: used id 8217 (American Beauty). Alternates: 3333543 Camera The Sons of Sam: A Descent into Darkness
+- Christopher Doyle: used id 1357 (In the Mood for Love). Alternates: 4574018 Camera n/a
+- John Seale: used id 2702 (Harry Potter and the Philosopher's Stone). Alternates: 3109319 Camera The Eyes of Children; 3625101 Camera The Muppets' Wizard of Oz
 
 ## 5. Cinematographer and writer seeds
 
@@ -322,6 +365,46 @@ Credits excluded before fetching details (documentary or TV movie genre, video r
 - **Michael Chapman**: 33 feature films, 1973 to 2007. Top directors: Ivan Reitman (4), Philip Kaufman (3), Martin Scorsese (2)
 - **Dion Beebe**: 24 feature films, 1999 to 2026. Top directors: Rob Marshall (6), Michael Mann (2), Jane Campion (2)
 - **Adam Stone**: 8 feature films, 2007 to 2024. Top directors: Jeff Nichols (6), Craig Zobel (1), Nathan Zellner (1)
+- **Gordon Willis**: 30 feature films, 1970 to 1997. Top directors: Woody Allen (8), Alan J. Pakula (6), Francis Ford Coppola (3)
+- **Vittorio Storaro**: 37 feature films, 1970 to 2023. Top directors: Bernardo Bertolucci (8), Woody Allen (6), Francis Ford Coppola (4)
+- **Conrad Hall**: 27 feature films, 1965 to 2002. Top directors: Richard Brooks (3), Sam Mendes (2), Steven Zaillian (2)
+- **Vilmos Zsigmond**: 42 feature films, 1963 to 2013. Top directors: Brian De Palma (4), Mark Rydell (4), Woody Allen (3)
+- **Jack Cardiff**: 29 feature films, 1945 to 1986. Top directors: Richard Fleischer (3), Emeric Pressburger (3), Michael Powell (3)
+- **Gregg Toland**: 24 feature films, 1929 to 1948. Top directors: William Wyler (7), Howard Hawks (3), John Ford (2)
+- **Sven Nykvist**: 45 feature films, 1953 to 1998. Top directors: Ingmar Bergman (20), Woody Allen (4), Lasse Hallström (2)
+- **Freddie Young**: 30 feature films, 1939 to 1984. Top directors: David Lean (3), John Ford (2), George Cukor (2)
+- **Janusz Kamiński**: 34 feature films, 1990 to 2026. Top directors: Steven Spielberg (21), Jocelyn Moorhouse (1), James L. Brooks (1)
+- **Wally Pfister**: 17 feature films, 1991 to 2012. Top directors: Christopher Nolan (7), Gregory Dark (2), Bennett Miller (1)
+- **Rodrigo Prieto**: 26 feature films, 2000 to 2024. Top directors: Alejandro G. Iñárritu (4), Martin Scorsese (4), Oliver Stone (2)
+- **Greig Fraser**: 20 feature films, 2006 to 2026. Top directors: Jane Campion (2), Matt Reeves (2), Gareth Edwards (2)
+- **Robert D. Yeoman**: 37 feature films, 1987 to 2026. Top directors: Wes Anderson (9), Paul Feig (4), Menno Meyjes (2)
+- **Harris Savides**: 18 feature films, 1995 to 2013. Top directors: Gus Van Sant (6), Sofia Coppola (2), Noah Baumbach (2)
+- **Christopher Doyle**: 40 feature films, 1983 to 2021. Top directors: Wong Kar-Wai (9), Peter Chan (3), Gus Van Sant (2)
+- **Michael Ballhaus**: 41 feature films, 1971 to 2013. Top directors: Rainer Werner Fassbinder (8), Martin Scorsese (7), Mike Nichols (4)
+- **Caleb Deschanel**: 28 feature films, 1979 to 2019. Top directors: William Friedkin (2), Carroll Ballard (2), Philip Kaufman (1)
+- **John Alcott**: 16 feature films, 1971 to 1987. Top directors: Stanley Kubrick (3), Roger Spottiswoode (2), Ted Kotcheff (1)
+- **Néstor Almendros**: 35 feature films, 1965 to 1991. Top directors: François Truffaut (9), Éric Rohmer (8), Robert Benton (5)
+- **Haskell Wexler**: 26 feature films, 1963 to 2004. Top directors: John Sayles (4), Norman Jewison (3), Hal Ashby (2)
+- **Owen Roizman**: 23 feature films, 1971 to 1995. Top directors: Sydney Pollack (5), Lawrence Kasdan (4), William Friedkin (2)
+- **Dante Spinotti**: 47 feature films, 1984 to 2025. Top directors: Brett Ratner (6), Michael Mann (5), Garry Marshall (3)
+- **Jordan Cronenweth**: 13 feature films, 1971 to 1992. Top directors: Francis Ford Coppola (2), Phil Joanou (2), Ridley Scott (1)
+- **Bruno Delbonnel**: 19 feature films, 1993 to 2025. Top directors: Joel Coen (4), Tim Burton (3), Ethan Coen (3)
+- **Matthew Libatique**: 36 feature films, 1998 to 2025. Top directors: Darren Aronofsky (8), Spike Lee (5), Joel Schumacher (3)
+- **Linus Sandgren**: 16 feature films, 2005 to 2026. Top directors: Damien Chazelle (3), Lasse Hallström (2), David O. Russell (2)
+- **Jeff Cronenweth**: 12 feature films, 1999 to 2026. Top directors: David Fincher (4), Aaron Sorkin (2), Sacha Gervasi (1)
+- **Ellen Kuras**: 17 feature films, 1992 to 2015. Top directors: Spike Lee (3), Rebecca Miller (3), Michel Gondry (2)
+- **Rachel Morrison**: 13 feature films, 2011 to 2019. Top directors: Ryan Coogler (2), John McNaughton (1), Travis Fine (1)
+- **Mandy Walker**: 14 feature films, 1996 to 2025. Top directors: Baz Luhrmann (2), Hany Abu-Assad (1), Niki Caro (1)
+- **Claudio Miranda**: 11 feature films, 2006 to 2025. Top directors: Joseph Kosinski (6), Ang Lee (1), Brad Bird (1)
+- **John Seale**: 31 feature films, 1981 to 2022. Top directors: Anthony Minghella (3), Peter Weir (3), George Miller (3)
+- **Dean Semler**: 53 feature films, 1981 to 2019. Top directors: Peter Segal (4), Randall Wallace (3), Andy Fickman (3)
+- **Barry Ackroyd**: 37 feature films, 1991 to 2025. Top directors: Ken Loach (13), Paul Greengrass (4), Kathryn Bigelow (3)
+- **Seamus McGarvey**: 33 feature films, 1995 to 2025. Top directors: Joe Wright (5), Sam Taylor-Johnson (3), Gavin O'Connor (2)
+- **Edward Lachman**: 36 feature films, 1974 to 2024. Top directors: Todd Haynes (5), Ulrich Seidl (4), Gregory Nava (3)
+- **Sean Bobbitt**: 24 feature films, 1999 to 2026. Top directors: Steve McQueen (4), Nia DaCosta (3), Dominic Cooke (2)
+- **Jarin Blaschke**: 10 feature films, 2009 to 2024. Top directors: Robert Eggers (4), M. Night Shyamalan (1), Alex Pettyfer (1)
+- **Robbie Ryan**: 29 feature films, 2005 to 2025. Top directors: Ken Loach (5), Andrea Arnold (5), Yorgos Lanthimos (4)
+- **Lawrence Sher**: 27 feature films, 2001 to 2026. Top directors: Todd Phillips (7), Zach Braff (2), Jay Chandrasekhar (2)
 
 ### Writers
 
@@ -356,7 +439,7 @@ Credits excluded before fetching details (documentary or TV movie genre, video r
 ## 7. Owner titles
 
 - letterboxd: 75/75 resolved to a TMDB id; 57 of those are films in the graph (the rest badge nothing until a seed reaches them).
-- essays: 20/20 resolved to a TMDB id; 11 of those are films in the graph (the rest badge nothing until a seed reaches them).
-- kids: 47/48 resolved to a TMDB id; 30 of those are films in the graph (the rest badge nothing until a seed reaches them).
+- essays: 20/20 resolved to a TMDB id; 12 of those are films in the graph (the rest badge nothing until a seed reaches them).
+- kids: 47/48 resolved to a TMDB id; 34 of those are films in the graph (the rest badge nothing until a seed reaches them).
 - Good Time is recorded as 5 stars (owner answer, 2026-10-13). Letterboxd's 3 is kept in `letterboxdRating`.
 

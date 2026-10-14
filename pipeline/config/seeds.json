@@ -551,6 +551,432 @@
         "knownFor": "Mud",
         "status": "ok"
       }
+    },
+    {
+      "name": "Gordon Willis",
+      "tmdbId": 3097,
+      "matched": {
+        "name": "Gordon Willis",
+        "department": "Camera",
+        "knownFor": "The Godfather",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Vittorio Storaro",
+      "tmdbId": 7202,
+      "matched": {
+        "name": "Vittorio Storaro",
+        "department": "Camera",
+        "knownFor": "Apocalypse Now",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Conrad Hall",
+      "tmdbId": 8217,
+      "matched": {
+        "name": "Conrad Hall",
+        "department": "Camera",
+        "knownFor": "American Beauty",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 3333543,
+            "department": "Camera",
+            "knownFor": "The Sons of Sam: A Descent into Darkness"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vilmos Zsigmond",
+      "tmdbId": 12235,
+      "matched": {
+        "name": "Vilmos Zsigmond",
+        "department": "Camera",
+        "knownFor": "Close Encounters of the Third Kind",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Jack Cardiff",
+      "tmdbId": 6603,
+      "matched": {
+        "name": "Jack Cardiff",
+        "department": "Camera",
+        "knownFor": "Rambo: First Blood Part II",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Gregg Toland",
+      "tmdbId": 8504,
+      "matched": {
+        "name": "Gregg Toland",
+        "department": "Camera",
+        "knownFor": "Citizen Kane",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Sven Nykvist",
+      "tmdbId": 11905,
+      "matched": {
+        "name": "Sven Nykvist",
+        "department": "Camera",
+        "knownFor": "What's Eating Gilbert Grape",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Freddie Young",
+      "tmdbId": 10079,
+      "matched": {
+        "name": "Freddie Young",
+        "department": "Camera",
+        "knownFor": "Lawrence of Arabia",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Janusz Kamiński",
+      "tmdbId": 492,
+      "matched": {
+        "name": "Janusz Kamiński",
+        "department": "Camera",
+        "knownFor": "Schindler's List",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Wally Pfister",
+      "tmdbId": 559,
+      "matched": {
+        "name": "Wally Pfister",
+        "department": "Camera",
+        "knownFor": "Inception",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Rodrigo Prieto",
+      "tmdbId": 275,
+      "matched": {
+        "name": "Rodrigo Prieto",
+        "department": "Camera",
+        "knownFor": "The Wolf of Wall Street",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Greig Fraser",
+      "tmdbId": 67113,
+      "matched": {
+        "name": "Greig Fraser",
+        "department": "Camera",
+        "knownFor": "Rogue One: A Star Wars Story",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Robert D. Yeoman",
+      "tmdbId": 5667,
+      "matched": {
+        "name": "Robert D. Yeoman",
+        "department": "Camera",
+        "knownFor": "The Grand Budapest Hotel",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Harris Savides",
+      "tmdbId": 10688,
+      "matched": {
+        "name": "Harris Savides",
+        "department": "Camera",
+        "knownFor": "Se7en",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Christopher Doyle",
+      "tmdbId": 1357,
+      "matched": {
+        "name": "Christopher Doyle",
+        "department": "Camera",
+        "knownFor": "In the Mood for Love",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 4574018,
+            "department": "Camera",
+            "knownFor": "n/a"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Michael Ballhaus",
+      "tmdbId": 3769,
+      "matched": {
+        "name": "Michael Ballhaus",
+        "department": "Camera",
+        "knownFor": "The Departed",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Caleb Deschanel",
+      "tmdbId": 8750,
+      "matched": {
+        "name": "Caleb Deschanel",
+        "department": "Camera",
+        "knownFor": "Titanic",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "John Alcott",
+      "tmdbId": 2286,
+      "matched": {
+        "name": "John Alcott",
+        "department": "Camera",
+        "knownFor": "The Shining",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Néstor Almendros",
+      "tmdbId": 3569,
+      "matched": {
+        "name": "Néstor Almendros",
+        "department": "Camera",
+        "knownFor": "Kramer vs. Kramer",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Haskell Wexler",
+      "tmdbId": 7067,
+      "matched": {
+        "name": "Haskell Wexler",
+        "department": "Camera",
+        "knownFor": "One Flew Over the Cuckoo's Nest",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Owen Roizman",
+      "tmdbId": 16331,
+      "matched": {
+        "name": "Owen Roizman",
+        "department": "Camera",
+        "knownFor": "The Exorcist",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Dante Spinotti",
+      "tmdbId": 11099,
+      "matched": {
+        "name": "Dante Spinotti",
+        "department": "Camera",
+        "knownFor": "Ant-Man and the Wasp",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Jordan Cronenweth",
+      "tmdbId": 594,
+      "matched": {
+        "name": "Jordan Cronenweth",
+        "department": "Camera",
+        "knownFor": "Blade Runner",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Bruno Delbonnel",
+      "tmdbId": 2423,
+      "matched": {
+        "name": "Bruno Delbonnel",
+        "department": "Camera",
+        "knownFor": "Harry Potter and the Half-Blood Prince",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Matthew Libatique",
+      "tmdbId": 4867,
+      "matched": {
+        "name": "Matthew Libatique",
+        "department": "Camera",
+        "knownFor": "Iron Man",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Linus Sandgren",
+      "tmdbId": 969171,
+      "matched": {
+        "name": "Linus Sandgren",
+        "department": "Camera",
+        "knownFor": "La La Land",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Jeff Cronenweth",
+      "tmdbId": 7479,
+      "matched": {
+        "name": "Jeff Cronenweth",
+        "department": "Camera",
+        "knownFor": "Fight Club",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Ellen Kuras",
+      "tmdbId": 313,
+      "matched": {
+        "name": "Ellen Kuras",
+        "department": "Camera",
+        "knownFor": "Eternal Sunshine of the Spotless Mind",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Rachel Morrison",
+      "tmdbId": 984113,
+      "matched": {
+        "name": "Rachel Morrison",
+        "department": "Camera",
+        "knownFor": "Black Panther",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Mandy Walker",
+      "tmdbId": 57849,
+      "matched": {
+        "name": "Mandy Walker",
+        "department": "Camera",
+        "knownFor": "Hidden Figures",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Claudio Miranda",
+      "tmdbId": 51333,
+      "matched": {
+        "name": "Claudio Miranda",
+        "department": "Camera",
+        "knownFor": "The Curious Case of Benjamin Button",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "John Seale",
+      "tmdbId": 2702,
+      "matched": {
+        "name": "John Seale",
+        "department": "Camera",
+        "knownFor": "Harry Potter and the Philosopher's Stone",
+        "status": "review",
+        "alternates": [
+          {
+            "id": 3109319,
+            "department": "Camera",
+            "knownFor": "The Eyes of Children"
+          },
+          {
+            "id": 3625101,
+            "department": "Camera",
+            "knownFor": "The Muppets' Wizard of Oz"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dean Semler",
+      "tmdbId": 4501,
+      "matched": {
+        "name": "Dean Semler",
+        "department": "Camera",
+        "knownFor": "Maleficent",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Barry Ackroyd",
+      "tmdbId": 15493,
+      "matched": {
+        "name": "Barry Ackroyd",
+        "department": "Camera",
+        "knownFor": "The Big Short",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Seamus McGarvey",
+      "tmdbId": 3285,
+      "matched": {
+        "name": "Seamus McGarvey",
+        "department": "Camera",
+        "knownFor": "The Avengers",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Edward Lachman",
+      "tmdbId": 6345,
+      "matched": {
+        "name": "Edward Lachman",
+        "department": "Camera",
+        "knownFor": "Carol",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Sean Bobbitt",
+      "tmdbId": 54926,
+      "matched": {
+        "name": "Sean Bobbitt",
+        "department": "Camera",
+        "knownFor": "12 Years a Slave",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Jarin Blaschke",
+      "tmdbId": 1135102,
+      "matched": {
+        "name": "Jarin Blaschke",
+        "department": "Camera",
+        "knownFor": "The Witch",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Robbie Ryan",
+      "tmdbId": 71086,
+      "matched": {
+        "name": "Robbie Ryan",
+        "department": "Camera",
+        "knownFor": "Marriage Story",
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Lawrence Sher",
+      "tmdbId": 5387,
+      "matched": {
+        "name": "Lawrence Sher",
+        "department": "Camera",
+        "knownFor": "Joker",
+        "status": "ok"
+      }
     }
   ],
   "inferred": [
