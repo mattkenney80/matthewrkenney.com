@@ -78,6 +78,8 @@ function index() {
     const best = Object.entries(rc).sort((a, b) => b[1] - a[1] || ROLE_ORDER.indexOf(a[0]) - ROLE_ORDER.indexOf(b[0]))[0];
     domRole.set(pid, best[0]);
   }
+  // Seeds keep the role they were seeded as; the credit count only decides for promoted people.
+  for (const [pid, p] of Object.entries(people)) if (p.s?.length) domRole.set(Number(pid), p.s[0]);
 }
 
 // Everyone who shares a film with pid, with the films grouped by the other person's role.
@@ -475,15 +477,53 @@ function render() {
   const role = domRole.get(state.p);
   if (state.v !== "h") {
     $("fr-roleSel").value = role in DEFAULTS ? role : "director";
-    fillPeople($("fr-roleSel").value);
     $("fr-person").value = nameOf(state.p);
   }
   if (state.v === "c") constellation(); else if (state.v === "r") river(); else heatmap();
   document.title = `${state.v === "h" ? "Film Repertory" : nameOf(state.p)} · Film Repertory · Matthew R. Kenney`;
 }
-function fillPeople(role) {
-  const dl = $("fr-people");
-  dl.replaceChildren(...nodesWithRole(role).map((id) => h("option", { value: nameOf(id) })));
+// Typeahead: empty box lists everyone in the chosen role; typing searches every full node.
+function setupSearch() {
+  const inp = $("fr-person"), box = $("fr-sugg");
+  let items = [], active = -1;
+  const close = () => { box.hidden = true; inp.setAttribute("aria-expanded", "false"); active = -1; };
+  const choose = (id) => { close(); inp.blur(); go({ p: id }); };
+  function paint() {
+    box.replaceChildren(...items.map((id, i) => {
+      const li = h("li", { role: "option", "aria-selected": String(i === active) }, h("span", {}, nameOf(id)), h("small", {}, ROLE_LABEL[domRole.get(id)] ?? ""));
+      li.addEventListener("mousedown", (e) => { e.preventDefault(); choose(id); });
+      return li;
+    }));
+    box.hidden = !items.length;
+    inp.setAttribute("aria-expanded", String(!box.hidden));
+    box.querySelector('[aria-selected="true"]')?.scrollIntoView({ block: "nearest" });
+  }
+  function update(browse) {
+    const q = inp.value.trim().toLowerCase();
+    if (browse || !q) items = nodesWithRole($("fr-roleSel").value);
+    else {
+      const all = Object.keys(people).map(Number).filter((id) => isNode(id) && nameOf(id).toLowerCase().includes(q));
+      all.sort((x, y) => (nameOf(y).toLowerCase().startsWith(q) - nameOf(x).toLowerCase().startsWith(q)) || nameOf(x).localeCompare(nameOf(y)));
+      items = all.slice(0, 40);
+    }
+    active = -1;
+    paint();
+  }
+  inp.addEventListener("focus", () => { inp.select(); update(true); });
+  inp.addEventListener("click", () => { if (box.hidden) update(true); });
+  inp.addEventListener("input", () => update(false));
+  inp.addEventListener("blur", () => { close(); inp.value = nameOf(state.p); });
+  inp.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+      e.preventDefault();
+      if (box.hidden) update(true);
+      active = (active + (e.key === "ArrowDown" ? 1 : -1) + items.length) % items.length;
+      paint();
+    } else if (e.key === "Enter") {
+      e.preventDefault();
+      if (items.length) choose(items[Math.max(active, 0)]);
+    } else if (e.key === "Escape") { close(); inp.blur(); }
+  });
 }
 
 function bind() {
@@ -493,11 +533,7 @@ function bind() {
     const pick = DEFAULTS[e.target.value] ?? nodesWithRole(e.target.value)[0];
     if (pick) go({ p: pick });
   });
-  $("fr-person").addEventListener("change", (e) => {
-    const want = e.target.value.trim().toLowerCase();
-    const hit = Object.keys(people).map(Number).find((id) => isNode(id) && nameOf(id).toLowerCase() === want);
-    if (hit) go({ p: hit }); else e.target.value = nameOf(state.p);
-  });
+  setupSearch();
   const own = $("fr-owner");
   own.checked = ownerOn = lsGet("fr-owner") === "1";
   own.addEventListener("change", () => { ownerOn = own.checked; lsSet("fr-owner", ownerOn ? "1" : "0"); render(); });
