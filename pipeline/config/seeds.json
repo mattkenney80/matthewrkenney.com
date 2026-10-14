@@ -572,6 +572,6 @@
     "minVoteCount": 25,
     "actorMaxOrder": 15,
     "promotedFilmCap": 25,
-    "maxPromoted": 400
+    "maxPromoted": 200
   }
 }

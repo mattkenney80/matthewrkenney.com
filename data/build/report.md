@@ -1,18 +1,18 @@
 # Film Repertory: crawl report
 
-Generated 2026-10-14T02:47:54.882Z. Config: {"minVoteCount":25,"actorMaxOrder":15,"promotedFilmCap":25,"maxPromoted":400,"hops":1,"minSharedFilmsToPromote":2,"topBilledActors":10,"featureFilmsOnly":true}
+Generated 2026-10-14T02:50:22.144Z. Config: {"minVoteCount":25,"actorMaxOrder":15,"promotedFilmCap":25,"maxPromoted":200,"hops":1,"minSharedFilmsToPromote":2,"topBilledActors":10,"featureFilmsOnly":true}
 
 ## 0. Size
 
 | file | raw | gzip |
 |---|---|---|
-| people.json | 2.24 MB | 0.83 MB |
-| films.json | 2.65 MB | 0.76 MB |
-| collaborations.json | 5.42 MB | 0.82 MB |
-| total | 10.30 MB | 2.41 MB |
+| people.json | 1.59 MB | 0.60 MB |
+| films.json | 1.75 MB | 0.50 MB |
+| collaborations.json | 3.19 MB | 0.48 MB |
+| total | 6.52 MB | 1.57 MB |
 
-Nodes: 46 seeds + 400 promoted = 446 full nodes. 27515 people and 5151 films appear in the data; 128793 collaboration rows.
-Handoff says to split per person and lazy load if the build passes a couple of MB. Gzipped total is 2.4 MB, so this is at that line. There was no earlier build in this repo to compare against.
+Nodes: 46 seeds + 200 promoted = 246 full nodes. 19368 people and 3372 films appear in the data; 75786 collaboration rows.
+Handoff says to split per person and lazy load if the build passes a couple of MB. Gzipped total is 1.6 MB, so this is at that line. There was no earlier build in this repo to compare against.
 
 ## 1. Seed directors
 
@@ -235,8 +235,8 @@ Mapped to a role by a judgment call, worth a glance: Composer, Screenstory, Tele
 
 Films in the build with no release year: 0.
 
-Dropped when TMDB details showed the film is not a released feature: 81.
-- short: 81. Next Floor (2008); 120 Seconds to Get Elected (2006); Rated R for Nudity (2011); The Grandmother (1970); The Alphabet (1969); Boat (2003); Six Men Getting Sick (1967); The Amputee (1974); The Cowboy and the Frenchman (1988); Darkened Room (2002); Absurd Encounter with Fear (1967); Bug Crawls (2004); ...
+Dropped when TMDB details showed the film is not a released feature: 59.
+- short: 59. It's Not Just You, Murray! (1964); The Big Shave (1967); What's a Nice Girl Like You Doing in a Place Like This? (1963); The Audition (2015); Reservoir Dogs (1991); The Lost Chapter: Yuki's Revenge (2025); The Grandmother (1970); The Alphabet (1969); Boat (2003); Six Men Getting Sick (1967); The Amputee (1974); The Cowboy and the Frenchman (1988); ...
 
 Credits excluded before fetching details (documentary or TV movie genre, video release, or fewer than 25 TMDB votes), seeds only:
 
@@ -346,8 +346,8 @@ Credits excluded before fetching details (documentary or TV movie genre, video r
 
 ## 7. Owner titles
 
-- letterboxd: 75/75 resolved to a TMDB id; 61 of those are films in the graph (the rest badge nothing until a seed reaches them).
-- essays: 20/20 resolved to a TMDB id; 14 of those are films in the graph (the rest badge nothing until a seed reaches them).
-- kids: 47/48 resolved to a TMDB id; 38 of those are films in the graph (the rest badge nothing until a seed reaches them).
+- letterboxd: 75/75 resolved to a TMDB id; 57 of those are films in the graph (the rest badge nothing until a seed reaches them).
+- essays: 20/20 resolved to a TMDB id; 11 of those are films in the graph (the rest badge nothing until a seed reaches them).
+- kids: 47/48 resolved to a TMDB id; 30 of those are films in the graph (the rest badge nothing until a seed reaches them).
 - Good Time is recorded as 5 stars (owner answer, 2026-10-13). Letterboxd's 3 is kept in `letterboxdRating`.
 
