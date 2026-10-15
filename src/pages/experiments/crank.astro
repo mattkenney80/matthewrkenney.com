@@ -15,61 +15,31 @@ if (!(await isSectionVisible(env?.DB, "experiments"))) {
   return Astro.rewrite("/404");
 }
 
-const TAU = Math.PI * 2;
-const RING = { x: 150, y: 200, teeth: 46, tip: 119, root: 107 };
-const COG = { x: 420, y: 200, teeth: 17, tip: 47, root: 36 };
-const ARM = 100;
-const CHAIN_RING_R = 110;
-const CHAIN_COG_R = (CHAIN_RING_R * COG.teeth) / RING.teeth;
+import {
+  ARM, CASSETTE, DEFAULT_GEAR, HUB, MOUNT, PULLEY_R, PULLEY_TEETH, RING, RING_R, RING_TEETH, TAU,
+  cagePath, chainPath, circlePath, derailleurAt, f, linksPath, rOf, sprocketPath, teethPath,
+} from "../../lib/drivetrain";
 
-const f = (n: number) => n.toFixed(2);
-
-// A toothed outline: one trapezoid per tooth, joined along the root circle.
-function teethPath(cx: number, cy: number, n: number, root: number, tip: number) {
-  const pitch = TAU / n;
-  const at = (r: number, a: number) => `${f(cx + r * Math.cos(a))},${f(cy + r * Math.sin(a))}`;
-  const parts: string[] = [];
-  for (let k = 0; k < n; k++) {
-    const a = k * pitch;
-    parts.push(
-      `${k === 0 ? "M" : "L"}${at(root, a - 0.46 * pitch)}`,
-      `L${at(tip, a - 0.2 * pitch)}`,
-      `L${at(tip, a + 0.2 * pitch)}`,
-      `L${at(root, a + 0.46 * pitch)}`
-    );
-  }
-  return parts.join(" ") + " Z";
-}
-
-// The chain: two external tangents joined by arcs around the ring and the cog.
-const d = COG.x - RING.x;
-const phi = Math.asin((CHAIN_RING_R - CHAIN_COG_R) / d);
-const sx = Math.sin(phi);
-const cy = Math.cos(phi);
-const p1t = `${f(RING.x + CHAIN_RING_R * sx)},${f(RING.y - CHAIN_RING_R * cy)}`;
-const p2t = `${f(COG.x + CHAIN_COG_R * sx)},${f(COG.y - CHAIN_COG_R * cy)}`;
-const p2b = `${f(COG.x + CHAIN_COG_R * sx)},${f(COG.y + CHAIN_COG_R * cy)}`;
-const p1b = `${f(RING.x + CHAIN_RING_R * sx)},${f(RING.y + CHAIN_RING_R * cy)}`;
-const chainD =
-  `M${p1t} L${p2t} A${f(CHAIN_COG_R)} ${f(CHAIN_COG_R)} 0 0 1 ${p2b} ` +
-  `L${p1b} A${CHAIN_RING_R} ${CHAIN_RING_R} 0 1 1 ${p1t} Z`;
-
-const ringTeeth = teethPath(RING.x, RING.y, RING.teeth, RING.root, RING.tip);
-const cogTeeth = teethPath(COG.x, COG.y, COG.teeth, COG.root, COG.tip);
-
-// Five spider arms and bolts for the chainring, evenly spaced.
-const spider = Array.from({ length: 5 }, (_, i) => {
-  const a = (i / 5) * TAU - Math.PI / 2;
-  return {
-    x: RING.x + 74 * Math.cos(a),
-    y: RING.y + 74 * Math.sin(a),
-  };
+// Chainring: teeth with the middle cut away, so the spider shows through.
+const ringD = teethPath(RING.x, RING.y, RING_TEETH, RING_R - 2.6, RING_R + 2.8) + " " + circlePath(RING.x, RING.y, RING_R - 12);
+const spiderArms = [0, 1, 2, 3].map((i) => {
+  const a = (i / 4) * TAU + Math.PI / 4;
+  return { x: RING.x + (RING_R - 10) * Math.cos(a), y: RING.y + (RING_R - 10) * Math.sin(a) };
 });
-
 const armD =
-  `M${RING.x} ${RING.y - 16} L${RING.x + ARM} ${RING.y - 10} ` +
-  `A10 10 0 0 1 ${RING.x + ARM} ${RING.y + 10} L${RING.x} ${RING.y + 16} ` +
-  `A16 16 0 0 1 ${RING.x} ${RING.y - 16} Z`;
+  `M${RING.x} ${RING.y - 15} L${RING.x + ARM} ${RING.y - 9} ` +
+  `A9 9 0 0 1 ${RING.x + ARM} ${RING.y + 9} L${RING.x} ${RING.y + 15} ` +
+  `A15 15 0 0 1 ${RING.x} ${RING.y - 15} Z`;
+
+// Cassette, biggest cog drawn first so the small ones sit on top.
+const cogs = CASSETTE.map((teeth, i) => ({ i, teeth, d: sprocketPath(HUB.x, HUB.y, teeth) }));
+const drawOrder = [...cogs].sort((a, b) => b.teeth - a.teeth);
+const pulleyD = teethPath(0, 0, PULLEY_TEETH, PULLEY_R - 2.4, PULLEY_R + 2.4);
+
+const rc0 = rOf(CASSETTE[DEFAULT_GEAR]);
+const der0 = derailleurAt(rc0);
+const chain0 = chainPath(rc0);
+const ratio0 = RING_TEETH / CASSETTE[DEFAULT_GEAR];
 ---
 
 <BaseLayout
@@ -81,7 +51,8 @@ const armD =
   <h1>Turn the crank</h1>
   <p class="lede">
     131 photographs from the <a href="/photography/bicycle-crimes">Bicycle Crimes</a> series, in the
-    order I took them. Pedal forward through eight years. Pedal backward to rewind.
+    order I took them. Pedal forward through eight years. Pedal backward to rewind. Shift gears and
+    watch what the bike does.
   </p>
 
   <section class="crank-app" id="crank-app" aria-label="Photograph viewer driven by a bicycle crank">
@@ -107,63 +78,132 @@ const armD =
         aria-valuemax="1"
         aria-valuenow="1"
       >
-        <svg
-          id="crank-svg"
-          viewBox="0 0 480 400"
-          aria-hidden="true"
-          focusable="false"
-        >
-          <rect width="480" height="400" fill="transparent"></rect>
+        <svg id="crank-svg" viewBox="0 0 540 420" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="g-steel" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f4f2ed"></stop>
+              <stop offset="0.55" stop-color="#cfcbc2"></stop>
+              <stop offset="1" stop-color="#9c978d"></stop>
+            </linearGradient>
+            <linearGradient id="g-anod" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#3b3a37"></stop>
+              <stop offset="1" stop-color="#121211"></stop>
+            </linearGradient>
+            <linearGradient id="g-graphite" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#4a4844"></stop>
+              <stop offset="1" stop-color="#1c1b1a"></stop>
+            </linearGradient>
+            <filter id="f-shadow" x="-10%" y="-10%" width="120%" height="130%">
+              <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#1a1a1a" flood-opacity="0.16"></feDropShadow>
+            </filter>
+          </defs>
+          <rect width="540" height="420" fill="transparent"></rect>
 
-          <path id="chain" class="chain" d={chainD}></path>
+          <g filter="url(#f-shadow)">
+            <!-- the frame's dropout, which the wheel and derailleur hang from -->
+            <line class="hanger" x1={HUB.x - 30} y1={HUB.y - 6} x2={MOUNT.x} y2={MOUNT.y}></line>
 
-          <g id="cog" transform={`rotate(0 ${COG.x} ${COG.y})`}>
-            <path class="metal" d={cogTeeth}></path>
-            <circle class="line" cx={COG.x} cy={COG.y} r="24"></circle>
-            <circle class="solid" cx={COG.x} cy={COG.y} r="7"></circle>
-            {[0, 1, 2, 3].map((i) => {
-              const a = (i / 4) * TAU;
-              return (
-                <line
-                  class="line"
-                  x1={f(COG.x + 8 * Math.cos(a))}
-                  y1={f(COG.y + 8 * Math.sin(a))}
-                  x2={f(COG.x + 24 * Math.cos(a))}
-                  y2={f(COG.y + 24 * Math.sin(a))}
-                ></line>
-              );
-            })}
-          </g>
+            <!-- cassette: every cog drawn, the one under the chain in polished steel -->
+            <g id="cassette" transform={`rotate(0 ${HUB.x} ${HUB.y})`}>
+              {drawOrder.map((c) => (
+                <path class={`cog${c.i === DEFAULT_GEAR ? " is-active" : ""}`} data-i={c.i} d={c.d}></path>
+              ))}
+              <circle class="hub-shell" cx={HUB.x} cy={HUB.y} r="17"></circle>
+              {[0, 1, 2, 3, 4, 5].map((i) => {
+                const a = (i / 6) * TAU;
+                return <circle class="hub-hole" cx={f(HUB.x + 11 * Math.cos(a))} cy={f(HUB.y + 11 * Math.sin(a))} r="2"></circle>;
+              })}
+              <circle class="hub-axle" cx={HUB.x} cy={HUB.y} r="5"></circle>
+            </g>
 
-          <g id="ring" transform={`rotate(0 ${RING.x} ${RING.y})`}>
-            <path class="metal" d={ringTeeth}></path>
-            <circle class="line" cx={RING.x} cy={RING.y} r="92"></circle>
-            {spider.map((b) => (
-              <>
-                <line class="line" x1={RING.x} y1={RING.y} x2={f(b.x)} y2={f(b.y)}></line>
-                <circle class="line" cx={f(b.x)} cy={f(b.y)} r="6"></circle>
-              </>
-            ))}
-            <path class="arm" d={armD}></path>
-            <g id="pedal" transform={`rotate(0 ${RING.x + ARM} ${RING.y})`}>
-              <rect class="pedal" x={RING.x + ARM - 19} y={RING.y - 8} width="38" height="16" rx="4"></rect>
+            <!-- chainring and spider -->
+            <g id="ring" transform={`rotate(0 ${RING.x} ${RING.y})`}>
+              <path class="ring" d={ringD} fill-rule="evenodd"></path>
+              <circle class="ring-bevel" cx={RING.x} cy={RING.y} r={f(RING_R - 12)}></circle>
+              {spiderArms.map((p) => (
+                <>
+                  <line class="spider" x1={RING.x} y1={RING.y} x2={f(p.x)} y2={f(p.y)}></line>
+                  <circle class="bolt" cx={f(p.x)} cy={f(p.y)} r="3.2"></circle>
+                </>
+              ))}
+              <circle class="spider-hub" cx={RING.x} cy={RING.y} r="21"></circle>
+            </g>
+
+            <!-- derailleur: hanger, parallelogram, cage, jockey wheels -->
+            <g id="derailleur">
+              <path id="der-links" class="links" d={linksPath(der0.knuckle)}></path>
+              <circle class="body" cx={MOUNT.x} cy={MOUNT.y} r="12"></circle>
+              <circle class="bolt" cx={MOUNT.x} cy={MOUNT.y} r="3.4"></circle>
+              <circle id="der-knuckle" class="body" cx={f(der0.knuckle.x)} cy={f(der0.knuckle.y)} r="9"></circle>
+              <path id="der-cage" class="cage" d={cagePath(der0.upper, der0.lower, PULLEY_R + 6)}></path>
+              <g id="pulley-up" transform={`translate(${f(der0.upper.x)} ${f(der0.upper.y)})`}>
+                <path class="pulley" d={pulleyD}></path><circle class="pulley-hub" r="4"></circle>
+              </g>
+              <g id="pulley-lo" transform={`translate(${f(der0.lower.x)} ${f(der0.lower.y)})`}>
+                <path class="pulley" d={pulleyD}></path><circle class="pulley-hub" r="4"></circle>
+              </g>
+            </g>
+
+            <!-- chain: dark outer plates, lighter inner plates, bright rollers -->
+            <path id="chain-base" class="chain-base" d={chain0}></path>
+            <path id="chain-plates" class="chain-plates" d={chain0}></path>
+            <path id="chain-rollers" class="chain-rollers" d={chain0}></path>
+
+            <path id="der-cage-front" class="cage-front" d={cagePath(der0.upper, der0.lower, PULLEY_R + 6)}></path>
+
+            <!-- crank arm and pedal ride on top of everything -->
+            <g id="crank" transform={`rotate(0 ${RING.x} ${RING.y})`}>
+              <path class="arm" d={armD}></path>
+              <circle class="arm-cap" cx={RING.x} cy={RING.y} r="8"></circle>
+              <g id="pedal" transform={`rotate(0 ${RING.x + ARM} ${RING.y})`}>
+                <rect class="pedal" x={RING.x + ARM - 20} y={RING.y - 8} width="40" height="16" rx="3"></rect>
+                <line class="pedal-pin" x1={RING.x + ARM - 13} y1={RING.y} x2={RING.x + ARM + 13} y2={RING.y}></line>
+              </g>
             </g>
           </g>
-          <circle class="solid" cx={RING.x} cy={RING.y} r="9"></circle>
+
+          <text class="lbl" x={RING.x} y="404" text-anchor="middle">Chainring &middot; {RING_TEETH}T</text>
+          <text class="lbl" x={HUB.x} y="28" text-anchor="middle">Cassette &middot; 10&ndash;51T</text>
+          <text class="lbl" x="530" y="404" text-anchor="end">Rear derailleur</text>
         </svg>
         <span class="crank-pulse" aria-hidden="true"></span>
       </div>
+
+      <div class="crank-shifter" aria-label="Gears">
+        <button type="button" class="shift" id="btn-easier" aria-label="Shift to an easier gear">
+          <span aria-hidden="true">&larr;</span> Easier
+        </button>
+        <div class="crank-picker" id="picker" role="group" aria-label="Pick a gear, 1 is the easiest">
+          {CASSETTE.map((teeth, i) => (
+            <button
+              type="button"
+              data-i={i}
+              aria-pressed={String(i === DEFAULT_GEAR)}
+              aria-label={`Gear ${i + 1}, ${teeth} tooth cog`}
+              style={`--h:${(teeth / CASSETTE[0]) * 100}%`}
+            >
+              <i></i><span>{teeth}</span>
+            </button>
+          ))}
+        </div>
+        <button type="button" class="shift" id="btn-harder" aria-label="Shift to a harder gear">
+          Harder <span aria-hidden="true">&rarr;</span>
+        </button>
+      </div>
+
+      <dl class="crank-gear" aria-live="polite">
+        <div><dt>Gear</dt><dd><output id="gear-no">{DEFAULT_GEAR + 1}</output> of {CASSETTE.length}</dd></div>
+        <div><dt>Teeth</dt><dd>{RING_TEETH} &times; <output id="gear-cog">{CASSETTE[DEFAULT_GEAR]}</output></dd></div>
+        <div><dt>Wheel turns per pedal turn</dt><dd><output id="gear-ratio">{ratio0.toFixed(2)}</output></dd></div>
+        <div><dt>Photos per pedal turn</dt><dd><output id="gear-photos">{(ratio0 * 4.5).toFixed(1)}</output></dd></div>
+      </dl>
 
       <div class="crank-controls">
         <button type="button" id="btn-back">Rewind</button>
         <button type="button" id="btn-fwd">Forward</button>
         <button type="button" id="btn-cruise" aria-pressed="false">Auto-pedal</button>
+        <span class="crank-rpm">Cadence <output id="rpm">0</output> rpm</span>
       </div>
-
-      <p class="crank-readout">
-        <span>Cadence <output id="rpm">0</output> rpm</span>
-        <span>Gear {RING.teeth}&times;{COG.teeth}</span>
-      </p>
     </div>
 
     <div class="crank-spine-wrap">
@@ -182,15 +222,33 @@ const armD =
     </p>
   </noscript>
 
+  <section class="crank-lesson" aria-labelledby="lesson-h">
+    <h2 id="lesson-h">How gears work</h2>
+    <p>
+      The chain links the pedals to the back wheel. Count the teeth on the front ring, divide by the
+      teeth on the back cog, and you get how many times the wheel turns for one turn of the pedals.
+    </p>
+    <ul>
+      <li><strong>Easy gear, big cog (32 &times; 51):</strong> 0.63 wheel turns per pedal turn. Pedaling is light, so it is the gear for hills, but you go slowly. The photos get big and crawl by.</li>
+      <li><strong>Hard gear, small cog (32 &times; 10):</strong> 3.2 wheel turns per pedal turn. Every push is heavy, but you fly. The photos shrink and race past.</li>
+      <li><strong>Try it:</strong> turn on Auto-pedal, which keeps your legs at the same speed, then shift. Only the gear changes, and the photos speed up or slow down.</li>
+    </ul>
+  </section>
+
   <p class="crank-about">
     How it was made: a Python script (Pillow) reduced 131 originals, 605 MB, to 21 MB of web images,
     stripped their metadata, read each capture date, and pulled a dominant color from every frame.
-    The crank is SVG with a flywheel: let go and it coasts.
+    The drivetrain is SVG with a flywheel: let go and it coasts. The chain path is recalculated as the derailleur shifts, from the tangent lines between the chainring, the cog, and the two jockey wheels.
   </p>
   <p><a href="/experiments">&larr; All experiments</a></p>
 </BaseLayout>
 
 <script>
+  import {
+    ARM, CASSETTE, DEFAULT_GEAR, HUB, PITCH, PULLEY_R, RING, RING_R, RING_TEETH, TAU,
+    cagePath, chainPath, cogRadius, derailleurAt, f, linksPath,
+  } from "../../lib/drivetrain";
+
   type Frame = {
     id: string;
     src: string;
@@ -201,15 +259,10 @@ const armD =
     lqip: string;
   };
 
-  const TAU = Math.PI * 2;
-  const FRAMES_PER_REV = 12; // one revolution moves through 12 photographs
-  const RING = { x: 150, y: 200, teeth: 46 };
-  const COG = { x: 420, y: 200, teeth: 17 };
-  const ARM = 100;
-  const CHAIN_R = 110;
-  const FRICTION = 1.15; // flywheel drag, per second
+  const PHOTOS_PER_WHEEL_REV = 4.5; // gear 1 shows about 3 photos per pedal turn, gear 12 about 14
   const MAX_OMEGA = 16; // rad/s, about 150 rpm
-  const CRUISE_OMEGA = 3.4; // rad/s, about 32 rpm
+  const CRUISE_OMEGA = 4.2; // rad/s, about 40 rpm, the same in every gear
+  const SCALE_HARDEST = 0.56; // photo size in gear 12; gear 1 is full size
   const WINDOW = 18; // frames kept decoded on either side of the current one
   const MAX_INFLIGHT = 6;
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -224,20 +277,38 @@ const armD =
   const drive = $<HTMLElement>("drive");
   const svg = $<SVGSVGElement>("crank-svg");
   const ringEl = $<SVGGElement>("ring");
+  const crankEl = $<SVGGElement>("crank");
   const pedalEl = $<SVGGElement>("pedal");
-  const cogEl = $<SVGGElement>("cog");
-  const chainEl = $<SVGPathElement>("chain");
+  const cassetteEl = $<SVGGElement>("cassette");
+  const chainEls = ["chain-base", "chain-plates", "chain-rollers"].map((id) => $<SVGPathElement>(id));
+  const [, platesEl, rollersEl] = chainEls;
+  const cageEls = [$<SVGPathElement>("der-cage"), $<SVGPathElement>("der-cage-front")];
+  const linksEl = $<SVGPathElement>("der-links");
+  const knuckleEl = $<SVGCircleElement>("der-knuckle");
+  const pulleyUp = $<SVGGElement>("pulley-up");
+  const pulleyLo = $<SVGGElement>("pulley-lo");
   const rpmEl = $<HTMLOutputElement>("rpm");
   const spine = $<HTMLElement>("spine");
   const yearsEl = $<HTMLElement>("years");
   const btnBack = $<HTMLButtonElement>("btn-back");
   const btnFwd = $<HTMLButtonElement>("btn-fwd");
   const btnCruise = $<HTMLButtonElement>("btn-cruise");
+  const btnEasier = $<HTMLButtonElement>("btn-easier");
+  const btnHarder = $<HTMLButtonElement>("btn-harder");
+  const pickerBtns = [...document.querySelectorAll<HTMLButtonElement>("#picker button")];
+  const cogEls = [...cassetteEl.querySelectorAll<SVGPathElement>(".cog")];
+  const out = {
+    no: $<HTMLOutputElement>("gear-no"),
+    cog: $<HTMLOutputElement>("gear-cog"),
+    ratio: $<HTMLOutputElement>("gear-ratio"),
+    photos: $<HTMLOutputElement>("gear-photos"),
+  };
 
   let frames: Frame[] = [];
   let n = 0;
   let theta = 0; // total crank angle in radians; clockwise is forward
-  let omega = 0; // coasting angular velocity
+  let wheel = 0; // total back-wheel angle; this is what moves the photographs
+  let omega = 0; // coasting angular velocity of the crank
   let vel = 0; // velocity shown in the readout
   let dragging = false;
   let cruising = false;
@@ -247,6 +318,9 @@ const armD =
   let lastT = 0;
   let shownRpm = -1;
   let ticks: HTMLElement[] = [];
+  let gear = DEFAULT_GEAR; // index into CASSETTE
+  let gearPos = DEFAULT_GEAR; // eases toward gear while the derailleur moves
+  let chainUnits = 1; // pathLength / real length, keeps whole links on the loop
 
   const mod = (a: number, m: number) => ((a % m) + m) % m;
   const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v));
@@ -254,6 +328,15 @@ const armD =
     const d = Math.abs(a - b);
     return Math.min(d, n - d);
   };
+  const ratio = () => RING_TEETH / CASSETTE[gear];
+  // Harder gears carry more momentum, so the flywheel coasts longer.
+  const friction = () => 1.5 - 0.8 * (gear / (CASSETTE.length - 1));
+
+  // Every crank movement goes through here, so the wheel always follows the gear.
+  function advance(d: number) {
+    theta += d;
+    wheel += d * ratio();
+  }
 
   // ---------- image cache: a sliding window of decoded frames ----------
   const cache = new Map<number, HTMLImageElement>();
@@ -347,19 +430,47 @@ const armD =
     pump();
   }
 
-  // ---------- crank rendering ----------
+  // ---------- drivetrain rendering ----------
+  // Redraw the chain and derailleur for the cog under the chain (fractional mid-shift).
+  function drawDerailleur() {
+    const rc = cogRadius(gearPos);
+    const der = derailleurAt(rc);
+    const d = chainPath(rc);
+    for (const el of chainEls) el.setAttribute("d", d);
+    // Round the loop to a whole number of links so the pattern has no seam.
+    const real = chainEls[0].getTotalLength();
+    const links = Math.max(1, Math.round(real / PITCH));
+    for (const el of chainEls) el.setAttribute("pathLength", String(links * PITCH));
+    chainUnits = (links * PITCH) / real;
+    const cage = cagePath(der.upper, der.lower, PULLEY_R + 6);
+    for (const el of cageEls) el.setAttribute("d", cage);
+    linksEl.setAttribute("d", linksPath(der.knuckle));
+    knuckleEl.setAttribute("cx", f(der.knuckle.x));
+    knuckleEl.setAttribute("cy", f(der.knuckle.y));
+    pulleyUp.dataset.x = f(der.upper.x);
+    pulleyUp.dataset.y = f(der.upper.y);
+    pulleyLo.dataset.x = f(der.lower.x);
+    pulleyLo.dataset.y = f(der.lower.y);
+  }
+
   function render() {
     if (n === 0) return;
     const deg = (theta * 180) / Math.PI;
-    ringEl.setAttribute("transform", `rotate(${deg.toFixed(2)} ${RING.x} ${RING.y})`);
+    const rot = `rotate(${deg.toFixed(2)} ${RING.x} ${RING.y})`;
+    ringEl.setAttribute("transform", rot);
+    crankEl.setAttribute("transform", rot);
     pedalEl.setAttribute("transform", `rotate(${(-deg).toFixed(2)} ${RING.x + ARM} ${RING.y})`);
-    cogEl.setAttribute(
-      "transform",
-      `rotate(${((deg * RING.teeth) / COG.teeth).toFixed(2)} ${COG.x} ${COG.y})`
-    );
-    chainEl.style.strokeDashoffset = String(-theta * CHAIN_R);
+    cassetteEl.setAttribute("transform", `rotate(${((wheel * 180) / Math.PI).toFixed(2)} ${HUB.x} ${HUB.y})`);
 
-    const idx = mod(Math.floor((theta / TAU) * FRAMES_PER_REV), n);
+    // Chain travel in SVG units: the chainring's pitch radius times the crank angle.
+    const s = theta * RING_R;
+    platesEl.style.strokeDashoffset = String(-s * chainUnits);
+    rollersEl.style.strokeDashoffset = String((-s - PITCH * 0.8) * chainUnits);
+    const pulleyDeg = ((s / PULLEY_R) * 180) / Math.PI;
+    pulleyUp.setAttribute("transform", `translate(${pulleyUp.dataset.x} ${pulleyUp.dataset.y}) rotate(${(-pulleyDeg).toFixed(2)})`);
+    pulleyLo.setAttribute("transform", `translate(${pulleyLo.dataset.x} ${pulleyLo.dataset.y}) rotate(${pulleyDeg.toFixed(2)})`);
+
+    const idx = mod(Math.floor((wheel / TAU) * PHOTOS_PER_WHEEL_REV), n);
     if (idx !== current) setFrame(idx);
 
     const rpm = Math.round((Math.abs(vel) * 60) / TAU);
@@ -369,34 +480,66 @@ const armD =
     }
   }
 
+  // ---------- gears ----------
+  function setGear(g: number) {
+    g = clamp(g, 0, CASSETTE.length - 1);
+    if (g === gear) return;
+    gear = g;
+    const r = ratio();
+    out.no.textContent = String(g + 1);
+    out.cog.textContent = String(CASSETTE[g]);
+    out.ratio.textContent = r.toFixed(2);
+    out.photos.textContent = (r * PHOTOS_PER_WHEEL_REV).toFixed(1);
+    pickerBtns.forEach((b) => b.setAttribute("aria-pressed", String(Number(b.dataset.i) === g)));
+    cogEls.forEach((c) => c.classList.toggle("is-active", Number(c.dataset.i) === g));
+    btnEasier.disabled = g === 0;
+    btnHarder.disabled = g === CASSETTE.length - 1;
+    // Easy gears show the photographs big; hard gears shrink them.
+    root.style.setProperty("--photo-scale", (1 - (1 - SCALE_HARDEST) * (g / (CASSETTE.length - 1))).toFixed(3));
+    root.classList.add("is-used");
+    if (reduceMotion) {
+      gearPos = g;
+      drawDerailleur();
+      render();
+    } else kick();
+  }
+
   // ---------- motion loop (runs only while something is moving) ----------
   function tick(now: number) {
     const dt = clamp((now - lastT) / 1000, 0.001, 0.05);
     lastT = now;
 
-    if (animTarget !== null) {
+    if (gearPos !== gear) {
+      gearPos += (gear - gearPos) * (1 - Math.exp(-11 * dt));
+      if (Math.abs(gear - gearPos) < 0.004) gearPos = gear;
+      drawDerailleur();
+    }
+
+    if (dragging) {
+      // the pointer drives the crank; just keep the loop alive for the shift
+    } else if (animTarget !== null) {
       const diff = animTarget - theta;
       if (Math.abs(diff) < 0.002) {
-        theta = animTarget;
+        advance(diff);
         animTarget = null;
       } else {
-        theta += diff * (1 - Math.exp(-16 * dt));
+        advance(diff * (1 - Math.exp(-16 * dt)));
       }
       vel = 0;
     } else if (cruising) {
       omega += (CRUISE_OMEGA - omega) * (1 - Math.exp(-3 * dt));
-      theta += omega * dt;
+      advance(omega * dt);
       vel = omega;
     } else {
-      omega *= Math.exp(-FRICTION * dt);
+      omega *= Math.exp(-friction() * dt);
       if (Math.abs(omega) < 0.04) omega = 0;
-      theta += omega * dt;
+      advance(omega * dt);
       vel = omega;
     }
     render();
 
-    const active = animTarget !== null || cruising || omega !== 0;
-    if (active && !dragging) {
+    const moving = animTarget !== null || cruising || omega !== 0;
+    if ((moving && !dragging) || gearPos !== gear) {
       requestAnimationFrame(tick);
     } else {
       running = false;
@@ -424,16 +567,18 @@ const armD =
     }
   }
 
+  // Move the wheel to the middle of the photograph `dir` steps away.
   function stepBy(dir: number) {
     setCruise(false);
     omega = 0;
-    const f = Math.floor((theta / TAU) * FRAMES_PER_REV);
-    const target = ((f + dir + 0.5) * TAU) / FRAMES_PER_REV;
+    const per = TAU / PHOTOS_PER_WHEEL_REV;
+    const target = (Math.floor(wheel / per) + dir + 0.5) * per;
+    const dTheta = (target - wheel) / ratio();
     if (reduceMotion) {
-      theta = target;
+      advance(dTheta);
       render();
     } else {
-      animTarget = target;
+      animTarget = theta + dTheta;
       kick();
     }
   }
@@ -443,7 +588,7 @@ const armD =
     animTarget = null;
     omega = 0;
     vel = 0;
-    theta = ((clamp(i, 0, n - 1) + 0.5) * TAU) / FRAMES_PER_REV;
+    wheel = ((clamp(i, 0, n - 1) + 0.5) * TAU) / PHOTOS_PER_WHEEL_REV;
     render();
   }
 
@@ -497,7 +642,7 @@ const armD =
     lastMoveT = now;
     emaVel = 0.55 * emaVel + 0.45 * (delta / dt);
     vel = emaVel;
-    theta += delta;
+    advance(delta);
     render();
   });
 
@@ -520,16 +665,21 @@ const armD =
   // ---------- keyboard and buttons ----------
   drive.addEventListener("keydown", (e) => {
     if (n === 0) return;
+    const pedalTurn = Math.max(1, Math.round(ratio() * PHOTOS_PER_WHEEL_REV));
     const keys: Record<string, () => void> = {
       ArrowRight: () => stepBy(1),
       ArrowUp: () => stepBy(1),
       ArrowLeft: () => stepBy(-1),
       ArrowDown: () => stepBy(-1),
-      PageUp: () => stepBy(FRAMES_PER_REV),
-      PageDown: () => stepBy(-FRAMES_PER_REV),
+      PageUp: () => stepBy(pedalTurn),
+      PageDown: () => stepBy(-pedalTurn),
       Home: () => seek(0),
       End: () => seek(n - 1),
       " ": () => setCruise(!cruising),
+      "[": () => setGear(gear - 1),
+      "]": () => setGear(gear + 1),
+      "-": () => setGear(gear - 1),
+      "=": () => setGear(gear + 1),
     };
     const action = keys[e.key];
     if (action) {
@@ -545,6 +695,9 @@ const armD =
     root.classList.add("is-used");
     setCruise(!cruising);
   });
+  btnEasier.addEventListener("click", () => setGear(gear - 1));
+  btnHarder.addEventListener("click", () => setGear(gear + 1));
+  pickerBtns.forEach((b) => b.addEventListener("click", () => setGear(Number(b.dataset.i))));
   if (reduceMotion) {
     btnCruise.disabled = true;
     btnCruise.title = "Auto-pedal is off because your device asks for reduced motion.";
@@ -602,6 +755,8 @@ const armD =
   }
 
   // ---------- boot ----------
+  root.style.setProperty("--photo-scale", (1 - (1 - SCALE_HARDEST) * (gear / (CASSETTE.length - 1))).toFixed(3));
+  drawDerailleur();
   fetch("/crank/manifest.json")
     .then((r) => {
       if (!r.ok) throw new Error(String(r.status));
@@ -614,7 +769,7 @@ const armD =
       buildSpine();
       layoutYears();
       new ResizeObserver(layoutYears).observe(spine);
-      theta = (0.5 * TAU) / FRAMES_PER_REV;
+      wheel = (0.5 * TAU) / PHOTOS_PER_WHEEL_REV;
       current = -1;
       render();
       root.dataset.state = "ready";
@@ -675,6 +830,8 @@ const armD =
     height: 100%;
     object-fit: contain;
     opacity: 0;
+    transform: scale(var(--photo-scale, 1));
+    transition: transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1);
   }
 
   .crank-loading {
@@ -747,27 +904,78 @@ const armD =
     cursor: grabbing;
   }
 
-  .crank-drive .metal {
-    fill: rgba(26, 26, 26, 0.05);
-    stroke: var(--color-ink);
-    stroke-width: 1.6;
-    stroke-linejoin: round;
-  }
-
-  .crank-drive .line {
+  /* drivetrain finishes: anodized ring and arm, polished steel cog, graphite derailleur */
+  .crank-drive .cog {
     fill: none;
     stroke: var(--color-ink);
-    stroke-width: 1.2;
-    stroke-opacity: 0.55;
+    stroke-width: 0.8;
+    stroke-opacity: 0.16;
+    stroke-linejoin: round;
+    transition: stroke-opacity 0.3s ease;
   }
 
-  .crank-drive .solid {
-    fill: var(--color-ink);
+  .crank-drive .cog.is-active {
+    fill: url(#g-steel);
+    stroke-opacity: 0.85;
+    stroke-width: 1.1;
+  }
+
+  .crank-drive .hub-shell { fill: url(#g-graphite); }
+  .crank-drive .hub-hole { fill: #d9d5cc; }
+  .crank-drive .hub-axle { fill: #e9e6df; stroke: #1c1b1a; stroke-width: 1.5; }
+
+  .crank-drive .ring {
+    fill: url(#g-anod);
+    stroke: #0e0e0d;
+    stroke-width: 0.8;
+    stroke-linejoin: round;
+  }
+  .crank-drive .ring-bevel { fill: none; stroke: rgba(255, 255, 255, 0.22); stroke-width: 1.2; }
+  .crank-drive .spider { stroke: url(#g-anod); stroke-width: 10; stroke-linecap: round; }
+  .crank-drive .spider-hub { fill: url(#g-anod); stroke: rgba(255, 255, 255, 0.16); stroke-width: 1; }
+  .crank-drive .bolt { fill: #c9c5bc; stroke: #1c1b1a; stroke-width: 0.8; }
+
+  .crank-drive .hanger { stroke: #e2ded5; stroke-width: 18; stroke-linecap: round; }
+  .crank-drive .links { fill: none; stroke: #2e2d2b; stroke-width: 6; stroke-linecap: round; }
+  .crank-drive .body { fill: url(#g-graphite); stroke: rgba(255, 255, 255, 0.18); stroke-width: 1; }
+  .crank-drive .cage { fill: url(#g-graphite); opacity: 0.92; }
+  .crank-drive .cage-front {
+    fill: none;
+    stroke: var(--tint);
+    stroke-width: 2;
+    stroke-opacity: 0.85;
+    transition: stroke 0.3s ease;
+  }
+  .crank-drive .pulley { fill: #2a2927; stroke: #8f8b84; stroke-width: 0.8; stroke-linejoin: round; }
+  .crank-drive .pulley-hub { fill: #d9d5cc; stroke: #1c1b1a; stroke-width: 1; }
+
+  .crank-drive .chain-base {
+    fill: none;
+    stroke: #262523;
+    stroke-width: 7.5;
+    stroke-linejoin: round;
+  }
+  .crank-drive .chain-plates {
+    fill: none;
+    stroke: #8a867e;
+    stroke-width: 4.2;
+    stroke-dasharray: 8.6 5.22;
+    stroke-linejoin: round;
+  }
+  .crank-drive .chain-rollers {
+    fill: none;
+    stroke: #e4e0d7;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 0 13.823;
   }
 
   .crank-drive .arm {
-    fill: var(--color-ink);
+    fill: url(#g-anod);
+    stroke: rgba(255, 255, 255, 0.2);
+    stroke-width: 1;
   }
+  .crank-drive .arm-cap { fill: #c9c5bc; stroke: #1c1b1a; stroke-width: 1; }
 
   .crank-drive .pedal {
     fill: var(--tint);
@@ -775,20 +983,20 @@ const armD =
     stroke-width: 1.4;
     transition: fill 0.3s ease;
   }
+  .crank-drive .pedal-pin { stroke: rgba(26, 26, 26, 0.45); stroke-width: 1.4; stroke-dasharray: 2 3; }
 
-  .crank-drive .chain {
-    fill: none;
-    stroke: var(--color-ink);
-    stroke-opacity: 0.7;
-    stroke-width: 5;
-    stroke-dasharray: 7 4;
+  .crank-drive .lbl {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    fill: var(--color-ink-soft);
   }
 
   /* A ring that invites the first drag, then goes away. */
   .crank-pulse {
     position: absolute;
-    left: calc(246.6 / 480 * 100%);
-    top: calc(225.9 / 400 * 100%);
+    left: calc(240 / 540 * 100%);
+    top: calc(208 / 420 * 100%);
     width: 2.75rem;
     height: 2.75rem;
     margin: -1.375rem 0 0 -1.375rem;
@@ -846,21 +1054,119 @@ const armD =
     cursor: not-allowed;
   }
 
-  .crank-readout {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    margin: 0.75rem 0 0;
+  .crank-rpm {
+    margin-left: auto;
+    align-self: center;
     font-size: 0.75rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--color-ink-soft);
     font-variant-numeric: tabular-nums;
   }
+  .crank-rpm output { color: var(--color-ink); }
 
-  .crank-readout output {
+  /* ---- gears: easier / a picker shaped like the cassette / harder ---- */
+  .crank-shifter {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 0.6rem;
+    margin-top: 0.5rem;
+  }
+
+  .crank-shifter .shift {
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.65rem 0.9rem;
+    min-height: 2.75rem;
+    color: #fff;
+    background: var(--color-ink);
+    border: 1px solid var(--color-ink);
+    border-radius: 8px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .crank-shifter .shift:disabled { opacity: 0.3; cursor: not-allowed; }
+  .crank-shifter .shift:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+
+  .crank-picker {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 4.25rem;
+  }
+
+  .crank-picker button {
+    flex: 1 1 0;
+    min-width: 0;
+    height: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: stretch;
+    gap: 0.2rem;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    color: var(--color-ink-soft);
+    font: inherit;
+  }
+  .crank-picker i {
+    display: block;
+    height: calc(var(--h) * 0.72);
+    border-radius: 2px;
+    background: linear-gradient(180deg, #e2dfd8, #b9b5ac);
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .crank-picker span {
+    font-size: 0.6875rem;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+  }
+  .crank-picker button:hover i { background: linear-gradient(180deg, #cfcbc2, #9c978d); }
+  .crank-picker button[aria-pressed="true"] i {
+    background: linear-gradient(180deg, var(--tint), var(--color-ink));
+    transform: scaleY(1.04);
+    transform-origin: bottom;
+  }
+  .crank-picker button[aria-pressed="true"] span { color: var(--color-ink); font-weight: 700; }
+  .crank-picker button:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; border-radius: 2px; }
+
+  .crank-gear {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem 1rem;
+    margin: 0.9rem 0 0;
+  }
+  .crank-gear div {
+    border-top: 1px solid var(--color-border);
+    padding-top: 0.4rem;
+  }
+  .crank-gear dt {
+    font-size: 0.625rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-ink-soft);
+    line-height: 1.3;
+  }
+  .crank-gear dd {
+    margin: 0.15rem 0 0;
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-variant-numeric: tabular-nums;
     color: var(--color-ink);
   }
+
+  .crank-lesson {
+    max-width: var(--measure);
+    margin-top: 3rem;
+  }
+  .crank-lesson h2 { font-size: 1.25rem; }
+  .crank-lesson p, .crank-lesson li { font-size: 0.95rem; line-height: 1.6; }
+  .crank-lesson ul { padding-left: 1.1rem; margin: 0.5rem 0 0; }
+  .crank-lesson li { margin-bottom: 0.5rem; }
 
   /* ---- the color spine ---- */
   .crank-spine-wrap {
@@ -929,9 +1235,14 @@ const armD =
   }
 
   /* ---- layout: photograph beside the crank on wide screens ---- */
+  @media (max-width: 30rem) {
+    .crank-shifter .shift { padding: 0.6rem 0.6rem; }
+    .crank-picker span { font-size: 0.5625rem; }
+  }
+
   @media (min-width: 58rem) {
     .crank-app {
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
       grid-template-areas:
         "figure rig"
         "spine  spine";
@@ -947,6 +1258,9 @@ const armD =
     .crank-frame,
     .crank-caption__date,
     .crank-drive .pedal,
+    .crank-drive .cog,
+    .crank-frame img,
+    .crank-picker i,
     .crank-spine :global(i) {
       transition: none;
     }
