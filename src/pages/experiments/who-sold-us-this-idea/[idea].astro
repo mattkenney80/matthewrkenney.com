@@ -1,0 +1,194 @@
+---
+// One idea page, rendered entirely from src/data/ideas/<idea>.json.
+// Adding an idea means adding a JSON file; this template does not change.
+// The interactive map and chart are drawn by src/scripts/idea-map.js.
+export const prerender = false;
+
+import { env } from "cloudflare:workers";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { isSectionVisible } from "../../../lib/settings";
+
+if (!(await isSectionVisible(env?.DB, "experiments"))) {
+  return Astro.rewrite("/404");
+}
+
+const files = import.meta.glob("../../../data/ideas/*.json", { eager: true, import: "default" });
+const ideas = Object.values(files) as any[];
+const idea = ideas.find((i) => i.id === Astro.params.idea);
+if (!idea) return Astro.rewrite("/404");
+
+const stations = [...idea.stations].sort((a: any, b: any) => a.year - b.year);
+const first = stations[0];
+const last = stations[stations.length - 1];
+// Only counterpoints with a source are shown; the rest are still being researched.
+const counterpoints = (idea.counterpoints ?? []).filter((c: any) => !/NEEDS VERIFICATION/i.test(c.status));
+const pending = (idea.counterpoints ?? []).length - counterpoints.length;
+const sourceNo = (c: any) => Number(/source (\d+)/i.exec(c.status)?.[1]) || null;
+const sourceUrl = (n: number) => idea.sources.find((s: any) => s.n === n)?.url;
+---
+
+<BaseLayout title={`Who sold us ${idea.title}?`} description={idea.question} wide>
+  <p class="isl-eyebrow"><a href="/experiments/who-sold-us-this-idea">Who Sold Us This Idea?</a> &middot; {idea.title}</p>
+  <h1>Who sold us <em>{idea.title}</em>?</h1>
+  <p class="lede">{idea.intro ?? idea.question}</p>
+
+  <div class="isl" id="isl" style={`--lane-consult:#7a4fb0;--lane-academy:#1f7a5a;--lane-media:#a3601b;--lane-gov:#9b2f3f;--lane-board:#2d5f8f;--lane-think:#5b6b2a;--lane-public:#6b6b6b`}>
+    <section class="isl-stage" aria-labelledby="isl-who">
+      <div class="isl-stage-head">
+        <h2 id="isl-who">Who thought of the idea?</h2>
+        <div class="isl-ctrls">
+          <button type="button" id="isl-prev">&larr; Back</button>
+          <button type="button" id="isl-next">Next &rarr;</button>
+        </div>
+      </div>
+
+      <div class="isl-scroll" id="isl-scroll">
+        <svg id="isl-map" viewBox="0 0 1000 410" aria-hidden="true"></svg>
+      </div>
+
+      <div class="isl-slider">
+        <label for="isl-range" class="isl-now" id="isl-now">{first.year} &middot; {first.short}</label>
+        <div class="isl-track">
+          <input
+            id="isl-range"
+            type="range"
+            min={first.year}
+            max={last.year}
+            step="0.1"
+            value={first.year}
+            aria-valuetext={`${first.year}, ${first.title}`}
+          />
+          <div class="isl-ticks" aria-hidden="true">
+            {stations.map((s: any) => (
+              <span style={`left:${((s.year - first.year) / (last.year - first.year)) * 100}%`}></span>
+            ))}
+          </div>
+        </div>
+        <div class="isl-ends" aria-hidden="true"><span>{first.year}</span><span>{last.year}</span></div>
+      </div>
+      <p class="isl-hint">
+        Slide through time, drag the blue idea across the map, or use the arrow keys. Lanes are kinds
+        of institutions. Solid lines hand the idea straight to the next carrier; dashed lines are a
+        push in parallel.
+      </p>
+    </section>
+
+    <article class="isl-card" id="isl-card" aria-live="polite"></article>
+
+    <section class="isl-chart" aria-labelledby="isl-chart-h">
+      <h2 id="isl-chart-h">{idea.chart?.title ?? "What it did"}</h2>
+      <p class="isl-readout" id="isl-readout"></p>
+      <svg id="isl-chart" viewBox="0 0 1000 240" aria-hidden="true"></svg>
+      <p class="isl-hint">{idea.chart?.note}</p>
+    </section>
+  </div>
+
+  {idea.findings?.length > 0 && (
+    <section class="isl-findings" aria-label="What the timeline shows">
+      {idea.findings.map((f: any) => <p><span>{f.title}</span>{f.text}</p>)}
+    </section>
+  )}
+
+  {counterpoints.length > 0 && (
+    <section class="isl-counter" aria-labelledby="isl-counter-h">
+      <h2 id="isl-counter-h">The case for the defense</h2>
+      <ul>
+        {counterpoints.map((c: any) => {
+          const n = sourceNo(c);
+          return (
+            <li>
+              {c.claim} <span class="isl-who">{c.who}{n && <>, <a href={sourceUrl(n)} target="_blank" rel="noopener">source {n}</a></>}</span>
+            </li>
+          );
+        })}
+      </ul>
+      {pending > 0 && <p class="isl-hint">{pending} more defenses are being sourced before they go up.</p>}
+    </section>
+  )}
+
+  <section class="isl-sources" aria-labelledby="isl-sources-h">
+    <h2 id="isl-sources-h">Sources</h2>
+    <ol>
+      {idea.sources.map((s: any) => (
+        <li id={`src-${s.n}`} value={s.n}><a href={s.url} target="_blank" rel="noopener">{s.title}</a></li>
+      ))}
+    </ol>
+  </section>
+
+  <p class="isl-back"><a href="/experiments/who-sold-us-this-idea">&larr; All ideas</a></p>
+
+  <script type="application/json" id="isl-data" set:html={JSON.stringify(idea)}></script>
+</BaseLayout>
+
+<script>
+  import "../../../scripts/idea-map.js";
+</script>
+
+<style is:global>
+  .isl-eyebrow { margin: 0 0 0.5rem; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-ink-soft); }
+  .isl-eyebrow a { color: inherit; }
+  h1 em { font-style: normal; color: #2340c8; }
+  .isl { --idea: #2340c8; --idea-soft: rgba(35, 64, 200, 0.2); margin-top: var(--space-4); display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); }
+  .isl > * { min-width: 0; }
+  .isl h2, .isl-findings span, .isl-counter h2, .isl-sources h2 { font-size: 1.25rem; }
+
+  .isl-stage { border: 1px solid var(--color-border); background: #fff; padding: var(--space-2); }
+  .isl-stage-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--space-1); }
+  .isl-stage-head h2 { margin: 0; }
+  .isl-ctrls { display: flex; gap: 0.5rem; }
+  .isl button { font: inherit; font-size: 0.85rem; padding: 0.4rem 0.8rem; background: transparent; color: var(--color-ink); border: 1px solid var(--color-border); border-radius: 6px; cursor: pointer; min-height: 2.5rem; }
+  .isl button:hover { border-color: var(--idea); color: var(--idea); }
+  .isl button:focus-visible, .isl input:focus-visible, #isl-map:focus-visible { outline: 2px solid var(--idea); outline-offset: 2px; }
+
+  .isl-scroll { overflow-x: auto; margin-top: var(--space-1); }
+  .isl svg { display: block; width: 100%; height: auto; }
+  #isl-map { min-width: 680px; user-select: none; -webkit-user-select: none; cursor: grab; touch-action: pan-x pan-y; }
+  #isl-map.drag { cursor: grabbing; }
+  #isl-map .lane-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+  #isl-map .node-year { font-size: 12px; fill: var(--color-ink-soft); font-variant-numeric: tabular-nums; }
+  #isl-map .node-name { font-size: 14px; fill: var(--color-ink-soft); }
+  #isl-map .on .node-name, #isl-map .on .node-year { fill: var(--color-ink); }
+  #isl-map .station { cursor: pointer; }
+  #isl-map .edge { fill: none; stroke: var(--color-border); stroke-width: 1.5; }
+  #isl-map .edge.parallel { stroke-dasharray: 4 4; }
+  #isl-map .edge.on { stroke: var(--idea); stroke-width: 2.5; }
+  #isl-map text { font-family: inherit; }
+
+  .isl-slider { margin-top: var(--space-2); }
+  .isl-now { display: block; font-family: var(--font-serif); font-size: 1.1rem; margin-bottom: 0.3rem; }
+  .isl-track { position: relative; }
+  .isl-track input { width: 100%; margin: 0; accent-color: var(--idea); height: 2.25rem; cursor: pointer; position: relative; z-index: 1; background: transparent; }
+  .isl-ticks { position: absolute; left: 8px; right: 8px; top: 50%; height: 0; }
+  .isl-ticks span { position: absolute; top: 6px; width: 2px; height: 8px; margin-left: -1px; background: var(--color-ink-soft); opacity: 0.6; }
+  .isl-ends { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--color-ink-soft); font-variant-numeric: tabular-nums; margin-top: 0.4rem; }
+  .isl-hint { margin: var(--space-1) 0 0; font-size: 0.85rem; color: var(--color-ink-soft); max-width: 62ch; }
+
+  .isl-card { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: var(--space-3) var(--space-4); border-top: 3px solid var(--color-ink); padding-top: var(--space-2); }
+  @media (max-width: 720px) { .isl-card { grid-template-columns: minmax(0, 1fr); } }
+  .isl-card .big-year { font-family: var(--font-serif); font-size: 4rem; line-height: 0.9; color: var(--idea); font-variant-numeric: tabular-nums; }
+  .isl-card h3 { font-size: 1.6rem; margin: 0.4rem 0 0.6rem; }
+  .isl-card .who { margin: 0 0 0.2rem; font-weight: 600; }
+  .isl-card .where { margin: 0; color: var(--color-ink-soft); }
+  .isl-card .chip { display: inline-block; margin-top: 0.75rem; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.5rem; color: #fff; }
+  .isl-card dl { margin: 0; display: grid; gap: var(--space-2); }
+  .isl-card dt { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-ink-soft); }
+  .isl-card dd { margin: 0.2rem 0 0; max-width: 62ch; }
+  .isl-card dd a { color: var(--idea); }
+
+  .isl-chart h2 { margin-bottom: 0.25rem; }
+  .isl-readout { margin: 0 0 0.5rem; font-variant-numeric: tabular-nums; color: var(--color-ink-soft); }
+  .isl-readout b { font-family: var(--font-serif); font-size: 2.25rem; color: var(--idea); margin-right: 0.4rem; font-weight: 500; }
+  #isl-chart .axis { font-size: 12px; fill: var(--color-ink-soft); font-family: inherit; }
+
+  .isl-findings { margin-top: var(--space-4); display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: var(--space-3); }
+  .isl-findings p { margin: 0; }
+  .isl-findings span { display: block; font-family: var(--font-serif); margin-bottom: 0.3rem; }
+  .isl-counter, .isl-sources { margin-top: var(--space-4); max-width: 46rem; }
+  .isl-counter ul { padding-left: 1.1rem; }
+  .isl-counter li { margin-bottom: 0.6rem; }
+  .isl-who { display: block; font-size: 0.85rem; color: var(--color-ink-soft); }
+  .isl-sources ol { font-size: 0.9rem; color: var(--color-ink-soft); padding-left: 1.4rem; columns: 2 18rem; column-gap: var(--space-4); }
+  .isl-sources li { break-inside: avoid; margin-bottom: 0.4rem; }
+  .isl-sources li:target { background: rgba(35, 64, 200, 0.08); }
+  .isl-back { margin-top: var(--space-4); }
+</style>

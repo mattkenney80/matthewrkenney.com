@@ -1,0 +1,490 @@
+{
+  "id": "ceo-pay",
+  "lanes": [
+    {
+      "id": "consult",
+      "label": "Consultants",
+      "y": 58
+    },
+    {
+      "id": "academy",
+      "label": "Universities",
+      "y": 128
+    },
+    {
+      "id": "media",
+      "label": "Journals",
+      "y": 198
+    },
+    {
+      "id": "gov",
+      "label": "Government",
+      "y": 268
+    },
+    {
+      "id": "board",
+      "label": "Boardrooms",
+      "y": 352
+    }
+  ],
+  "stations": [
+    {
+      "id": "patton",
+      "year": 1951,
+      "lane": "consult",
+      "short": "Arch Patton",
+      "lab": "below",
+      "title": "The pay survey",
+      "who": "Arch Patton",
+      "where": "McKinsey & Company, hired by General Motors",
+      "what": "A multi-industry study of executive pay, published in Harvard Business Review.",
+      "pitch": "From 1939 to 1950 hourly pay more than doubled while top management pay rose only 35 percent. Adjusted for inflation, executives were going backwards.",
+      "spread": "HBR made it an annual feature for more than a decade before it moved to McKinsey Quarterly. For several years Patton accounted for close to a tenth of McKinsey's billings. Duff McDonald calls this the original sin of executive pay.",
+      "sources": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "hbr50s",
+      "year": 1956,
+      "lane": "media",
+      "short": "HBR",
+      "lab": "below",
+      "title": "Pay becomes a field",
+      "who": "Harvard Business Review",
+      "where": "Harvard Business School's house journal",
+      "what": "Executive compensation turns into a regular beat, led by Patton's annual reports.",
+      "pitch": "Pay is something you measure against other companies, not a moral question.",
+      "spread": "From 1948 to 1951 HBR ran about one pay article a year. A few years later it ran about five. Patton kept writing there for decades, from “What Is an Executive Worth?” (1961) to “Executive Compensation by 1970” (1964).",
+      "sources": [
+        1,
+        3
+      ]
+    },
+    {
+      "id": "friedman",
+      "year": 1970,
+      "lane": "academy",
+      "short": "Milton Friedman",
+      "lab": "above",
+      "title": "Profit is the only job",
+      "who": "Milton Friedman",
+      "where": "University of Chicago, writing in The New York Times Magazine",
+      "what": "The essay “The Social Responsibility of Business Is to Increase Its Profits.”",
+      "pitch": "A corporate manager works for the shareholders. Spending their money on anything else is taking it from them.",
+      "spread": "Friedman said what managers should do. He did not say how to make them do it. Two Chicago-trained economists in Rochester picked up that question.",
+      "sources": [
+        4
+      ]
+    },
+    {
+      "id": "jm76",
+      "year": 1976,
+      "lane": "academy",
+      "short": "Jensen & Meckling",
+      "lab": "below",
+      "title": "Agency theory",
+      "who": "Michael Jensen and William Meckling",
+      "where": "University of Rochester, published in the Journal of Financial Economics",
+      "what": "“Theory of the Firm: Managerial Behavior, Agency Costs and Ownership Structure.”",
+      "pitch": "Managers are agents who will serve themselves unless their wealth rises and falls with the shareholders'. The fix is to pay them like owners.",
+      "spread": "They set out to turn Friedman's essay into the math of economics. It became the most cited paper in financial economics and the default lens of business schools.",
+      "sources": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "shad",
+      "year": 1982,
+      "lane": "gov",
+      "short": "SEC 10b-18",
+      "lab": "above",
+      "title": "The buyback door opens",
+      "who": "John Shad",
+      "where": "Chairman of the SEC, appointed by Reagan from E.F. Hutton",
+      "what": "Rule 10b-18 gives companies a safe harbor from manipulation charges when they buy back their own stock.",
+      "pitch": "A company buying its own shares on the open market is not rigging its price.",
+      "spread": "Buybacks lift earnings per share and stock price, the exact numbers executive pay was being tied to. Two days after the rule passed, Jensen and Eugene Fama presented their agency papers at the Hoover Institution.",
+      "sources": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "hbr90",
+      "year": 1990,
+      "lane": "media",
+      "short": "Jensen & Murphy",
+      "lab": "above",
+      "title": "It's not how much, but how",
+      "who": "Michael Jensen and Kevin J. Murphy",
+      "where": "Harvard Business School and the University of Rochester, in HBR May–June 1990",
+      "what": "“CEO Incentives: It's Not How Much You Pay, But How.”",
+      "pitch": "Corporate America, they wrote, “pays its most important leaders like bureaucrats.” Pay should swing hard with the stock price.",
+      "spread": "The idea left the journals and entered the boardroom. The Conference Board credits the article with the explosion in stock option grants that followed.",
+      "sources": [
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "id": "sec92",
+      "year": 1992,
+      "lane": "gov",
+      "short": "Disclosure rule",
+      "lab": "above",
+      "title": "Everyone can see everyone",
+      "who": "Securities and Exchange Commission",
+      "where": "New proxy disclosure rules",
+      "what": "Companies must report top executive pay in clear, comparable tables.",
+      "pitch": "Sunlight will shame boards into restraint.",
+      "spread": "It armed the opposite instinct. Every board and consultant could now see what rival CEOs got, and nobody wanted a below-average CEO.",
+      "sources": [
+        12
+      ]
+    },
+    {
+      "id": "clinton93",
+      "year": 1993,
+      "lane": "gov",
+      "short": "Section 162(m)",
+      "lab": "below",
+      "yOff": 34,
+      "title": "The million dollar loophole",
+      "who": "President Bill Clinton and Congress",
+      "where": "Omnibus Budget Reconciliation Act of 1993",
+      "what": "Companies can no longer deduct salary above $1 million for top executives, unless the pay is performance based.",
+      "pitch": "A cap to rein in CEO pay.",
+      "spread": "Stock options counted as performance based, so pay moved into options. Companies below $1 million raised salaries to exactly $1 million. SEC chair Christopher Cox later said it earned a place in the Museum of Unintended Consequences.",
+      "sources": [
+        13,
+        14
+      ]
+    },
+    {
+      "id": "peer",
+      "year": 1997,
+      "lane": "board",
+      "short": "Pay consultants",
+      "lab": "below",
+      "title": "The Lake Wobegon machine",
+      "who": "Compensation consultants and board pay committees",
+      "where": "Peer group benchmarking",
+      "what": "Boards set CEO pay by targeting the 50th or 75th percentile of a hand-picked peer group.",
+      "pitch": "We have to pay the market rate to keep talent.",
+      "spread": "If every board pays above the median, the median keeps rising. Median CEO pay went from $2.3 million in 1992 to $7.2 million in 2001. By 2000 stock options were 49 percent of S&P 500 CEO pay.",
+      "sources": [
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "id": "chagrin",
+      "year": 2004,
+      "lane": "academy",
+      "short": "Second thoughts",
+      "lab": "above",
+      "title": "The authors flinch",
+      "who": "Michael Jensen and Kevin J. Murphy",
+      "where": "Later papers and an unfinished book, CEO Pay and What to Do About It",
+      "what": "A reassessment of what their 1990 idea had become.",
+      "pitch": "Options were supposed to replace other pay, not sit on top of it.",
+      "spread": "Murphy said companies layered options onto already competitive packages, to their chagrin. Options had tripled inflation-adjusted S&P 500 CEO pay in under a decade. Murphy and Jensen blame Congress more than themselves.",
+      "sources": [
+        11,
+        20
+      ]
+    },
+    {
+      "id": "today",
+      "year": 2024,
+      "lane": "board",
+      "short": "281 to 1",
+      "lab": "above",
+      "title": "Where it landed",
+      "who": "The 350 largest US companies",
+      "where": "Economic Policy Institute data",
+      "what": "CEO pay up 1,094 percent since 1978. Typical worker pay up 26 percent.",
+      "pitch": "Pay for performance.",
+      "spread": "The ratio peaked at 399 to 1 in 2021 and was 281 to 1 in 2024. The 1993 loophole was repealed in 2017. Pay did not come back down, because the peer machine no longer needed it.",
+      "sources": [
+        18,
+        19
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "patton",
+      "to": "hbr50s",
+      "kind": "handoff"
+    },
+    {
+      "from": "friedman",
+      "to": "jm76",
+      "kind": "handoff"
+    },
+    {
+      "from": "jm76",
+      "to": "hbr90",
+      "kind": "handoff"
+    },
+    {
+      "from": "hbr90",
+      "to": "peer",
+      "kind": "handoff"
+    },
+    {
+      "from": "sec92",
+      "to": "peer",
+      "kind": "handoff"
+    },
+    {
+      "from": "clinton93",
+      "to": "peer",
+      "kind": "handoff"
+    },
+    {
+      "from": "peer",
+      "to": "chagrin",
+      "kind": "handoff"
+    },
+    {
+      "from": "peer",
+      "to": "today",
+      "kind": "handoff"
+    },
+    {
+      "from": "shad",
+      "to": "today",
+      "kind": "handoff"
+    },
+    {
+      "from": "jm76",
+      "to": "shad",
+      "kind": "parallel"
+    },
+    {
+      "from": "hbr50s",
+      "to": "peer",
+      "kind": "parallel"
+    }
+  ],
+  "ratio": [
+    {
+      "year": 1965,
+      "value": 20.6,
+      "approximate": false
+    },
+    {
+      "year": 1970,
+      "value": 23.8,
+      "approximate": false
+    },
+    {
+      "year": 1973,
+      "value": 23,
+      "approximate": false
+    },
+    {
+      "year": 1975,
+      "value": 26.1,
+      "approximate": false
+    },
+    {
+      "year": 1978,
+      "value": 30.7,
+      "approximate": false
+    },
+    {
+      "year": 1980,
+      "value": 36.1,
+      "approximate": false
+    },
+    {
+      "year": 1985,
+      "value": 49.4,
+      "approximate": false
+    },
+    {
+      "year": 1989,
+      "value": 60.1,
+      "approximate": false
+    },
+    {
+      "year": 2000,
+      "value": 367,
+      "approximate": true
+    },
+    {
+      "year": 2021,
+      "value": 399,
+      "approximate": false
+    },
+    {
+      "year": 2024,
+      "value": 280.7,
+      "approximate": false
+    }
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "title": "Duff McDonald via Ritholtz, Is McKinsey to Blame for Skyrocketing CEO Pay? (2013)",
+      "url": "https://ritholtz.com/2013/08/is-mckinsey-to-blame-for-skyrocketing-ceo-pay"
+    },
+    {
+      "n": 2,
+      "title": "TIME, interview with Duff McDonald on The Firm (2013)",
+      "url": "https://business.time.com/?p=86980"
+    },
+    {
+      "n": 3,
+      "title": "EconBiz, Arch Patton HBR bibliography",
+      "url": "https://econbiz.de/Record/what-is-an-executive-worth-patton-arch/10002617140"
+    },
+    {
+      "n": 4,
+      "title": "Wikipedia, William H. Meckling",
+      "url": "https://en.wikipedia.org/wiki/William_H._Meckling"
+    },
+    {
+      "n": 5,
+      "title": "TIME, The social responsibility of business is... what again?",
+      "url": "https://business.time.com/?p=2582"
+    },
+    {
+      "n": 6,
+      "title": "ProMarket, Jensen and Meckling 1976",
+      "url": "https://www.promarket.org/?p=28278"
+    },
+    {
+      "n": 7,
+      "title": "INET, Lazonick on SEC Rule 10b-18",
+      "url": "https://ineteconomics.org/perspectives/blog/to-boost-investment-end-sec-rule-encouraging-buybacks"
+    },
+    {
+      "n": 8,
+      "title": "SASE, Lazonick paper on Rule 10b-18 and the Hoover conference",
+      "url": "https://sase.confex.com/sase/2015am/webprogram/Paper1822.html"
+    },
+    {
+      "n": 9,
+      "title": "USC Gould, Jensen and Murphy HBR 1990 citation",
+      "url": "https://gould.usc.edu/publication/ceo-incentives-its-not-how-much-you-pay-but-how"
+    },
+    {
+      "n": 10,
+      "title": "Conference Board, On Executive Pay, Simpler Is Better",
+      "url": "https://conference-board.org/blog/postdetail.cfm?post=3573"
+    },
+    {
+      "n": 11,
+      "title": "University of Rochester, tribute to Michael Jensen",
+      "url": "https://www.rochester.edu/newscenter/economist-michael-jensen-theory-of-the-firm-tribute-601412"
+    },
+    {
+      "n": 12,
+      "title": "Harvard Law Forum, Pay Harmony and the 1992 SEC rule",
+      "url": "https://corpgov.law.harvard.edu/2013/06/19/pay-harmony-peer-comparison-and-executive-compensation/"
+    },
+    {
+      "n": 13,
+      "title": "NBER Digest, Does the Tax Code Influence CEO Compensation?",
+      "url": "https://www.nber.org/digest/dec00/does-tax-code-influence-ceo-compensation"
+    },
+    {
+      "n": 14,
+      "title": "D&O Diary, Cox testimony on 162(m)",
+      "url": "https://www.dandodiary.com/?p=828"
+    },
+    {
+      "n": 15,
+      "title": "Arkansas Business, Elson study on peer groups",
+      "url": "https://www.arkansasbusiness.com/?p=58683"
+    },
+    {
+      "n": 16,
+      "title": "strategy+business, compensation benchmarking and leapfrogs",
+      "url": "https://strategy-business.com/article/re00116"
+    },
+    {
+      "n": 17,
+      "title": "IGOPP, Allaire on Jensen and stock options",
+      "url": "https://igopp.org/?p=2462"
+    },
+    {
+      "n": 18,
+      "title": "EPI, CEO pay landing page (2025)",
+      "url": "https://www.epi.org/publication/ceo-pay/"
+    },
+    {
+      "n": 19,
+      "title": "EPI, CEO-to-worker ratio series",
+      "url": "https://www.epi.org/chart/ceo-pay-robust-ceo-to-worker-pay-ratio/"
+    },
+    {
+      "n": 20,
+      "title": "ProMarket, Murphy on Mike Jensen and CEO pay (2024)",
+      "url": "https://www.promarket.org/2024/05/04/mike-jensen-on-ceo-pay/"
+    }
+  ],
+  "title": "CEO pay",
+  "question": "Why do CEOs make 281 times what a typical worker makes?",
+  "status": "draft-v1",
+  "counterpoints": [
+    {
+      "claim": "CEO pay tracks the growth in company size, not just ideas or loopholes.",
+      "who": "Xavier Gabaix and Augustin Landier, \"Why Has CEO Pay Increased So Much?\" (2008)",
+      "status": "NEEDS VERIFICATION"
+    },
+    {
+      "claim": "Pay for top earners in other fields (lawyers, hedge funds, athletes) rose just as fast, so it may be a superstar economy, not a boardroom con.",
+      "who": "Steven Kaplan, University of Chicago",
+      "status": "NEEDS VERIFICATION"
+    },
+    {
+      "claim": "Jensen and Murphy argued the option explosion came mostly from Congress (162(m)), not their paper.",
+      "who": "Kevin J. Murphy, ProMarket 2024",
+      "status": "sourced, source 20"
+    }
+  ],
+  "open_questions": [
+    "Get a verified EPI figure for 1995 and 2000 (chart currently uses an approximate 2000 point).",
+    "Did the 1991 SEC Section 16 change (exercise and sell options immediately) matter? Lazonick says yes.",
+    "Who were the named pay consultants of the 1990s (Towers Perrin, Pearl Meyer, Frederic W. Cook) and which CEOs set the leapfrog packages?",
+    "Graef Crystal, ex-consultant turned critic, In Search of Excess (1991): add as the whistleblower node.",
+    "Who funded the Rochester and Chicago work (foundations, think tanks)? Do not guess; source it.",
+    "Jack Welch 1981 Pierre Hotel speech as the CEO-side salesman of shareholder value."
+  ],
+  "intro": "In 1965 a big-company CEO made about 21 times what a typical worker made. In 2024 it was 281 times. A consultant, two economists, a magazine, a regulator and a president each carried the idea one step further. Move the idea through the people who carried it.",
+  "chart": {
+    "title": "What it did to CEO pay",
+    "unit": ":1",
+    "label": "CEO pay to typical worker pay",
+    "note": "CEO-to-typical-worker pay ratio at the 350 largest US firms, from the Economic Policy Institute. Filled dots are published figures; hollow dots are approximate. Dashed lines bridge gaps in the data and are not data themselves.",
+    "sources": [
+      18,
+      19
+    ]
+  },
+  "findings": [
+    {
+      "title": "The money came late",
+      "text": "The ratio barely moved from 1965 to 1973, hovering around 23 to 1. The ideas were born in the 1950s and 1970s. The money arrived later: a slow climb in the 1980s, then a near vertical jump in the 1990s."
+    },
+    {
+      "title": "The pitch never changed",
+      "text": "Patton in 1951 and Jensen and Murphy in 1990 made the same sale: executives are underpaid compared with what they are worth. Only the justification changed, from fairness to incentives."
+    },
+    {
+      "title": "Even its authors flinched",
+      "text": "Jensen and Murphy wanted options to replace other pay. Boards stacked options on top of pay they already gave. Murphy said it happened to their chagrin."
+    }
+  ]
+}
