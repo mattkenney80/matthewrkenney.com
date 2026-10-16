@@ -1,0 +1,100 @@
+---
+// Who Sold Us This Idea? Ideas traced through the people and institutions that carried them.
+// Each idea will get its own page here, rendered from a JSON file. This page is the index.
+export const prerender = false;
+
+import { env } from "cloudflare:workers";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { isSectionVisible } from "../../../lib/settings";
+
+if (!(await isSectionVisible(env?.DB, "experiments"))) {
+  return Astro.rewrite("/404");
+}
+
+const ideas: { title: string; question: string; status: string; href?: string }[] = [
+  {
+    title: "CEO pay",
+    question: "Why do CEOs make 281 times what a typical worker makes?",
+    status: "In research",
+  },
+];
+---
+
+<BaseLayout
+  title="Who Sold Us This Idea?"
+  description="Following one idea at a time from where it was born to where it landed, through the people and institutions that sold it."
+>
+  <p class="wsi-eyebrow">Experiment</p>
+  <h1>Who Sold Us This Idea?</h1>
+  <p class="lede">
+    I'm a big fan of the director Adam Curtis. The question running through all of his
+    documentary films for the BBC is &ldquo;Who sold us this idea?&rdquo;
+  </p>
+  <p class="lede">
+    I've worked in innovation management for eleven and a half years, with roughly 250
+    companies, helping them collect and track ideas.
+  </p>
+
+  <section class="wsi-ideas" aria-labelledby="wsi-ideas-h">
+    <h2 id="wsi-ideas-h">Ideas</h2>
+    <ul>
+      {ideas.map((idea) => (
+        <li>
+          {idea.href ? (
+            <a class="wsi-title" href={idea.href}>{idea.title}</a>
+          ) : (
+            <span class="wsi-title">{idea.title}</span>
+          )}
+          <span class="wsi-q">{idea.question}</span>
+          <span class="wsi-status">{idea.status}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <p class="wsi-back"><a href="/experiments">&larr; All experiments</a></p>
+</BaseLayout>
+
+<style>
+  .wsi-eyebrow {
+    margin: 0 0 0.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-ink-soft);
+  }
+  .lede + .lede { margin-top: var(--space-2); }
+  .wsi-ideas { margin-top: var(--space-4); }
+  .wsi-ideas h2 {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-ink-soft);
+    font-family: inherit;
+    font-weight: 400;
+  }
+  .wsi-ideas ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--color-border); }
+  .wsi-ideas li {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.25rem 1rem;
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .wsi-title { font-family: var(--font-serif); font-size: 1.375rem; color: var(--color-ink); }
+  a.wsi-title:hover { color: var(--color-accent); }
+  .wsi-q { grid-column: 1; color: var(--color-ink-soft); }
+  .wsi-status {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-ink-soft);
+    border: 1px solid var(--color-border);
+    padding: 0.2rem 0.5rem;
+    white-space: nowrap;
+  }
+  .wsi-back { margin-top: var(--space-4); }
+</style>
