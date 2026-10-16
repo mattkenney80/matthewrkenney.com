@@ -43,9 +43,11 @@ const sourceUrl = (n: number) => idea.sources.find((s: any) => s.n === n)?.url;
       </div>
 
       <div class="isl-scroll" id="isl-scroll">
-        <svg id="isl-map" viewBox="0 0 1000 410" aria-hidden="true"></svg>
+        <svg id="isl-map" viewBox="0 0 1000 440" aria-hidden="true"></svg>
       </div>
 
+      <div class="isl-lower">
+      <div>
       <div class="isl-slider">
         <label for="isl-range" class="isl-now" id="isl-now">{first.year} &middot; {first.short}</label>
         <div class="isl-track">
@@ -66,11 +68,21 @@ const sourceUrl = (n: number) => idea.sources.find((s: any) => s.n === n)?.url;
         </div>
         <div class="isl-ends" aria-hidden="true"><span>{first.year}</span><span>{last.year}</span></div>
       </div>
-      <p class="isl-hint">
-        Slide through time, drag the blue idea across the map, or use the arrow keys. Lanes are kinds
-        of institutions. Solid lines hand the idea straight to the next carrier; dashed lines are a
-        push in parallel.
+        <p class="isl-hint">
+        Slide through time, drag the blue idea across the map, or use the arrow keys. Each bubble is
+        sized by the pay ratio in that year: a ~ marks an estimate and ? means no data yet. Lanes are
+        kinds of institutions. Solid lines hand the idea straight to the next carrier; dashed lines are
+        a push in parallel.
       </p>
+      </div>
+
+      <div class="isl-meter" aria-live="polite">
+        <p class="isl-meter-n" id="isl-meter-n">?</p>
+        <p class="isl-meter-cap" id="isl-meter-cap"></p>
+        <div class="isl-dots" id="isl-dots" aria-hidden="true"></div>
+        <p class="isl-meter-key"><i></i> one typical worker's pay</p>
+      </div>
+      </div>
     </section>
 
     <article class="isl-card" id="isl-card" aria-live="polite"></article>
@@ -154,6 +166,33 @@ const sourceUrl = (n: number) => idea.sources.find((s: any) => s.n === n)?.url;
   #isl-map .edge.on { stroke: var(--idea); stroke-width: 2.5; }
   #isl-map text { font-family: inherit; }
 
+
+  /* station bubbles: size and number show the outcome in that year */
+  #isl-map .bubble { fill: #fff; stroke-width: 2.5; transition: fill 0.25s ease; }
+  #isl-map .bubble-n { font-weight: 700; fill: var(--idea); font-variant-numeric: tabular-nums; pointer-events: none; transition: fill 0.25s ease; }
+  #isl-map .station.on .bubble { fill: var(--idea); }
+  #isl-map .bubble-n.on { fill: #fff; }
+  #isl-map .bubble-n.nd, #isl-map .bubble-n.nd.on { fill: var(--color-ink-soft); }
+  #isl-map .station.est .bubble { stroke-dasharray: 3 2.5; }
+  #isl-map .station.no-data .bubble { fill: #fff; stroke-dasharray: 2 3; }
+  #isl-map .halo { fill: none; stroke: var(--idea); stroke-width: 3; opacity: 0; transition: opacity 0.25s ease; }
+  #isl-map .station.is-current .halo { opacity: 0.35; }
+  #isl-map .station:hover .bubble { stroke-width: 3.5; }
+
+  .isl-lower { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: var(--space-3) var(--space-4); align-items: start; margin-top: var(--space-2); }
+  @media (max-width: 760px) { .isl-lower { grid-template-columns: minmax(0, 1fr); } }
+  .isl-lower .isl-slider { margin-top: 0; }
+  .isl-meter { border-left: 3px solid var(--idea); padding-left: var(--space-2); }
+  @media (max-width: 760px) { .isl-meter { border-left: 0; border-top: 3px solid var(--idea); padding: var(--space-2) 0 0; } }
+  .isl-meter-n { margin: 0; font-family: var(--font-serif); font-size: clamp(3rem, 8vw, 4.5rem); line-height: 0.95; color: var(--idea); font-variant-numeric: tabular-nums; }
+  .isl-meter-n.est { opacity: 0.75; }
+  .isl-meter-cap { margin: 0.35rem 0 0.75rem; font-size: 0.95rem; min-height: 2.9em; }
+  .isl-dots { display: grid; grid-template-columns: repeat(30, minmax(0, 1fr)); gap: 2px; max-width: 18rem; }
+  .isl-dots i { display: block; aspect-ratio: 1; background: var(--color-border); transition: background 0.15s ease; }
+  .isl-dots i.on { background: var(--idea); }
+  .isl-meter-key { margin: 0.5rem 0 0; font-size: 0.75rem; color: var(--color-ink-soft); display: flex; align-items: center; gap: 0.4rem; }
+  .isl-meter-key i { display: inline-block; width: 0.55rem; height: 0.55rem; background: var(--idea); }
+  @media (prefers-reduced-motion: reduce) { #isl-map .bubble, #isl-map .halo, .isl-dots i { transition: none; } }
   .isl-slider { margin-top: var(--space-2); }
   .isl-now { display: block; font-family: var(--font-serif); font-size: 1.1rem; margin-bottom: 0.3rem; }
   .isl-track { position: relative; }
