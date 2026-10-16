@@ -27,12 +27,12 @@ const sourceNo = (c: any) => Number(/source (\d+)/i.exec(c.status)?.[1]) || null
 const sourceUrl = (n: number) => idea.sources.find((s: any) => s.n === n)?.url;
 ---
 
-<BaseLayout title={`Who sold us ${idea.title}?`} description={idea.question} wide>
+<BaseLayout title={idea.headline ?? `Who sold us ${idea.title}?`} description={idea.question} wide>
   <p class="isl-eyebrow"><a href="/experiments/who-sold-us-this-idea">Who Sold Us This Idea?</a> &middot; {idea.title}</p>
-  <h1>Who sold us <em>{idea.title}</em>?</h1>
+  {idea.headline ? <h1>{idea.headline}</h1> : <h1>Who sold us <em>{idea.title}</em>?</h1>}
   <p class="lede">{idea.intro ?? idea.question}</p>
 
-  <div class="isl" id="isl" style={`--lane-consult:#7a4fb0;--lane-academy:#1f7a5a;--lane-media:#a3601b;--lane-gov:#9b2f3f;--lane-board:#2d5f8f;--lane-think:#5b6b2a;--lane-public:#6b6b6b`}>
+  <div class="isl" id="isl" style={`--lane-consult:#7a4fb0;--lane-academy:#1f7a5a;--lane-media:#a3601b;--lane-gov:#9b2f3f;--lane-board:#2d5f8f;--lane-think:#5b6b2a;--lane-public:#6b6b6b;--lane-law:#7a4fb0;--lane-court:#a3601b;--lane-money:#2d5f8f`}>
     <section class="isl-stage" aria-labelledby="isl-who">
       <div class="isl-stage-head">
         <h2 id="isl-who">Who thought of the idea?</h2>
@@ -70,9 +70,9 @@ const sourceUrl = (n: number) => idea.sources.find((s: any) => s.n === n)?.url;
       </div>
         <p class="isl-hint">
         Slide through time, drag the blue idea across the map, or use the arrow keys. Each bubble is
-        sized by the pay ratio in that year: a ~ marks an estimate and ? means no data yet. Lanes are
-        kinds of institutions. Solid lines hand the idea straight to the next carrier; dashed lines are
-        a push in parallel.
+        sized by the figure in the chart below at that point: a ~ marks an estimate and ? means no data
+        yet. Lanes are kinds of institutions. Solid lines hand the idea straight to the next carrier;
+        dashed lines are a push in parallel.
       </p>
       </div>
 
@@ -80,7 +80,7 @@ const sourceUrl = (n: number) => idea.sources.find((s: any) => s.n === n)?.url;
         <p class="isl-meter-n" id="isl-meter-n">?</p>
         <p class="isl-meter-cap" id="isl-meter-cap"></p>
         <div class="isl-dots" id="isl-dots" aria-hidden="true"></div>
-        <p class="isl-meter-key"><i></i> one typical worker's pay</p>
+        <p class="isl-meter-key"><i></i> {idea.chart?.dotLabel ?? "one unit"}</p>
       </div>
       </div>
     </section>
@@ -100,6 +100,29 @@ const sourceUrl = (n: number) => idea.sources.find((s: any) => s.n === n)?.url;
       {idea.findings.map((f: any) => <p><span>{f.title}</span>{f.text}</p>)}
     </section>
   )}
+
+  {idea.context?.length > 0 && <h2 class="isl-ctx-h">Context: the research notes</h2>}
+  {idea.context?.map((sec: any, si: number) => (
+    <section class="pn-sec" aria-labelledby={`ctx-${si}`}>
+      <h2 id={`ctx-${si}`}>{sec.title}</h2>
+      <ol class="pn-list">
+        {sec.items.map((it: any) => (
+          <li>
+            <span class="pn-year">{it.year}</span>
+            <div>
+              <b>{it.who}</b>
+              <p>
+                {it.text}{" "}
+                <span class="pn-src">
+                  {it.src.map(([label, url]: [string, string], i: number) => <>{i > 0 && ", "}<a href={url} target="_blank" rel="noopener">{label}</a></>)}
+                </span>
+              </p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+  ))}
 
   {counterpoints.length > 0 && (
     <section class="isl-counter" aria-labelledby="isl-counter-h">
@@ -230,4 +253,15 @@ const sourceUrl = (n: number) => idea.sources.find((s: any) => s.n === n)?.url;
   .isl-sources li { break-inside: avoid; margin-bottom: 0.4rem; }
   .isl-sources li:target { background: rgba(35, 64, 200, 0.08); }
   .isl-back { margin-top: var(--space-4); }
+  .isl-ctx-h { margin-top: var(--space-5); padding-top: var(--space-3); border-top: 3px solid var(--color-ink); font-size: 1.5rem; }
+  .pn-sec { margin-top: var(--space-4); max-width: 46rem; }
+  .pn-sec h2 { font-size: 1.25rem; }
+  .pn-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--color-border); }
+  .pn-list li { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: var(--space-2); padding: var(--space-2) 0; border-bottom: 1px solid var(--color-border); }
+  @media (max-width: 30rem) { .pn-list li { grid-template-columns: minmax(0, 1fr); gap: 0.25rem; } }
+  .pn-year { font-family: var(--font-serif); color: #2340c8; font-variant-numeric: tabular-nums; }
+  .pn-list p { margin: 0.2rem 0 0; }
+  .pn-src { font-size: 0.85rem; color: var(--color-ink-soft); }
+  .pn-src a { color: inherit; }
+
 </style>

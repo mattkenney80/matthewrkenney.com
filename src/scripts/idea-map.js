@@ -11,9 +11,25 @@ const X0 = 120, X1 = 985;
 const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 const S = [...IDEA.stations].sort((a, b) => a.year - b.year);
-const Y0 = Math.floor(S[0].year / 10) * 10 - 4;
-const Y1 = S[S.length - 1].year + 7; // room for the last, largest bubble
-const X = (y) => X0 + ((y - Y0) / (Y1 - Y0)) * (X1 - X0);
+// An idea can stretch its busy decades with a piecewise time scale: [[year, 0..1], ...].
+const TS = IDEA.timeScale ?? null;
+const Y0 = TS ? TS[0][0] : Math.floor(S[0].year / 10) * 10 - 4;
+const Y1 = TS ? TS[TS.length - 1][0] : S[S.length - 1].year + 7; // room for the last, largest bubble
+function frac(y) {
+  if (!TS) return (y - Y0) / (Y1 - Y0);
+  for (let i = 1; i < TS.length; i++) {
+    const [ya, fa] = TS[i - 1], [yb, fb] = TS[i];
+    if (y <= yb || i === TS.length - 1) return fa + ((y - ya) / (yb - ya)) * (fb - fa);
+  }
+}
+function unfrac(f) {
+  if (!TS) return Y0 + f * (Y1 - Y0);
+  for (let i = 1; i < TS.length; i++) {
+    const [ya, fa] = TS[i - 1], [yb, fb] = TS[i];
+    if (f <= fb || i === TS.length - 1) return ya + ((f - fa) / (fb - fa)) * (yb - ya);
+  }
+}
+const X = (y) => X0 + frac(y) * (X1 - X0);
 const laneOf = (id) => IDEA.lanes.find((l) => l.id === id);
 const laneColor = (id) => `var(--lane-${id}, var(--color-ink-soft))`;
 for (const s of S) { s.x = X(s.year); s.y = laneOf(s.lane).y + (s.yOff || 0); }
@@ -22,11 +38,21 @@ const sourceUrl = (n) => IDEA.sources.find((s) => s.n === n)?.url ?? "#";
 const R = IDEA.ratio;
 const unit = IDEA.chart?.unit ?? "";
 const badge = IDEA.chart?.badge ?? unit;
-// The outcome series is annual, so any moment in a year reads that year's figure.
-const pointAt = (y) => R.find((r) => r.year === Math.round(y)) ?? null;
-const fmt = (p) => `${p.approximate ? "~" : ""}${Math.round(p.value)}${badge}`;
-// A station's bubble grows with the outcome in its year (area roughly tracks the value).
-const bubbleR = (p) => (p ? 8 + Math.sqrt(p.value) * 1.1 : 10);
+const prefix = IDEA.chart?.prefix ?? "";
+const decimals = IDEA.chart?.decimals ?? 0;
+// The series may be annual (cycle 1) or per election (cycle 2 or 4). Any moment reads the
+// figure for its own year, or for the next election when the series is per election.
+const cycle = IDEA.chart?.cycle ?? 1;
+const pointAt = (y) => {
+  const yr = Math.round(y);
+  const target = cycle > 1 ? Math.ceil(yr / cycle) * cycle : yr;
+  return R.find((r) => r.year === target) ?? null;
+};
+const num = (v) => v.toFixed(decimals);
+const fmt = (p) => `${p.approximate ? "~" : ""}${prefix}${num(p.value)}${badge}`;
+const VMAX = Math.max(...R.map((r) => r.value));
+// A station's bubble grows with the outcome in its year (area tracks the value).
+const bubbleR = (p) => (p ? 9 + Math.sqrt(p.value / VMAX) * (IDEA.chart?.bubbleGrow ?? 19) : 10);
 
 const $ = (id) => document.getElementById(id);
 const map = $("isl-map"), chart = $("isl-chart"), range = $("isl-range"), now = $("isl-now");
@@ -75,14 +101,15 @@ const nodeEls = S.map((s) => {
   el("text", { x: s.x, y: up ? s.y - r - 18 : s.y + r + 28, class: "node-year", "text-anchor": "middle" }, g).textContent = s.year;
   el("text", { x: s.x, y: up ? s.y - r - 6 : s.y + r + 14, class: "node-name", "text-anchor": "middle" }, g).textContent = s.short;
   const tip = el("title", {}, g);
-  tip.textContent = p ? `${s.year}: ${p.approximate ? "about " : ""}${Math.round(p.value)}${unit}` : `${s.year}: before the data begins in ${R[0].year}`;
+  tip.textContent = p ? `${s.year}: ${p.approximate ? "about " : ""}${prefix}${num(p.value)}${unit}${p.year !== s.year ? ` (${p.year})` : ""}` : `${s.year}: before the data begins in ${R[0].year}`;
   g.addEventListener("click", () => animateTo(s.year));
   return { g, bub, s };
 });
 const token = el("g", { class: "token" }, map);
 el("circle", { r: 20, fill: "var(--idea-soft)" }, token);
 const tokenCore = el("circle", { r: 6, fill: "var(--idea)", stroke: "#fff", "stroke-width": 2.5 }, token);
-el("text", { y: -26, "text-anchor": "middle", class: "lane-label", fill: "var(--idea)" }, token).textContent = "the idea";
+const tokenLabel = el("text", { y: -26, "text-anchor": "middle", class: "lane-label", fill: "var(--idea)" }, token);
+tokenLabel.textContent = "the idea";
 
 // Bubble numbers sit above the token so the idea never hides the figure it is passing.
 const numLayer = el("g", { "pointer-events": "none" }, map);
@@ -93,43 +120,52 @@ for (const n of numbers) {
 }
 
 // ---- chart --------------------------------------------------------------------------------
+// The chart can zoom to the years the data covers; its cursor hides outside them.
+const CX0 = IDEA.chart?.xFrom ?? Y0;
+const XC = (y) => X0 + ((y - CX0) / (Y1 - CX0)) * (X1 - X0);
+const chartTicks = [];
+const tickStep = Y1 - CX0 > 60 ? 20 : Y1 - CX0 > 30 ? 10 : 4;
+for (let y = Math.ceil(CX0 / tickStep) * tickStep; y <= Y1 - 2; y += tickStep) chartTicks.push(y);
 const CY0 = 200, CY1 = 20;
 const top = Math.max(...R.map((r) => r.value));
-const stepV = top > 200 ? 100 : top > 50 ? 20 : 10;
+const stepV = IDEA.chart?.step ?? (top > 200 ? 100 : top > 50 ? 20 : 10);
 const RMAX = Math.ceil((top * 1.05) / stepV) * stepV;
 const CY = (v) => CY0 - (v / RMAX) * (CY0 - CY1);
-for (let v = 0; v <= RMAX; v += stepV) {
+for (let v = 0; v <= RMAX + 1e-9; v += stepV) {
   el("line", { x1: X0, x2: X1, y1: CY(v), y2: CY(v), stroke: "var(--color-border)", "stroke-width": 1 }, chart);
-  el("text", { x: X0 - 10, y: CY(v) + 4, class: "axis", "text-anchor": "end" }, chart).textContent = v + unit;
+  el("text", { x: X0 - 10, y: CY(v) + 4, class: "axis", "text-anchor": "end" }, chart).textContent = `${prefix}${+v.toFixed(2)}${unit}`;
 }
-for (const y of decades) el("text", { x: X(y), y: 226, class: "axis", "text-anchor": "middle" }, chart).textContent = y;
+for (const y of chartTicks) el("text", { x: XC(y), y: 226, class: "axis", "text-anchor": "middle" }, chart).textContent = y;
 for (let i = 1; i < R.length; i++) {
-  const a = R[i - 1], b = R[i], est = a.approximate || b.approximate || b.year - a.year > 5;
+  const a = R[i - 1], b = R[i], est = a.approximate || b.approximate || b.year - a.year > Math.max(5, cycle);
   el("line", {
-    x1: X(a.year), y1: CY(a.value), x2: X(b.year), y2: CY(b.value),
+    x1: XC(a.year), y1: CY(a.value), x2: XC(b.year), y2: CY(b.value),
     stroke: "var(--color-ink)", "stroke-width": 2, "stroke-dasharray": est ? "3 4" : "none", opacity: est ? 0.5 : 1,
   }, chart);
 }
-for (const r of R) el("circle", { cx: X(r.year), cy: CY(r.value), r: 2.8, fill: r.approximate ? "#fff" : "var(--color-ink)", stroke: "var(--color-ink)", "stroke-width": 1.4 }, chart);
+for (const r of R) el("circle", { cx: XC(r.year), cy: CY(r.value), r: 2.8, fill: r.approximate ? "#fff" : "var(--color-ink)", stroke: "var(--color-ink)", "stroke-width": 1.4 }, chart);
 const cursor = el("line", { y1: CY1 - 8, y2: CY0, stroke: "var(--idea)", "stroke-width": 2 }, chart);
 const cursorDot = el("circle", { r: 6, fill: "var(--idea)" }, chart);
-// ---- meter: one square per typical worker ------------------------------------------------
-const DOTS = Math.ceil(Math.max(...R.map((r) => r.value)) / 10) * 10;
+// ---- meter: one square per unit of the outcome (a worker's pay, $100 million, ...) --------
+const dotUnit = IDEA.chart?.dotUnit ?? 1;
+const DOTS = Math.ceil(VMAX / dotUnit / 10) * 10;
 const dots = Array.from({ length: DOTS }, () => dotsEl.appendChild(document.createElement("i")));
 let lit = -1;
 function drawMeter(y) {
   const p = pointAt(y);
-  const n = p ? Math.round(p.value) : 0;
+  const n = p ? Math.round(p.value / dotUnit) : 0;
   if (n !== lit) {
     for (let i = 0; i < DOTS; i++) dots[i].className = i < n ? "on" : "";
     lit = n;
   }
-  meterN.textContent = p ? `${p.approximate ? "~" : ""}${n}${badge}` : "?";
+  meterN.textContent = p ? fmt(p) : "?";
   meterN.classList.toggle("est", !!p?.approximate);
   const tpl = IDEA.chart?.meter ?? "{year}: {n}";
   meterCap.textContent = p
-    ? tpl.replace("{year}", String(Math.round(y))).replace("{n}", `${p.approximate ? "about " : ""}${n}`) + (p.approximate ? " This year is an estimate." : "")
-    : `${Math.round(y)}: no data yet. The series starts in ${R[0].year} at ${Math.round(R[0].value)}${badge}.`;
+    ? tpl.replace("{year}", String(p.year))
+        .replace("{n}", `${p.approximate ? "about " : ""}${num(p.value)}`)
+        .replace("{v}", `${p.approximate ? "about " : ""}${prefix}${num(p.value)}${badge}`) + (p.approximate ? ` ${IDEA.chart?.estimateNote ?? "This year is an estimate."}` : "")
+    : `${Math.round(y)}: no data yet. The series starts in ${R[0].year} at ${fmt(R[0])}.`;
 }
 
 // ---- card ----------------------------------------------------------------------------------
@@ -177,7 +213,9 @@ function render() {
   const [tx, ty] = posAt(year);
   token.setAttribute("transform", `translate(${tx},${ty})`);
   // Parked on a station, the bubble itself is the idea; hide the dot so the figure reads.
-  tokenCore.setAttribute("opacity", S.some((s) => Math.abs(s.year - year) < 0.35) ? 0 : 1);
+  const parked = S.some((s) => Math.abs(s.year - year) < 0.35);
+  tokenCore.setAttribute("opacity", parked ? 0 : 1);
+  tokenLabel.setAttribute("opacity", parked ? 0 : 1);
   const pts = S.filter((s) => s.year <= year).map((s) => `${s.x},${s.y}`);
   pts.push(`${tx},${ty}`);
   trail.setAttribute("points", pts.join(" "));
@@ -195,8 +233,10 @@ function render() {
   range.value = String(year);
   range.setAttribute("aria-valuetext", `${active.year}, ${active.title}`);
 
-  cursor.setAttribute("x1", X(year));
-  cursor.setAttribute("x2", X(year));
+  const inChart = year >= CX0;
+  cursor.setAttribute("opacity", inChart ? 1 : 0);
+  cursor.setAttribute("x1", XC(Math.max(year, CX0)));
+  cursor.setAttribute("x2", XC(Math.max(year, CX0)));
   const pt = pointAt(year);
   readout.replaceChildren();
   if (!pt) {
@@ -204,9 +244,9 @@ function render() {
     readout.append(h("b", null, "–"), `${Math.round(year)}: before the data begins in ${R[0].year}`);
   } else {
     cursorDot.setAttribute("opacity", 1);
-    cursorDot.setAttribute("cx", X(pt.year));
+    cursorDot.setAttribute("cx", XC(pt.year));
     cursorDot.setAttribute("cy", CY(pt.value));
-    readout.append(h("b", null, `${pt.approximate ? "about " : ""}${Math.round(pt.value)}${unit}`), `${IDEA.chart?.label ?? ""}, ${pt.year}`);
+    readout.append(h("b", null, `${pt.approximate ? "about " : ""}${prefix}${num(pt.value)}${unit}`), `${IDEA.chart?.label ?? ""}, ${pt.year}`);
   }
   drawMeter(year);
 
@@ -242,7 +282,7 @@ function svgYear(evt) {
   const pt = map.createSVGPoint();
   pt.x = evt.clientX; pt.y = evt.clientY;
   const p = pt.matrixTransform(map.getScreenCTM().inverse());
-  return Math.max(S[0].year, Math.min(S[S.length - 1].year, Y0 + ((p.x - X0) / (X1 - X0)) * (Y1 - Y0)));
+  return Math.max(S[0].year, Math.min(S[S.length - 1].year, unfrac((p.x - X0) / (X1 - X0))));
 }
 let dragging = false;
 map.addEventListener("pointerdown", (e) => {

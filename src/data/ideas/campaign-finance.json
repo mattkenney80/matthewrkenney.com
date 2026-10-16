@@ -1,0 +1,944 @@
+{
+  "id": "campaign-finance",
+  "title": "Campaign Finance Superpacs",
+  "headline": "Campaign Finance Superpacs",
+  "question": "How did “money is speech” go from a 1971 think tank paper to billion-dollar campaigns?",
+  "status": "draft-v1",
+  "intro": "In 1971 a Yale law professor writing for the American Enterprise Institute argued that spending money on politics is speech. Over the next 39 years the courts agreed, one case at a time, until 2010 gave us the super PAC. Move the idea through the people who carried it, and watch what presidential campaigns spent.",
+  "lanes": [
+    {
+      "id": "think",
+      "label": "Think tanks",
+      "y": 58
+    },
+    {
+      "id": "law",
+      "label": "Lawyers, activists",
+      "y": 128
+    },
+    {
+      "id": "court",
+      "label": "Courts",
+      "y": 198
+    },
+    {
+      "id": "gov",
+      "label": "Congress",
+      "y": 268
+    },
+    {
+      "id": "money",
+      "label": "Business, PACs",
+      "y": 352
+    }
+  ],
+  "stations": [
+    {
+      "id": "tillman",
+      "year": 1907,
+      "lane": "gov",
+      "short": "Tillman Act",
+      "lab": "below",
+      "title": "Keep corporate money out",
+      "who": "Congress",
+      "where": "The Tillman Act",
+      "what": "Bans corporate contributions to federal campaigns.",
+      "pitch": "Corporate money corrupts elections, so keep it out of them.",
+      "spread": "The first federal limit. Later laws build on it for most of the century.",
+      "sources": [
+        1
+      ]
+    },
+    {
+      "id": "taft",
+      "year": 1947,
+      "lane": "gov",
+      "short": "Taft-Hartley",
+      "lab": "above",
+      "title": "Unions too",
+      "who": "Congress, over President Truman’s veto",
+      "where": "The Taft-Hartley Act",
+      "what": "Bans union contributions and restricts corporate and union spending on federal elections.",
+      "pitch": "Neither unions nor corporations should spend on federal elections.",
+      "spread": "Restrictions on corporate and union election spending hold, in one form or another, until 2010.",
+      "sources": [
+        2
+      ]
+    },
+    {
+      "id": "powell",
+      "year": 1971,
+      "lane": "money",
+      "short": "Powell memo",
+      "lab": "above",
+      "title": "Business, get organized",
+      "who": "Lewis Powell, corporate lawyer",
+      "where": "A memo for the U.S. Chamber of Commerce",
+      "what": "“Attack on the American Free Enterprise System” urges business to organize politically and in the courts.",
+      "pitch": "Business should fight for its interests in politics and in court.",
+      "spread": "Powell is nominated to the Supreme Court later that year. Critics see the memo behind his 1978 Bellotti opinion; that link is their interpretation.",
+      "sources": [
+        12
+      ]
+    },
+    {
+      "id": "aei",
+      "year": 1973,
+      "lane": "think",
+      "short": "AEI papers",
+      "lab": "above",
+      "title": "Money is speech",
+      "who": "Ralph K. Winter Jr., Yale Law School, with John R. Bolton",
+      "where": "American Enterprise Institute, papers of 1971 and 1973",
+      "what": "“Money, Politics and the First Amendment” (1971) and Campaign Financing and Political Freedom (1973), written against the limits Congress was passing.",
+      "pitch": "A limit on campaign money is a limit on political speech.",
+      "spread": "Winter takes the argument to court as lead lawyer in Buckley. Bolton later calls him the intellectual father of the arguments the Court accepted.",
+      "sources": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "feca",
+      "year": 1974,
+      "lane": "gov",
+      "short": "FECA, after Watergate",
+      "lab": "below",
+      "title": "Cap the money",
+      "who": "Congress; President Gerald Ford",
+      "where": "The Federal Election Campaign Act of 1971 and its 1974 amendments",
+      "what": "Caps gifts at $1,000 per person and $5,000 per committee for each election, limits spending, and creates the Federal Election Commission.",
+      "pitch": "After Watergate, put a ceiling on campaign money.",
+      "spread": "Ford signs the amendments on October 15, 1974. The lawsuit against them is filed on January 2, 1975.",
+      "sources": [
+        1,
+        3,
+        8
+      ]
+    },
+    {
+      "id": "buckley",
+      "year": 1976,
+      "lane": "court",
+      "short": "Buckley v. Valeo",
+      "lab": "above",
+      "title": "The Court agrees, halfway",
+      "who": "Sen. James Buckley, Eugene McCarthy, donor Stewart Mott and a left-right coalition",
+      "where": "Supreme Court, argued by Ralph Winter",
+      "what": "Limits on spending are struck down; limits on contributions to candidates and disclosure survive.",
+      "pitch": "Spending money on elections is political speech.",
+      "spread": "The plaintiffs ran from the American Conservative Union to the Socialist Workers Party. Every later campaign finance case builds on this one.",
+      "sources": [
+        8,
+        9,
+        10,
+        28
+      ]
+    },
+    {
+      "id": "bellotti",
+      "year": 1978,
+      "lane": "court",
+      "short": "Bellotti",
+      "lab": "below",
+      "yOff": 38,
+      "title": "Corporations can speak",
+      "who": "Justice Lewis Powell",
+      "where": "First National Bank of Boston v. Bellotti",
+      "what": "Corporations may spend money on ballot questions.",
+      "pitch": "What matters is the speech, not who is speaking.",
+      "spread": "Justice Rehnquist dissents that the traits that make corporations useful in business could pose special dangers in politics.",
+      "sources": [
+        11
+      ]
+    },
+    {
+      "id": "ij",
+      "year": 1991,
+      "lane": "law",
+      "short": "Institute for Justice",
+      "lab": "above",
+      "title": "A law firm for the idea",
+      "who": "Chip Mellor and Clint Bolick; Charles Koch",
+      "where": "Institute for Justice, a libertarian public interest law firm",
+      "what": "Founded with Koch seed money of up to $500,000 a year for three years.",
+      "pitch": "Win liberty in court, one case at a time.",
+      "spread": "Files a brief for Citizens United and is co-counsel in SpeechNow.org v. FEC, the case that creates super PACs.",
+      "sources": [
+        13,
+        16,
+        19
+      ]
+    },
+    {
+      "id": "smith",
+      "year": 2001,
+      "lane": "think",
+      "short": "Bradley Smith",
+      "lab": "below",
+      "title": "Unfree Speech",
+      "who": "Bradley A. Smith",
+      "where": "Unfree Speech: The Folly of Campaign Finance Reform (Princeton University Press)",
+      "what": "A book arguing that campaign finance limits do more harm than good.",
+      "pitch": "There is little proof that money corrupts politics, and reform makes things worse.",
+      "spread": "Smith serves on and chairs the FEC, then founds the Center for Competitive Politics in 2005.",
+      "sources": [
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "id": "bcra",
+      "year": 2002,
+      "lane": "gov",
+      "short": "McCain-Feingold",
+      "lab": "above",
+      "title": "Close the loopholes",
+      "who": "Sens. John McCain and Russ Feingold; Congress",
+      "where": "The Bipartisan Campaign Reform Act",
+      "what": "Restricts corporate-funded ads that name candidates close to an election.",
+      "pitch": "Stop corporate money from coming in through the side door.",
+      "spread": "In 2008 the law blocks Hillary: The Movie. The fight over that film becomes Citizens United.",
+      "sources": [
+        17,
+        18
+      ]
+    },
+    {
+      "id": "ccp",
+      "year": 2005,
+      "lane": "law",
+      "short": "Competitive Politics",
+      "lab": "below",
+      "title": "A group to end the limits",
+      "who": "Bradley Smith",
+      "where": "Center for Competitive Politics, now the Institute for Free Speech",
+      "what": "A group founded to fight contribution and spending limits.",
+      "pitch": "Political speech should be free of limits.",
+      "spread": "Co-counsel with the Institute for Justice in SpeechNow.org v. FEC.",
+      "sources": [
+        16
+      ]
+    },
+    {
+      "id": "bossie",
+      "year": 2008,
+      "lane": "law",
+      "short": "Hillary: The Movie",
+      "lab": "above",
+      "title": "The test case",
+      "who": "David Bossie, Citizens United; lawyer James Bopp Jr.",
+      "where": "Federal court in Washington",
+      "what": "A film attacking Hillary Clinton is barred as campaign advertising under McCain-Feingold. Citizens United sues and loses.",
+      "pitch": "A documentary is not a campaign ad.",
+      "spread": "Ted Olson replaces Bopp at the Supreme Court and frames it as a First Amendment case.",
+      "sources": [
+        17,
+        18
+      ]
+    },
+    {
+      "id": "cu",
+      "year": 2010,
+      "lane": "court",
+      "short": "Citizens United",
+      "lab": "above",
+      "title": "No limit on corporate spending",
+      "who": "Justice Anthony Kennedy, for a 5 to 4 Court",
+      "where": "Citizens United v. FEC, January 2010",
+      "what": "Corporations and unions may spend without limit on independent political ads.",
+      "pitch": "The government may not limit political speech because the speaker is a corporation.",
+      "spread": "Cato and the Institute for Justice file briefs for Citizens United; Senators McCain and Feingold file for the FEC.",
+      "sources": [
+        19,
+        20
+      ]
+    },
+    {
+      "id": "speechnow",
+      "year": 2010,
+      "lane": "court",
+      "short": "SpeechNow",
+      "lab": "below",
+      "yOff": 46,
+      "title": "The super PAC is born",
+      "who": "David Keating, SpeechNow.org; the Institute for Justice and the Center for Competitive Politics",
+      "where": "D.C. Circuit, 9 to 0, March 2010",
+      "what": "Groups that only spend independently may raise unlimited money.",
+      "pitch": "If independent spending cannot corrupt, neither can giving to it.",
+      "spread": "The Supreme Court declines to review. Groups modeled on SpeechNow multiply.",
+      "sources": [
+        16,
+        21
+      ]
+    },
+    {
+      "id": "crossroads",
+      "year": 2010,
+      "lane": "money",
+      "short": "Crossroads",
+      "lab": "above",
+      "title": "The first big machine",
+      "who": "Karl Rove and Ed Gillespie",
+      "where": "American Crossroads (super PAC) and Crossroads GPS (nonprofit)",
+      "what": "A super PAC paired with a nonprofit that mostly keeps its donors secret.",
+      "pitch": "Use the new rules before anyone else does.",
+      "spread": "$123 million raised through 2011, 62 percent of it through the secret-donor arm.",
+      "sources": [
+        22
+      ]
+    },
+    {
+      "id": "mccutcheon",
+      "year": 2014,
+      "lane": "court",
+      "short": "McCutcheon",
+      "lab": "above",
+      "title": "No cap on a donor’s total",
+      "who": "Shaun McCutcheon and the RNC; Chief Justice John Roberts",
+      "where": "McCutcheon v. FEC, 5 to 4",
+      "what": "Strikes down the cap on how much one donor can give in total across candidates and parties.",
+      "pitch": "A cap on total giving is a cap on speech.",
+      "spread": "The biggest donors can give to as many candidates and committees as they like.",
+      "sources": [
+        23
+      ]
+    },
+    {
+      "id": "harris",
+      "year": 2024,
+      "lane": "money",
+      "short": "Harris vs. Trump",
+      "lab": "above",
+      "title": "Where it landed",
+      "who": "Kamala Harris and Donald Trump",
+      "where": "Federal Election Commission filings",
+      "what": "Harris for President raises and spends $1.175 billion. Trump’s main committee raises $496 million and spends $472 million.",
+      "pitch": "Whoever spends the most, wins.",
+      "spread": "Harris outspends Trump about two and a half to one on campaign committees, and loses. Outside super PACs, including Elon Musk’s, narrow the gap.",
+      "sources": [
+        24,
+        26,
+        27
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "tillman",
+      "to": "taft",
+      "kind": "handoff"
+    },
+    {
+      "from": "taft",
+      "to": "feca",
+      "kind": "handoff"
+    },
+    {
+      "from": "aei",
+      "to": "buckley",
+      "kind": "handoff"
+    },
+    {
+      "from": "feca",
+      "to": "buckley",
+      "kind": "handoff"
+    },
+    {
+      "from": "buckley",
+      "to": "bellotti",
+      "kind": "handoff"
+    },
+    {
+      "from": "powell",
+      "to": "bellotti",
+      "kind": "parallel"
+    },
+    {
+      "from": "bellotti",
+      "to": "cu",
+      "kind": "handoff"
+    },
+    {
+      "from": "aei",
+      "to": "smith",
+      "kind": "parallel"
+    },
+    {
+      "from": "smith",
+      "to": "ccp",
+      "kind": "handoff"
+    },
+    {
+      "from": "ij",
+      "to": "speechnow",
+      "kind": "handoff"
+    },
+    {
+      "from": "ccp",
+      "to": "speechnow",
+      "kind": "handoff"
+    },
+    {
+      "from": "bcra",
+      "to": "bossie",
+      "kind": "handoff"
+    },
+    {
+      "from": "bossie",
+      "to": "cu",
+      "kind": "handoff"
+    },
+    {
+      "from": "cu",
+      "to": "speechnow",
+      "kind": "handoff"
+    },
+    {
+      "from": "speechnow",
+      "to": "crossroads",
+      "kind": "handoff"
+    },
+    {
+      "from": "cu",
+      "to": "crossroads",
+      "kind": "parallel"
+    },
+    {
+      "from": "buckley",
+      "to": "mccutcheon",
+      "kind": "parallel"
+    },
+    {
+      "from": "crossroads",
+      "to": "harris",
+      "kind": "handoff"
+    },
+    {
+      "from": "mccutcheon",
+      "to": "harris",
+      "kind": "handoff"
+    }
+  ],
+  "ratio": [
+    {
+      "year": 1988,
+      "value": 0.381,
+      "approximate": false
+    },
+    {
+      "year": 1992,
+      "value": 0.347,
+      "approximate": false
+    },
+    {
+      "year": 1996,
+      "value": 0.478,
+      "approximate": false
+    },
+    {
+      "year": 2000,
+      "value": 0.613,
+      "approximate": false
+    },
+    {
+      "year": 2004,
+      "value": 0.892,
+      "approximate": false
+    },
+    {
+      "year": 2008,
+      "value": 1.77,
+      "approximate": false
+    },
+    {
+      "year": 2012,
+      "value": 1.406,
+      "approximate": false
+    },
+    {
+      "year": 2016,
+      "value": 1.529,
+      "approximate": false
+    },
+    {
+      "year": 2020,
+      "value": 4.059,
+      "approximate": false
+    },
+    {
+      "year": 2024,
+      "value": 1.953,
+      "approximate": true
+    }
+  ],
+  "chart": {
+    "title": "What presidential campaigns spent",
+    "prefix": "$",
+    "unit": "B",
+    "badge": "B",
+    "decimals": 1,
+    "cycle": 4,
+    "xFrom": 1984,
+    "step": 1,
+    "dotUnit": 0.05,
+    "dotLabel": "$50 million",
+    "label": "spent by all presidential candidates in the election",
+    "meter": "Presidential candidates spent {v} in the {year} election.",
+    "estimateNote": "Corrected: the FEC total counts the Biden and Harris committee twice and leaves out Trump’s main committee.",
+    "note": "Total spent by every presidential candidate’s campaign in each election, from the Federal Election Commission. This counts the candidates’ own committees only; super PACs and party spending come on top. The FEC’s 2024 total counts the shared Biden and Harris committee twice and leaves out Trump’s main committee, so 2024 is corrected here and drawn hollow. 2020 includes Michael Bloomberg’s self-funded primary run.",
+    "sources": [
+      25,
+      24
+    ],
+    "bubbleGrow": 12
+  },
+  "findings": [
+    {
+      "title": "The idea came first",
+      "text": "Winter’s argument for the American Enterprise Institute came in 1971, before the post-Watergate limits it attacked. It took the courts 39 years to get from there to the super PAC."
+    },
+    {
+      "title": "Left and right together",
+      "text": "Buckley’s plaintiffs ran from Eugene McCarthy, the antiwar Democrat, and the Socialist Workers Party to the American Conservative Union."
+    },
+    {
+      "title": "The money followed",
+      "text": "Presidential campaigns first passed $1 billion in 2008, by the FEC’s count, and spent $4.1 billion in 2020. That is the candidates alone, before super PACs."
+    }
+  ],
+  "counterpoints": [
+    {
+      "claim": "Spending money is how political speech reaches people. Citizens United began with a documentary about a candidate that the law barred from being shown.",
+      "who": "Citizens United and its supporters",
+      "status": "sourced, source 17"
+    },
+    {
+      "claim": "Super PACs must disclose their donors. The secret money runs through nonprofits like Crossroads GPS, which is a disclosure problem, not a super PAC problem.",
+      "who": "Center for Public Integrity reporting on Crossroads",
+      "status": "sourced, source 22"
+    },
+    {
+      "claim": "Money does not simply buy elections. In 2024 Harris’s campaign outspent Trump’s about two and a half to one, and lost.",
+      "who": "FEC committee totals",
+      "status": "sourced, source 24"
+    }
+  ],
+  "context": [
+    {
+      "title": "The first idea: limit money in politics",
+      "items": [
+        {
+          "year": "1907",
+          "who": "Congress, the Tillman Act",
+          "text": "Bans corporate contributions to federal campaigns.",
+          "src": [
+            [
+              "MTSU",
+              "https://firstamendment.mtsu.edu/article/federal-election-campaign-act-of-1971"
+            ]
+          ]
+        },
+        {
+          "year": "1947",
+          "who": "Congress, over President Truman's veto",
+          "text": "Taft-Hartley bans union contributions and restricts corporate and union election spending.",
+          "src": [
+            [
+              "New World Encyclopedia",
+              "https://www.newworldencyclopedia.org/entry/Taft-Hartley_Act"
+            ]
+          ]
+        },
+        {
+          "year": "1971",
+          "who": "Congress, the Federal Election Campaign Act",
+          "text": "Caps how much campaigns spend on advertising and expands disclosure.",
+          "src": [
+            [
+              "MTSU",
+              "https://firstamendment.mtsu.edu/article/federal-election-campaign-act-of-1971"
+            ]
+          ]
+        },
+        {
+          "year": "1974",
+          "who": "Congress after Watergate; President Gerald Ford",
+          "text": "Caps individual gifts at $1,000 per election and committee gifts at $5,000, limits spending, and creates the Federal Election Commission.",
+          "src": [
+            [
+              "FECA Amendments of 1974",
+              "https://en.wikipedia.org/wiki/Federal_Election_Campaign_Act_Amendments_of_1974"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The counter-idea: money is speech",
+      "items": [
+        {
+          "year": "1971",
+          "who": "Ralph K. Winter Jr., Yale Law School, for the American Enterprise Institute",
+          "text": "“Money, Politics and the First Amendment,” in an AEI volume arguing the constitutional case against limits.",
+          "src": [
+            [
+              "Catalog record",
+              "https://search.law.villanova.edu/Record/167089"
+            ]
+          ]
+        },
+        {
+          "year": "1973",
+          "who": "Ralph K. Winter Jr. with John R. Bolton, American Enterprise Institute",
+          "text": "Campaign Financing and Political Freedom, written against the limits Congress was passing. Bolton later called Winter the intellectual father of the arguments the Court accepted in Buckley.",
+          "src": [
+            [
+              "Catalog record",
+              "https://lawcat.berkeley.edu/record/1303214"
+            ],
+            [
+              "Econlib",
+              "https://www.econlib.org/ralph-k-winter-jr-rip/"
+            ],
+            [
+              "Election Law Blog",
+              "https://electionlawblog.org/?p=79389"
+            ]
+          ]
+        },
+        {
+          "year": "1975",
+          "who": "Sen. James Buckley, Eugene McCarthy, Stewart Mott, the New York Civil Liberties Union and others",
+          "text": "A left-right coalition, from the American Conservative Union to the Socialist Workers Party, sues to strike down the 1974 law. Winter argues it.",
+          "src": [
+            [
+              "Buckley v. Valeo",
+              "https://en.wikipedia.org/wiki/Buckley_v._Valeo"
+            ],
+            [
+              "Winter's account",
+              "https://openyls.law.yale.edu/entities/publication/b002747a-ea76-4efd-a056-5ad92ffc2f3f"
+            ]
+          ]
+        },
+        {
+          "year": "1976",
+          "who": "The Supreme Court, Buckley v. Valeo",
+          "text": "Spending money on elections is protected speech. Spending limits fall; limits on contributions to candidates and disclosure survive.",
+          "src": [
+            [
+              "Britannica",
+              "https://www.britannica.com/event/Buckley-v-Valeo"
+            ]
+          ]
+        },
+        {
+          "year": "1978",
+          "who": "Justice Lewis Powell, First National Bank of Boston v. Bellotti",
+          "text": "Corporations may spend on ballot questions. Seven years earlier Powell had written a memo urging the U.S. Chamber of Commerce to organize business politically and in the courts.",
+          "src": [
+            [
+              "Bellotti",
+              "https://en.wikipedia.org/wiki/First_National_Bank_of_Boston_v._Bellotti"
+            ],
+            [
+              "Washington Monthly",
+              "https://washingtonmonthly.com/2016/01/24/bucking-the-trends/"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "When it took off",
+      "items": [
+        {
+          "year": "1991",
+          "who": "Chip Mellor and Clint Bolick, Institute for Justice; Charles Koch",
+          "text": "A libertarian public interest law firm, started with Koch seed money. It later wins the case that creates super PACs.",
+          "src": [
+            [
+              "Philanthropy Roundtable",
+              "https://www.philanthropyroundtable.org/almanac/institute-for-justice/"
+            ]
+          ]
+        },
+        {
+          "year": "2001 to 2005",
+          "who": "Bradley Smith",
+          "text": "His book Unfree Speech argues limits do more harm than good. He chairs the Federal Election Commission, then founds the Center for Competitive Politics (now the Institute for Free Speech).",
+          "src": [
+            [
+              "Publishers Weekly",
+              "https://publishersweekly.com/978-0-691-07045-2"
+            ],
+            [
+              "Institute for Free Speech",
+              "https://www.ifs.org/wp-content/uploads/2018/03/2018-03-26_Issue-Brief_Wachob_SpeechNow.org-v-FEC-Protecting-The-First-Amendment-Rights-of-Americans.pdf"
+            ]
+          ]
+        },
+        {
+          "year": "2008",
+          "who": "David Bossie, Citizens United; lawyers James Bopp Jr. and Ted Olson",
+          "text": "Hillary: The Movie is blocked as campaign advertising under the McCain-Feingold law. The group sues.",
+          "src": [
+            [
+              "Reason",
+              "https://reason.com/2008/01/14/hillary-the-movie-the-lawsuit/"
+            ],
+            [
+              "CS Monitor",
+              "https://www.csmonitor.com/2008/0201/p03s01-ussc.html"
+            ]
+          ]
+        },
+        {
+          "year": "Jan 2010",
+          "who": "Justice Anthony Kennedy, Citizens United v. FEC (5 to 4)",
+          "text": "Corporations and unions may spend without limit on independent political ads. Cato and the Institute for Justice back Citizens United; Senators McCain and Feingold back the FEC.",
+          "src": [
+            [
+              "Cato brief",
+              "https://www.cato.org/legal-briefs/citizens-united-v-federal-election-commission"
+            ],
+            [
+              "McCain-Feingold brief",
+              "https://campaignlegal.org/document/citizens-united-v-fec-brief-filed-senators-mccain-feingold-et-al"
+            ]
+          ]
+        },
+        {
+          "year": "Mar 2010",
+          "who": "David Keating, SpeechNow.org; the Institute for Justice and Bradley Smith's center",
+          "text": "A federal appeals court rules 9 to 0 that groups spending independently can raise unlimited money. The super PAC is born.",
+          "src": [
+            [
+              "Institute for Justice",
+              "https://ij.org/press-release/speechnoworg-can-speak-now-federal-court-declares-contribution-limits-unconstitutional-and-enjoins-federal-election-commission/"
+            ]
+          ]
+        },
+        {
+          "year": "2010",
+          "who": "Karl Rove and Ed Gillespie",
+          "text": "American Crossroads, a super PAC, and Crossroads GPS, a nonprofit that mostly keeps its donors secret. Together they raise $123 million by the end of 2011.",
+          "src": [
+            [
+              "Center for Public Integrity",
+              "https://publicintegrity.org/politics/crossroads-political-machine-funded-mostly-by-secret-donors/"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "When it accelerated",
+      "items": [
+        {
+          "year": "2014",
+          "who": "Shaun McCutcheon and the RNC; Chief Justice John Roberts",
+          "text": "McCutcheon v. FEC (5 to 4) removes the cap on how much one donor can give in total across candidates and parties.",
+          "src": [
+            [
+              "Public Citizen",
+              "https://clpblog.citizen.org/supreme-court-strikes-down-aggregate-campaign-limits-under-first-amendment/"
+            ]
+          ]
+        },
+        {
+          "year": "2020 to 2024",
+          "who": "The cost of federal elections",
+          "text": "About $15.1 billion in 2020 and $8.9 billion in the 2022 midterms. OpenSecrets projected at least $15.9 billion for 2024, with outside groups on track to pass $5 billion.",
+          "src": [
+            [
+              "CNN via KRDO",
+              "https://krdo.com/news/2024/10/08/spending-in-presidential-and-congressional-races-projected-to-hit-nearly-16-billion-and-smash-records-new-analysis-shows/"
+            ],
+            [
+              "OpenSecrets via ZNetwork",
+              "https://znetwork.org/znetarticle/cost-of-2022-federal-elections-tops-8-9-billion-a-new-midterm-record"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "Heritage Foundation: no source ties it to these cases yet.",
+    "Super PAC spending by cycle from OpenSecrets or the FEC, to chart outside money next to candidate money.",
+    "A final sourced total for Harris and Trump including party and allied committees."
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "title": "FEC Act of 1971, MTSU First Amendment Encyclopedia",
+      "url": "https://firstamendment.mtsu.edu/article/federal-election-campaign-act-of-1971"
+    },
+    {
+      "n": 2,
+      "title": "Taft-Hartley Act, New World Encyclopedia",
+      "url": "https://www.newworldencyclopedia.org/entry/Taft-Hartley_Act"
+    },
+    {
+      "n": 3,
+      "title": "Federal Election Campaign Act Amendments of 1974",
+      "url": "https://en.wikipedia.org/wiki/Federal_Election_Campaign_Act_Amendments_of_1974"
+    },
+    {
+      "n": 4,
+      "title": "Winter, Money, Politics and the First Amendment (AEI, 1971), catalog record",
+      "url": "https://search.law.villanova.edu/Record/167089"
+    },
+    {
+      "n": 5,
+      "title": "Winter and Bolton, Campaign Financing and Political Freedom (AEI, 1973), catalog record",
+      "url": "https://lawcat.berkeley.edu/record/1303214"
+    },
+    {
+      "n": 6,
+      "title": "Econlib, Ralph K. Winter Jr., RIP",
+      "url": "https://www.econlib.org/ralph-k-winter-jr-rip/"
+    },
+    {
+      "n": 7,
+      "title": "Election Law Blog, John Bolton on Buckley at forty",
+      "url": "https://electionlawblog.org/?p=79389"
+    },
+    {
+      "n": 8,
+      "title": "Buckley v. Valeo",
+      "url": "https://en.wikipedia.org/wiki/Buckley_v._Valeo"
+    },
+    {
+      "n": 9,
+      "title": "Ralph K. Winter, reflections on Buckley (Yale)",
+      "url": "https://openyls.law.yale.edu/entities/publication/b002747a-ea76-4efd-a056-5ad92ffc2f3f"
+    },
+    {
+      "n": 10,
+      "title": "Britannica, Buckley v. Valeo",
+      "url": "https://www.britannica.com/event/Buckley-v-Valeo"
+    },
+    {
+      "n": 11,
+      "title": "First National Bank of Boston v. Bellotti",
+      "url": "https://en.wikipedia.org/wiki/First_National_Bank_of_Boston_v._Bellotti"
+    },
+    {
+      "n": 12,
+      "title": "Washington Monthly on Buckley and the Powell memo (opinion)",
+      "url": "https://washingtonmonthly.com/2016/01/24/bucking-the-trends/"
+    },
+    {
+      "n": 13,
+      "title": "Philanthropy Roundtable, Institute for Justice",
+      "url": "https://www.philanthropyroundtable.org/almanac/institute-for-justice/"
+    },
+    {
+      "n": 14,
+      "title": "Publishers Weekly, Unfree Speech",
+      "url": "https://publishersweekly.com/978-0-691-07045-2"
+    },
+    {
+      "n": 15,
+      "title": "Reason, Prof. Smith Goes to Washington (2001)",
+      "url": "https://reason.com/2001/07/01/prof-smith-goes-to-washington-2/"
+    },
+    {
+      "n": 16,
+      "title": "Institute for Free Speech, SpeechNow.org v. FEC issue brief",
+      "url": "https://www.ifs.org/wp-content/uploads/2018/03/2018-03-26_Issue-Brief_Wachob_SpeechNow.org-v-FEC-Protecting-The-First-Amendment-Rights-of-Americans.pdf"
+    },
+    {
+      "n": 17,
+      "title": "Reason, Hillary: The Movie: The Lawsuit (2008)",
+      "url": "https://reason.com/2008/01/14/hillary-the-movie-the-lawsuit/"
+    },
+    {
+      "n": 18,
+      "title": "CS Monitor, Now showing: Hillary: The Movie (2008)",
+      "url": "https://www.csmonitor.com/2008/0201/p03s01-ussc.html"
+    },
+    {
+      "n": 19,
+      "title": "Cato Institute, Citizens United brief",
+      "url": "https://www.cato.org/legal-briefs/citizens-united-v-federal-election-commission"
+    },
+    {
+      "n": 20,
+      "title": "Campaign Legal Center, brief of Senators McCain and Feingold",
+      "url": "https://campaignlegal.org/document/citizens-united-v-fec-brief-filed-senators-mccain-feingold-et-al"
+    },
+    {
+      "n": 21,
+      "title": "Institute for Justice, SpeechNow.org ruling (2010)",
+      "url": "https://ij.org/press-release/speechnoworg-can-speak-now-federal-court-declares-contribution-limits-unconstitutional-and-enjoins-federal-election-commission/"
+    },
+    {
+      "n": 22,
+      "title": "Center for Public Integrity, Crossroads funded mostly by secret donors",
+      "url": "https://publicintegrity.org/politics/crossroads-political-machine-funded-mostly-by-secret-donors/"
+    },
+    {
+      "n": 23,
+      "title": "Public Citizen, McCutcheon v. FEC",
+      "url": "https://clpblog.citizen.org/supreme-court-strikes-down-aggregate-campaign-limits-under-first-amendment/"
+    },
+    {
+      "n": 24,
+      "title": "FEC, candidate and committee totals (API)",
+      "url": "https://api.open.fec.gov/developers/"
+    },
+    {
+      "n": 25,
+      "title": "FEC, Spending: by the numbers",
+      "url": "https://www.fec.gov/data/spending-bythenumbers/"
+    },
+    {
+      "n": 26,
+      "title": "CNN via KRDO, OpenSecrets 2024 spending projection",
+      "url": "https://krdo.com/news/2024/10/08/spending-in-presidential-and-congressional-races-projected-to-hit-nearly-16-billion-and-smash-records-new-analysis-shows/"
+    },
+    {
+      "n": 27,
+      "title": "NBC News, Harris campaign spending after the election",
+      "url": "https://www.nbcnews.com/politics/2024-election/kamala-harris-campaign-spent-277-million-final-weeks-rcna182923"
+    },
+    {
+      "n": 28,
+      "title": "Center for Public Integrity, Buckley v. Valeo",
+      "url": "https://apps.publicintegrity.org/citizens-united/card/buckley-v-valeo"
+    }
+  ],
+  "timeScale": [
+    [
+      1900,
+      0
+    ],
+    [
+      1965,
+      0.12
+    ],
+    [
+      1985,
+      0.31
+    ],
+    [
+      2000,
+      0.43
+    ],
+    [
+      2016,
+      0.86
+    ],
+    [
+      2028,
+      1
+    ]
+  ]
+}
