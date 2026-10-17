@@ -1,0 +1,1065 @@
+{
+  "id": "pensions",
+  "title": "Pensions and the 401(k)",
+  "headline": "Who sold us the 401(k)?",
+  "question": "In 1975 seven in ten workers in a retirement plan earned a pension. Now it’s one in ten. Who sold us the 401(k)?",
+  "status": "draft-v1",
+  "intro": "In 1975 seven in ten workers in a workplace retirement plan were earning a pension. By 2022 it was about one in ten. Move the idea through the people who carried it, from the pension as a promise to the 401(k) as an account.",
+  "lanes": [
+    {
+      "id": "think",
+      "label": "Think tanks",
+      "y": 58
+    },
+    {
+      "id": "consult",
+      "label": "Consultants",
+      "y": 128
+    },
+    {
+      "id": "gov",
+      "label": "Congress, IRS",
+      "y": 198
+    },
+    {
+      "id": "labor",
+      "label": "Unions, courts",
+      "y": 268
+    },
+    {
+      "id": "board",
+      "label": "Boardrooms",
+      "y": 352
+    }
+  ],
+  "timeScale": [
+    [
+      1870,
+      0
+    ],
+    [
+      1945,
+      0.08
+    ],
+    [
+      1972,
+      0.2
+    ],
+    [
+      1979,
+      0.29
+    ],
+    [
+      1988,
+      0.6
+    ],
+    [
+      2010,
+      0.86
+    ],
+    [
+      2026,
+      1
+    ]
+  ],
+  "stations": [
+    {
+      "id": "amex",
+      "year": 1875,
+      "lane": "board",
+      "short": "American Express",
+      "lab": "above",
+      "title": "The first pension",
+      "who": "American Express Company",
+      "where": "A private employer pension",
+      "what": "Creates the first private pension plan in the United States.",
+      "pitch": "A monthly check for life after a long career, paid for by the employer.",
+      "spread": "Utilities, banks and manufacturers follow.",
+      "sources": [
+        1
+      ]
+    },
+    {
+      "id": "inland",
+      "year": 1949,
+      "lane": "labor",
+      "short": "Inland Steel",
+      "lab": "above",
+      "title": "Pensions go to the bargaining table",
+      "who": "The labor board and the courts; Inland Steel",
+      "where": "Inland Steel Co. v. NLRB, 1948 to 1949",
+      "what": "The courts uphold the labor board: pensions are something unions can bargain over. The Supreme Court declines to review it in 1949.",
+      "pitch": "Retirement pay is part of pay.",
+      "spread": "Unions can now put pensions on the table in contract talks.",
+      "sources": [
+        2
+      ]
+    },
+    {
+      "id": "treaty",
+      "year": 1950,
+      "lane": "labor",
+      "short": "Treaty of Detroit",
+      "lab": "below",
+      "yOff": 44,
+      "title": "The Treaty of Detroit",
+      "who": "Walter Reuther, United Auto Workers; General Motors",
+      "where": "A five-year contract with GM",
+      "what": "Trades labor peace for pensions, health care and cost-of-living raises.",
+      "pitch": "Long-term peace in exchange for long-term security.",
+      "spread": "Ford and Chrysler sign similar deals. Fortune magazine gives it its name.",
+      "sources": [
+        3
+      ]
+    },
+    {
+      "id": "studebaker",
+      "year": 1963,
+      "lane": "board",
+      "short": "Studebaker",
+      "lab": "below",
+      "title": "A promise breaks",
+      "who": "Studebaker, South Bend, Indiana",
+      "where": "A plant closing",
+      "what": "The plant closes and its pension plan fails.",
+      "pitch": "A pension for life.",
+      "spread": "More than 8,500 auto workers lose some or all of their promised benefits. It becomes the case for federal pension insurance.",
+      "sources": [
+        4
+      ]
+    },
+    {
+      "id": "erisa",
+      "year": 1974,
+      "lane": "gov",
+      "short": "ERISA",
+      "lab": "above",
+      "title": "Insure the promise",
+      "who": "Sen. Jacob Javits; President Gerald Ford",
+      "where": "Employee Retirement Income Security Act",
+      "what": "Sets federal rules for private pensions and creates the Pension Benefit Guaranty Corporation to insure them.",
+      "pitch": "No worker should lose a promised pension again.",
+      "spread": "Javits had pushed for pension reform since 1967. Ford signs it on September 2, 1974.",
+      "sources": [
+        5
+      ]
+    },
+    {
+      "id": "s401k",
+      "year": 1978,
+      "lane": "gov",
+      "short": "Section 401(k)",
+      "lab": "below",
+      "title": "A small tax rule",
+      "who": "Congress; President Jimmy Carter",
+      "where": "Revenue Act of 1978",
+      "what": "Adds Section 401(k), a narrow tax rule for deferred pay, reportedly aimed at executives’ profit-sharing plans.",
+      "pitch": "Settle how deferred pay is taxed.",
+      "spread": "Its own champions later say it was never meant to be anyone’s main retirement plan.",
+      "sources": [
+        6,
+        7,
+        14
+      ]
+    },
+    {
+      "id": "ferrara",
+      "year": 1980,
+      "lane": "think",
+      "short": "Ferrara, Cato",
+      "lab": "above",
+      "title": "Accounts, not promises",
+      "who": "Peter Ferrara, Cato Institute",
+      "where": "Cato’s first book",
+      "what": "Argues for replacing Social Security with private accounts.",
+      "pitch": "Let workers own their retirement.",
+      "spread": "Cato hosts about 200 congressional staffers after Reagan’s election. The target is the public pension, not company plans.",
+      "sources": [
+        15
+      ]
+    },
+    {
+      "id": "benna",
+      "year": 1981,
+      "lane": "consult",
+      "short": "Ted Benna",
+      "lab": "above",
+      "title": "The 401(k) as we know it",
+      "who": "Ted Benna, benefits consultant; the IRS",
+      "where": "A new reading of Section 401(k)",
+      "what": "Benna sees a way for any worker to save from their own paycheck, with an employer match. IRS rules in November 1981 make it official.",
+      "pitch": "Easy saving, with free money from your employer.",
+      "spread": "401(k)s spread through the 1980s while new pension plans all but stop forming.",
+      "sources": [
+        6,
+        7,
+        19
+      ]
+    },
+    {
+      "id": "butler",
+      "year": 1984,
+      "lane": "think",
+      "short": "Heritage strategy",
+      "lab": "above",
+      "title": "A long campaign",
+      "who": "Stuart Butler and Peter Germanis, Heritage Foundation",
+      "where": "“Achieving a ‘Leninist’ Strategy,” Cato Journal",
+      "what": "A plan to build a coalition for private accounts over time.",
+      "pitch": "Build support for accounts, step by step.",
+      "spread": "Aimed at Social Security, not company pensions.",
+      "sources": [
+        16
+      ]
+    },
+    {
+      "id": "raids",
+      "year": 1985,
+      "lane": "board",
+      "short": "Pension raids",
+      "lab": "above",
+      "yearLabel": "1980s",
+      "title": "Raiding the surplus",
+      "who": "Corporate raiders and employers; Sen. Howard Metzenbaum",
+      "where": "Terminated pension plans",
+      "what": "Overfunded pensions are shut down and the surplus taken back: over $20 billion since 1980, by the GAO’s count.",
+      "pitch": "The surplus belongs to the company.",
+      "spread": "Some of it helps pay for takeovers. Metzenbaum fights for a moratorium in 1988.",
+      "sources": [
+        8,
+        9,
+        21
+      ]
+    },
+    {
+      "id": "cashbal",
+      "year": 1985,
+      "lane": "consult",
+      "short": "Cash balance",
+      "lab": "below",
+      "yearLabel": "1980s",
+      "title": "A pension that looks like an account",
+      "who": "Kwasha Lipton, benefits consultants; Bank of America",
+      "where": "The cash balance plan",
+      "what": "A pension designed to look like an account balance.",
+      "pitch": "Make the pension look like an account.",
+      "spread": "Kwasha Lipton sells the design to dozens of other employers.",
+      "sources": [
+        10
+      ]
+    },
+    {
+      "id": "excise",
+      "year": 1986,
+      "lane": "gov",
+      "short": "Reversion tax",
+      "lab": "below",
+      "title": "Tax the raids",
+      "who": "Congress",
+      "where": "Tax Reform Act of 1986",
+      "what": "Puts a 10 percent tax on pension surplus taken back by employers, raised again in 1988 and 1990.",
+      "pitch": "Stop treating pension funds as piggy banks.",
+      "spread": "Reversions fall sharply.",
+      "sources": [
+        9,
+        8
+      ]
+    },
+    {
+      "id": "ibm",
+      "year": 1999,
+      "lane": "board",
+      "short": "IBM",
+      "lab": "above",
+      "yearLabel": "1999 to 2004",
+      "title": "The cash balance fight",
+      "who": "IBM; Kathi Cooper and 140,000 employees",
+      "where": "The IBM pension lawsuit",
+      "what": "IBM’s switch to a cash balance plan is challenged as age discrimination.",
+      "pitch": "A new plan that treats every employee the same way.",
+      "spread": "A federal judge sides with the employees in 2003. IBM settles in 2004 and takes a $320 million charge.",
+      "sources": [
+        11
+      ]
+    },
+    {
+      "id": "bush",
+      "year": 2005,
+      "lane": "think",
+      "short": "Ownership society",
+      "lab": "above",
+      "title": "The ownership society",
+      "who": "President George W. Bush",
+      "where": "Social Security reform",
+      "what": "Personal accounts at the center of Social Security reform.",
+      "pitch": "Own your retirement.",
+      "spread": "Public disapproval of his handling rises from 48 to 64 percent, and the plan stalls.",
+      "sources": [
+        17
+      ]
+    },
+    {
+      "id": "freeze",
+      "year": 2006,
+      "lane": "board",
+      "short": "The freeze",
+      "lab": "below",
+      "yearLabel": "2004 to 2011",
+      "title": "The freeze",
+      "who": "Fortune 1000 boardrooms",
+      "where": "Frozen pension plans",
+      "what": "Companies with at least one frozen pension grow from 45 in 2004 to 237 in 2011.",
+      "pitch": "Cut costs and smooth out contributions.",
+      "spread": "Watson Wyatt finds most of the savings go into bigger 401(k) contributions.",
+      "sources": [
+        12,
+        22
+      ]
+    },
+    {
+      "id": "ppa",
+      "year": 2006,
+      "lane": "gov",
+      "short": "Pension Protection Act",
+      "lab": "above",
+      "title": "The 401(k) becomes the default",
+      "who": "Congress; Richard Thaler and Shlomo Benartzi",
+      "where": "Pension Protection Act of 2006",
+      "what": "Encourages automatic enrollment and automatic increases in 401(k)s, building on their research.",
+      "pitch": "Nudge people to save.",
+      "spread": "Being in a 401(k) becomes the default at many employers.",
+      "sources": [
+        13
+      ]
+    },
+    {
+      "id": "regret",
+      "year": 2017,
+      "lane": "consult",
+      "short": "Benna’s regret",
+      "lab": "above",
+      "title": "The father has regrets",
+      "who": "Ted Benna",
+      "where": "Wall Street Journal, January 2017",
+      "what": "Says he regrets helping open the way for the financial industry, and that the 401(k) was never meant to be the main retirement plan.",
+      "pitch": "A supplement, not a replacement.",
+      "spread": "He spends his later years working on plan fees.",
+      "sources": [
+        14
+      ]
+    },
+    {
+      "id": "today",
+      "year": 2022,
+      "lane": "board",
+      "short": "Where it landed",
+      "lab": "above",
+      "title": "Where it landed",
+      "who": "Private-sector workers",
+      "where": "Department of Labor, Form 5500 filings",
+      "what": "11.3 million workers actively earning a pension; 92.6 million in 401(k)-type plans.",
+      "pitch": "Your retirement, your account.",
+      "spread": "In 1975, 71 percent of active plan participants were earning a pension. In 2022, 11 percent.",
+      "sources": [
+        18
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "amex",
+      "to": "inland",
+      "kind": "parallel"
+    },
+    {
+      "from": "inland",
+      "to": "treaty",
+      "kind": "handoff"
+    },
+    {
+      "from": "treaty",
+      "to": "studebaker",
+      "kind": "handoff"
+    },
+    {
+      "from": "studebaker",
+      "to": "erisa",
+      "kind": "handoff"
+    },
+    {
+      "from": "erisa",
+      "to": "s401k",
+      "kind": "handoff"
+    },
+    {
+      "from": "s401k",
+      "to": "benna",
+      "kind": "handoff"
+    },
+    {
+      "from": "benna",
+      "to": "cashbal",
+      "kind": "parallel"
+    },
+    {
+      "from": "erisa",
+      "to": "raids",
+      "kind": "parallel"
+    },
+    {
+      "from": "raids",
+      "to": "excise",
+      "kind": "handoff"
+    },
+    {
+      "from": "cashbal",
+      "to": "ibm",
+      "kind": "handoff"
+    },
+    {
+      "from": "ibm",
+      "to": "freeze",
+      "kind": "handoff"
+    },
+    {
+      "from": "freeze",
+      "to": "ppa",
+      "kind": "handoff"
+    },
+    {
+      "from": "benna",
+      "to": "ppa",
+      "kind": "handoff"
+    },
+    {
+      "from": "ppa",
+      "to": "today",
+      "kind": "handoff"
+    },
+    {
+      "from": "benna",
+      "to": "regret",
+      "kind": "handoff"
+    },
+    {
+      "from": "ferrara",
+      "to": "butler",
+      "kind": "parallel"
+    },
+    {
+      "from": "butler",
+      "to": "bush",
+      "kind": "parallel"
+    },
+    {
+      "from": "bush",
+      "to": "ppa",
+      "kind": "parallel"
+    }
+  ],
+  "ratio": [
+    {
+      "year": 1975,
+      "value": 70.8,
+      "approximate": false
+    },
+    {
+      "year": 1976,
+      "value": 67.6,
+      "approximate": false
+    },
+    {
+      "year": 1977,
+      "value": 65.8,
+      "approximate": false
+    },
+    {
+      "year": 1978,
+      "value": 65,
+      "approximate": false
+    },
+    {
+      "year": 1979,
+      "value": 62.7,
+      "approximate": false
+    },
+    {
+      "year": 1980,
+      "value": 61.4,
+      "approximate": false
+    },
+    {
+      "year": 1981,
+      "value": 59.2,
+      "approximate": false
+    },
+    {
+      "year": 1982,
+      "value": 55.9,
+      "approximate": false
+    },
+    {
+      "year": 1983,
+      "value": 51.8,
+      "approximate": false
+    },
+    {
+      "year": 1984,
+      "value": 49.6,
+      "approximate": false
+    },
+    {
+      "year": 1985,
+      "value": 46.6,
+      "approximate": false
+    },
+    {
+      "year": 1986,
+      "value": 45.2,
+      "approximate": false
+    },
+    {
+      "year": 1987,
+      "value": 44.9,
+      "approximate": false
+    },
+    {
+      "year": 1988,
+      "value": 45.2,
+      "approximate": false
+    },
+    {
+      "year": 1989,
+      "value": 44.5,
+      "approximate": false
+    },
+    {
+      "year": 1990,
+      "value": 42.6,
+      "approximate": false
+    },
+    {
+      "year": 1991,
+      "value": 41.8,
+      "approximate": false
+    },
+    {
+      "year": 1992,
+      "value": 39.5,
+      "approximate": false
+    },
+    {
+      "year": 1993,
+      "value": 38.8,
+      "approximate": false
+    },
+    {
+      "year": 1994,
+      "value": 37.9,
+      "approximate": false
+    },
+    {
+      "year": 1995,
+      "value": 35.7,
+      "approximate": false
+    },
+    {
+      "year": 1996,
+      "value": 34.3,
+      "approximate": false
+    },
+    {
+      "year": 1997,
+      "value": 32.2,
+      "approximate": false
+    },
+    {
+      "year": 1998,
+      "value": 31.4,
+      "approximate": false
+    },
+    {
+      "year": 1999,
+      "value": 31,
+      "approximate": false
+    },
+    {
+      "year": 2000,
+      "value": 30.4,
+      "approximate": false
+    },
+    {
+      "year": 2001,
+      "value": 29.7,
+      "approximate": false
+    },
+    {
+      "year": 2002,
+      "value": 29,
+      "approximate": false
+    },
+    {
+      "year": 2003,
+      "value": 29.1,
+      "approximate": false
+    },
+    {
+      "year": 2004,
+      "value": 28.3,
+      "approximate": false
+    },
+    {
+      "year": 2005,
+      "value": 24.6,
+      "approximate": false
+    },
+    {
+      "year": 2006,
+      "value": 23.2,
+      "approximate": false
+    },
+    {
+      "year": 2007,
+      "value": 22.5,
+      "approximate": false
+    },
+    {
+      "year": 2008,
+      "value": 22,
+      "approximate": false
+    },
+    {
+      "year": 2009,
+      "value": 20.1,
+      "approximate": false
+    },
+    {
+      "year": 2010,
+      "value": 19,
+      "approximate": false
+    },
+    {
+      "year": 2011,
+      "value": 18.3,
+      "approximate": false
+    },
+    {
+      "year": 2012,
+      "value": 17.3,
+      "approximate": false
+    },
+    {
+      "year": 2013,
+      "value": 16.6,
+      "approximate": false
+    },
+    {
+      "year": 2014,
+      "value": 16.1,
+      "approximate": false
+    },
+    {
+      "year": 2015,
+      "value": 15.6,
+      "approximate": false
+    },
+    {
+      "year": 2016,
+      "value": 14.8,
+      "approximate": false
+    },
+    {
+      "year": 2017,
+      "value": 14.2,
+      "approximate": false
+    },
+    {
+      "year": 2018,
+      "value": 13.6,
+      "approximate": false
+    },
+    {
+      "year": 2019,
+      "value": 12.8,
+      "approximate": false
+    },
+    {
+      "year": 2020,
+      "value": 12.3,
+      "approximate": false
+    },
+    {
+      "year": 2021,
+      "value": 11.7,
+      "approximate": false
+    },
+    {
+      "year": 2022,
+      "value": 10.9,
+      "approximate": false
+    }
+  ],
+  "chart": {
+    "title": "What happened to the pension",
+    "unit": "%",
+    "badge": "%",
+    "decimals": 0,
+    "cycle": 1,
+    "xFrom": 1972,
+    "step": 10,
+    "dots": 100,
+    "dotLabel": "one worker in a plan who earns a pension",
+    "bubbleGrow": 14,
+    "label": "of workers in a workplace plan earning a pension",
+    "meter": "In {year}, {n} of every 100 workers in a workplace retirement plan were earning a pension.",
+    "note": "Share of active participants in private-sector retirement plans who were in a defined benefit pension rather than a 401(k)-type plan, from Department of Labor Form 5500 data, 1975 to 2022. The department revised how it counts participants in 2004, so later years are not a perfect match for earlier ones. Before 1975 there is no comparable series.",
+    "sources": [
+      18
+    ]
+  },
+  "findings": [
+    {
+      "title": "Never for everyone",
+      "text": "Even at the 1979 peak, only about half of private-sector workers had a retirement plan of any kind, according to Boston College’s Center for Retirement Research."
+    },
+    {
+      "title": "The crossover",
+      "text": "In 1984, for the first time, more workers were active in 401(k)-type plans (30.5 million) than in pensions (30.1 million), by the Labor Department’s count."
+    },
+    {
+      "title": "A slow fade, not a single kill",
+      "text": "The number of pension plans peaked at 175,143 in 1983 and fell to 46,508 by 2022. No one law ended them. Tax rules, consultants, raiders and boardrooms each moved them one step."
+    }
+  ],
+  "counterpoints": [
+    {
+      "claim": "A 401(k) moves with you. Workers who change jobs get noticeably smaller pensions, even when both employers have identical plans.",
+      "who": "Boston College Center for Retirement Research",
+      "status": "sourced, source 20"
+    },
+    {
+      "claim": "A pension is only as good as the company behind it. Studebaker is why federal pension insurance exists.",
+      "who": "Pension Benefit Guaranty Corporation",
+      "status": "sourced, source 4"
+    }
+  ],
+  "context": [
+    {
+      "title": "The promise",
+      "items": [
+        {
+          "year": "1875",
+          "who": "American Express",
+          "text": "Creates the first private pension plan in the United States.",
+          "src": [
+            [
+              "ThinkAdvisor",
+              "https://thinkadvisor.com/2016/09/06/9-milestones-in-the-rise-and-fall-of-american-pensions"
+            ]
+          ]
+        },
+        {
+          "year": "1948 to 1949",
+          "who": "Inland Steel and the NLRB",
+          "text": "The courts uphold the labor board: pensions are something unions can bargain over.",
+          "src": [
+            [
+              "Inland Steel v. NLRB",
+              "https://www.casemine.com/commentary/us/inland-steel-co.-v.-nlrb:-constitutional-implications-of-collective-bargaining-over-pension-plans/view"
+            ]
+          ]
+        },
+        {
+          "year": "1950",
+          "who": "Walter Reuther, United Auto Workers",
+          "text": "The “Treaty of Detroit” with General Motors trades labor peace for pensions and health care. Ford and Chrysler follow.",
+          "src": [
+            [
+              "Treaty of Detroit",
+              "https://en.wikipedia.org/wiki/Reuther%27s_Treaty_of_Detroit"
+            ]
+          ]
+        },
+        {
+          "year": "1963",
+          "who": "Studebaker, South Bend",
+          "text": "The plant closes and its pension plan fails. More than 8,500 auto workers lose some or all of their benefits.",
+          "src": [
+            [
+              "PBGC",
+              "https://www.pbgc.gov/about/pbgc-pensions-studebaker"
+            ]
+          ]
+        },
+        {
+          "year": "1974",
+          "who": "Sen. Jacob Javits; President Gerald Ford",
+          "text": "ERISA becomes law and creates federal insurance for private pensions.",
+          "src": [
+            [
+              "PBGC history",
+              "https://www.pbgc.gov/about/who-we-are/history"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The turn to the account",
+      "items": [
+        {
+          "year": "1978",
+          "who": "Congress; President Jimmy Carter",
+          "text": "The Revenue Act of 1978 adds Section 401(k), a narrow rule about deferred pay.",
+          "src": [
+            [
+              "ICI",
+              "https://idc.org/system/files/attachments/per12-02.pdf"
+            ]
+          ]
+        },
+        {
+          "year": "1980 to 1981",
+          "who": "Ted Benna, benefits consultant; the IRS",
+          "text": "Benna reads the rule as a way for any worker to save from their own paycheck, with an employer match. IRS rules in November 1981 make it official.",
+          "src": [
+            [
+              "Gusto",
+              "https://gusto.com/resources/articles/benefits/401k-history"
+            ],
+            [
+              "ICI",
+              "https://idc.org/system/files/attachments/per12-02.pdf"
+            ]
+          ]
+        },
+        {
+          "year": "1980s",
+          "who": "Corporate raiders and employers; Sen. Howard Metzenbaum",
+          "text": "More than $20 billion in surplus is taken back from terminated pensions. Congress starts taxing these reversions in 1986.",
+          "src": [
+            [
+              "GAO",
+              "https://www.gao.gov/assets/hrd-90-51br.pdf"
+            ],
+            [
+              "SOA",
+              "https://production.soa.org/493886/globalassets/assets/files/research/projects/reversion.pdf"
+            ]
+          ]
+        },
+        {
+          "year": "1980s",
+          "who": "Kwasha Lipton, consultants; Bank of America",
+          "text": "The cash balance plan: a pension designed to look like an account, sold to dozens of employers.",
+          "src": [
+            [
+              "Kwasha Lipton",
+              "https://en.wikipedia.org/wiki/Kwasha_Lipton"
+            ]
+          ]
+        },
+        {
+          "year": "1999 to 2004",
+          "who": "IBM; Kathi Cooper and 140,000 employees",
+          "text": "IBM's switch to cash balance is challenged as age discrimination. IBM settles and takes a $320 million charge.",
+          "src": [
+            [
+              "Workforce",
+              "https://www.workforce.com/news/the-cash-balance-battle-grinds-on"
+            ]
+          ]
+        },
+        {
+          "year": "2004 to 2011",
+          "who": "Fortune 1000 boardrooms",
+          "text": "Companies with at least one frozen pension grow from 45 to 237.",
+          "src": [
+            [
+              "Business Insurance",
+              "https://www.businessinsurance.com/fortune-1000-pension-freezes-accelerate/"
+            ]
+          ]
+        },
+        {
+          "year": "2006",
+          "who": "Congress; Richard Thaler and Shlomo Benartzi",
+          "text": "The Pension Protection Act makes automatic 401(k) enrollment the norm, building on their research.",
+          "src": [
+            [
+              "Brookings",
+              "https://www.brookings.edu/wp-content/uploads/2016/06/04_pension_protection.pdf"
+            ]
+          ]
+        },
+        {
+          "year": "2017",
+          "who": "Ted Benna",
+          "text": "Tells the Wall Street Journal he regrets it: the 401(k) was never meant to be the main retirement plan.",
+          "src": [
+            [
+              "CS Monitor",
+              "https://csmonitor.com/Business/2017/0104/Why-Father-of-the-401-k-says-he-regrets-pushing-the-retirement-plan"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The parallel push, on Social Security",
+      "items": [
+        {
+          "year": "1980",
+          "who": "Peter Ferrara, Cato Institute",
+          "text": "Cato's first book argues for replacing Social Security with private accounts.",
+          "src": [
+            [
+              "Harvard Law Today",
+              "https://hls.harvard.edu/today/26-years-later"
+            ]
+          ]
+        },
+        {
+          "year": "1984",
+          "who": "Stuart Butler and Peter Germanis, Heritage Foundation",
+          "text": "“Achieving a ‘Leninist’ Strategy” lays out a long campaign for private accounts.",
+          "src": [
+            [
+              "Cato",
+              "https://clips.cato.org/sites/default/files/Cato-Salon-SocialSecurity_1.pdf"
+            ]
+          ]
+        },
+        {
+          "year": "2005",
+          "who": "President George W. Bush",
+          "text": "The “ownership society” puts personal accounts at the center of Social Security reform. It stalls.",
+          "src": [
+            [
+              "Brookings",
+              "https://www.brookings.edu/articles/why-the-2005-social-security-initiative-failed-and-what-it-means-for-the-future/"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "Who drafted Section 401(k) in 1978.",
+    "Benna’s firm and the exact date of the first plan.",
+    "The 1942 Revenue Act and World War II wage controls.",
+    "FASB Statement 87 (1985)."
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "title": "ThinkAdvisor, 9 Milestones in the Rise and Fall of American Pensions",
+      "url": "https://thinkadvisor.com/2016/09/06/9-milestones-in-the-rise-and-fall-of-american-pensions"
+    },
+    {
+      "n": 2,
+      "title": "Inland Steel Co. v. NLRB, commentary",
+      "url": "https://www.casemine.com/commentary/us/inland-steel-co.-v.-nlrb:-constitutional-implications-of-collective-bargaining-over-pension-plans/view"
+    },
+    {
+      "n": 3,
+      "title": "Reuther’s Treaty of Detroit",
+      "url": "https://en.wikipedia.org/wiki/Reuther%27s_Treaty_of_Detroit"
+    },
+    {
+      "n": 4,
+      "title": "PBGC, Studebaker",
+      "url": "https://www.pbgc.gov/about/pbgc-pensions-studebaker"
+    },
+    {
+      "n": 5,
+      "title": "PBGC, history",
+      "url": "https://www.pbgc.gov/about/who-we-are/history"
+    },
+    {
+      "n": 6,
+      "title": "Investment Company Institute, 401(k) retrospective",
+      "url": "https://idc.org/system/files/attachments/per12-02.pdf"
+    },
+    {
+      "n": 7,
+      "title": "Gusto, history of the 401(k)",
+      "url": "https://gusto.com/resources/articles/benefits/401k-history"
+    },
+    {
+      "n": 8,
+      "title": "GAO, pension plan reversions (HRD-90-51BR)",
+      "url": "https://www.gao.gov/assets/hrd-90-51br.pdf"
+    },
+    {
+      "n": 9,
+      "title": "Society of Actuaries, pension reversions paper",
+      "url": "https://production.soa.org/493886/globalassets/assets/files/research/projects/reversion.pdf"
+    },
+    {
+      "n": 10,
+      "title": "Kwasha Lipton",
+      "url": "https://en.wikipedia.org/wiki/Kwasha_Lipton"
+    },
+    {
+      "n": 11,
+      "title": "Workforce, the cash balance battle",
+      "url": "https://www.workforce.com/news/the-cash-balance-battle-grinds-on"
+    },
+    {
+      "n": 12,
+      "title": "Business Insurance, Fortune 1000 pension freezes accelerate",
+      "url": "https://www.businessinsurance.com/fortune-1000-pension-freezes-accelerate/"
+    },
+    {
+      "n": 13,
+      "title": "Brookings, the Pension Protection Act",
+      "url": "https://www.brookings.edu/wp-content/uploads/2016/06/04_pension_protection.pdf"
+    },
+    {
+      "n": 14,
+      "title": "CS Monitor, why the father of the 401(k) regrets it (2017)",
+      "url": "https://csmonitor.com/Business/2017/0104/Why-Father-of-the-401-k-says-he-regrets-pushing-the-retirement-plan"
+    },
+    {
+      "n": 15,
+      "title": "Harvard Law Today, Peter Ferrara",
+      "url": "https://hls.harvard.edu/today/26-years-later"
+    },
+    {
+      "n": 16,
+      "title": "Cato, Social Security (Butler and Germanis)",
+      "url": "https://clips.cato.org/sites/default/files/Cato-Salon-SocialSecurity_1.pdf"
+    },
+    {
+      "n": 17,
+      "title": "Brookings, why the 2005 Social Security initiative failed",
+      "url": "https://www.brookings.edu/articles/why-the-2005-social-security-initiative-failed-and-what-it-means-for-the-future/"
+    },
+    {
+      "n": 18,
+      "title": "Department of Labor, Private Pension Plan Bulletin Historical Tables, 1975 to 2022",
+      "url": "https://www.dol.gov/sites/dolgov/files/ebsa/pdf_files/private-pension-plan-bulletin-historical-tables-and-graphs.pdf"
+    },
+    {
+      "n": 19,
+      "title": "Boston College CRR, An Update on Private Pensions",
+      "url": "https://crr.bc.edu/an-update-on-private-pensions/ib_50_508"
+    },
+    {
+      "n": 20,
+      "title": "Boston College CRR, Job Tenure and Pension Coverage",
+      "url": "https://crr.bc.edu/wp-content/uploads/2006/10/wp_2006-18-508.pdf"
+    },
+    {
+      "n": 21,
+      "title": "CS Monitor, companies end pensions to use excess cash (1988)",
+      "url": "https://www.csmonitor.com/1988/0718/amerg.html"
+    },
+    {
+      "n": 22,
+      "title": "Workforce, more employers freeze defined benefit plans",
+      "url": "https://www.workforce.com/news/more-employers-freeze-defined-benefit-plans"
+    }
+  ]
+}

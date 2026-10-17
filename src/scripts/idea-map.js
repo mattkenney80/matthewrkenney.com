@@ -32,7 +32,8 @@ function unfrac(f) {
 const X = (y) => X0 + frac(y) * (X1 - X0);
 const laneOf = (id) => IDEA.lanes.find((l) => l.id === id);
 const laneColor = (id) => `var(--lane-${id}, var(--color-ink-soft))`;
-for (const s of S) { s.x = X(s.year); s.y = laneOf(s.lane).y + (s.yOff || 0); }
+// yearLabel lets a station stand for a span ("1980s") while still sitting at one point in time.
+for (const s of S) { s.x = X(s.year); s.y = laneOf(s.lane).y + (s.yOff || 0); s.label = s.yearLabel ?? String(s.year); }
 const byId = Object.fromEntries(S.map((s) => [s.id, s]));
 const sourceUrl = (n) => IDEA.sources.find((s) => s.n === n)?.url ?? "#";
 const R = IDEA.ratio;
@@ -98,10 +99,10 @@ const nodeEls = S.map((s) => {
   const bub = el("circle", { cx: s.x, cy: s.y, r, class: "bubble", stroke: laneColor(s.lane) }, g);
   numbers.push({ g, x: s.x, y: s.y, r, text: p ? fmt(p) : "?" });
   const up = s.lab === "above";
-  el("text", { x: s.x, y: up ? s.y - r - 18 : s.y + r + 28, class: "node-year", "text-anchor": "middle" }, g).textContent = s.year;
+  el("text", { x: s.x, y: up ? s.y - r - 18 : s.y + r + 28, class: "node-year", "text-anchor": "middle" }, g).textContent = s.label;
   el("text", { x: s.x, y: up ? s.y - r - 6 : s.y + r + 14, class: "node-name", "text-anchor": "middle" }, g).textContent = s.short;
   const tip = el("title", {}, g);
-  tip.textContent = p ? `${s.year}: ${p.approximate ? "about " : ""}${prefix}${num(p.value)}${unit}${p.year !== s.year ? ` (${p.year})` : ""}` : `${s.year}: before the data begins in ${R[0].year}`;
+  tip.textContent = p ? `${s.label}: ${p.approximate ? "about " : ""}${prefix}${num(p.value)}${unit}${p.year !== s.year ? ` (${p.year})` : ""}` : `${s.label}: before the data begins in ${R[0].year}`;
   g.addEventListener("click", () => animateTo(s.year));
   return { g, bub, s };
 });
@@ -148,7 +149,7 @@ const cursor = el("line", { y1: CY1 - 8, y2: CY0, stroke: "var(--idea)", "stroke
 const cursorDot = el("circle", { r: 6, fill: "var(--idea)" }, chart);
 // ---- meter: one square per unit of the outcome (a worker's pay, $100 million, ...) --------
 const dotUnit = IDEA.chart?.dotUnit ?? 1;
-const DOTS = Math.ceil(VMAX / dotUnit / 10) * 10;
+const DOTS = IDEA.chart?.dots ?? Math.ceil(VMAX / dotUnit / 10) * 10;
 const dots = Array.from({ length: DOTS }, () => dotsEl.appendChild(document.createElement("i")));
 let lit = -1;
 function drawMeter(y) {
@@ -171,7 +172,7 @@ function drawMeter(y) {
 // ---- card ----------------------------------------------------------------------------------
 function drawCard(s) {
   const left = h("div");
-  left.append(h("div", "big-year", s.year), h("h3", null, s.title), h("p", "who", s.who), h("p", "where", s.where));
+  left.append(h("div", "big-year", s.label), h("h3", null, s.title), h("p", "who", s.who), h("p", "where", s.where));
   const chip = h("span", "chip", laneOf(s.lane).label);
   chip.style.background = laneColor(s.lane);
   left.append(chip);
@@ -229,9 +230,9 @@ function render() {
     current = active;
     drawCard(active);
   }
-  now.textContent = `${active.year} · ${active.short}`;
+  now.textContent = `${active.label} · ${active.short}`;
   range.value = String(year);
-  range.setAttribute("aria-valuetext", `${active.year}, ${active.title}`);
+  range.setAttribute("aria-valuetext", `${active.label}, ${active.title}`);
 
   const inChart = year >= CX0;
   cursor.setAttribute("opacity", inChart ? 1 : 0);
