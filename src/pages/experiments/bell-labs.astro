@@ -1,0 +1,174 @@
+---
+// Out of Bell Labs: five ideas from one New Jersey lab, each on its own row ("threads" layout).
+// Rendered from src/data/bell-labs/bell-labs.json; the map, chart and card are drawn by
+// src/scripts/bell-labs.js, ported from Matthew's bell-labs.html prototype.
+export const prerender = false;
+
+import { env } from "cloudflare:workers";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { isSectionVisible } from "../../lib/settings";
+import idea from "../../data/bell-labs/bell-labs.json";
+
+if (!(await isSectionVisible(env?.DB, "experiments"))) {
+  return Astro.rewrite("/404");
+}
+
+const src = (n: number) => idea.sources.find((s) => s.n === n);
+const findings = [
+  { k: "Invented here, scaled there", text: "Texas Instruments sold the transistor radio, Hoffman sold the solar cell, Motorola made the first handheld cell call and Apple put Unix in the Mac. Bell Labs was the birthplace, almost never the factory." },
+  { k: "Washington was a co-author", text: "The 1956 consent decree made 7,820 Bell patents free to use and kept AT&T out of computers. That is part of why the transistor went west and Unix went to Berkeley." },
+  { k: "The ideas crossed", text: "Fuller and Pearson found the solar cell while working on silicon transistors. In 1962 Telstar flew 3,600 solar cells and 1,000 transistors, two Bell inventions in one satellite." },
+];
+const isDraft = /draft/i.test(idea.intro.status);
+---
+
+<BaseLayout title="Out of Bell Labs" description={idea.question} wide>
+  <p class="bl-eyebrow">Experiment &middot; New Jersey innovation</p>
+  <h1>Five ideas that left <em>Bell Labs</em></h1>
+  <p class="lede">
+    On January 1, 1925, AT&amp;T put its engineers into one company you could not buy stock in. Over
+    the next half century they produced the transistor, the bit, the solar cell, Unix and the cellular
+    network. Then other people, in other places, turned each one into the modern world. Drag through
+    the years and follow all five out of New Jersey.
+  </p>
+
+  <aside class="bl-note" aria-label={idea.intro.label}>
+    <p class="bl-mono">
+      <span>{idea.intro.label}</span><span>{idea.intro.author}</span>{isDraft && <span class="bl-draft">Draft</span>}
+    </p>
+    {idea.intro.paragraphs.map((p) => <p>{p}</p>)}
+    <p class="bl-mono bl-srcline">
+      Sources {idea.intro.sources.map((n, i) => <>{i > 0 && ", "}<a href={`#bl-src-${n}`} title={src(n)?.title}>{n}</a></>)}
+    </p>
+  </aside>
+
+  <div class="bl" id="bl">
+    <section class="bl-stage" aria-label="Idea map">
+      <div class="bl-chips" id="bl-chips" role="group" aria-label="Choose an idea to follow"></div>
+      <div class="bl-stage-head">
+        <span class="bl-mono">Drag the map, or use the arrow keys</span>
+        <div class="bl-ctrls">
+          <button id="bl-prev" type="button">&larr; Back</button>
+          <button id="bl-next" type="button">Next &rarr;</button>
+        </div>
+      </div>
+      <svg id="bl-map" tabindex="0" role="slider" aria-label="Year" aria-valuemin="1925" aria-valuemax="2028"></svg>
+      <p class="bl-hint">
+        Each row is one idea. The blue token is the idea you are following; Back and Next step through
+        its stations, and Up and Down switch ideas. Dashed lines show where one idea fed another.
+      </p>
+    </section>
+
+    <article class="bl-card" id="bl-card" aria-live="polite"></article>
+
+    <section class="bl-chart" aria-labelledby="bl-chart-h">
+      <h2 id="bl-chart-h">The economy they grew into</h2>
+      <p class="bl-readout" id="bl-readout"></p>
+      <svg id="bl-chartsvg" aria-hidden="true"></svg>
+      <p class="bl-hint">
+        {idea.series.label}, {idea.series.unit}. {idea.series.note} Small dots on the baseline mark the
+        stations of the idea you are following.
+        (<a href={`#bl-src-${idea.series.source}`}>source {idea.series.source}</a>)
+      </p>
+    </section>
+  </div>
+
+  <section class="bl-findings" aria-label="What the map shows">
+    {findings.map((f) => <p><span>{f.k}</span>{f.text}</p>)}
+  </section>
+
+  <section class="bl-sec" aria-labelledby="bl-other">
+    <h2 id="bl-other">The other side</h2>
+    <ul class="bl-counter">
+      {idea.counterpoints.map((c) => (
+        <li>{c.claim}<span class="bl-who">{c.who} &middot; {c.status}</span></li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="bl-sec" aria-labelledby="bl-sources">
+    <h2 id="bl-sources">Sources</h2>
+    <ol class="bl-sources">
+      {idea.sources.map((s) => (
+        <li id={`bl-src-${s.n}`} value={s.n}><a href={s.url} target="_blank" rel="noopener">{s.title}</a></li>
+      ))}
+    </ol>
+  </section>
+
+  <p class="bl-back"><a href="/experiments">&larr; All experiments</a></p>
+
+  <script type="application/json" id="bl-data" set:html={JSON.stringify(idea)}></script>
+</BaseLayout>
+
+<script>
+  import "../../scripts/bell-labs.js";
+</script>
+
+<style is:global>
+  .bl-eyebrow { margin: 0 0 0.5rem; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-ink-soft); }
+  h1 em { font-style: normal; color: #2340c8; }
+  .bl, .bl-note { --accent: #2340c8; --accent-soft: rgba(35, 64, 200, 0.2);
+    --t-lab: #3d4a47; --t-transistor: #7a4fb0; --t-info: #1f7a5a; --t-solar: #a3601b; --t-unix: #9b2f3f; --t-cell: #12707a; }
+  .bl-mono { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-ink-soft); }
+  .bl-note { margin-top: var(--space-3); border-left: 3px solid var(--color-border); padding-left: var(--space-2); max-width: 40rem; }
+  .bl-note p { margin: 0 0 0.75rem; }
+  .bl-note .bl-mono { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+  .bl-draft { border: 1px solid var(--color-ink-soft); padding: 0 0.35rem; }
+  .bl-note .bl-srcline { display: block; text-transform: none; letter-spacing: 0; }
+  .bl-srcline a { color: var(--accent); }
+
+  .bl { margin-top: var(--space-4); display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); }
+  .bl > * { min-width: 0; }
+  .bl h2, .bl-sec h2 { font-size: 1.25rem; }
+  .bl-stage { border: 1px solid var(--color-border); background: #fff; padding: var(--space-2); display: grid; gap: 0.6rem; }
+  .bl-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .bl button { font: inherit; font-size: 0.82rem; padding: 0.4rem 0.75rem; min-height: 2.5rem; background: transparent; color: var(--color-ink); border: 1px solid var(--color-border); border-radius: 6px; cursor: pointer; }
+  .bl button:hover { border-color: var(--accent); color: var(--accent); }
+  .bl button:focus-visible, #bl-map:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .bl-chip { display: inline-flex; align-items: center; gap: 0.45rem; }
+  .bl-chip i { width: 0.65rem; height: 0.65rem; border-radius: 50%; display: inline-block; }
+  .bl-chip[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+  .bl-stage-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.5rem; }
+  .bl-ctrls { display: flex; gap: 0.5rem; }
+  .bl svg { display: block; width: 100%; height: auto; }
+  #bl-map { touch-action: pan-y; cursor: grab; user-select: none; -webkit-user-select: none; }
+  #bl-map.drag { cursor: grabbing; }
+  #bl-map text, #bl-chartsvg text { font-family: inherit; }
+  .bl .row-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; }
+  .bl .node-name { font-size: 13px; fill: var(--color-ink); }
+  .bl .axis { font-size: 11px; fill: var(--color-ink-soft); }
+  .bl .edge { fill: none; stroke: var(--color-border); stroke-width: 1.5; stroke-dasharray: 4 4; }
+  .bl .edge.on { stroke: var(--color-ink-soft); }
+  .bl-hint { margin: 0; font-size: 0.85rem; color: var(--color-ink-soft); max-width: 62ch; }
+  .bl-hint a { color: inherit; }
+
+  .bl-card { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: var(--space-3) var(--space-4); border-top: 3px solid var(--color-ink); padding-top: var(--space-2); }
+  @media (max-width: 720px) { .bl-card { grid-template-columns: minmax(0, 1fr); } }
+  .bl-card .big-year { font-family: var(--font-serif); font-size: 4rem; line-height: 0.9; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .bl-card h3 { font-size: 1.6rem; margin: 0.4rem 0 0.6rem; }
+  .bl-card .who { margin: 0 0 0.2rem; font-weight: 600; }
+  .bl-card .where { margin: 0; color: var(--color-ink-soft); }
+  .bl-card .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+  .bl-card .tag { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.5rem; border: 1px solid var(--color-border); color: var(--color-ink-soft); }
+  .bl-card .tag.thread { color: #fff; border-color: transparent; }
+  .bl-card .waiting { margin: 0.75rem 0 0; font-size: 0.85rem; color: var(--color-ink-soft); }
+  .bl-card dl { margin: 0; display: grid; gap: var(--space-2); }
+  .bl-card dt { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-ink-soft); }
+  .bl-card dd { margin: 0.2rem 0 0; max-width: 62ch; }
+  .bl-card dd a { color: var(--accent); }
+
+  .bl-readout { margin: 0 0 0.5rem; color: var(--color-ink-soft); font-variant-numeric: tabular-nums; }
+  .bl-readout b { font-family: var(--font-serif); font-size: 2.1rem; font-weight: 500; color: var(--accent); margin-right: 0.4rem; }
+
+  .bl-findings { margin-top: var(--space-4); display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: var(--space-3); }
+  .bl-findings p { margin: 0; }
+  .bl-findings span { display: block; font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 0.3rem; }
+  .bl-sec { margin-top: var(--space-4); max-width: 52rem; }
+  .bl-counter { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: var(--space-2) var(--space-3); }
+  .bl-counter li { border-top: 1px solid var(--color-border); padding-top: 0.6rem; }
+  .bl-who { display: block; margin-top: 0.35rem; font-size: 0.82rem; color: var(--color-ink-soft); }
+  .bl-sources { font-size: 0.9rem; color: var(--color-ink-soft); padding-left: 1.6rem; columns: 2 18rem; column-gap: var(--space-4); }
+  .bl-sources li { break-inside: avoid; margin-bottom: 0.4rem; }
+  .bl-sources li:target { background: rgba(35, 64, 200, 0.08); }
+  .bl-back { margin-top: var(--space-4); }
+</style>

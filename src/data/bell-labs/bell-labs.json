@@ -1,0 +1,1283 @@
+{
+  "id": "bell-labs",
+  "title": "Out of Bell Labs",
+  "question": "How did five ideas from one New Jersey lab end up running the world?",
+  "status": "draft-v1",
+  "layout": "threads",
+  "schema_notes": "New for this idea: layout 'threads'. Each thread is one idea and gets its own row. Stations carry 'thread' (which row) and 'lane' (which kind of institution, shown as a chip on the card). Edges inside a thread are implied by date order; 'edges' only lists links between threads. 'series' replaces 'ratio' as a general outcome metric with its own label, unit and source.",
+  "intro": {
+    "label": "Why this one",
+    "author": "Matthew Kenney",
+    "status": "DRAFT, run through writing-check before it ships",
+    "paragraphs": [
+      "I live about five miles from Thomas Edison's laboratory in West Orange. He opened it in 1887 as an invention factory, with a library, machine shops and a factory next door, and more than half of his 1,093 patents came out of it. By World War One the complex employed 10,000 people.",
+      "Thirty-eight years after Edison opened West Orange, AT&T built the same idea at a scale he never imagined, and in 1941 it moved it to Murray Hill. I have spent eleven and a half years in corporate innovation, which mostly means watching big companies try to rebuild what Bell Labs had.",
+      "California runs the table now. But for a small, crowded state, New Jersey punches way above its weight. This page follows five ideas out of one New Jersey lab and asks how each one left the building."
+    ],
+    "sources": [
+      34,
+      36,
+      1
+    ]
+  },
+  "lanes": [
+    {
+      "id": "lab",
+      "label": "Bell Labs"
+    },
+    {
+      "id": "gov",
+      "label": "Government"
+    },
+    {
+      "id": "industry",
+      "label": "Industry"
+    },
+    {
+      "id": "univ",
+      "label": "Universities"
+    },
+    {
+      "id": "public",
+      "label": "Where it landed"
+    }
+  ],
+  "threads": [
+    {
+      "id": "lab",
+      "label": "The lab itself",
+      "color": "lab"
+    },
+    {
+      "id": "transistor",
+      "label": "The transistor",
+      "color": "transistor"
+    },
+    {
+      "id": "info",
+      "label": "Information theory",
+      "color": "info"
+    },
+    {
+      "id": "solar",
+      "label": "The solar cell",
+      "color": "solar"
+    },
+    {
+      "id": "unix",
+      "label": "Unix and C",
+      "color": "unix"
+    },
+    {
+      "id": "cell",
+      "label": "The cellular network",
+      "color": "cell"
+    }
+  ],
+  "stations": [
+    {
+      "id": "founded",
+      "thread": "lab",
+      "year": 1925,
+      "lane": "lab",
+      "short": "Founded",
+      "title": "A lab with no stock ticker",
+      "who": "Frank Jewett, first president. Owned half by AT&T, half by Western Electric.",
+      "where": "463 West Street, Manhattan",
+      "what": "On January 1, 1925, AT&T folds the engineering departments of AT&T and Western Electric into one company, Bell Telephone Laboratories. You could not buy its stock.",
+      "pitch": "Bell Labs would develop equipment for Western Electric and plan the network for AT&T, and those two companies would pay its bills.",
+      "spread": "Its starting budget was about $12 million, which Jon Gertner puts at roughly $150 million in today's money. From the start it was several labs in different places, not one building.",
+      "sources": [
+        1,
+        3,
+        2
+      ]
+    },
+    {
+      "id": "kelly",
+      "thread": "lab",
+      "year": 1936,
+      "lane": "lab",
+      "short": "Mervin Kelly",
+      "title": "The man who built the place",
+      "who": "Mervin Kelly",
+      "where": "Director of research, Bell Telephone Laboratories",
+      "what": "A vacuum tube physicist from Princeton, Missouri is named director of research in 1936. He starts hiring young PhDs in a field Bell barely had, solid state physics. His first hire is William Shockley.",
+      "pitch": "Hire a critical mass of brilliant people, put the thinkers and the builders under one roof, and point them at what is not yet known. Kelly called it an institute of creative technology.",
+      "spread": "After the war he reorganized the labs around a new solid state group. He became president in 1951 and chairman in 1959. On his watch Bell produced the transistor, the solar cell and the laser.",
+      "sources": [
+        5,
+        6,
+        7,
+        8,
+        4
+      ]
+    },
+    {
+      "id": "murray",
+      "thread": "lab",
+      "year": 1941,
+      "lane": "lab",
+      "short": "Murray Hill",
+      "title": "Murray Hill",
+      "who": "Bell Telephone Laboratories",
+      "where": "Murray Hill, New Jersey",
+      "what": "The New Jersey campus opens in 1941.",
+      "pitch": "Research and development, side by side, on one campus.",
+      "spread": "It stays the home of Bell Labs for more than 80 years and hosts the transistor and the laser.",
+      "sources": [
+        9,
+        2
+      ]
+    },
+    {
+      "id": "decree",
+      "thread": "lab",
+      "year": 1956,
+      "lane": "gov",
+      "short": "Consent decree",
+      "title": "The government opens the vault",
+      "who": "U.S. Justice Department and AT&T",
+      "where": "Consent decree of January 24, 1956",
+      "what": "Settling a seven-year antitrust case, AT&T must license all its existing patents royalty free and stay out of every business except telecommunications.",
+      "pitch": "Free the monopoly's inventions without breaking up the monopoly.",
+      "spread": "7,820 patents, about 1.3 percent of all unexpired US patents, became free to use. Follow-on innovation building on them rose 17 percent, driven mainly by young and small companies, and almost entirely outside telecom equipment.",
+      "sources": [
+        10,
+        11
+      ]
+    },
+    {
+      "id": "breakup",
+      "thread": "lab",
+      "year": 1984,
+      "lane": "gov",
+      "short": "Breakup",
+      "title": "Ma Bell comes apart",
+      "who": "AT&T and the federal government",
+      "where": "Bell System divestiture, January 1, 1984",
+      "what": "The Bell System breaks up. Bell Labs becomes part of AT&T Technologies, and the Bell cellular licenses pass to the new regional phone companies.",
+      "pitch": "Split the phone monopoly into pieces.",
+      "spread": "In 1996 most of Bell Labs went to Lucent Technologies. Lucent merged with Alcatel in 2006, and Nokia bought Alcatel-Lucent in 2016.",
+      "sources": [
+        13,
+        30,
+        37
+      ]
+    },
+    {
+      "id": "helix",
+      "thread": "lab",
+      "year": 2028,
+      "lane": "lab",
+      "short": "HELIX",
+      "title": "Back to the city",
+      "who": "Nokia Bell Labs",
+      "where": "HELIX, New Brunswick, New Jersey, next to Rutgers",
+      "what": "Ground was broken September 4, 2025 on a 10 story, 370,000 square foot headquarters. The move out of Murray Hill is planned for 2028.",
+      "pitch": "Researchers do better work close to universities, startups and partners than on a suburban campus.",
+      "spread": "Nokia says the work there will include quantum, photonics, optics, 6G and AI. It stays in New Jersey after Nokia looked at 25 locations.",
+      "sources": [
+        14,
+        9,
+        38,
+        39
+      ]
+    },
+    {
+      "id": "t47",
+      "thread": "transistor",
+      "year": 1947,
+      "lane": "lab",
+      "short": "Point contact",
+      "title": "The transistor",
+      "who": "John Bardeen and Walter Brattain, with their supervisor William Shockley",
+      "where": "Building 1, Murray Hill",
+      "what": "A half inch device of germanium and gold that amplified a signal about 100 times. They showed it to Bell executives on December 23, 1947.",
+      "pitch": "A solid state replacement for the vacuum tube.",
+      "spread": "Bell announced it on June 30, 1948. Shockley followed with the junction transistor, easier to manufacture, announced in 1951. The three shared the 1956 Nobel Prize in Physics.",
+      "sources": [
+        15,
+        7,
+        16
+      ]
+    },
+    {
+      "id": "t54",
+      "thread": "transistor",
+      "year": 1954,
+      "lane": "industry",
+      "short": "Texas Instruments",
+      "title": "The transistor goes on sale",
+      "who": "Texas Instruments",
+      "where": "Dallas, Texas",
+      "what": "Commercial production of junction transistors for portable radios.",
+      "pitch": "Electronics you can carry.",
+      "spread": "Under seven years from a lab bench in New Jersey to a product sold by a company in Texas.",
+      "sources": [
+        17
+      ]
+    },
+    {
+      "id": "t56",
+      "thread": "transistor",
+      "year": 1956,
+      "lane": "industry",
+      "short": "Shockley goes west",
+      "title": "West to Mountain View",
+      "who": "William Shockley",
+      "where": "Shockley Semiconductor Laboratory, Mountain View, California",
+      "what": "Backed by Beckman Instruments, Shockley, who had left Bell Labs, opens Shockley Semiconductor Laboratory in Mountain View, near Stanford. It is the same year the consent decree frees the transistor patents.",
+      "pitch": "Silicon devices, made by a startup.",
+      "spread": "The Benton Institute argues that the decree's royalty-free transistor licenses are a missing piece of how Silicon Valley got its start.",
+      "sources": [
+        12,
+        17,
+        44
+      ]
+    },
+    {
+      "id": "t18",
+      "thread": "transistor",
+      "year": 2018,
+      "lane": "public",
+      "short": "13 sextillion",
+      "title": "The most made thing in history",
+      "who": "The global chip industry",
+      "where": "Estimate by analyst Jim Handy, via the Computer History Museum",
+      "what": "About 13 sextillion transistors shipped, more than 99.9 percent of them MOS devices.",
+      "pitch": "Billions of switches on every chip in every phone and AI server.",
+      "spread": "A sextillion is a one followed by 21 zeros. The 2014 estimate was 2.9 sextillion, and the total grows by billions every day.",
+      "sources": [
+        18
+      ]
+    },
+    {
+      "id": "i48",
+      "thread": "info",
+      "year": 1948,
+      "lane": "lab",
+      "short": "Shannon",
+      "title": "The bit",
+      "who": "Claude Shannon",
+      "where": "Bell System Technical Journal, July and October 1948",
+      "what": "“A Mathematical Theory of Communication,” which defined information entropy and redundancy and put the word bit into print.",
+      "pitch": "Communication is a statistical process you can measure, whatever the message means.",
+      "spread": "Shannon had mostly finished the paper at Bell Labs by the end of 1944. He credited the word bit to his colleague John Tukey.",
+      "sources": [
+        19,
+        20
+      ]
+    },
+    {
+      "id": "i49",
+      "thread": "info",
+      "year": 1949,
+      "lane": "univ",
+      "short": "The book",
+      "title": "From A theory to The theory",
+      "who": "Claude Shannon and Warren Weaver",
+      "where": "Book edition, 1949",
+      "what": "The paper becomes a book, retitled The Mathematical Theory of Communication once its generality was clear, with an essay by Warren Weaver for general readers.",
+      "pitch": "A theory for every kind of signal, not just the phone network.",
+      "spread": "The paper is treated as the founding work of information theory as a field.",
+      "sources": [
+        19,
+        20
+      ]
+    },
+    {
+      "id": "s54",
+      "thread": "solar",
+      "year": 1954,
+      "lane": "lab",
+      "short": "Bell Solar Battery",
+      "title": "The solar cell",
+      "who": "Daryl Chapin, Calvin Fuller and Gerald Pearson",
+      "where": "Bell Labs in Berkeley Heights, announced at Murray Hill",
+      "what": "The first practical silicon solar cell, about 6 percent efficient. On April 25, 1954 it powered a toy Ferris wheel and a radio transmitter.",
+      "pitch": "Power for phone equipment in remote, humid places, where dry cell batteries kept failing.",
+      "spread": "Fuller and Pearson were doping silicon for transistors. Pearson saw the effect and told Chapin to stop wasting time on selenium.",
+      "sources": [
+        21,
+        22,
+        40
+      ]
+    },
+    {
+      "id": "s58",
+      "thread": "solar",
+      "year": 1958,
+      "lane": "gov",
+      "short": "Vanguard I",
+      "title": "Saved by the space race",
+      "who": "U.S. Navy Vanguard program. Hoffman Electronics held the license to sell the cells.",
+      "where": "Vanguard I, launched March 17, 1958",
+      "what": "A 3.5 pound satellite carrying six solar cells.",
+      "pitch": "A satellite that keeps talking after its battery dies.",
+      "spread": "Its battery-powered radio fell silent within months. The solar-powered one kept transmitting until 1964. Before that, high cost had kept the cells to toys and demos.",
+      "sources": [
+        23,
+        41,
+        45
+      ]
+    },
+    {
+      "id": "s62",
+      "thread": "solar",
+      "year": 1962,
+      "lane": "lab",
+      "short": "Telstar",
+      "title": "Two inventions fly together",
+      "who": "Bell Labs and NASA",
+      "where": "Telstar 1, launched July 10, 1962",
+      "what": "The first active, direct relay communications satellite, powered by 3,600 solar cells and carrying 1,000 transistors.",
+      "pitch": "Bounce a microwave signal, and television, across the ocean.",
+      "spread": "Bell scientist John Pierce's idea went from theory to working satellite in two years.",
+      "sources": [
+        24
+      ]
+    },
+    {
+      "id": "s24",
+      "thread": "solar",
+      "year": 2024,
+      "lane": "public",
+      "short": "Terawatts",
+      "title": "Terawatts",
+      "who": "The global solar industry",
+      "where": "IEEE Electron Devices Society, 70th anniversary note",
+      "what": "Worldwide silicon solar installations have passed the terawatt mark.",
+      "pitch": "Electricity from sunlight, cheap enough for rooftops.",
+      "spread": "Cell efficiency has risen about 0.3 percent a year since 1954.",
+      "sources": [
+        25
+      ]
+    },
+    {
+      "id": "u69",
+      "thread": "unix",
+      "year": 1969,
+      "lane": "lab",
+      "short": "Unix",
+      "title": "Unix on a spare PDP-7",
+      "who": "Ken Thompson and Dennis Ritchie, with Doug McIlroy and Joe Ossanna",
+      "where": "Bell Labs, after it pulled out of the Multics project",
+      "what": "A small new operating system, soon called Unix, begun in the summer of 1969.",
+      "pitch": "Something smaller and simpler than Multics, built for their own use.",
+      "spread": "Thompson started by writing a game, Space Travel, for the machine.",
+      "sources": [
+        26,
+        27
+      ]
+    },
+    {
+      "id": "u73",
+      "thread": "unix",
+      "year": 1973,
+      "lane": "lab",
+      "short": "Rewritten in C",
+      "title": "Portable software",
+      "who": "Dennis Ritchie and Ken Thompson",
+      "where": "Bell Labs. Shown outside at a symposium in October 1973.",
+      "what": "Unix is rewritten in C, the language Ritchie built for it, so it can move from one kind of computer to another.",
+      "pitch": "Write the system once, run it on many machines.",
+      "spread": "Barred from the computer business by its antitrust agreement, AT&T could not sell Unix as a product. Version 6 in 1975 was the first to spread widely outside Bell Labs.",
+      "sources": [
+        28,
+        27,
+        12
+      ]
+    },
+    {
+      "id": "u77",
+      "thread": "unix",
+      "year": 1977,
+      "lane": "univ",
+      "short": "Berkeley",
+      "title": "Berkeley takes it over",
+      "who": "University of California, Berkeley",
+      "where": "BSD, the Berkeley Software Distribution",
+      "what": "The Berkeley line of Unix begins. AT&T later licenses Unix to Microsoft, Sun, HP and IBM too.",
+      "pitch": "A Unix that universities could improve and pass around.",
+      "spread": "Ken Thompson spent a sabbatical year teaching operating systems at Berkeley in 1975 and 1976.",
+      "sources": [
+        28,
+        27,
+        42
+      ]
+    },
+    {
+      "id": "u00",
+      "thread": "unix",
+      "year": 2000,
+      "lane": "industry",
+      "short": "Inside the Mac",
+      "title": "Inside the Mac and the phone",
+      "who": "Apple, and later Google",
+      "where": "Darwin, the core of Mac OS X",
+      "what": "Apple releases Darwin, a Unix system that becomes the core of Mac OS X, now macOS.",
+      "pitch": "A solid, proven core under a friendly interface.",
+      "spread": "The Computer History Museum counts Linux, Android, BSD, macOS and iOS among Unix's descendants. Linux copies the design but carries no Bell Labs or Berkeley code.",
+      "sources": [
+        27,
+        26,
+        28
+      ]
+    },
+    {
+      "id": "c47",
+      "thread": "cell",
+      "year": 1947,
+      "lane": "lab",
+      "short": "Hexagons",
+      "title": "Hexagons",
+      "who": "W. Rae Young and Douglas H. Ring",
+      "where": "Bell Labs internal memo, December 11, 1947",
+      "what": "A grid of hexagonal cells, each with a low power transmitter, handing a call from one cell to the next as a car drives through.",
+      "pitch": "Reuse the same radio frequencies over and over across a city, so many more people can have a mobile phone.",
+      "spread": "The technology to build it did not exist yet, and the frequencies had not been allocated. It waited decades.",
+      "sources": [
+        29,
+        30,
+        43
+      ]
+    },
+    {
+      "id": "c73",
+      "thread": "cell",
+      "year": 1973,
+      "lane": "industry",
+      "short": "Motorola",
+      "title": "Motorola calls Bell",
+      "who": "Martin Cooper, Motorola",
+      "where": "A New York City street",
+      "what": "The first public call on a handheld cell phone, placed to Joel Engel, who ran AT&T's rival project.",
+      "pitch": "A phone that belongs to a person, not a car.",
+      "spread": "At Bell, Engel and Richard Frenkiel had rediscovered Ring's idea and developed it into a network of hexagonal cells.",
+      "sources": [
+        31,
+        30
+      ]
+    },
+    {
+      "id": "c83",
+      "thread": "cell",
+      "year": 1983,
+      "lane": "public",
+      "short": "Chicago",
+      "title": "Cellular goes live",
+      "who": "AT&T and Illinois Bell",
+      "where": "Advanced Mobile Phone Service, October 1983",
+      "what": "The first modern commercial cellular system in the US opens in Chicago.",
+      "pitch": "Phone service that follows you.",
+      "spread": "Three months later the Bell System broke up, and its cellular licenses passed to the new regional phone companies.",
+      "sources": [
+        30
+      ]
+    },
+    {
+      "id": "c25",
+      "thread": "cell",
+      "year": 2025,
+      "lane": "public",
+      "short": "9.2 billion",
+      "title": "9.2 billion",
+      "who": "The world",
+      "where": "International Telecommunication Union, Facts and Figures 2025",
+      "what": "9.2 billion mobile cellular subscriptions, 112 for every 100 people on Earth.",
+      "pitch": "A phone in every pocket.",
+      "spread": "Mobile broadband is 89 percent of them, and 36 percent of mobile broadband is now 5G.",
+      "sources": [
+        32
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "kelly",
+      "to": "t47",
+      "kind": "handoff"
+    },
+    {
+      "from": "t47",
+      "to": "s54",
+      "kind": "parallel"
+    },
+    {
+      "from": "t47",
+      "to": "s62",
+      "kind": "parallel"
+    },
+    {
+      "from": "decree",
+      "to": "t56",
+      "kind": "handoff"
+    },
+    {
+      "from": "decree",
+      "to": "u73",
+      "kind": "parallel"
+    },
+    {
+      "from": "c83",
+      "to": "breakup",
+      "kind": "parallel"
+    }
+  ],
+  "series": {
+    "label": "US real GDP",
+    "unit": "billions of chained 2017 dollars",
+    "source": 33,
+    "note": "Annual, from the Bureau of Economic Analysis via FRED. The series starts in 1929, four years after Bell Labs. It shows the economy the inventions grew into, not how much of it they caused.",
+    "points": [
+      {
+        "year": 1929,
+        "value": 1191.124,
+        "approximate": false
+      },
+      {
+        "year": 1930,
+        "value": 1089.785,
+        "approximate": false
+      },
+      {
+        "year": 1931,
+        "value": 1019.977,
+        "approximate": false
+      },
+      {
+        "year": 1932,
+        "value": 888.414,
+        "approximate": false
+      },
+      {
+        "year": 1933,
+        "value": 877.431,
+        "approximate": false
+      },
+      {
+        "year": 1934,
+        "value": 972.263,
+        "approximate": false
+      },
+      {
+        "year": 1935,
+        "value": 1058.836,
+        "approximate": false
+      },
+      {
+        "year": 1936,
+        "value": 1195.251,
+        "approximate": false
+      },
+      {
+        "year": 1937,
+        "value": 1256.503,
+        "approximate": false
+      },
+      {
+        "year": 1938,
+        "value": 1214.869,
+        "approximate": false
+      },
+      {
+        "year": 1939,
+        "value": 1312.365,
+        "approximate": false
+      },
+      {
+        "year": 1940,
+        "value": 1428.075,
+        "approximate": false
+      },
+      {
+        "year": 1941,
+        "value": 1681.049,
+        "approximate": false
+      },
+      {
+        "year": 1942,
+        "value": 1998.542,
+        "approximate": false
+      },
+      {
+        "year": 1943,
+        "value": 2338.761,
+        "approximate": false
+      },
+      {
+        "year": 1944,
+        "value": 2524.752,
+        "approximate": false
+      },
+      {
+        "year": 1945,
+        "value": 2500.057,
+        "approximate": false
+      },
+      {
+        "year": 1946,
+        "value": 2209.911,
+        "approximate": false
+      },
+      {
+        "year": 1947,
+        "value": 2184.614,
+        "approximate": false
+      },
+      {
+        "year": 1948,
+        "value": 2274.627,
+        "approximate": false
+      },
+      {
+        "year": 1949,
+        "value": 2261.928,
+        "approximate": false
+      },
+      {
+        "year": 1950,
+        "value": 2458.532,
+        "approximate": false
+      },
+      {
+        "year": 1951,
+        "value": 2656.32,
+        "approximate": false
+      },
+      {
+        "year": 1952,
+        "value": 2764.803,
+        "approximate": false
+      },
+      {
+        "year": 1953,
+        "value": 2894.411,
+        "approximate": false
+      },
+      {
+        "year": 1954,
+        "value": 2877.708,
+        "approximate": false
+      },
+      {
+        "year": 1955,
+        "value": 3083.026,
+        "approximate": false
+      },
+      {
+        "year": 1956,
+        "value": 3148.765,
+        "approximate": false
+      },
+      {
+        "year": 1957,
+        "value": 3215.065,
+        "approximate": false
+      },
+      {
+        "year": 1958,
+        "value": 3191.216,
+        "approximate": false
+      },
+      {
+        "year": 1959,
+        "value": 3412.421,
+        "approximate": false
+      },
+      {
+        "year": 1960,
+        "value": 3500.272,
+        "approximate": false
+      },
+      {
+        "year": 1961,
+        "value": 3590.066,
+        "approximate": false
+      },
+      {
+        "year": 1962,
+        "value": 3810.124,
+        "approximate": false
+      },
+      {
+        "year": 1963,
+        "value": 3976.142,
+        "approximate": false
+      },
+      {
+        "year": 1964,
+        "value": 4205.277,
+        "approximate": false
+      },
+      {
+        "year": 1965,
+        "value": 4478.555,
+        "approximate": false
+      },
+      {
+        "year": 1966,
+        "value": 4773.931,
+        "approximate": false
+      },
+      {
+        "year": 1967,
+        "value": 4904.864,
+        "approximate": false
+      },
+      {
+        "year": 1968,
+        "value": 5145.914,
+        "approximate": false
+      },
+      {
+        "year": 1969,
+        "value": 5306.594,
+        "approximate": false
+      },
+      {
+        "year": 1970,
+        "value": 5316.391,
+        "approximate": false
+      },
+      {
+        "year": 1971,
+        "value": 5491.445,
+        "approximate": false
+      },
+      {
+        "year": 1972,
+        "value": 5780.048,
+        "approximate": false
+      },
+      {
+        "year": 1973,
+        "value": 6106.371,
+        "approximate": false
+      },
+      {
+        "year": 1974,
+        "value": 6073.363,
+        "approximate": false
+      },
+      {
+        "year": 1975,
+        "value": 6060.875,
+        "approximate": false
+      },
+      {
+        "year": 1976,
+        "value": 6387.437,
+        "approximate": false
+      },
+      {
+        "year": 1977,
+        "value": 6682.804,
+        "approximate": false
+      },
+      {
+        "year": 1978,
+        "value": 7052.711,
+        "approximate": false
+      },
+      {
+        "year": 1979,
+        "value": 7275.999,
+        "approximate": false
+      },
+      {
+        "year": 1980,
+        "value": 7257.316,
+        "approximate": false
+      },
+      {
+        "year": 1981,
+        "value": 7441.485,
+        "approximate": false
+      },
+      {
+        "year": 1982,
+        "value": 7307.314,
+        "approximate": false
+      },
+      {
+        "year": 1983,
+        "value": 7642.266,
+        "approximate": false
+      },
+      {
+        "year": 1984,
+        "value": 8195.295,
+        "approximate": false
+      },
+      {
+        "year": 1985,
+        "value": 8537.004,
+        "approximate": false
+      },
+      {
+        "year": 1986,
+        "value": 8832.611,
+        "approximate": false
+      },
+      {
+        "year": 1987,
+        "value": 9137.745,
+        "approximate": false
+      },
+      {
+        "year": 1988,
+        "value": 9519.427,
+        "approximate": false
+      },
+      {
+        "year": 1989,
+        "value": 9869.003,
+        "approximate": false
+      },
+      {
+        "year": 1990,
+        "value": 10055.129,
+        "approximate": false
+      },
+      {
+        "year": 1991,
+        "value": 10044.238,
+        "approximate": false
+      },
+      {
+        "year": 1992,
+        "value": 10398.046,
+        "approximate": false
+      },
+      {
+        "year": 1993,
+        "value": 10684.179,
+        "approximate": false
+      },
+      {
+        "year": 1994,
+        "value": 11114.647,
+        "approximate": false
+      },
+      {
+        "year": 1995,
+        "value": 11413.012,
+        "approximate": false
+      },
+      {
+        "year": 1996,
+        "value": 11843.599,
+        "approximate": false
+      },
+      {
+        "year": 1997,
+        "value": 12370.299,
+        "approximate": false
+      },
+      {
+        "year": 1998,
+        "value": 12924.876,
+        "approximate": false
+      },
+      {
+        "year": 1999,
+        "value": 13543.774,
+        "approximate": false
+      },
+      {
+        "year": 2000,
+        "value": 14096.033,
+        "approximate": false
+      },
+      {
+        "year": 2001,
+        "value": 14230.726,
+        "approximate": false
+      },
+      {
+        "year": 2002,
+        "value": 14472.712,
+        "approximate": false
+      },
+      {
+        "year": 2003,
+        "value": 14877.312,
+        "approximate": false
+      },
+      {
+        "year": 2004,
+        "value": 15449.757,
+        "approximate": false
+      },
+      {
+        "year": 2005,
+        "value": 15987.957,
+        "approximate": false
+      },
+      {
+        "year": 2006,
+        "value": 16433.148,
+        "approximate": false
+      },
+      {
+        "year": 2007,
+        "value": 16762.445,
+        "approximate": false
+      },
+      {
+        "year": 2008,
+        "value": 16781.485,
+        "approximate": false
+      },
+      {
+        "year": 2009,
+        "value": 16349.11,
+        "approximate": false
+      },
+      {
+        "year": 2010,
+        "value": 16789.75,
+        "approximate": false
+      },
+      {
+        "year": 2011,
+        "value": 17052.41,
+        "approximate": false
+      },
+      {
+        "year": 2012,
+        "value": 17442.759,
+        "approximate": false
+      },
+      {
+        "year": 2013,
+        "value": 17812.167,
+        "approximate": false
+      },
+      {
+        "year": 2014,
+        "value": 18261.714,
+        "approximate": false
+      },
+      {
+        "year": 2015,
+        "value": 18799.622,
+        "approximate": false
+      },
+      {
+        "year": 2016,
+        "value": 19141.672,
+        "approximate": false
+      },
+      {
+        "year": 2017,
+        "value": 19612.102,
+        "approximate": false
+      },
+      {
+        "year": 2018,
+        "value": 20193.896,
+        "approximate": false
+      },
+      {
+        "year": 2019,
+        "value": 20715.671,
+        "approximate": false
+      },
+      {
+        "year": 2020,
+        "value": 20284.5,
+        "approximate": false
+      },
+      {
+        "year": 2021,
+        "value": 21556.002,
+        "approximate": false
+      },
+      {
+        "year": 2022,
+        "value": 22079.726,
+        "approximate": false
+      },
+      {
+        "year": 2023,
+        "value": 22724.135,
+        "approximate": false
+      },
+      {
+        "year": 2024,
+        "value": 23394.892,
+        "approximate": false
+      },
+      {
+        "year": 2025,
+        "value": 23943.305,
+        "approximate": false
+      }
+    ]
+  },
+  "sources": [
+    {
+      "n": 1,
+      "title": "Wikipedia, Bell Labs",
+      "url": "https://en.wikipedia.org/wiki/Bell_Labs"
+    },
+    {
+      "n": 2,
+      "title": "EBSCO Research Starters, Bell Labs Is Formed",
+      "url": "https://www.ebsco.com/research-starters/history/bell-labs-formed"
+    },
+    {
+      "n": 3,
+      "title": "Jon Gertner, The Idea Factory (2012), reposted excerpt on the 1925 founding",
+      "url": "https://greaterwrong.com/posts/Ba8LNjWKDF5nrn9Q6/will-the-world-s-elites-navigate-the-creation-of-ai-just/comment/BeGkEQQrqRTmmW7Z8"
+    },
+    {
+      "n": 4,
+      "title": "Physics Today, review of The Idea Factory (2012)",
+      "url": "https://physicstoday.aip.org/reviews/the-idea-factory-bell-labs-and-the-great-age-of-american-innovation"
+    },
+    {
+      "n": 5,
+      "title": "Wikipedia, Mervin Kelly",
+      "url": "https://en.wikipedia.org/wiki/Mervin_Kelly"
+    },
+    {
+      "n": 6,
+      "title": "ETHW, Mervin J. Kelly",
+      "url": "https://ethw.org/Mervin_J._Kelly"
+    },
+    {
+      "n": 7,
+      "title": "ETHW, Bell Demonstrates Transistor",
+      "url": "https://ethw.org/Bell_Demonstrates_Transistor"
+    },
+    {
+      "n": 8,
+      "title": "PBS, Transistorized: Mervin Kelly",
+      "url": "https://www.pbs.org/transistor/album1/addlbios/kelly.html"
+    },
+    {
+      "n": 9,
+      "title": "Converge Digest, Nokia Bell Labs breaks ground at HELIX (2025)",
+      "url": "https://convergedigest.com/?p=105059"
+    },
+    {
+      "n": 10,
+      "title": "Watzinger, Fackler, Nagler, Schnitzer, CESifo Working Paper 6351 (2017)",
+      "url": "https://www.cesifo.org/en/publications/2017/working-paper/how-antitrust-enforcement-can-spur-innovation-bell-labs-and-1956"
+    },
+    {
+      "n": 11,
+      "title": "Watzinger et al., summary of the 1956 consent decree study",
+      "url": "https://www.nakedcapitalism.com/2017/02/antitrust-enforcement-can-spur-innovation-bell-labs-1956-consent-decree.html"
+    },
+    {
+      "n": 12,
+      "title": "Benton Institute, How Silicon Valley's Leap Ahead Was Preceded by Visible Government Footsteps (2023)",
+      "url": "https://www.mediacompolicy.org/2023/04/25/how-silicon-valleys-leap-ahead-was-preceded-by-visible-government-footsteps/"
+    },
+    {
+      "n": 13,
+      "title": "Britannica, Bell Laboratories",
+      "url": "https://britannica.com/topic/Bell-Laboratories"
+    },
+    {
+      "n": 14,
+      "title": "NJBIZ, On the scene: Nokia Bell Labs' HELIX groundbreaking (2025)",
+      "url": "https://njbiz.com/nokia-bell-labs-helix-hq-new-brunswick-groundbreaking"
+    },
+    {
+      "n": 15,
+      "title": "Physics Today, Demonstration of the transistor",
+      "url": "https://physicstoday.aip.org/news/demonstration-of-the-transistor"
+    },
+    {
+      "n": 16,
+      "title": "Wikipedia, Transistor",
+      "url": "https://en.wikipedia.org/wiki/Transistor"
+    },
+    {
+      "n": 17,
+      "title": "San Jose State University, The History of the Transistor",
+      "url": "https://sjsu.edu/faculty/watkins/transist.htm"
+    },
+    {
+      "n": 18,
+      "title": "Computer History Museum, 13 Sextillion and Counting",
+      "url": "https://computerhistory.org/blog/13-sextillion-counting-the-long-winding-road-to-the-most-frequently-manufactured-human-artifact-in-history/"
+    },
+    {
+      "n": 19,
+      "title": "Wikipedia, A Mathematical Theory of Communication",
+      "url": "https://en.wikipedia.org/wiki/A_Mathematical_Theory_of_Communication"
+    },
+    {
+      "n": 20,
+      "title": "Wikipedia, History of information theory",
+      "url": "https://en.wikipedia.org/wiki/History_of_information_theory"
+    },
+    {
+      "n": 21,
+      "title": "APS News, April 25, 1954: Bell Labs Demonstrates the First Practical Silicon Solar Cell",
+      "url": "https://aps.org/apsnews/2009/04/bell-labs-silicon-solar-cell"
+    },
+    {
+      "n": 22,
+      "title": "ETHW, Milestones: First Practical Photovoltaic Solar Cell",
+      "url": "https://ethw.org/Milestones:First_Practical_Photovoltaic_Solar_Cell"
+    },
+    {
+      "n": 23,
+      "title": "John Perlin via ASES, Saved by the Space Race",
+      "url": "https://ases.org/?p=2977"
+    },
+    {
+      "n": 24,
+      "title": "Microwaves & RF, Bell Labs Celebrates 50th Anniversary of Telstar Launch",
+      "url": "https://www.mwrf.com/markets/commercial/article/21844356/bell-labs-celebrates-50th-anniversary-of-telstar-launch"
+    },
+    {
+      "n": 25,
+      "title": "IEEE Electron Devices Society, Silicon Solar Cell Turns 70 (2024)",
+      "url": "https://ieee.org/ns/periodicals/EDS/EDS-APRIL-2024-HTML-v1/InnerFiles/LandPage.html"
+    },
+    {
+      "n": 26,
+      "title": "Computer History Museum, The Earliest Unix Code",
+      "url": "https://computerhistory.org/blog/the-earliest-unix-code-an-anniversary-source-code-release/"
+    },
+    {
+      "n": 27,
+      "title": "Wikipedia, Unix",
+      "url": "https://en.wikipedia.org/wiki/Unix"
+    },
+    {
+      "n": 28,
+      "title": "Vivian Voss, Origins of Unix",
+      "url": "https://vivianvoss.net/blog/origins-of-unix"
+    },
+    {
+      "n": 29,
+      "title": "Wikipedia, W. Rae Young",
+      "url": "https://en.wikipedia.org/wiki/W._Rae_Young"
+    },
+    {
+      "n": 30,
+      "title": "ETHW, The Foundations of Mobile and Cellular Telephony",
+      "url": "https://ethw.org/The_Foundations_of_Mobile_and_Cellular_Telephony"
+    },
+    {
+      "n": 31,
+      "title": "Britannica, Martin Cooper",
+      "url": "https://www.britannica.com/print/article/1932257"
+    },
+    {
+      "n": 32,
+      "title": "ITU, Facts and Figures 2025: mobile subscriptions",
+      "url": "https://www.itu.int/itu-d/reports/statistics/2025/10/15/ff25-subscriptions/"
+    },
+    {
+      "n": 33,
+      "title": "FRED, Real Gross Domestic Product (GDPCA), from the BEA",
+      "url": "https://fred.stlouisfed.org/series/GDPCA"
+    },
+    {
+      "n": 34,
+      "title": "ETHW, Milestones: Thomas A. Edison West Orange Laboratories and Factories, 1887",
+      "url": "https://ethw.org/Milestones:Thomas_A._Edison_West_Orange_Laboratories_and_Factories,_1887"
+    },
+    {
+      "n": 35,
+      "title": "ETHW, Bell Labs",
+      "url": "https://ethw.org/Bell_Labs"
+    },
+    {
+      "n": 36,
+      "title": "Google Arts & Culture, Thomas Edison Laboratory Complex",
+      "url": "https://artsandculture.google.com/story/eQWxt2jDm5ShOg"
+    },
+    {
+      "n": 37,
+      "title": "Wikipedia, Lucent Technologies",
+      "url": "https://en.wikipedia.org/wiki/Lucent"
+    },
+    {
+      "n": 38,
+      "title": "ROI-NJ, For Nokia Bell Labs, move to HELIX is all about connectivity (2023)",
+      "url": "https://www.roi-nj.com/2023/12/12/tech/for-nokia-bell-labs-move-to-helix-is-all-about-connectivity/"
+    },
+    {
+      "n": 39,
+      "title": "NJB Magazine, Nokia Bell Labs HQ is Moving from Murray Hill to New Brunswick",
+      "url": "https://njbmagazine.com/njb-news-now/nokia-bell-labs-hq-is-moving-from-murray-hill-to-new-brunswick/"
+    },
+    {
+      "n": 40,
+      "title": "Wikipedia, Solar panels on spacecraft",
+      "url": "https://en.wikipedia.org/wiki/Solar_panels_on_spacecraft"
+    },
+    {
+      "n": 41,
+      "title": "Linda Hall Library, Scientist of the Day: Vanguard 1",
+      "url": "https://www.lindahall.org/about/news/scientist-of-the-day/vanguard-1/"
+    },
+    {
+      "n": 42,
+      "title": "Cadence, The Most Important Operating System Ever",
+      "url": "https://community.cadence.com/cadence_blogs_8/b/breakfast-bytes/posts/the-most-important-operating-system-ever"
+    },
+    {
+      "n": 43,
+      "title": "AT&T Archives: Advanced Mobile Phone Service (AMPS)",
+      "url": "https://forohistorico.coit.es/index.php/multimedia/videoteca/item/at-t-archives-advanced-mobile-phone-service-amps"
+    },
+    {
+      "n": 44,
+      "title": "Computer History Museum, 1956: Silicon Comes to Silicon Valley",
+      "url": "https://www.computerhistory.org/siliconengine/silicon-comes-to-silicon-valley/"
+    },
+    {
+      "n": 45,
+      "title": "Wikipedia, Vanguard 1",
+      "url": "https://en.wikipedia.org/wiki/Vanguard_1"
+    }
+  ],
+  "counterpoints": [
+    {
+      "claim": "The monopoly paid for the miracles. AT&T's huge resources as the phone monopoly let Bell Labs do basic research with only loose ties to phone service. When the company shrank, so did the pure research.",
+      "who": "IEEE History Center (ETHW), Bell Labs",
+      "status": "sourced, source 35"
+    },
+    {
+      "claim": "The same monopoly sat on its own market. After 1956 innovation rose outside telecom, but not in telecom equipment, where Bell kept shutting competitors out.",
+      "who": "Watzinger, Fackler, Nagler and Schnitzer (2017)",
+      "status": "sourced, source 10"
+    },
+    {
+      "claim": "Inventing is not scaling. Texas Instruments sold the first transistor radios, Hoffman sold the solar cells, Motorola made the first handheld cell call and Apple put Unix in the Mac. Bell often invented the thing other people turned into products.",
+      "who": "Britannica, SJSU, John Perlin, Wikipedia",
+      "status": "sourced, sources 17, 23, 27, 31"
+    },
+    {
+      "claim": "Bell was not the only place the transistor could have come from. A point-contact transistor was invented independently in 1948.",
+      "who": "Wikipedia, Transistor",
+      "status": "sourced, source 16. Name the 1948 inventors once checked against a primary source."
+    }
+  ],
+  "open_questions": [
+    "Verify the $12 million 1925 budget directly in The Idea Factory. Right now it comes from a reposted excerpt (source 3).",
+    "Find a sourced modern landing for information theory, such as how Shannon's limits shape the coding in 5G or Wi-Fi. The thread stops in 1949.",
+    "Laser and CCD are the obvious alternates for the top five. Source who built the first working laser before adding it.",
+    "Name the 1948 independent inventors of the transistor from a primary source.",
+    "One source credits Eero Saarinen with Murray Hill. Saarinen designed Holmdel. Do not use until verified.",
+    "HELIX timing conflicts: NJBIZ says construction completes in 2027, Nokia says the move happens by 2028.",
+    "NEEDS SOURCE for the New Jersey claim: patents or R&D spending per capita by state, New Jersey against California and Massachusetts.",
+    "Second series idea: Bell Labs headcount by year (one source says 6,000 in 1950)."
+  ],
+  "edit_log": [
+    "2026-10-20: t56 reworded; Shockley left Bell before 1956 (sources 44, 17). s58: battery radio lasted weeks to months depending on source, solar radio until 1964 (source 45)."
+  ]
+}
