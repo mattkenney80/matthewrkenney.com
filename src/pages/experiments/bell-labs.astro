@@ -31,6 +31,13 @@ const isDraft = /draft/i.test(idea.intro.status);
     network. Then other people, in other places, turned each one into the modern world. Drag through
     the years and follow all five out of New Jersey.
   </p>
+  <p class="lede">
+    Bell Labs ran on two kinds of energy. Mervin Kelly&rsquo;s was proximity: hallways so long you
+    could not walk to lunch without bumping into someone smarter than you in a different field.
+    William Shockley&rsquo;s was spite. Left off the transistor patent, he locked himself in a Chicago
+    hotel room and invented a better one. Then he moved to California and managed so badly that his
+    eight best engineers quit and founded Silicon Valley without him.
+  </p>
 
   <aside class="bl-note" aria-label={idea.intro.label}>
     <p class="bl-mono">
@@ -105,6 +112,7 @@ const isDraft = /draft/i.test(idea.intro.status);
 </script>
 
 <style is:global>
+  .lede + .lede { margin-top: var(--space-2); }
   .bl-eyebrow { margin: 0 0 0.5rem; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-ink-soft); }
   h1 em { font-style: normal; color: #2340c8; }
   .bl, .bl-note { --accent: #2340c8; --accent-soft: rgba(35, 64, 200, 0.2);
