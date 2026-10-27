@@ -21,7 +21,7 @@ const stations = [...idea.stations].sort((a: any, b: any) => a.year - b.year);
 const first = stations[0];
 const last = stations[stations.length - 1];
 // Only counterpoints with a source are shown; the rest are still being researched.
-const counterpoints = (idea.counterpoints ?? []).filter((c: any) => !/NEEDS VERIFICATION/i.test(c.status));
+const counterpoints = (idea.counterpoints ?? []).filter((c: any) => !/NEEDS (VERIFICATION|SOURCE)/i.test(c.status));
 const pending = (idea.counterpoints ?? []).length - counterpoints.length;
 const sourceNo = (c: any) => Number(/source (\d+)/i.exec(c.status)?.[1]) || null;
 const sourceUrl = (n: number) => idea.sources.find((s: any) => s.n === n)?.url;
@@ -32,7 +32,7 @@ const sourceUrl = (n: number) => idea.sources.find((s: any) => s.n === n)?.url;
   {idea.headline ? <h1>{idea.headline}</h1> : <h1>Who sold us <em>{idea.title}</em>?</h1>}
   <p class="lede">{idea.intro ?? idea.question}</p>
 
-  <div class="isl" id="isl" style={`--lane-consult:#7a4fb0;--lane-academy:#1f7a5a;--lane-media:#a3601b;--lane-gov:#9b2f3f;--lane-board:#2d5f8f;--lane-think:#5b6b2a;--lane-public:#6b6b6b;--lane-law:#7a4fb0;--lane-court:#a3601b;--lane-money:#2d5f8f;--lane-labor:#1f7a5a`}>
+  <div class="isl" id="isl" style={`--lane-consult:#7a4fb0;--lane-academy:#1f7a5a;--lane-media:#a3601b;--lane-gov:#9b2f3f;--lane-board:#2d5f8f;--lane-think:#5b6b2a;--lane-public:#6b6b6b;--lane-industry:#2d5f8f;--lane-law:#7a4fb0;--lane-court:#a3601b;--lane-money:#2d5f8f;--lane-labor:#1f7a5a`}>
     <section class="isl-stage" aria-labelledby="isl-who">
       <div class="isl-stage-head">
         <h2 id="isl-who">Who thought of the idea?</h2>
@@ -93,6 +93,15 @@ const sourceUrl = (n: number) => idea.sources.find((s: any) => s.n === n)?.url;
       <svg id="isl-chart" viewBox="0 0 1000 240" aria-hidden="true"></svg>
       <p class="isl-hint">{idea.chart?.note}</p>
     </section>
+
+    {idea.charts?.map((c: any, i: number) => (
+      <section class="isl-chart" aria-labelledby={`isl-xh-${i}`}>
+        <h2 id={`isl-xh-${i}`}>{c.title}</h2>
+        <p class="isl-readout isl-xr" id={`isl-xr-${i}`}></p>
+        <svg id={`isl-xc-${i}`} viewBox="0 0 1000 240" aria-hidden="true"></svg>
+        <p class="isl-hint">{c.note}</p>
+      </section>
+    ))}
   </div>
 
   {idea.findings?.length > 0 && (
@@ -240,6 +249,12 @@ const sourceUrl = (n: number) => idea.sources.find((s: any) => s.n === n)?.url;
   .isl-chart h2 { margin-bottom: 0.25rem; }
   .isl-readout { margin: 0 0 0.5rem; font-variant-numeric: tabular-nums; color: var(--color-ink-soft); }
   .isl-readout b { font-family: var(--font-serif); font-size: 2.25rem; color: var(--idea); margin-right: 0.4rem; font-weight: 500; }
+  .isl-xr { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 1.25rem; }
+  .isl-xv { display: inline-flex; align-items: baseline; gap: 0.4rem; }
+  .isl-xv i { display: inline-block; width: 0.7rem; height: 0.7rem; align-self: center; }
+  .isl-xv b { margin-right: 0; }
+  .isl-xwhen { font-size: 0.85rem; }
+  .isl-chart svg .axis { font-size: 12px; fill: var(--color-ink-soft); font-family: inherit; }
   #isl-chart .axis { font-size: 12px; fill: var(--color-ink-soft); font-family: inherit; }
 
   .isl-findings { margin-top: var(--space-4); display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: var(--space-3); }

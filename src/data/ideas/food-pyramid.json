@@ -1,0 +1,1092 @@
+{
+  "id": "food-pyramid",
+  "title": "the food pyramid",
+  "question": "In 1977 the government told Americans to eat less fat. In 1992 it drew a pyramid with bread at the bottom. Follow who sold the idea, how it was marketed, and how much heavier the country got after.",
+  "status": "In research",
+  "lanes": [
+    {
+      "id": "academy",
+      "label": "Universities",
+      "y": 58
+    },
+    {
+      "id": "industry",
+      "label": "Industry",
+      "y": 128
+    },
+    {
+      "id": "media",
+      "label": "Press",
+      "y": 198
+    },
+    {
+      "id": "gov",
+      "label": "Government",
+      "y": 268
+    },
+    {
+      "id": "public",
+      "label": "Your plate",
+      "y": 352
+    }
+  ],
+  "timeScale": [
+    [
+      1938,
+      0
+    ],
+    [
+      1960,
+      0.17
+    ],
+    [
+      1981,
+      0.58
+    ],
+    [
+      1990,
+      0.64
+    ],
+    [
+      2010,
+      0.84
+    ],
+    [
+      2029,
+      1
+    ]
+  ],
+  "stations": [
+    {
+      "id": "basic7",
+      "year": 1943,
+      "lane": "gov",
+      "short": "Basic Seven",
+      "lab": "below",
+      "title": "Butter gets its own group",
+      "who": "U.S. Department of Agriculture",
+      "where": "National Wartime Nutrition Guide, 1943, reissued as the National Food Guide in 1946",
+      "what": "The Basic Seven, a wheel of seven food groups meant to keep the home front fed under rationing. One whole group was butter and fortified margarine, recommended every day.",
+      "pitch": "Eat enough of the right things. The worry was getting too little, not too much.",
+      "spread": "Federal diet advice went back to Wilbur Atwater's 1894 farmers' bulletin, but this was the USDA's first visual food guide. The advice stayed focused on getting enough nutrients until the 1970s.",
+      "sources": [
+        2,
+        5,
+        3,
+        1
+      ]
+    },
+    {
+      "id": "keys53",
+      "year": 1953,
+      "lane": "academy",
+      "short": "Keys's graph",
+      "lab": "above",
+      "title": "The six-country graph",
+      "who": "Ancel Keys",
+      "where": "University of Minnesota, in “Atherosclerosis: A Problem in Newer Public Health” (1953)",
+      "what": "A graph of six countries, from Japan to the United States, showing heart disease deaths in middle-aged men rising with the share of calories from fat.",
+      "pitch": "The heart attack epidemic in middle-aged American men comes from how they live and eat, and it can be changed.",
+      "spread": "The UN had food data on 22 countries; Keys plotted six. Critics Jacob Yerushalmy and Herman Hilleboe pointed out that the wider data showed a much weaker link. Keys pressed on and began the Seven Countries Study in 1958.",
+      "sources": [
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "id": "basic4",
+      "year": 1956,
+      "lane": "gov",
+      "short": "Basic Four",
+      "lab": "below",
+      "title": "Four groups for 36 years",
+      "who": "Harvard School of Public Health researchers, then the USDA",
+      "where": "Food for Fitness: A Daily Food Guide",
+      "what": "Harvard nutrition researchers condensed the Basic Seven into four groups: milk, meat, fruits and vegetables, and breads and cereals. The USDA adopted it, with minimum amounts from each group.",
+      "pitch": "A simpler way to make sure you get enough.",
+      "spread": "It hung in American classrooms until the pyramid replaced it in 1992. In 1979 the USDA added a fifth group to eat in moderation: fats, sweets and alcohol.",
+      "sources": [
+        4,
+        1,
+        5,
+        21
+      ]
+    },
+    {
+      "id": "aha61",
+      "year": 1961,
+      "lane": "media",
+      "short": "Heart Association",
+      "lab": "above",
+      "title": "Mr. Cholesterol",
+      "who": "Ancel Keys and the American Heart Association",
+      "where": "Time magazine cover, January 13, 1961",
+      "what": "Keys joins the AHA's nutrition committee, and in 1961 the AHA becomes the first group anywhere to advise cutting back on saturated fat and dietary cholesterol. Time puts Keys on its cover.",
+      "pitch": "Replace saturated fats with polyunsaturated vegetable oils to protect your heart.",
+      "spread": "Keys and his wife had already taken the idea to the public in a bestseller, Eat Well and Stay Well (1959). His message was to swap fats, not to go fat free.",
+      "sources": [
+        7,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "id": "sugar65",
+      "year": 1965,
+      "lane": "industry",
+      "short": "Sugar money",
+      "lab": "below",
+      "title": "The sugar industry hires Harvard",
+      "who": "Sugar Research Foundation",
+      "where": "Its executive committee, July 13, 1965",
+      "what": "After a burst of research and press linking sugar to heart disease, the trade group approves Project 226: a literature review on carbohydrates and heart disease by Harvard's Mark Hegsted and Robert McGandy, overseen by their department head, F. J. Stare.",
+      "pitch": "Point the evidence on heart disease away from sugar.",
+      "spread": "The industry paid the equivalent of about $50,000 in 2016 dollars, set the review's goal, supplied articles to include and saw drafts. A sugar trade group had noted as early as 1954 that if Americans ate less fat, they would eat more sugar.",
+      "sources": [
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "id": "nejm67",
+      "year": 1967,
+      "lane": "academy",
+      "short": "Harvard review",
+      "lab": "below",
+      "title": "Fat takes the blame",
+      "who": "Robert McGandy, Mark Hegsted and F. J. Stare",
+      "where": "New England Journal of Medicine, published in two parts, 1967",
+      "what": "A review that picked apart the studies tying sugar to heart disease and went easy on the studies blaming fat. It concluded that cutting fat was the best diet change to prevent heart disease.",
+      "pitch": "The case against sugar is weak. The case against fat is strong.",
+      "spread": "The sugar money was not disclosed. In 2016 researchers at UC San Francisco found the letters in public archives. They found no direct evidence the industry edited the paper, and called the evidence that it shaped the conclusions circumstantial.",
+      "sources": [
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "id": "yudkin72",
+      "year": 1972,
+      "lane": "academy",
+      "short": "Yudkin",
+      "lab": "above",
+      "title": "The man who blamed sugar",
+      "who": "John Yudkin",
+      "where": "Queen Elizabeth College, London, in the book Pure, White and Deadly",
+      "what": "A book arguing that sugar was behind heart disease, obesity, diabetes and tooth decay, a case Yudkin had been making since at least 1957.",
+      "pitch": "Sugar is the dangerous one, not fat.",
+      "spread": "Keys attacked Yudkin's work, including for not accounting for confounding factors, and Keys's side won the argument for decades. In 2012 the book was reissued with a foreword by Robert Lustig, a leading modern critic of sugar.",
+      "sources": [
+        15,
+        16
+      ]
+    },
+    {
+      "id": "mcgovern77",
+      "year": 1977,
+      "lane": "gov",
+      "short": "McGovern Goals",
+      "lab": "below",
+      "title": "The Senate tells America what to eat",
+      "who": "Senator George McGovern's Select Committee on Nutrition and Human Needs, drafted mainly by staffer Nick Mottern",
+      "where": "Dietary Goals for the United States, January 14, 1977",
+      "what": "The first federal advice aimed at eating too much rather than too little. It tied six of the ten leading causes of death to diet.",
+      "pitch": "Change the national diet to prevent heart disease and the other chronic killers.",
+      "spread": "Mark Hegsted, of the 1967 sugar-funded review, strongly backed the Goals. Meat, dairy and egg groups fought them, and a second edition in December 1977 dropped the advice to eat less meat. Many scientists also doubted the science supported such specific numbers.",
+      "sources": [
+        6,
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "id": "dga80",
+      "year": 1980,
+      "lane": "gov",
+      "short": "First guidelines",
+      "lab": "above",
+      "title": "From a Senate report to standing policy",
+      "who": "USDA and the federal health department",
+      "where": "Dietary Guidelines for Americans, first edition, 1980",
+      "what": "The first Dietary Guidelines for Americans, a small pamphlet. They have been reissued every five years since.",
+      "pitch": "The same direction as the Goals, now with the executive branch behind it.",
+      "spread": "Controversy over the 1980 edition led to an outside scientific advisory committee for every later edition. In 1994 Congress required school meals to follow the guidelines.",
+      "sources": [
+        17,
+        20
+      ]
+    },
+    {
+      "id": "pyramid92",
+      "year": 1992,
+      "lane": "gov",
+      "short": "The pyramid",
+      "lab": "below",
+      "title": "The pyramid",
+      "who": "Agriculture Secretary Edward Madigan",
+      "where": "Food Guide Pyramid, unveiled April 1992",
+      "what": "Bread, cereal, rice and pasta at the base, 6 to 11 servings a day. Fats, oils and sweets at the tip, to use sparingly. Children were the main target, and materials went straight to schools.",
+      "pitch": "Eat mostly grains, then fruits and vegetables, go easy on meat and dairy, and barely touch fat.",
+      "spread": "It was due in spring 1991, but the USDA pulled it after meat and dairy groups complained it discouraged their products. After $855,000 more research it came out a year later with 33 small changes, and the meat industry dropped its objection.",
+      "sources": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ]
+    },
+    {
+      "id": "snackwells",
+      "year": 1992.6,
+      "lane": "industry",
+      "short": "SnackWell's",
+      "lab": "above",
+      "title": "Fat-free cookies",
+      "who": "Nabisco",
+      "where": "SnackWell's, launched 1992",
+      "what": "A line of fat-free and low-fat cookies and crackers, led by devil's food cookie cakes.",
+      "pitch": "The flavors you already like, without the fat. Nabisco's own polling said fat was America's top health worry.",
+      "spread": "It arrived the same year as the pyramid, on shelves already crowded with low-fat cookies, and sold itself on the guidelines' warning about fat. The brand was retired in 2022.",
+      "sources": [
+        26,
+        27
+      ],
+      "yearLabel": "1992"
+    },
+    {
+      "id": "taubes02",
+      "year": 2002,
+      "lane": "media",
+      "short": "Taubes",
+      "lab": "above",
+      "title": "What if it's all been a big fat lie?",
+      "who": "Gary Taubes",
+      "where": "New York Times Magazine cover story, July 7, 2002",
+      "what": "An investigation arguing that the low-fat advice rested on weak science, and that carbohydrates, not fat, were driving heart disease and obesity.",
+      "pitch": "Fat is not what makes you fat.",
+      "spread": "It was one of the magazine's most controversial stories of the year. The Center for Science in the Public Interest answered with a point-by-point rebuttal. Taubes expanded it into Good Calories, Bad Calories (2007) and became a leading voice of the low-carb movement.",
+      "sources": [
+        28,
+        29
+      ]
+    },
+    {
+      "id": "myplate11",
+      "year": 2011,
+      "lane": "gov",
+      "short": "MyPlate",
+      "lab": "below",
+      "title": "The pyramid becomes a plate",
+      "who": "First Lady Michelle Obama and Agriculture Secretary Tom Vilsack",
+      "where": "MyPlate, June 2, 2011",
+      "what": "A plate split into four wedges, vegetables and grains a little larger than fruit and protein. It replaced MyPyramid and ended 19 years of pyramids.",
+      "pitch": "Picture your plate, not a pyramid.",
+      "spread": "MyPyramid (2005) had already turned the pyramid into vertical stripes. MyPlate stayed the federal symbol until January 2026, though the portion sizes underneath had not changed since 2005.",
+      "sources": [
+        30,
+        31,
+        1,
+        25
+      ]
+    },
+    {
+      "id": "kearns16",
+      "year": 2016,
+      "lane": "academy",
+      "short": "Sugar papers",
+      "lab": "above",
+      "title": "The letters surface",
+      "who": "Cristin Kearns, Laura Schmidt and Stanton Glantz",
+      "where": "UC San Francisco, in JAMA Internal Medicine, September 12, 2016",
+      "what": "An analysis of more than 340 documents between the sugar industry and two scientists, showing the industry paid for and steered the 1967 Harvard review.",
+      "pitch": "Reviews should be written by people without conflicts of interest, and nutrition science needs to disclose who pays.",
+      "spread": "The story ran everywhere. Critics said a few letters did not show the Harvard professors were dishonest, and the authors replied that they had never claimed the review set the course of national policy.",
+      "sources": [
+        12,
+        13,
+        38,
+        39
+      ]
+    },
+    {
+      "id": "today",
+      "year": 2024,
+      "lane": "public",
+      "short": "Your plate",
+      "lab": "below",
+      "title": "Where it landed",
+      "who": "American adults",
+      "where": "CDC National Health and Nutrition Examination Survey and national death records",
+      "what": "Obesity among adults 20 to 74 went from 13.4 percent in the early 1960s to 40.8 percent in 2021 to 2023. The average man went from about 166 pounds to about 199.",
+      "pitch": "Low fat.",
+      "spread": "Obesity barely moved from 1960 to 1980, then climbed through the 1990s and 2000s and peaked at 42.8 percent in 2017 to 2018. Over the same years life expectancy reached a record 79.0 in 2024. Americans are heavier and longer-lived at the same time.",
+      "sources": [
+        40,
+        41,
+        43,
+        44
+      ]
+    },
+    {
+      "id": "flip26",
+      "year": 2026,
+      "lane": "gov",
+      "short": "Flipped",
+      "lab": "above",
+      "title": "The pyramid comes back upside down",
+      "who": "HHS Secretary Robert F. Kennedy Jr. and USDA Secretary Brooke Rollins",
+      "where": "Dietary Guidelines for Americans, 2025 to 2030, released January 7, 2026",
+      "what": "An inverted pyramid with protein, dairy, healthy fats, fruits and vegetables across the wide top and whole grains at the narrow bottom. The guidelines shrank to 10 pages from 164.",
+      "pitch": "Eat real food and cut out highly processed products.",
+      "spread": "Some experts praised it as overdue. Critics, including Yale's Susan Mayne, said it gave meat, butter and whole milk striking prominence, and some doctors accused it of bowing to the meat and dairy industry, the same charge made in 1991 from the other direction.",
+      "sources": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "id": "coke15",
+      "year": 2015,
+      "lane": "industry",
+      "title": "Blame the couch, not the can",
+      "who": "Coca-Cola and the Global Energy Balance Network",
+      "where": "A nonprofit of university scientists, quietly funded by a soda company",
+      "what": "A research group that told the public obesity comes mostly from too little exercise, not from what people eat and drink.",
+      "pitch": "Keep drinking, just move more. Its vice president, exercise scientist Steven Blair, said there was virtually no compelling evidence that fast food and sugary drinks were the cause.",
+      "spread": "The New York Times reported in August 2015 that Coca-Cola had given $1.5 million to start the group and close to $4 million more to projects by two of its founding members, none of it plainly disclosed. Marion Nestle of NYU called it a front group for the company.",
+      "sources": [
+        51,
+        52,
+        53
+      ],
+      "lab": "below",
+      "short": "Coke's network"
+    }
+  ],
+  "edges": [
+    {
+      "from": "basic7",
+      "to": "basic4",
+      "kind": "handoff"
+    },
+    {
+      "from": "keys53",
+      "to": "aha61",
+      "kind": "handoff"
+    },
+    {
+      "from": "sugar65",
+      "to": "nejm67",
+      "kind": "handoff"
+    },
+    {
+      "from": "nejm67",
+      "to": "mcgovern77",
+      "kind": "handoff"
+    },
+    {
+      "from": "aha61",
+      "to": "mcgovern77",
+      "kind": "handoff"
+    },
+    {
+      "from": "mcgovern77",
+      "to": "dga80",
+      "kind": "handoff"
+    },
+    {
+      "from": "dga80",
+      "to": "pyramid92",
+      "kind": "handoff"
+    },
+    {
+      "from": "basic4",
+      "to": "pyramid92",
+      "kind": "handoff"
+    },
+    {
+      "from": "pyramid92",
+      "to": "snackwells",
+      "kind": "parallel"
+    },
+    {
+      "from": "pyramid92",
+      "to": "myplate11",
+      "kind": "handoff"
+    },
+    {
+      "from": "pyramid92",
+      "to": "today",
+      "kind": "handoff"
+    },
+    {
+      "from": "snackwells",
+      "to": "today",
+      "kind": "handoff"
+    },
+    {
+      "from": "myplate11",
+      "to": "flip26",
+      "kind": "handoff"
+    },
+    {
+      "from": "yudkin72",
+      "to": "kearns16",
+      "kind": "parallel"
+    },
+    {
+      "from": "taubes02",
+      "to": "flip26",
+      "kind": "parallel"
+    },
+    {
+      "from": "kearns16",
+      "to": "flip26",
+      "kind": "parallel"
+    },
+    {
+      "from": "snackwells",
+      "to": "coke15",
+      "kind": "parallel"
+    }
+  ],
+  "ratio": [
+    {
+      "year": 1961,
+      "value": 13.4,
+      "approximate": false,
+      "period": "1960-1962"
+    },
+    {
+      "year": 1972.5,
+      "value": 14.5,
+      "approximate": false,
+      "period": "1971-1974"
+    },
+    {
+      "year": 1978,
+      "value": 15.0,
+      "approximate": false,
+      "period": "1976-1980"
+    },
+    {
+      "year": 1991,
+      "value": 23.2,
+      "approximate": false,
+      "period": "1988-1994"
+    },
+    {
+      "year": 1999.5,
+      "value": 30.9,
+      "approximate": false,
+      "period": "1999-2000"
+    },
+    {
+      "year": 2001.5,
+      "value": 31.2,
+      "approximate": false,
+      "period": "2001-2002"
+    },
+    {
+      "year": 2003.5,
+      "value": 32.9,
+      "approximate": false,
+      "period": "2003-2004"
+    },
+    {
+      "year": 2005.5,
+      "value": 35.1,
+      "approximate": false,
+      "period": "2005-2006"
+    },
+    {
+      "year": 2007.5,
+      "value": 34.3,
+      "approximate": false,
+      "period": "2007-2008"
+    },
+    {
+      "year": 2009.5,
+      "value": 36.1,
+      "approximate": false,
+      "period": "2009-2010"
+    },
+    {
+      "year": 2011.5,
+      "value": 35.3,
+      "approximate": false,
+      "period": "2011-2012"
+    },
+    {
+      "year": 2013.5,
+      "value": 38.2,
+      "approximate": false,
+      "period": "2013-2014"
+    },
+    {
+      "year": 2015.5,
+      "value": 40.0,
+      "approximate": false,
+      "period": "2015-2016"
+    },
+    {
+      "year": 2017.5,
+      "value": 42.8,
+      "approximate": false,
+      "period": "2017-2018"
+    },
+    {
+      "year": 2022.5,
+      "value": 40.8,
+      "approximate": false,
+      "period": "August 2021-August 2023"
+    }
+  ],
+  "chart": {
+    "title": "How fat the country got",
+    "unit": "%",
+    "badge": "%",
+    "decimals": 1,
+    "hold": true,
+    "xFrom": 1948,
+    "step": 10,
+    "dots": 100,
+    "bubbleGrow": 14,
+    "dotLabel": "one adult in a hundred with obesity",
+    "label": "of adults 20 to 74 with obesity",
+    "meter": "In the {year} survey, {n} of every 100 American adults had obesity.",
+    "note": "Obesity is a body mass index of 30 or more, from measured height and weight. Ages 20 to 74 is the only age group CDC can compare across every survey back to 1960. The curve bends after the late 1970s, when the low-fat advice began. That timing fits the story; it does not prove it. Between surveys the bubbles and meter hold the last measured figure.",
+    "sources": [
+      40
+    ]
+  },
+  "charts": [
+    {
+      "title": "The average adult",
+      "unit": " lb",
+      "step": 10,
+      "note": "Mean measured weight of adults from CDC exam surveys, plotted at the middle year of each survey period. Points through 1999-2002 are ages 20 to 74. The two latest points are ages 20 and older, which adds people over 75, who weigh less on average, so the switch slightly lowers the later figures. Weight alone does not show what caused the gain.",
+      "lines": [
+        {
+          "label": "Men",
+          "points": [
+            {
+              "year": 1961,
+              "value": 166.3,
+              "approximate": false,
+              "period": "1960-1962"
+            },
+            {
+              "year": 1972.5,
+              "value": 173.4,
+              "approximate": false,
+              "period": "1971-1974"
+            },
+            {
+              "year": 1978,
+              "value": 173.8,
+              "approximate": false,
+              "period": "1976-1980"
+            },
+            {
+              "year": 1991,
+              "value": 182.4,
+              "approximate": false,
+              "period": "1988-1994"
+            },
+            {
+              "year": 2000.5,
+              "value": 191.0,
+              "approximate": false,
+              "period": "1999-2002"
+            },
+            {
+              "year": 2016.5,
+              "value": 199.8,
+              "approximate": false,
+              "period": "2015-2018"
+            },
+            {
+              "year": 2022.5,
+              "value": 199.0,
+              "approximate": false,
+              "period": "August 2021-August 2023"
+            }
+          ]
+        },
+        {
+          "label": "Women",
+          "points": [
+            {
+              "year": 1961,
+              "value": 140.2,
+              "approximate": false,
+              "period": "1960-1962"
+            },
+            {
+              "year": 1972.5,
+              "value": 144.2,
+              "approximate": false,
+              "period": "1971-1974"
+            },
+            {
+              "year": 1978,
+              "value": 145.4,
+              "approximate": false,
+              "period": "1976-1980"
+            },
+            {
+              "year": 1991,
+              "value": 154.1,
+              "approximate": false,
+              "period": "1988-1994"
+            },
+            {
+              "year": 2000.5,
+              "value": 164.3,
+              "approximate": false,
+              "period": "1999-2002"
+            },
+            {
+              "year": 2016.5,
+              "value": 170.8,
+              "approximate": false,
+              "period": "2015-2018"
+            },
+            {
+              "year": 2022.5,
+              "value": 171.8,
+              "approximate": false,
+              "period": "August 2021-August 2023"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "And yet we live longer",
+      "unit": " yrs",
+      "step": 2,
+      "decimals": 1,
+      "note": "Period life expectancy at birth from national death records. The drop in 2020 and 2021 came with the COVID-19 pandemic. Lifespan rose the whole time weight rose, so this chart is a check on the story, not support for it: diet is one of many things that move it.",
+      "lines": [
+        {
+          "label": "Life expectancy at birth",
+          "points": [
+            {
+              "year": 1950,
+              "value": 68.2,
+              "approximate": false
+            },
+            {
+              "year": 1960,
+              "value": 69.7,
+              "approximate": false
+            },
+            {
+              "year": 1970,
+              "value": 70.8,
+              "approximate": false
+            },
+            {
+              "year": 1980,
+              "value": 73.7,
+              "approximate": false
+            },
+            {
+              "year": 1990,
+              "value": 75.4,
+              "approximate": false
+            },
+            {
+              "year": 2000,
+              "value": 76.8,
+              "approximate": false
+            },
+            {
+              "year": 2010,
+              "value": 78.7,
+              "approximate": false
+            },
+            {
+              "year": 2015,
+              "value": 78.8,
+              "approximate": false
+            },
+            {
+              "year": 2019,
+              "value": 78.8,
+              "approximate": false
+            },
+            {
+              "year": 2020,
+              "value": 77.0,
+              "approximate": false
+            },
+            {
+              "year": 2021,
+              "value": 76.4,
+              "approximate": false
+            },
+            {
+              "year": 2022,
+              "value": 77.5,
+              "approximate": false
+            },
+            {
+              "year": 2023,
+              "value": 78.4,
+              "approximate": false
+            },
+            {
+              "year": 2024,
+              "value": 79.0,
+              "approximate": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "title": "The advice came first",
+      "text": "Obesity among adults 20 to 74 barely moved from the early 1960s to the late 1970s, 13.4 percent to 15.0 percent. The Dietary Goals came in 1977 and the first guidelines in 1980. By 1988 to 1994 it was 23.2 percent, and by 1999 to 2000 it was 30.9. The timing fits. It does not prove the cause."
+    },
+    {
+      "title": "Fat got blamed, sugar paid",
+      "text": "The sugar industry paid for the 1967 Harvard review that pointed at fat and did not disclose it. One of its authors, Mark Hegsted, then strongly backed the 1977 Senate goals that turned the idea into national advice."
+    },
+    {
+      "title": "Heavier and longer-lived",
+      "text": "The average man gained about 33 pounds between the early 1960s and today. Life expectancy rose from 69.7 years in 1960 to a record 79.0 in 2024. Whatever the pyramid did to our waistlines, it did not stop that climb."
+    }
+  ],
+  "counterpoints": [
+    {
+      "claim": "Almost nobody ate the pyramid. Very few Americans ever followed the pyramid or MyPlate, so the advice may explain less about what people actually ate than this page implies.",
+      "who": "PolitiFact (2025)",
+      "status": "sourced, source 25"
+    },
+    {
+      "claim": "Keys gets blamed for more than he said. He argued for swapping saturated fat for other fats, not for fat-free food, and his defenders say the Seven Countries Study did not drop inconvenient countries. The famous six-country graph was a separate, earlier paper.",
+      "who": "Pett, Kahn, Willett and Katz white paper via Oldways; University of Houston",
+      "status": "sourced, sources 37, 11"
+    },
+    {
+      "claim": "The sugar papers can be overread. Critics say the letters show no dishonesty and the review made few ripples. The authors themselves say they never claimed it set national policy.",
+      "who": "FoodNavigator (2016); Kearns, Schmidt and Glantz reply",
+      "status": "sourced, sources 38, 39"
+    },
+    {
+      "claim": "Fat really is calorie dense. Fat has twice the calories of protein or carbohydrate, which is the core of the case that low-fat advice was reasonable.",
+      "who": "Marion Nestle, quoted by the Center for Science in the Public Interest (2002)",
+      "status": "sourced, source 29"
+    },
+    {
+      "claim": "We got heavier and still live longer. Life expectancy hit a record 79.0 in 2024 while about 40 percent of adults had obesity, so the weight chart is not a body count.",
+      "who": "CDC NCHS",
+      "status": "sourced, sources 40, 44"
+    },
+    {
+      "claim": "Heart disease deaths fell sharply after the late 1960s, and some researchers credit lower blood cholesterol alongside less smoking and better treatment. If so, part of the fat advice worked.",
+      "who": "To be found",
+      "status": "NEEDS SOURCE"
+    },
+    {
+      "claim": "Obesity rose in many countries with very different food guides, which points to causes beyond the USDA, such as cheaper calories, bigger portions and less physical work.",
+      "who": "To be found",
+      "status": "NEEDS VERIFICATION"
+    }
+  ],
+  "open_questions": [
+    "Matthew to decide whether this page gets a first-person intro. Do not draft one for him.",
+    "Basic Four date: Harvard and USDA history say 1956, Nursing Clio says the Food for Fitness leaflet came out in 1958. Check the USDA leaflet itself.",
+    "Read Keys 1953 (Journal of the Mount Sinai Hospital) and Yerushalmy and Hilleboe 1957 directly. Sources disagree on whether data existed for 21 or 22 countries.",
+    "Replace source 50 (a mirror of Health, United States 2019) with the cdc.gov original for the 2000 life expectancy point, and fill in 1975 and 1995.",
+    "Primary source for what the 1977 Dietary Goals actually recommended (the fat, sugar and salt targets). The DietaryGuidelines.gov history lists them.",
+    "Second outcome series worth adding: USDA ERS food availability per person (added sugars, grains, added fats) from 1970, to test whether eating actually followed the advice.",
+    "Third series worth adding: age-adjusted heart disease death rate, which tests the fat hypothesis more directly than weight does.",
+    "Who designed the 1992 pyramid graphic, and who did the $855,000 follow-up research? Luise Light, a USDA nutritionist, has said her draft was changed; do not use until sourced.",
+    "SnackWell's sales figures (one weak source says over $400 million by 1995). Find a business press source before using.",
+    "Eisenhower's 1955 heart attack and Paul Dudley White's public advice could be a press-lane station. Source it first.",
+    "Source the steelman counterpoints marked NEEDS SOURCE and NEEDS VERIFICATION before this ships."
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "title": "Wikipedia, History of USDA nutrition guidelines",
+      "url": "https://en.wikipedia.org/wiki/History_of_USDA_nutrition_guidelines"
+    },
+    {
+      "n": 2,
+      "title": "Nursing Clio, Butter and the History of U.S. Dietary Guides since 1894 (2019)",
+      "url": "https://nursingclio.org/2019/10/22/butter-and-the-history-of-u-s-dietary-guides-since-1894/"
+    },
+    {
+      "n": 3,
+      "title": "NPR The Salt, Illustrating Diet Advice Is Hard. Here's How USDA Has Tried To Do It (2016)",
+      "url": "https://www.npr.org/sections/thesalt/2016/01/13/462821161/illustrating-diet-advice-is-hard-heres-how-usda-has-tried-to-do-it"
+    },
+    {
+      "n": 4,
+      "title": "Harvard T.H. Chan School of Public Health, centennial history of food guides",
+      "url": "https://hsph.harvard.edu/news/centennial-food-guides-history"
+    },
+    {
+      "n": 5,
+      "title": "VERIFY via 13News Now, the history of USDA food guides",
+      "url": "https://www.13newsnow.com/article/news/verify/food-verify/usda-food-guide-history-tiktok-claim-origin-story/536-95a45c95-9df0-414c-ad8b-29734a0822eb"
+    },
+    {
+      "n": 6,
+      "title": "Cato Institute, Why Does the Federal Government Issue Damaging Dietary Guidelines?",
+      "url": "https://www.cato.org/publications/policy-analysis/why-does-federal-government-issue-damaging-dietary-guidelines-lessons"
+    },
+    {
+      "n": 7,
+      "title": "Wikipedia, Lipid hypothesis",
+      "url": "https://en.wikipedia.org/wiki/Lipid_hypothesis"
+    },
+    {
+      "n": 8,
+      "title": "Seven Countries Study, History",
+      "url": "https://sevencountriesstudy.com/about-the-study/history"
+    },
+    {
+      "n": 9,
+      "title": "Wikipedia, George V. Mann",
+      "url": "https://en.wikipedia.org/wiki/George_V._Mann"
+    },
+    {
+      "n": 10,
+      "title": "University of Minnesota, Ancel Keys obituary (2004)",
+      "url": "https://scholarswalk.umn.edu/node/356"
+    },
+    {
+      "n": 11,
+      "title": "University of Houston, Engines of Our Ingenuity No. 2469: Ancel Keys",
+      "url": "https://engines.egr.uh.edu/episode/2469"
+    },
+    {
+      "n": 12,
+      "title": "Kearns, Schmidt and Glantz, Sugar Industry and Coronary Heart Disease Research, JAMA Internal Medicine (2016)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5099084"
+    },
+    {
+      "n": 13,
+      "title": "University of California, UCSF unearths sugar industry's role in shifting national heart disease focus (2016)",
+      "url": "https://www.universityofcalifornia.edu/news/ucsf-unearths-sugar-industrys-role-shifting-national-heart-disease-focus"
+    },
+    {
+      "n": 14,
+      "title": "NPR via KPBS, 50 Years Ago, Sugar Industry Quietly Paid Scientists To Point Blame At Fat (2016)",
+      "url": "https://www.kpbs.org/news/2016/09/13/50-years-ago-sugar-industry-quietly-paid"
+    },
+    {
+      "n": 15,
+      "title": "Wikipedia, John Yudkin",
+      "url": "https://en.wikipedia.org/wiki/John_Yudkin"
+    },
+    {
+      "n": 16,
+      "title": "Montana Public Radio, Sugar vs. Cholesterol: John Yudkin vs. Ancel Keys (2015)",
+      "url": "https://www.mtpr.org/post/sugar-vs-cholesterol-john-yudkin-vs-ancel-keys"
+    },
+    {
+      "n": 17,
+      "title": "DietaryGuidelines.gov, History of the Dietary Guidelines",
+      "url": "https://www.dietaryguidelines.gov/about-dietary-guidelines/history-dietary-guidelines"
+    },
+    {
+      "n": 18,
+      "title": "D. Mark Hegsted, his account of the Dietary Goals, via Food Politics",
+      "url": "https://www.foodpolitics.com/wp-content/uploads/Hegsted.pdf"
+    },
+    {
+      "n": 19,
+      "title": "Oppenheimer and Benrubi, McGovern's Senate Select Committee Versus the Meat Industry, American Journal of Public Health",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3910043/"
+    },
+    {
+      "n": 20,
+      "title": "Agri-Pulse, Marshall Matz on the history of the Dietary Guidelines",
+      "url": "https://agri-pulse.com/articles/216-new-dietary-guidelines-being-drafted"
+    },
+    {
+      "n": 21,
+      "title": "Education Week, U.S.D.A. Unveils Updated 'Food Pyramid' (May 6, 1992)",
+      "url": "https://www.edweek.org/education/u-s-d-a-unveils-updated-food-pyramid-to-depict-a-healthy-diet/1992/05"
+    },
+    {
+      "n": 22,
+      "title": "Associated Press via University Daily Kansan, Agriculture Department alters food group recommendations (April 29, 1992)",
+      "url": "https://digital.lib.ku.edu/islandora/object/ku-udk%3A125194/datastream/OCR/download"
+    },
+    {
+      "n": 23,
+      "title": "International Journal of Health Services, on industry pressure and the 1991 pyramid withdrawal",
+      "url": "https://journals.sagepub.com/doi/10.2190/32F2-2PFB-MEG7-8HPU"
+    },
+    {
+      "n": 24,
+      "title": "St. Petersburg Times, The million dollar pyramid (April 30, 1992)",
+      "url": "https://www.tampabay.com/archive/1992/04/30/the-million-dollar-pyramid"
+    },
+    {
+      "n": 25,
+      "title": "PolitiFact, The history of the food pyramid and MyPlate (2025)",
+      "url": "https://api.politifact.com/article/2025/nov/07/food-pyramid-history-my-plate-healthy-diet"
+    },
+    {
+      "n": 26,
+      "title": "Tedium, the history of SnackWell's (2019)",
+      "url": "https://tedium.co/2019/04/02/snackwells-history-low-fat-cookies/"
+    },
+    {
+      "n": 27,
+      "title": "Wikipedia, SnackWell's",
+      "url": "https://www.wikipedia.org/wiki/SnackWells"
+    },
+    {
+      "n": 28,
+      "title": "Wikipedia, Gary Taubes",
+      "url": "https://en.wikipedia.org/wiki/Gary_Taubes"
+    },
+    {
+      "n": 29,
+      "title": "Center for Science in the Public Interest, Nutrition Action rebuttal to Taubes (November 2002)",
+      "url": "https://www.cspi.org/sites/default/files/media/documents/resource/bigfatlies.pdf"
+    },
+    {
+      "n": 30,
+      "title": "Wikipedia, MyPlate",
+      "url": "https://en.wikipedia.org/wiki/MyPlate"
+    },
+    {
+      "n": 31,
+      "title": "Manufacturing.net, The History of USDA Nutrition Guides (2015)",
+      "url": "https://www.manufacturing.net/blog/2015/05/history-usda-nutrition-guides"
+    },
+    {
+      "n": 32,
+      "title": "Perkins Coie, 2025-2030 Dietary Guidelines for Americans: Regulatory Update and Key Changes (2026)",
+      "url": "https://perkinscoie.com/insights/article/2025-2030-dietary-guidelines-americans-regulatory-update-and-key-changes"
+    },
+    {
+      "n": 33,
+      "title": "Fill Your Plate, on the 2025-2030 guidelines and the new pyramid (2026)",
+      "url": "https://fillyourplate.org/?p=23615"
+    },
+    {
+      "n": 34,
+      "title": "Yale News, Unpacking the new dietary guidelines (2026)",
+      "url": "https://news.yale.edu/2026/02/03/unpacking-new-dietary-guidelines"
+    },
+    {
+      "n": 35,
+      "title": "BakeryandSnacks, US Dietary Guidelines sideline MyPlate in favor of inverted food pyramid (2026)",
+      "url": "https://www.bakeryandsnacks.com/Article/2026/01/20/us-dietary-guidelines-sideline-myplate-causing-concern"
+    },
+    {
+      "n": 36,
+      "title": "FoodNavigator, US Dietary Guidelines sideline MyPlate, with related coverage (2026)",
+      "url": "https://www.foodnavigator.com/Article/2026/01/20/us-dietary-guidelines-sideline-myplate-causing-concern/"
+    },
+    {
+      "n": 37,
+      "title": "Oldways, on the Pett, Kahn, Willett and Katz white paper defending Ancel Keys",
+      "url": "https://oldwayspt.org/print/blog/pulling-ancel-keys-out-under-bus"
+    },
+    {
+      "n": 38,
+      "title": "FoodNavigator, Sugar review: Rewriting history to expose a non-existent conspiracy (2016)",
+      "url": "https://www.foodnavigator.com/Article/2016/09/19/Sugar-review-Rewriting-history-to-expose-a-non-existent-conspiracy/"
+    },
+    {
+      "n": 39,
+      "title": "Kearns, Schmidt and Glantz, reply to critics of the sugar papers (PMC)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7289079"
+    },
+    {
+      "n": 40,
+      "title": "CDC NCHS, Health E-Stat 111: overweight, obesity and severe obesity among adults, 1960-1962 through August 2021-August 2023 (2026)",
+      "url": "https://www.cdc.gov/nchs/data/hestat/hestat111.htm"
+    },
+    {
+      "n": 41,
+      "title": "CDC NCHS, Mean Body Weight, Height, and Body Mass Index, United States 1960-2002 (Advance Data 347)",
+      "url": "https://stacks.cdc.gov/view/cdc/61483"
+    },
+    {
+      "n": 42,
+      "title": "CDC NCHS, Anthropometric Reference Data for Children and Adults: United States, 2015-2018",
+      "url": "https://stacks.cdc.gov/view/cdc/100478"
+    },
+    {
+      "n": 43,
+      "title": "CDC NCHS, FastStats: Body Measurements (August 2021-August 2023)",
+      "url": "https://www.cdc.gov/nchs/fastats/body-measurements.htm"
+    },
+    {
+      "n": 44,
+      "title": "CDC NCHS, Mortality in the United States, 2024 (Data Brief 548, 2026)",
+      "url": "https://cdc.gov/nchs/products/databriefs/db548.htm"
+    },
+    {
+      "n": 45,
+      "title": "CDC NCHS, Health, United States 2016, Table 15: life expectancy",
+      "url": "https://www.cdc.gov/nchs/data/hus/2016/015.pdf"
+    },
+    {
+      "n": 46,
+      "title": "CDC NCHS, Health, United States 2020-2021: life expectancy table",
+      "url": "https://cdc.gov/nchs/data/hus/2020-2021/LExpMort.pdf"
+    },
+    {
+      "n": 47,
+      "title": "NCHS National Vital Statistics Report 50(6), Table 12, via lifeexpectancy.org",
+      "url": "https://www.lifeexpectancy.org/articles/le_birth.pdf"
+    },
+    {
+      "n": 48,
+      "title": "CDC NCHS, Mortality in the United States, 2020 (Data Brief 427)",
+      "url": "https://cdc.gov/nchs/products/databriefs/db427.htm"
+    },
+    {
+      "n": 49,
+      "title": "CDC NCHS, QuickStats: Life Expectancy at Birth, by Sex, 2019-2022",
+      "url": "https://blogs.cdc.gov/nchs/2024/04/05/7580/"
+    },
+    {
+      "n": 50,
+      "title": "Health, United States 2019, Table 4 (mirror copy)",
+      "url": "https://davidhealy.org/?p=11666"
+    },
+    {
+      "n": 51,
+      "title": "NPR, Coke Funds Exercise Research That Plays Down Role Of Sugary Drinks (2015)",
+      "url": "https://www.npr.org/transcripts/431343137"
+    },
+    {
+      "n": 52,
+      "title": "AJMC, Coca-Cola Funds Science to Promote Exercise as Solution to Obesity Crisis (2015)",
+      "url": "https://www.ajmc.com/view/coca-cola-funds-science-to-promote-exercise-as-solution-to-obesity-crisis"
+    },
+    {
+      "n": 53,
+      "title": "Chronicle of Philanthropy, Coca-Cola nonprofit pays for research refuting soda-obesity link (2015)",
+      "url": "https://www.philanthropy.com/news/coca-cola-nonprofit-pays-for-research-refuting-soda-obesity-link/"
+    }
+  ]
+}
