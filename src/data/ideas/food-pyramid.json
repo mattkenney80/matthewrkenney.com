@@ -2,6 +2,10 @@
   "id": "food-pyramid",
   "title": "the food pyramid",
   "question": "In 1977 the government told Americans to eat less fat. In 1992 it drew a pyramid with bread at the bottom. Follow who sold the idea, how it was marketed, and how much heavier the country got after.",
+  "opening": [
+    "My whole life, there’s been consciousness about people’s weight, and all we do is talk about weight and health, but the whole country has been getting bigger and bigger and more unhealthy.",
+    "I always like to say, “Look at a photo of Woodstock and look at a photo of Coachella.” Everyone at Woodstock was eating pot roast and smoking cigarettes, and they look absolutely amazing. Everyone at Coachella is thinking about their diet."
+  ],
   "status": "In research",
   "lanes": [
     {

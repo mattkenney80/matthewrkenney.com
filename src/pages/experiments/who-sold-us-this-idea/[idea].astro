@@ -30,6 +30,7 @@ const sourceUrl = (n: number) => idea.sources.find((s: any) => s.n === n)?.url;
 <BaseLayout title={idea.headline ?? `Who sold us ${idea.title}?`} description={idea.question} wide>
   <p class="isl-eyebrow"><a href="/experiments/who-sold-us-this-idea">Who Sold Us This Idea?</a> &middot; {idea.title}</p>
   {idea.headline ? <h1>{idea.headline}</h1> : <h1>Who sold us <em>{idea.title}</em>?</h1>}
+  {idea.opening?.map((p: string) => <p class="lede isl-opening">{p}</p>)}
   <p class="lede">{idea.intro ?? idea.question}</p>
 
   <div class="isl" id="isl" style={`--lane-consult:#7a4fb0;--lane-academy:#1f7a5a;--lane-media:#a3601b;--lane-gov:#9b2f3f;--lane-board:#2d5f8f;--lane-think:#5b6b2a;--lane-public:#6b6b6b;--lane-industry:#2d5f8f;--lane-law:#7a4fb0;--lane-court:#a3601b;--lane-money:#2d5f8f;--lane-labor:#1f7a5a`}>
@@ -172,6 +173,7 @@ const sourceUrl = (n: number) => idea.sources.find((s: any) => s.n === n)?.url;
   .isl-eyebrow { margin: 0 0 0.5rem; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-ink-soft); }
   .isl-eyebrow a { color: inherit; }
   h1 em { font-style: normal; color: #2340c8; }
+  .lede + .lede { margin-top: var(--space-2); }
   .isl { --idea: #2340c8; --idea-soft: rgba(35, 64, 200, 0.2); margin-top: var(--space-4); display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); }
   .isl > * { min-width: 0; }
   .isl h2, .isl-findings span, .isl-counter h2, .isl-sources h2 { font-size: 1.25rem; }
