@@ -1,10 +1,13 @@
-// Out of Bell Labs: the "threads" layout. Each idea is a row; one year cursor moves every row,
-// and the reader picks which row to follow. Ported from Matthew's bell-labs.html prototype.
-// The SVG is sized from the container's real width so text stays readable on a phone.
+// The "threads" layout (Out of Bell Labs, The Long Manifesto). Each idea is a row; one year
+// cursor moves every row, and the reader picks which row to follow. Ported from Matthew's
+// prototypes. The SVG is sized from the container's real width so text stays readable on a phone.
+// An idea's optional `view` sets its years; its `series` sets the chart (Bell Labs defaults).
 
 const IDEA = JSON.parse(document.getElementById("bl-data").textContent);
 const NS = "http://www.w3.org/2000/svg";
-const Y0 = 1921, Y1 = 2031, PADL = 16, PADR = 16;
+const V = IDEA.view ?? {};
+const Y0 = V.from ?? 1921, Y1 = V.to ?? 2031, PADL = 16, PADR = 16;
+const TICK0 = V.tickFrom ?? 1930, TICK1 = V.tickTo ?? 2020;
 const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 const el = (tag, attrs, parent) => {
@@ -27,7 +30,7 @@ const srcLinks = (ns) => ns.map((n) => {
   return s ? `<a href="#bl-src-${n}" title="${esc(s.title)}">${n}</a>` : n;
 }).join(", ");
 
-let sel = 0, year = 1936, W = 900;
+let sel = 0, year = V.start ?? 1936, W = 900;
 const X = (y) => PADL + ((y - Y0) / (Y1 - Y0)) * (W - PADL - PADR);
 
 // ---- chips --------------------------------------------------------------------------------
@@ -51,7 +54,7 @@ function buildMap() {
   const H = TOP + T.length * ROW + 26;
   map.setAttribute("viewBox", `0 0 ${W} ${H}`);
   const step = W < 520 ? 20 : 10;
-  for (let y = 1930; y <= 2020; y += step) {
+  for (let y = TICK0; y <= TICK1; y += step) {
     el("line", { x1: X(y), x2: X(y), y1: TOP, y2: H - 24, stroke: "var(--color-border)", "stroke-width": 1, "stroke-dasharray": "2 6" }, map);
     el("text", { x: X(y), y: H - 8, class: "axis", "text-anchor": "middle" }, map).textContent = y;
   }
@@ -88,8 +91,13 @@ function buildMap() {
 
 // ---- chart: the outcome series on the same x scale ---------------------------------------
 const chart = document.getElementById("bl-chartsvg");
-const P = IDEA.series.points;
-const VMAX = Math.ceil(Math.max(...P.map((p) => p.value)) / 5000) * 5000;
+const SER = IDEA.series;
+const P = SER.points;
+// Count data (a whole number per year) is drawn as flat steps rather than a sloped line.
+const STEP = SER.step ?? false;
+const GRID = SER.grid ?? 5000;
+const axisLabel = SER.axis ? (v) => `${v}` : (v) => `$${v / 1000}T`;
+const VMAX = Math.ceil(Math.max(...P.map((p) => p.value)) / GRID) * GRID;
 const CT = 14, CB = 196;
 const CY = (v) => CB - (v / VMAX) * (CB - CT);
 let C = {};
@@ -97,13 +105,15 @@ function buildChart() {
   chart.textContent = "";
   const H = 222;
   chart.setAttribute("viewBox", `0 0 ${W} ${H}`);
-  for (let v = 0; v <= VMAX; v += 5000) {
+  for (let v = 0; v <= VMAX; v += GRID) {
     el("line", { x1: PADL, x2: W - PADR, y1: CY(v), y2: CY(v), stroke: "var(--color-border)", "stroke-width": 1 }, chart);
-    if (v) el("text", { x: PADL, y: CY(v) - 4, class: "axis" }, chart).textContent = `$${v / 1000}T`;
+    if (v) el("text", { x: PADL, y: CY(v) - 4, class: "axis" }, chart).textContent = axisLabel(v);
   }
   const step = W < 520 ? 20 : 10;
-  for (let y = 1930; y <= 2020; y += step) el("text", { x: X(y), y: H - 6, class: "axis", "text-anchor": "middle" }, chart).textContent = y;
-  const pts = P.map((p) => `${X(p.year).toFixed(1)},${CY(p.value).toFixed(1)}`);
+  for (let y = TICK0; y <= TICK1; y += step) el("text", { x: X(y), y: H - 6, class: "axis", "text-anchor": "middle" }, chart).textContent = y;
+  const pts = STEP
+    ? P.flatMap((p, i) => [...(i ? [`${X(p.year).toFixed(1)},${CY(P[i - 1].value).toFixed(1)}`] : []), `${X(p.year).toFixed(1)},${CY(p.value).toFixed(1)}`])
+    : P.map((p) => `${X(p.year).toFixed(1)},${CY(p.value).toFixed(1)}`);
   el("path", { d: `M${X(P[0].year)},${CB} L${pts.join(" L")} L${X(P[P.length - 1].year)},${CB} Z`, fill: "var(--color-ink)", opacity: 0.07 }, chart);
   el("path", { d: `M${pts.join(" L")}`, fill: "none", stroke: "var(--color-ink)", "stroke-width": 2, "stroke-linejoin": "round" }, chart);
   C.marks = el("g", {}, chart);
@@ -114,6 +124,7 @@ const last = P[P.length - 1];
 const valAt = (y) => {
   if (y < P[0].year) return null;
   if (y >= last.year) return last.value;
+  if (STEP) return P.filter((p) => p.year <= y + 0.01).pop().value;
   for (let i = 1; i < P.length; i++) if (y <= P[i].year) {
     const a = P[i - 1], b = P[i];
     return a.value + ((b.value - a.value) * (y - a.year)) / (b.year - a.year);
@@ -166,12 +177,13 @@ function render() {
   const v = valAt(year);
   if (v == null) {
     C.dot.style.display = "none";
-    readout.innerHTML = `<b>&ndash;</b> ${Math.round(year)}: before the BEA series begins in ${P[0].year}`;
+    readout.innerHTML = `<b>&ndash;</b> ${Math.round(year)}: before the ${esc(SER.from ?? "BEA series")} begins in ${P[0].year}`;
   } else {
     C.dot.style.display = "";
     C.dot.setAttribute("cx", X(Math.min(year, last.year)));
     C.dot.setAttribute("cy", CY(v));
     const y = Math.min(Math.round(year), last.year), m = (v / P[0].value).toFixed(1);
+    if (SER.readout) { readout.innerHTML = SER.readout.replace("{v}", `<b>${v}</b>`).replace("{noun}", v === 1 ? SER.one : SER.many).replace("{year}", y); return; }
     readout.innerHTML = `<b>$${(v / 1000).toFixed(1)} trillion</b> ${esc(IDEA.series.label)} in 2017 dollars, ${y}${year > last.year + 0.5 ? " (latest year)" : ""}. ${m} times ${P[0].year}.`;
   }
 }

@@ -1,0 +1,1545 @@
+{
+  "id": "marxism",
+  "title": "The Long Manifesto",
+  "question": "How did a 23-page pamphlet written in London end up ruling 25 countries, and then only five?",
+  "status": "In research",
+  "layout": "threads",
+  "schema_notes": "Second 'threads' idea, after bell-labs. Uses 'charts' (not 'series'). The chart is a step series derived by counting date ranges in source 16; see the chart note for the inclusion rules. No intro block: Matthew has not written one.",
+  "lanes": [
+    {
+      "id": "writers",
+      "label": "Writers and theorists"
+    },
+    {
+      "id": "press",
+      "label": "Printers and translators"
+    },
+    {
+      "id": "movement",
+      "label": "Movements"
+    },
+    {
+      "id": "party",
+      "label": "Parties"
+    },
+    {
+      "id": "univ",
+      "label": "Universities"
+    },
+    {
+      "id": "gov",
+      "label": "Governments"
+    },
+    {
+      "id": "public",
+      "label": "Where it landed"
+    }
+  ],
+  "threads": [
+    {
+      "id": "book",
+      "label": "The book",
+      "color": "book"
+    },
+    {
+      "id": "reform",
+      "label": "The reformers",
+      "color": "reform"
+    },
+    {
+      "id": "russia",
+      "label": "Russia and the Soviet bloc",
+      "color": "russia"
+    },
+    {
+      "id": "china",
+      "label": "China",
+      "color": "china"
+    },
+    {
+      "id": "vietnam",
+      "label": "Vietnam",
+      "color": "vietnam"
+    },
+    {
+      "id": "cambodia",
+      "label": "Cambodia",
+      "color": "cambodia"
+    },
+    {
+      "id": "cuba",
+      "label": "Cuba",
+      "color": "cuba"
+    }
+  ],
+  "stations": [
+    {
+      "id": "b45",
+      "thread": "book",
+      "year": 1845,
+      "lane": "writers",
+      "short": "Engels in Manchester",
+      "title": "The mill owner's son",
+      "who": "Friedrich Engels",
+      "where": "Victoria Mill of Ermen & Engels, Manchester, a thread firm his father co-founded",
+      "what": "Sent to Manchester in 1842 as a clerk in the family firm, Engels publishes The Condition of the Working Class in England in German in 1845.",
+      "pitch": "Show what industrial capitalism does to the people inside it, from the factory floor of its most advanced city.",
+      "spread": "He met Karl Marx in Paris in August 1844 and they worked together for the rest of their lives. From 1850 Engels sent the Marx family a steady stream of money, reportedly 3,000 to 4,000 pounds in all, which helped pay for the writing of Capital.",
+      "sources": [
+        21
+      ]
+    },
+    {
+      "id": "b48",
+      "thread": "book",
+      "year": 1848,
+      "lane": "writers",
+      "short": "The Manifesto",
+      "title": "A 23-page pamphlet",
+      "who": "Karl Marx and Friedrich Engels, for the Communist League",
+      "where": "46 Liverpool Street, London. Published anonymously, in German, in late February 1848",
+      "what": "The League commissioned it at its congress in late 1847. It came out as a dark green pamphlet, in the middle of the revolutions sweeping Europe that year.",
+      "pitch": "History is a story of class struggle, and the workers of every country should unite to overthrow the order that exploits them.",
+      "spread": "About a thousand copies reached Paris around March 20, 1848, and Polish, Danish and Swedish translations followed within the year. Then the 1848 revolutions failed and the pamphlet fell into obscurity for most of the 1850s and 1860s.",
+      "sources": [
+        1
+      ]
+    },
+    {
+      "id": "b64",
+      "thread": "book",
+      "year": 1864,
+      "lane": "movement",
+      "short": "First International",
+      "title": "Workers of the world, organized",
+      "who": "The International Workingmen's Association. Marx drafts its Inaugural Address and rules.",
+      "where": "St Martin's Hall, London, September 28, 1864, before about 2,000 workers",
+      "what": "The first international organization of working people, joining trade unionists, socialists and anarchists from several countries.",
+      "pitch": "Workers must win political power, and they can only do it together across borders.",
+      "spread": "Membership peaked around 150,000 in 1871 and 1872. It split at the 1872 Hague Congress when Marx's side expelled the anarchist Mikhail Bakunin, moved its council to New York, and dissolved in Philadelphia in 1876.",
+      "sources": [
+        3
+      ]
+    },
+    {
+      "id": "b67",
+      "thread": "book",
+      "year": 1867,
+      "lane": "press",
+      "short": "Capital",
+      "title": "Capital, Volume I",
+      "who": "Karl Marx",
+      "where": "Verlag von Otto Meissner, Hamburg. Preface dated London, July 25, 1867",
+      "what": "The first volume of Das Kapital, the only one published in Marx's lifetime.",
+      "pitch": "A scientific account of how capitalism works and why it produces its own crises. Marx warned readers the first chapter would be hard going.",
+      "spread": "After Marx died, Engels edited Volume II (1885) and Volume III (1894) from his notes.",
+      "sources": [
+        2,
+        21
+      ]
+    },
+    {
+      "id": "b71",
+      "thread": "book",
+      "year": 1871,
+      "lane": "movement",
+      "short": "Paris Commune",
+      "title": "The first test",
+      "who": "The Paris Commune. About a third of its council belonged to the International.",
+      "where": "Paris, spring 1871",
+      "what": "Working people take over the government of Paris for about two months before the French army crushes them.",
+      "pitch": "Marx held it up as a model of workers' government in The Civil War in France.",
+      "spread": "The repression that followed fell on the International too. In 1872 Marx and Engels wrote a new preface to the Manifesto saying its general principles still held.",
+      "sources": [
+        3,
+        1
+      ]
+    },
+    {
+      "id": "b72",
+      "thread": "book",
+      "year": 1872,
+      "lane": "press",
+      "short": "Russian Capital",
+      "title": "The first translation goes east",
+      "who": "N. P. Poliakov, publisher",
+      "where": "St Petersburg",
+      "what": "The first translation of Capital into any language, 3,000 copies.",
+      "pitch": "The same book, now for Russian readers.",
+      "spread": "It sold out quickly and was later banned. Between 1871 and 1873 the Manifesto also came out in more than nine editions in six languages, after it was read aloud at a German treason trial.",
+      "sources": [
+        25,
+        1
+      ]
+    },
+    {
+      "id": "b83",
+      "thread": "book",
+      "year": 1883,
+      "lane": "writers",
+      "short": "Highgate",
+      "title": "A small funeral",
+      "who": "Friedrich Engels gives the eulogy",
+      "where": "Highgate Cemetery, London",
+      "what": "Marx dies on March 14, 1883 and is buried three days later in his wife's grave. At least thirteen named people attend.",
+      "pitch": "Engels spends his last twelve years editing and promoting Marx's work.",
+      "spread": "In 1956 the Communist Party of Great Britain paid for the bronze bust that stands there now, carved with the Manifesto's last line. The Manifesto has since sold an estimated 500 million copies.",
+      "sources": [
+        22,
+        1,
+        21
+      ]
+    },
+    {
+      "id": "r91",
+      "thread": "reform",
+      "year": 1891,
+      "lane": "party",
+      "short": "Erfurt",
+      "title": "Marxist on paper",
+      "who": "The Social Democratic Party of Germany (SPD)",
+      "where": "Erfurt Congress, 1891",
+      "what": "With Germany's anti-socialist laws (1878 to 1890) lifted, the SPD writes a program that keeps Marxism and the overthrow of capitalism as official doctrine.",
+      "pitch": "Revolution as the goal, practical reform as the daily work.",
+      "spread": "It became the model for socialist parties across Europe. The gap between the doctrine and the daily work is where the next fight started.",
+      "sources": [
+        4
+      ]
+    },
+    {
+      "id": "r99",
+      "thread": "reform",
+      "year": 1899,
+      "lane": "writers",
+      "short": "Bernstein",
+      "title": "Socialism without revolution",
+      "who": "Eduard Bernstein, answered by Rosa Luxemburg",
+      "where": "Bernstein's 1899 book, The Preconditions of Socialism",
+      "what": "Bernstein argues capitalism is not collapsing. Democratic rights and social welfare programs can turn it into socialism step by step.",
+      "pitch": "Reform, not revolution.",
+      "spread": "Luxemburg answered him in Social Reform or Revolution and won the argument for the moment. The SPD stayed officially orthodox at its 1899, 1901 and 1903 congresses.",
+      "sources": [
+        4
+      ]
+    },
+    {
+      "id": "r20",
+      "thread": "reform",
+      "year": 1920,
+      "lane": "party",
+      "short": "Tours",
+      "title": "The left splits in two",
+      "who": "French socialists (SFIO). Leon Blum leads the minority that stays.",
+      "where": "Tours Congress, December 25 to 30, 1920",
+      "what": "About three quarters of the delegates vote to join Moscow's Third International and walk out to form what becomes the French Communist Party.",
+      "pitch": "Choose: Lenin's revolution or parliamentary socialism.",
+      "spread": "The same split ran through nearly every socialist party in Europe. From here on there were two families, communists and social democrats.",
+      "sources": [
+        13
+      ]
+    },
+    {
+      "id": "r59",
+      "thread": "reform",
+      "year": 1959,
+      "lane": "party",
+      "short": "Godesberg",
+      "title": "Goodbye to Marx",
+      "who": "The SPD",
+      "where": "Bad Godesberg, near Bonn, November 15, 1959",
+      "what": "The party drops Marxist class struggle and stops treating nationalization as the core of socialism. It accepts a regulated market economy and the welfare state.",
+      "pitch": "As much competition as possible, as much planning as necessary.",
+      "spread": "Historians read it as Bernstein's final victory over orthodox Marxism, and a template for modern social democracy.",
+      "sources": [
+        26
+      ]
+    },
+    {
+      "id": "s02",
+      "thread": "russia",
+      "year": 1902,
+      "lane": "writers",
+      "short": "What Is to Be Done?",
+      "title": "The vanguard",
+      "who": "Vladimir Lenin",
+      "where": "Pamphlet, 1902",
+      "what": "Lenin rejects the idea that capitalism will push workers to revolution on its own.",
+      "pitch": "Left alone, workers will fight only for better pay. A disciplined party of professional revolutionaries has to lead them.",
+      "spread": "Marx expected history to deliver the revolution. Lenin built an organization to make it happen.",
+      "sources": [
+        12
+      ]
+    },
+    {
+      "id": "s17",
+      "thread": "russia",
+      "year": 1917,
+      "lane": "gov",
+      "short": "October",
+      "title": "The Bolsheviks take power",
+      "who": "Lenin's Bolsheviks. Leon Trotsky organizes the rising.",
+      "where": "Petrograd, November 7, 1917 (October 25 in the old calendar)",
+      "what": "Lenin, back from Swiss exile by sealed train with Germany's permission, calls for overthrowing the Provisional Government. The Bolsheviks seize the Winter Palace overnight.",
+      "pitch": "Peace, an end to the war, and power to the workers' councils.",
+      "spread": "A civil war follows until late 1922 and ends with the Soviet Union, the first state founded in Marx's name.",
+      "sources": [
+        5,
+        16
+      ]
+    },
+    {
+      "id": "s19",
+      "thread": "russia",
+      "year": 1919,
+      "lane": "party",
+      "short": "Comintern",
+      "title": "The export office",
+      "who": "The Communist International, founded in Moscow",
+      "where": "Moscow, March 2 to 6, 1919. Only nine of 51 delegates came from abroad",
+      "what": "A world party of communists, with 21 conditions for joining by 1920: purge the reformers, rename yourselves Communist, obey Moscow.",
+      "pitch": "Revolution in every country, run from one center.",
+      "spread": "From 1921 it funded parties abroad from the Soviet treasury and sent agents to steer them. It ordered the Chinese party into an alliance with the Nationalists in 1922. Stalin dissolved it in 1943.",
+      "sources": [
+        6
+      ]
+    },
+    {
+      "id": "s32",
+      "thread": "russia",
+      "year": 1932,
+      "lane": "gov",
+      "short": "Famine",
+      "title": "Collectivization and hunger",
+      "who": "Joseph Stalin's government",
+      "where": "Soviet Ukraine, Kazakhstan and the Kuban, 1930 to 1933",
+      "what": "Forced collectivization of farms and grain quotas Ukraine could not meet, under the First Five-Year Plan.",
+      "pitch": "Industrialize a peasant country fast, paid for with grain.",
+      "spread": "Recent scholarship puts deaths in Ukraine at 3.5 to 5 million. Scholars agree the famine was man-made but disagree on whether it was aimed at Ukrainians. Ukraine and 33 other UN members call it genocide.",
+      "sources": [
+        10
+      ]
+    },
+    {
+      "id": "s61",
+      "thread": "russia",
+      "year": 1961,
+      "lane": "gov",
+      "short": "Berlin Wall",
+      "title": "A wall to keep people in",
+      "who": "The East German government",
+      "where": "Berlin, August 13, 1961",
+      "what": "Between 1945 and 1949 communist governments take over across Eastern Europe, from Yugoslavia and Albania to Poland, Hungary and East Germany. In 1961 East Germany builds a wall through Berlin.",
+      "pitch": "An anti-fascist protective rampart, in the government's words.",
+      "spread": "About 3.5 million East Germans, roughly a fifth of the population, had already left. Researchers have confirmed at least 140 deaths at the wall.",
+      "sources": [
+        20,
+        16
+      ]
+    },
+    {
+      "id": "s89",
+      "thread": "russia",
+      "year": 1989,
+      "lane": "public",
+      "short": "Wall opens",
+      "title": "1989",
+      "who": "Crowds at the Berlin crossings",
+      "where": "Berlin, November 9, 1989",
+      "what": "East Germany announces its people may cross to the West, and the guards open the gates that night.",
+      "pitch": "Freedom to travel, then freedom.",
+      "spread": "Communist rule ended that year in Hungary, Poland and Romania, and in Czechoslovakia, East Germany and Bulgaria by 1991.",
+      "sources": [
+        20,
+        16,
+        7
+      ]
+    },
+    {
+      "id": "s91",
+      "thread": "russia",
+      "year": 1991,
+      "lane": "gov",
+      "short": "USSR ends",
+      "title": "The flag comes down",
+      "who": "Mikhail Gorbachev, Boris Yeltsin",
+      "where": "Moscow, December 25 and 26, 1991",
+      "what": "Gorbachev's openness and reforms from 1985 let the republics push away. After a failed hardliner coup in August 1991, Russia, Ukraine and Belarus declare the Union over.",
+      "pitch": "Reform the system to save it.",
+      "spread": "Gorbachev resigned on December 25. The Soviet of the Republics dissolved the Soviet Union the next day.",
+      "sources": [
+        7
+      ]
+    },
+    {
+      "id": "c21",
+      "thread": "china",
+      "year": 1921,
+      "lane": "party",
+      "short": "Shanghai",
+      "title": "A party on a boat",
+      "who": "Chen Duxiu and Li Dazhao, with help from Comintern agents. Henk Sneevliet attends.",
+      "where": "A house in Shanghai's French Concession, then a tourist boat on South Lake, Jiaxing",
+      "what": "Thirteen Chinese delegates found the Chinese Communist Party in July 1921. French police raid the meeting and it finishes on the lake.",
+      "pitch": "Marxism as China's way out of weakness and foreign control, after the May Fourth protests of 1919.",
+      "spread": "Chen was elected the first leader. Neither founder actually attended.",
+      "sources": [
+        8
+      ]
+    },
+    {
+      "id": "c27",
+      "thread": "china",
+      "year": 1927,
+      "lane": "writers",
+      "short": "Hunan report",
+      "title": "The peasants, not the factories",
+      "who": "Mao Zedong",
+      "where": "Report on an Investigation of the Peasant Movement in Hunan, March 28, 1927",
+      "what": "After 32 days in the countryside, Mao reports that poor peasants, not city workers, will drive China's revolution.",
+      "pitch": "A rising of the peasants that no power can hold back.",
+      "spread": "Historian Maurice Meisner counts two heresies: it bypassed the urban working class Marx wrote about, and it trusted peasant initiative over the party and the Comintern.",
+      "sources": [
+        24
+      ]
+    },
+    {
+      "id": "c49",
+      "thread": "china",
+      "year": 1949,
+      "lane": "gov",
+      "short": "People's Republic",
+      "title": "Tiananmen",
+      "who": "Mao Zedong",
+      "where": "Tiananmen Gate, Beijing, October 1, 1949",
+      "what": "Mao announces the Central People's Government of the People's Republic of China.",
+      "pitch": "The sole legal government of all China.",
+      "spread": "The Soviet Union recognized it the next day. The Nationalist government had retreated to Taiwan by December.",
+      "sources": [
+        29
+      ]
+    },
+    {
+      "id": "c59",
+      "thread": "china",
+      "year": 1959,
+      "lane": "gov",
+      "short": "Great Leap famine",
+      "title": "The Great Leap Forward",
+      "who": "Mao Zedong's government",
+      "where": "China, 1959 to 1961",
+      "what": "People's communes, grain requisitioning and backyard industry, meant to catch up with the industrial West in a few years.",
+      "pitch": "Leap past capitalism by mass mobilization.",
+      "spread": "In the famine that followed, most recent estimates fall between 30 and 46 million deaths, though methods differ and published figures run from under 4 million to 55 million.",
+      "sources": [
+        9
+      ]
+    },
+    {
+      "id": "c64",
+      "thread": "china",
+      "year": 1964,
+      "lane": "press",
+      "short": "Little Red Book",
+      "title": "Quotations from Chairman Mao",
+      "who": "The People's Liberation Army",
+      "where": "Beijing or Tianjin, May 1964",
+      "what": "A pocket book of Mao's sayings, first issued to soldiers in an edition of about 50,000.",
+      "pitch": "Mao's thought, in every pocket.",
+      "spread": "An estimated 720 million copies were printed by the end of 1967, in more than 36 languages. That is probably a record for copies of one work printed in under four years.",
+      "sources": [
+        23
+      ]
+    },
+    {
+      "id": "c78",
+      "thread": "china",
+      "year": 1978,
+      "lane": "gov",
+      "short": "Reform",
+      "title": "Socialism with Chinese characteristics",
+      "who": "Deng Xiaoping",
+      "where": "Third plenum of the 11th Central Committee, December 18, 1978",
+      "what": "Farmers get private plots under the household responsibility system, and special economic zones like Shenzhen open to foreign money.",
+      "pitch": "Markets in service of a communist party.",
+      "spread": "China reports 800 million people lifted out of extreme poverty between 1978 and 2018, though some scholars dispute the poverty line used. The approach went into the party constitution in 1997.",
+      "sources": [
+        11
+      ]
+    },
+    {
+      "id": "c25",
+      "thread": "china",
+      "year": 2025,
+      "lane": "public",
+      "short": "101 million",
+      "title": "The second largest party on Earth",
+      "who": "The Chinese Communist Party",
+      "where": "End of 2025",
+      "what": "101.29 million members.",
+      "pitch": "Marxism-Leninism, adapted to Chinese conditions.",
+      "spread": "It still calls Mao Zedong Thought Marxism-Leninism applied and developed in China.",
+      "sources": [
+        8
+      ]
+    },
+    {
+      "id": "v20",
+      "thread": "vietnam",
+      "year": 1920,
+      "lane": "party",
+      "short": "Ho at Tours",
+      "title": "A colonial subject joins the Communists",
+      "who": "Nguyen Ai Quoc, later Ho Chi Minh",
+      "where": "Paris, and the Tours Congress, December 1920",
+      "what": "Working in Paris, he reads Lenin's theses on national and colonial questions. At Tours he denounces French rule in the colonies and votes to join the Third International.",
+      "pitch": "Communism as the road to national independence.",
+      "spread": "He became a founding member of the French Communist Party.",
+      "sources": [
+        17,
+        13
+      ]
+    },
+    {
+      "id": "v30",
+      "thread": "vietnam",
+      "year": 1930,
+      "lane": "party",
+      "short": "Hong Kong",
+      "title": "The Indochinese Communist Party",
+      "who": "Ho Chi Minh",
+      "where": "Hong Kong, February 3, 1930",
+      "what": "After a stay in Moscow and two years training more than 200 Vietnamese cadres in Guangzhou, Ho presides over the founding of a unified Vietnamese Communist Party.",
+      "pitch": "One party for the anti-colonial left.",
+      "spread": "At the Comintern's request it was renamed the Indochinese Communist Party later that year.",
+      "sources": [
+        17
+      ]
+    },
+    {
+      "id": "v45",
+      "thread": "vietnam",
+      "year": 1945,
+      "lane": "gov",
+      "short": "Independence",
+      "title": "The Democratic Republic of Vietnam",
+      "who": "Ho Chi Minh",
+      "where": "Hanoi, September 2, 1945",
+      "what": "A communist-led state is declared in the north at the end of the Second World War.",
+      "pitch": "Independence from France.",
+      "spread": "It governed the north until the country was reunified in 1976.",
+      "sources": [
+        16
+      ]
+    },
+    {
+      "id": "v75",
+      "thread": "vietnam",
+      "year": 1975,
+      "lane": "gov",
+      "short": "Saigon",
+      "title": "The war ends",
+      "who": "The North Vietnamese army and the Viet Cong",
+      "where": "Saigon, April 30, 1975",
+      "what": "Saigon falls. The country is reunified on July 2, 1976 as the Socialist Republic of Vietnam, and Saigon is renamed Ho Chi Minh City.",
+      "pitch": "One Vietnam, under the party.",
+      "spread": "Communist parties took Cambodia in April and Laos in December the same year.",
+      "sources": [
+        28,
+        16
+      ]
+    },
+    {
+      "id": "v86",
+      "thread": "vietnam",
+      "year": 1986,
+      "lane": "gov",
+      "short": "Doi Moi",
+      "title": "Renovation",
+      "who": "The Communist Party of Vietnam",
+      "where": "Doi Moi reforms, 1986",
+      "what": "Cooperative farms are dissolved, households get land rights, and private companies become legal.",
+      "pitch": "Keep the party, open the market.",
+      "spread": "Inflation of about 400 percent fell to around 8 percent by 1993. The poverty rate fell from almost 60 percent in 1993 to 14 percent in 2014.",
+      "sources": [
+        19
+      ]
+    },
+    {
+      "id": "k49",
+      "thread": "cambodia",
+      "year": 1949,
+      "lane": "univ",
+      "short": "Paris",
+      "title": "A student in Paris",
+      "who": "Saloth Sar, later Pol Pot",
+      "where": "Paris, from October 1, 1949",
+      "what": "He arrives on one of five government scholarships to study radio electronics. He fails his exams twice and loses the scholarship.",
+      "pitch": "A French education for a future Cambodian elite.",
+      "spread": "Paris was where he found Marxism, not engineering.",
+      "sources": [
+        14
+      ]
+    },
+    {
+      "id": "k51",
+      "thread": "cambodia",
+      "year": 1951,
+      "lane": "party",
+      "short": "Cercle Marxiste",
+      "title": "The reading circle",
+      "who": "Saloth Sar and Ieng Sary",
+      "where": "Paris",
+      "what": "They help found the Cercle Marxiste, a secret group that reads Marxist texts and holds self-criticism sessions. Saloth Sar joins the French Communist Party in 1951.",
+      "pitch": "Revolution must go all the way, with no compromise, built on the peasants.",
+      "spread": "He read Stalin's party history and Mao's On New Democracy, and took lessons from Kropotkin's history of the French Revolution.",
+      "sources": [
+        14
+      ]
+    },
+    {
+      "id": "k75",
+      "thread": "cambodia",
+      "year": 1975,
+      "lane": "gov",
+      "short": "Year Zero",
+      "title": "Phnom Penh is emptied",
+      "who": "The Khmer Rouge, led by Pol Pot",
+      "where": "Phnom Penh, April 17, 1975",
+      "what": "The Khmer Rouge take the capital and march its people into the countryside. About 20,000 die on the evacuation marches.",
+      "pitch": "A pure agrarian communism: no money, no religion, no private property.",
+      "spread": "The regime, Democratic Kampuchea, forced the population into labor camps and carried out mass executions.",
+      "sources": [
+        14,
+        15
+      ]
+    },
+    {
+      "id": "k79",
+      "thread": "cambodia",
+      "year": 1979,
+      "lane": "gov",
+      "short": "Toppled",
+      "title": "A quarter of the country",
+      "who": "Vietnamese army",
+      "where": "Phnom Penh, January 7, 1979",
+      "what": "Vietnam invades and drives the Khmer Rouge to the Thai border.",
+      "pitch": "Vietnam's own communist government ends Cambodia's.",
+      "spread": "An estimated 1.5 to 2 million people died from 1975 to 1979, about a quarter of the population. Executions may account for up to 60 percent of the deaths. About 20,000 people passed through the S-21 prison alone.",
+      "sources": [
+        15,
+        14
+      ]
+    },
+    {
+      "id": "k10",
+      "thread": "cambodia",
+      "year": 2010,
+      "lane": "public",
+      "short": "Tribunal",
+      "title": "The verdicts",
+      "who": "Extraordinary Chambers in the Courts of Cambodia",
+      "where": "Phnom Penh, July 26, 2010",
+      "what": "The S-21 commandant, Kang Kek Iew, known as Duch, is convicted of crimes against humanity and later sentenced to life.",
+      "pitch": "Justice, three decades late.",
+      "spread": "Nuon Chea and Khieu Samphan were later convicted of genocide against the Vietnamese and sentenced to life. Pol Pot died in 1998 without a trial.",
+      "sources": [
+        15,
+        14
+      ]
+    },
+    {
+      "id": "u59",
+      "thread": "cuba",
+      "year": 1959,
+      "lane": "gov",
+      "short": "Havana",
+      "title": "The revolution",
+      "who": "Fidel Castro",
+      "where": "Havana, 1959",
+      "what": "Castro's guerrillas overthrow Fulgencio Batista's dictatorship. Land reform follows, then the seizure of foreign oil holdings and all foreign-owned property.",
+      "pitch": "Land and sovereignty for Cubans.",
+      "spread": "Washington grew wary and cut diplomatic ties in January 1961.",
+      "sources": [
+        18,
+        16
+      ]
+    },
+    {
+      "id": "u61",
+      "thread": "cuba",
+      "year": 1961,
+      "lane": "gov",
+      "short": "Marxist-Leninist",
+      "title": "For the rest of his life",
+      "who": "Fidel Castro",
+      "where": "Televised speech, December 2, 1961",
+      "what": "Eight months after the failed US-backed Bay of Pigs invasion, Castro declares himself a Marxist-Leninist and says he will stay one for life.",
+      "pitch": "One revolutionary movement, the working class's.",
+      "spread": "Cuba allied with the Soviet Union for economic and military aid. Some critics saw the declaration as a move to get more of it.",
+      "sources": [
+        18
+      ]
+    },
+    {
+      "id": "u08",
+      "thread": "cuba",
+      "year": 2008,
+      "lane": "gov",
+      "short": "Castro steps down",
+      "title": "Still standing",
+      "who": "Fidel Castro",
+      "where": "Havana, 2008",
+      "what": "Castro hands over power after nearly five decades.",
+      "pitch": "Continuity.",
+      "spread": "Cuba remains one of five states ruled by a communist party, with China, Vietnam, Laos and North Korea.",
+      "sources": [
+        18,
+        16
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "b67",
+      "to": "r91",
+      "kind": "parallel"
+    },
+    {
+      "from": "b72",
+      "to": "s02",
+      "kind": "parallel"
+    },
+    {
+      "from": "s19",
+      "to": "r20",
+      "kind": "handoff"
+    },
+    {
+      "from": "s19",
+      "to": "c21",
+      "kind": "handoff"
+    },
+    {
+      "from": "s19",
+      "to": "v30",
+      "kind": "parallel"
+    },
+    {
+      "from": "r20",
+      "to": "v20",
+      "kind": "handoff"
+    },
+    {
+      "from": "v20",
+      "to": "k51",
+      "kind": "parallel"
+    },
+    {
+      "from": "c27",
+      "to": "k51",
+      "kind": "parallel"
+    },
+    {
+      "from": "s17",
+      "to": "c49",
+      "kind": "parallel"
+    },
+    {
+      "from": "s17",
+      "to": "u61",
+      "kind": "parallel"
+    },
+    {
+      "from": "v75",
+      "to": "k79",
+      "kind": "handoff"
+    }
+  ],
+  "findings": [
+    {
+      "label": "A flop before it was a bible",
+      "text": "The Manifesto sank after 1848 and was almost forgotten for twenty years. Trials, the Paris Commune and a Russian translation of Capital brought it back.",
+      "sources": [
+        1,
+        25
+      ]
+    },
+    {
+      "label": "Every country rewrote it",
+      "text": "Marx expected revolution in industrial countries, made by factory workers. Lenin added a party of professional revolutionaries, Mao swapped in the peasants, Ho Chi Minh joined it to national independence, and Bernstein's heirs dropped revolution altogether.",
+      "sources": [
+        12,
+        24,
+        17,
+        26
+      ]
+    },
+    {
+      "label": "Moscow was the distributor",
+      "text": "After 1919 the Comintern set the rules for communist parties abroad and paid for many of them. It helped found the Chinese party, split the French left at Tours, and renamed Ho's party. Pol Pot joined the French party that Tours created.",
+      "sources": [
+        6,
+        8,
+        13,
+        17,
+        14
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "title": "Wikipedia, The Communist Manifesto",
+      "url": "https://en.wikipedia.org/wiki/The_Communist_Manifesto"
+    },
+    {
+      "n": 2,
+      "title": "Online Library of Liberty, Marx, Das Kapital Buch 1 (1867)",
+      "url": "https://oll.libertyfund.org/pages/marx-k1-1867"
+    },
+    {
+      "n": 3,
+      "title": "Wikipedia, First International",
+      "url": "https://en.wikipedia.org/wiki/First_International"
+    },
+    {
+      "n": 4,
+      "title": "Wikipedia, Social Reform or Revolution?",
+      "url": "https://en.wikipedia.org/wiki/Social_Reform_or_Revolution%3F"
+    },
+    {
+      "n": 5,
+      "title": "Wikipedia, October Revolution",
+      "url": "https://en.wikipedia.org/wiki/October_Revolution"
+    },
+    {
+      "n": 6,
+      "title": "Wikipedia, Communist International",
+      "url": "https://en.wikipedia.org/wiki/Communist_International"
+    },
+    {
+      "n": 7,
+      "title": "Wikipedia, Dissolution of the Soviet Union",
+      "url": "https://en.wikipedia.org/wiki/Dissolution_of_the_Soviet_Union"
+    },
+    {
+      "n": 8,
+      "title": "Wikipedia, Chinese Communist Party",
+      "url": "https://en.wikipedia.org/wiki/Chinese_Communist_Party"
+    },
+    {
+      "n": 9,
+      "title": "Wikipedia, Great Chinese Famine",
+      "url": "https://en.wikipedia.org/wiki/Great_Chinese_Famine"
+    },
+    {
+      "n": 10,
+      "title": "Wikipedia, Holodomor",
+      "url": "https://en.wikipedia.org/wiki/Holodomor"
+    },
+    {
+      "n": 11,
+      "title": "Wikipedia, Reform and opening up",
+      "url": "https://en.wikipedia.org/wiki/Reform_and_opening_up"
+    },
+    {
+      "n": 12,
+      "title": "Britannica, What Is to Be Done?",
+      "url": "https://britannica.com/topic/What-Is-to-Be-Done-work-by-Lenin"
+    },
+    {
+      "n": 13,
+      "title": "Wikipedia, Tours Congress",
+      "url": "https://en.wikipedia.org/wiki/Tours_Congress"
+    },
+    {
+      "n": 14,
+      "title": "Wikipedia, Pol Pot",
+      "url": "https://en.wikipedia.org/wiki/Pol_Pot"
+    },
+    {
+      "n": 15,
+      "title": "Wikipedia, Cambodian genocide",
+      "url": "https://en.wikipedia.org/wiki/Cambodian_genocide"
+    },
+    {
+      "n": 16,
+      "title": "Wikipedia, List of communist states",
+      "url": "https://en.wikipedia.org/wiki/List_of_communist_states"
+    },
+    {
+      "n": 17,
+      "title": "Library of Congress Country Studies, Vietnam: Ho Chi Minh and the Communist Movement",
+      "url": "https://countrystudies.us/vietnam/18.htm"
+    },
+    {
+      "n": 18,
+      "title": "History.com, Castro declares himself a Marxist-Leninist",
+      "url": "https://www.history.com/this-day-in-history/castro-declares-himself-a-marxist-leninist"
+    },
+    {
+      "n": 19,
+      "title": "IMF, Vietnam: Raising Millions Out of Poverty",
+      "url": "https://www.imf.org/en/countries/vnm/vietnam-raising-millions-out-of-poverty"
+    },
+    {
+      "n": 20,
+      "title": "Wikipedia, Berlin Wall",
+      "url": "https://en.wikipedia.org/wiki/Berlin_Wall"
+    },
+    {
+      "n": 21,
+      "title": "Wikipedia, Friedrich Engels",
+      "url": "https://en.wikipedia.org/wiki/Friedrich_Engels"
+    },
+    {
+      "n": 22,
+      "title": "Wikipedia, Tomb of Karl Marx",
+      "url": "https://en.wikipedia.org/wiki/Tomb_of_Karl_Marx"
+    },
+    {
+      "n": 23,
+      "title": "History of Information, 720 million copies of Quotations from Chairman Mao",
+      "url": "https://www.historyofinformation.com/detail.php?id=823"
+    },
+    {
+      "n": 24,
+      "title": "Wikipedia, Report on an Investigation of the Peasant Movement in Hunan",
+      "url": "https://en.wikipedia.org/wiki/Report_on_an_Investigation_of_the_Peasant_Movement_in_Hunan"
+    },
+    {
+      "n": 25,
+      "title": "Inlibris, the first translation of Das Kapital (St Petersburg, 1872)",
+      "url": "https://inlibris.com/item/bn45524/"
+    },
+    {
+      "n": 26,
+      "title": "Wikipedia, Godesberg Program",
+      "url": "https://en.wikipedia.org/wiki/Godesberg_Program"
+    },
+    {
+      "n": 27,
+      "title": "The National Interest, The Arithmetic of Atrocity (review of The Black Book of Communism)",
+      "url": "https://nationalinterest.org/bookreview/the-arithmetic-of-atrocity-377"
+    },
+    {
+      "n": 28,
+      "title": "Wikipedia, Fall of Saigon",
+      "url": "https://en.wikipedia.org/wiki/Fall_of_Saigon"
+    },
+    {
+      "n": 29,
+      "title": "Wikipedia, Proclamation of the People's Republic of China",
+      "url": "https://en.wikipedia.org/wiki/Proclamation_of_the_People%27s_Republic_of_China"
+    }
+  ],
+  "counterpoints": [
+    {
+      "claim": "Marx is not the same as Lenin or Pol Pot. Marx described capitalism; the vanguard party that seized and held power was Lenin's addition, and Lenin himself did not consider the early Soviet state socialist.",
+      "who": "Britannica on What Is to Be Done?; Wikipedia, List of communist states",
+      "status": "sourced, sources 12, 16"
+    },
+    {
+      "claim": "The biggest descendant may be the welfare state. The reformist branch of Marx's movement gave up revolution and helped build Europe's social democracies.",
+      "who": "Wikipedia, Godesberg Program; Social Reform or Revolution?",
+      "status": "sourced, sources 4, 26"
+    },
+    {
+      "claim": "Communist parties have presided over some of the largest drops in poverty on record: about 800 million people in China and 40 million in Vietnam. Critics answer that both came after those parties adopted markets.",
+      "who": "Wikipedia, Reform and opening up; IMF",
+      "status": "sourced, sources 11, 19"
+    },
+    {
+      "claim": "Body counts are disputed. The Black Book of Communism's figure of nearly 100 million was criticized by two of its own contributors, and estimates for the Chinese famine alone range from under 4 million to 55 million.",
+      "who": "The National Interest; Wikipedia, Great Chinese Famine",
+      "status": "sourced, sources 27, 9"
+    }
+  ],
+  "open_questions": [
+    "NEEDS SOURCE: a peak share of world population living under communist rule (often given as about a third). Would make a better second chart than the country count.",
+    "NEEDS VERIFICATION: the date of the tribunal's genocide verdict for Nuon Chea and Khieu Samphan. Source 15 as read gives March 28, 2019; other accounts give November 16, 2018. The card avoids the date for now.",
+    "Source the 1903 Bolshevik and Menshevik split and tie it to What Is to Be Done? from a source that says so. Britannica (source 12) does not.",
+    "The 500 million copies figure for the Manifesto is an estimate repeated by Wikipedia. Find its origin before it goes in a headline.",
+    "Candidate threads not yet built: North Korea, the Eastern Bloc as its own row, Africa (Ethiopia, Angola, Mozambique), and Marxism in Western universities (the Frankfurt School, the 1960s New Left).",
+    "China's Cultural Revolution (1966) is missing as a station. Source its scale before adding.",
+    "Vietnam 1945: source 16 gives only the date. Add a source for the declaration itself.",
+    "Lenin's sealed train and the German role deserve a primary source."
+  ],
+  "view": {
+    "from": 1838,
+    "to": 2032,
+    "start": 1845,
+    "tickFrom": 1850,
+    "tickTo": 2020
+  },
+  "series": {
+    "label": "Countries ruled by a communist party",
+    "unit": "countries, counted on July 1 of each year",
+    "note": "Counted from the date ranges in Wikipedia's list of communist states: sovereign states whose constitutions named a ruling communist or Marxist-Leninist party (self-described socialist, people's democratic and national democratic states). Soviet Russia and the USSR count as one; Kampuchea and the People's Republic of Kampuchea count as one Cambodia. Short-lived and unrecognized republics are left out. Other rules give slightly different numbers. A country is not a population: China alone outweighs most of the rest.",
+    "source": 16,
+    "points": [
+      {
+        "year": 1917,
+        "value": 0,
+        "approximate": false
+      },
+      {
+        "year": 1918,
+        "value": 1,
+        "approximate": false
+      },
+      {
+        "year": 1919,
+        "value": 1,
+        "approximate": false
+      },
+      {
+        "year": 1920,
+        "value": 1,
+        "approximate": false
+      },
+      {
+        "year": 1921,
+        "value": 1,
+        "approximate": false
+      },
+      {
+        "year": 1922,
+        "value": 2,
+        "approximate": false
+      },
+      {
+        "year": 1923,
+        "value": 2,
+        "approximate": false
+      },
+      {
+        "year": 1924,
+        "value": 2,
+        "approximate": false
+      },
+      {
+        "year": 1925,
+        "value": 3,
+        "approximate": false
+      },
+      {
+        "year": 1926,
+        "value": 3,
+        "approximate": false
+      },
+      {
+        "year": 1927,
+        "value": 3,
+        "approximate": false
+      },
+      {
+        "year": 1928,
+        "value": 3,
+        "approximate": false
+      },
+      {
+        "year": 1929,
+        "value": 3,
+        "approximate": false
+      },
+      {
+        "year": 1930,
+        "value": 3,
+        "approximate": false
+      },
+      {
+        "year": 1931,
+        "value": 3,
+        "approximate": false
+      },
+      {
+        "year": 1932,
+        "value": 3,
+        "approximate": false
+      },
+      {
+        "year": 1933,
+        "value": 3,
+        "approximate": false
+      },
+      {
+        "year": 1934,
+        "value": 3,
+        "approximate": false
+      },
+      {
+        "year": 1935,
+        "value": 3,
+        "approximate": false
+      },
+      {
+        "year": 1936,
+        "value": 3,
+        "approximate": false
+      },
+      {
+        "year": 1937,
+        "value": 3,
+        "approximate": false
+      },
+      {
+        "year": 1938,
+        "value": 3,
+        "approximate": false
+      },
+      {
+        "year": 1939,
+        "value": 3,
+        "approximate": false
+      },
+      {
+        "year": 1940,
+        "value": 3,
+        "approximate": false
+      },
+      {
+        "year": 1941,
+        "value": 3,
+        "approximate": false
+      },
+      {
+        "year": 1942,
+        "value": 3,
+        "approximate": false
+      },
+      {
+        "year": 1943,
+        "value": 3,
+        "approximate": false
+      },
+      {
+        "year": 1944,
+        "value": 3,
+        "approximate": false
+      },
+      {
+        "year": 1945,
+        "value": 2,
+        "approximate": false
+      },
+      {
+        "year": 1946,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 1947,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 1948,
+        "value": 8,
+        "approximate": false
+      },
+      {
+        "year": 1949,
+        "value": 10,
+        "approximate": false
+      },
+      {
+        "year": 1950,
+        "value": 13,
+        "approximate": false
+      },
+      {
+        "year": 1951,
+        "value": 13,
+        "approximate": false
+      },
+      {
+        "year": 1952,
+        "value": 13,
+        "approximate": false
+      },
+      {
+        "year": 1953,
+        "value": 13,
+        "approximate": false
+      },
+      {
+        "year": 1954,
+        "value": 13,
+        "approximate": false
+      },
+      {
+        "year": 1955,
+        "value": 13,
+        "approximate": false
+      },
+      {
+        "year": 1956,
+        "value": 13,
+        "approximate": false
+      },
+      {
+        "year": 1957,
+        "value": 13,
+        "approximate": false
+      },
+      {
+        "year": 1958,
+        "value": 13,
+        "approximate": false
+      },
+      {
+        "year": 1959,
+        "value": 14,
+        "approximate": false
+      },
+      {
+        "year": 1960,
+        "value": 14,
+        "approximate": false
+      },
+      {
+        "year": 1961,
+        "value": 14,
+        "approximate": false
+      },
+      {
+        "year": 1962,
+        "value": 14,
+        "approximate": false
+      },
+      {
+        "year": 1963,
+        "value": 14,
+        "approximate": false
+      },
+      {
+        "year": 1964,
+        "value": 15,
+        "approximate": false
+      },
+      {
+        "year": 1965,
+        "value": 15,
+        "approximate": false
+      },
+      {
+        "year": 1966,
+        "value": 15,
+        "approximate": false
+      },
+      {
+        "year": 1967,
+        "value": 15,
+        "approximate": false
+      },
+      {
+        "year": 1968,
+        "value": 15,
+        "approximate": false
+      },
+      {
+        "year": 1969,
+        "value": 15,
+        "approximate": false
+      },
+      {
+        "year": 1970,
+        "value": 16,
+        "approximate": false
+      },
+      {
+        "year": 1971,
+        "value": 17,
+        "approximate": false
+      },
+      {
+        "year": 1972,
+        "value": 17,
+        "approximate": false
+      },
+      {
+        "year": 1973,
+        "value": 17,
+        "approximate": false
+      },
+      {
+        "year": 1974,
+        "value": 17,
+        "approximate": false
+      },
+      {
+        "year": 1975,
+        "value": 21,
+        "approximate": false
+      },
+      {
+        "year": 1976,
+        "value": 23,
+        "approximate": false
+      },
+      {
+        "year": 1977,
+        "value": 23,
+        "approximate": false
+      },
+      {
+        "year": 1978,
+        "value": 24,
+        "approximate": false
+      },
+      {
+        "year": 1979,
+        "value": 25,
+        "approximate": false
+      },
+      {
+        "year": 1980,
+        "value": 25,
+        "approximate": false
+      },
+      {
+        "year": 1981,
+        "value": 25,
+        "approximate": false
+      },
+      {
+        "year": 1982,
+        "value": 25,
+        "approximate": false
+      },
+      {
+        "year": 1983,
+        "value": 25,
+        "approximate": false
+      },
+      {
+        "year": 1984,
+        "value": 24,
+        "approximate": false
+      },
+      {
+        "year": 1985,
+        "value": 24,
+        "approximate": false
+      },
+      {
+        "year": 1986,
+        "value": 24,
+        "approximate": false
+      },
+      {
+        "year": 1987,
+        "value": 24,
+        "approximate": false
+      },
+      {
+        "year": 1988,
+        "value": 24,
+        "approximate": false
+      },
+      {
+        "year": 1989,
+        "value": 24,
+        "approximate": false
+      },
+      {
+        "year": 1990,
+        "value": 17,
+        "approximate": false
+      },
+      {
+        "year": 1991,
+        "value": 12,
+        "approximate": false
+      },
+      {
+        "year": 1992,
+        "value": 6,
+        "approximate": false
+      },
+      {
+        "year": 1993,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 1994,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 1995,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 1996,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 1997,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 1998,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 1999,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 2000,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 2001,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 2002,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 2003,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 2004,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 2005,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 2006,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 2007,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 2008,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 2009,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 2010,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 2011,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 2012,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 2013,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 2014,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 2015,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 2016,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 2017,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 2018,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 2019,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 2020,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 2021,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 2022,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 2023,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 2024,
+        "value": 5,
+        "approximate": false
+      },
+      {
+        "year": 2025,
+        "value": 5,
+        "approximate": false
+      }
+    ],
+    "step": true,
+    "grid": 5,
+    "axis": "count",
+    "from": "count",
+    "readout": "{v} {noun} ruled by a communist party on July 1, {year}.",
+    "one": "country",
+    "many": "countries"
+  },
+  "intro": {
+    "label": "Why I'm following this one",
+    "author": "Matthew Kenney",
+    "status": "",
+    "paragraphs": [
+      "Ever since college at the University of Florida, when I spent hours in a far-left bookstore, I have been enamored with the ideas of Marxism. Only when I got a little older did I realize they are ideas to critique. Marxism is a lens, but it is not the only lens. It is a good thing to know, but it is not the only thing to know.",
+      "The ideas are genuinely interesting. Marxist thinkers are brilliant on culture: on art, on music, on film. Put into practice, though, the ideas lead to disaster. So I keep coming back to one question: why do these ideas keep recirculating through history?",
+      "Intellectuals have always been drawn to the Marxist way of thinking. The ideas are awful when they are implemented, and yet there is something very alluring about them."
+    ]
+  }
+}

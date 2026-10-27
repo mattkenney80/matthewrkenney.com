@@ -1,13 +1,14 @@
 ---
 // Out of Bell Labs: five ideas from one New Jersey lab, each on its own row ("threads" layout).
 // Rendered from src/data/bell-labs/bell-labs.json; the map, chart and card are drawn by
-// src/scripts/bell-labs.js, ported from Matthew's bell-labs.html prototype.
+// src/scripts/threads.js, ported from Matthew's bell-labs.html prototype.
 export const prerender = false;
 
 import { env } from "cloudflare:workers";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { isSectionVisible } from "../../lib/settings";
 import idea from "../../data/bell-labs/bell-labs.json";
+import "../../styles/threads.css";
 
 if (!(await isSectionVisible(env?.DB, "experiments"))) {
   return Astro.rewrite("/404");
@@ -108,75 +109,12 @@ const isDraft = /draft/i.test(idea.intro.status);
 </BaseLayout>
 
 <script>
-  import "../../scripts/bell-labs.js";
+  import "../../scripts/threads.js";
 </script>
 
 <style is:global>
   .lede + .lede { margin-top: var(--space-2); }
-  .bl-eyebrow { margin: 0 0 0.5rem; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-ink-soft); }
   h1 em { font-style: normal; color: #2340c8; }
   .bl, .bl-note { --accent: #2340c8; --accent-soft: rgba(35, 64, 200, 0.2);
     --t-lab: #3d4a47; --t-transistor: #7a4fb0; --t-info: #1f7a5a; --t-solar: #a3601b; --t-unix: #9b2f3f; --t-cell: #12707a; }
-  .bl-mono { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-ink-soft); }
-  .bl-note { margin-top: var(--space-3); border-left: 3px solid var(--color-border); padding-left: var(--space-2); max-width: 40rem; }
-  .bl-note p { margin: 0 0 0.75rem; }
-  .bl-note .bl-mono { display: flex; flex-wrap: wrap; gap: 0.75rem; }
-  .bl-draft { border: 1px solid var(--color-ink-soft); padding: 0 0.35rem; }
-  .bl-note .bl-srcline { display: block; text-transform: none; letter-spacing: 0; }
-  .bl-srcline a { color: var(--accent); }
-
-  .bl { margin-top: var(--space-4); display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); }
-  .bl > * { min-width: 0; }
-  .bl h2, .bl-sec h2 { font-size: 1.25rem; }
-  .bl-stage { border: 1px solid var(--color-border); background: #fff; padding: var(--space-2); display: grid; gap: 0.6rem; }
-  .bl-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-  .bl button { font: inherit; font-size: 0.82rem; padding: 0.4rem 0.75rem; min-height: 2.5rem; background: transparent; color: var(--color-ink); border: 1px solid var(--color-border); border-radius: 6px; cursor: pointer; }
-  .bl button:hover { border-color: var(--accent); color: var(--accent); }
-  .bl button:focus-visible, #bl-map:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  .bl-chip { display: inline-flex; align-items: center; gap: 0.45rem; }
-  .bl-chip i { width: 0.65rem; height: 0.65rem; border-radius: 50%; display: inline-block; }
-  .bl-chip[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
-  .bl-stage-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.5rem; }
-  .bl-ctrls { display: flex; gap: 0.5rem; }
-  .bl svg { display: block; width: 100%; height: auto; }
-  #bl-map { touch-action: pan-y; cursor: grab; user-select: none; -webkit-user-select: none; }
-  #bl-map.drag { cursor: grabbing; }
-  #bl-map text, #bl-chartsvg text { font-family: inherit; }
-  .bl .row-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; }
-  .bl .node-name { font-size: 13px; fill: var(--color-ink); }
-  .bl .axis { font-size: 11px; fill: var(--color-ink-soft); }
-  .bl .edge { fill: none; stroke: var(--color-border); stroke-width: 1.5; stroke-dasharray: 4 4; }
-  .bl .edge.on { stroke: var(--color-ink-soft); }
-  .bl-hint { margin: 0; font-size: 0.85rem; color: var(--color-ink-soft); max-width: 62ch; }
-  .bl-hint a { color: inherit; }
-
-  .bl-card { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: var(--space-3) var(--space-4); border-top: 3px solid var(--color-ink); padding-top: var(--space-2); }
-  @media (max-width: 720px) { .bl-card { grid-template-columns: minmax(0, 1fr); } }
-  .bl-card .big-year { font-family: var(--font-serif); font-size: 4rem; line-height: 0.9; color: var(--accent); font-variant-numeric: tabular-nums; }
-  .bl-card h3 { font-size: 1.6rem; margin: 0.4rem 0 0.6rem; }
-  .bl-card .who { margin: 0 0 0.2rem; font-weight: 600; }
-  .bl-card .where { margin: 0; color: var(--color-ink-soft); }
-  .bl-card .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
-  .bl-card .tag { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.5rem; border: 1px solid var(--color-border); color: var(--color-ink-soft); }
-  .bl-card .tag.thread { color: #fff; border-color: transparent; }
-  .bl-card .waiting { margin: 0.75rem 0 0; font-size: 0.85rem; color: var(--color-ink-soft); }
-  .bl-card dl { margin: 0; display: grid; gap: var(--space-2); }
-  .bl-card dt { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-ink-soft); }
-  .bl-card dd { margin: 0.2rem 0 0; max-width: 62ch; }
-  .bl-card dd a { color: var(--accent); }
-
-  .bl-readout { margin: 0 0 0.5rem; color: var(--color-ink-soft); font-variant-numeric: tabular-nums; }
-  .bl-readout b { font-family: var(--font-serif); font-size: 2.1rem; font-weight: 500; color: var(--accent); margin-right: 0.4rem; }
-
-  .bl-findings { margin-top: var(--space-4); display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: var(--space-3); }
-  .bl-findings p { margin: 0; }
-  .bl-findings span { display: block; font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 0.3rem; }
-  .bl-sec { margin-top: var(--space-4); max-width: 52rem; }
-  .bl-counter { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: var(--space-2) var(--space-3); }
-  .bl-counter li { border-top: 1px solid var(--color-border); padding-top: 0.6rem; }
-  .bl-who { display: block; margin-top: 0.35rem; font-size: 0.82rem; color: var(--color-ink-soft); }
-  .bl-sources { font-size: 0.9rem; color: var(--color-ink-soft); padding-left: 1.6rem; columns: 2 18rem; column-gap: var(--space-4); }
-  .bl-sources li { break-inside: avoid; margin-bottom: 0.4rem; }
-  .bl-sources li:target { background: rgba(35, 64, 200, 0.08); }
-  .bl-back { margin-top: var(--space-4); }
 </style>
